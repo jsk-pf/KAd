@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Layout Guide</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- guide css -->
+	<link rel="stylesheet" href="../css/base.css">
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<script src="../../lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="wrap" class="coding_guide">
+		<h1 class="h1_guide">Common</h1>
+
+		<div class="title-box">
+			<h2 class="h2_guide">공통</h2>
+		</div>
+
+		<section class="section main-frame">
+			<div class="table-wrapper">
+				<div class="update-date"><em class="fc-blue">(update: 22.06.13)</em></div>
+				<table class="fl-table">
+					<colgroup>
+						<col style="width: 20%">
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th>구분</th>
+							<th>내용</th>
+							<th>작성일시</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>작업환경</th>
+							<td>
+								<ul>
+									<li>
+										<p><b>Browser</b> : IE11+, Microsoft Edge, Chrome, Whale</p>
+									</li>
+									<li>
+										<p><b>Language</b> : HTML5, SCSS, Javscript, jQuery</p>
+									</li>
+								</ul>
+							</td>
+							<td class="date">
+								<ul>
+									<li><span>22.05.30</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>Title 표시</th>
+							<td>
+								<ul class="cont-list">
+									<li>
+										<div>페이지 별 Title 태그의 내용은 기획서 파일 확인 <br>- <u class="fc-red"> Description ⇒ # 내용 </u>확인하여 title 내용 입력
+										</div>
+									</li>
+								</ul>
+							</td>
+							<td class="date">
+								<ul>
+									<li>22.06.02</li>
+								</ul>
+							</td>
+						</tr>
+
+						<tr>
+							<th>영역 구분 및 컬럼</th>
+							<td>
+								<ul class="cont-list">
+									<li>영역 구분 : [class="c-panel"]</li>
+									<li>
+										[class='col-*'] : column max : 12, column에 비례 [col-*] 클래스 숫자를 부여하여 사용 <br>
+										col-1 ~ col-12, col
+									</li>
+								</ul>
+							</td>
+							<td class="date">
+								<ul>
+									<li><s>22.05.31</s></li>
+									<li><s>22.06.02</s></li>
+									<li>22.06.07</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>Coding Guide</th>
+							<td>
+								<ul class="cont-list">
+									<li>
+										<div>
+											퍼블리싱 파일 내에 class명을 제외한 수정이 필요한 속성값은 작업 페이지에 맞게
+											<em class="fc-yellow">반드시 네이밍 변경하여 사용</em>
+										</div>
+									</li>
+									<li>
+										<div>
+											Coding Guide 내 소스는 상속 태그를 제외한 단일 요소로<br>
+											실제 개발 소스 내 사용 시
+											<em class="e_code">[class="c-panel"], [class="c-article"], [class="c-row"]</em>
+											<br>같은 블록요소 내에서 적용
+										</div>
+									</li>
+								</ul>
+							</td>
+							<td class="date">
+								<ul>
+									<li><s>22.05.31</s></li>
+									<li><s>22.06.02</s></li>
+									<li>22.06.07</li>
+								</ul>
+							</td>
+						</tr>
+
+						<tr>
+							<th>FORM 요소</th>
+							<td>
+								<ul class="cont-list">
+									<li>label + input 결합 시 중복 id 값 입력이나 공란으로 비워두지 말 것 (Web Standard Error)</li>
+									<li>
+										<div>
+											<b>label + input</b>
+											- input + label 요소 작업 시 id 속성값 = label for 속성값 매칭<br>
+											<p class="fc-red">* 퍼블리싱 소스의 id/for 속성의 공란이나 임의값에 대해 <em class="fc-red">적절한 네이밍으로 변경하여 매칭 되도록
+													작업</em></p>
+											- label + input 1 : 다 인경우 <br>
+										</div>
+									</li>
+									<li><span>lable for, input id 매칭 X</span>, 각 input 태그에 적절한 title 속성값 부여</li>
+								</ul>
+							</td>
+							<td class="date">
+								<ul>
+									<li><s>22.05.31</s></li>
+									<li><s>22.06.02</s></li>
+									<li>22.06.07</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>Heading 태그</th>
+							<td>
+								<ul class="cont-list">
+									<li>Heading 태그 : 무분별한 h1~h6 태그 사용 금지, markup 구조에 따른 사용 필요(Web Standard)</li>
+								</ul>
+							</td>
+							<td class="date">
+								<ul>
+									<li><s>22.05.31</s></li>
+									<li><s>22.06.02</s></li>
+									<li>22.06.07</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</div>
+	<!-- guide script -->
+	<script src="../js/pretty.js"></script>
+
+	<script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+	<script defer src="../../js/common.js"></script>
+</body>
+
+</html>

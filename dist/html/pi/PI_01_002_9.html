@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검진 제안서 관리</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Contents -->
+            <section class="contents">
+                <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupRegChkupProposal01
+					">
+                    <span>검진 제안서 등록</span>
+                </button>
+                <!-- [ layer popup] -->
+                <div class="c-layer-popup type03 modal fade" id="popupRegChkupProposal01" role="dialog" aria-labelledby="popupRegChkupProposal01_Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <!-- modal Header -->
+                            <div class="modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupRegChkupProposal01_Label">검진 제안서 등록</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업
+                                        닫기</span></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">관계 고객사 기본정보</h5>
+                                        <div class="buttons">
+                                            <button type="button" class="c-btn is-outline-blue-1"><span>검진 제안 불러오기</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="c-article input-list">
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputCompanytName">고객사명</label>
+                                                <input type="text" class="c-input" id="inputCompanytName" value="삼성전자" disabled>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputClientNnem">대표자명</label>
+                                                <input type="text" class="c-input" id="inputClientNnem" value="홍길동" disabled>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputCompanytNum">사업자 등록번호</label>
+                                                <input type="text" class="c-input" id="inputCompanytNum" value="106-88-65257" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">검진 제안 정보</h5>
+                                    </div>
+                                    <div class="c-article input-list">
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputProposalName">제안서명</label>
+                                                <input type="text" class="c-input" id="inputProposalName">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputProposalPerson">검진 대상 인원</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputProposalPerson" value="31,245">
+                                                    <span class="unit">명</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputSales">예상매출</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputSales" value="1,000,000">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputCost">공단비용 청구 설정</label>
+                                                <div class="c-select">
+                                                    <select id="inputCost">
+                                                        <option value="" selected>포함</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="row inner c-input-date-group">
+                                                    <div class="col-6 label-input">
+                                                        <label for="proposalStartDate">제안기간 (시작)</label>
+                                                        <div class="c-input-date">
+                                                            <input type="text" class="c-input" id="proposalStartDate" placeholder="YYYY-MM-DD">
+                                                            <span><i class="date-btn"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 label-input">
+                                                        <label for="proposalEndDate">종료일 (종료)</label>
+                                                        <div class="c-input-date">
+                                                            <input type="text" class="c-input" id="proposalEndDate" placeholder="YYYY-MM-DD">
+                                                            <span><i class="date-btn"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputCheckDiv">검진구분</label>
+                                                <div class="c-select">
+                                                    <select id="inputCheckDiv">
+                                                        <option value="" selected>종합검진</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputCheckYear">검진연도</label>
+                                                <div class="c-select">
+                                                    <select id="inputCheckYear">
+                                                        <option value="" selected>2021</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputCheckPrice">검진가격</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputCheckPrice" value="1,000,000">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 label-input">
+                                                <label for="inputReqText">요청사항</label>
+                                                <div class="c-txtarea-field">
+                                                    <textarea id="inputReqText" class="c-txt-area"> </textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">상품 정보</h5>
+                                    </div>
+                                    <div class="c-article input-list">
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputProductName">상품명</label>
+                                                <input type="text" class="c-input" id="inputProductName" value="정밀 종합검진 일반형">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputProductCheck">검진구분</label>
+                                                <input type="text" class="c-input" id="inputProductCheck" value="종합검진">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputProductProgress">공단1차 진행여부</label>
+                                                <div class="c-select">
+                                                    <select id="inputProductProgress">
+                                                        <option value="" selected>진행</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputProductClaim">공단1차 청구설정</label>
+                                                <div class="c-select">
+                                                    <select id="inputProductClaim">
+                                                        <option value="" selected>청구안함</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputPriceClaimGroup_01">위 내시경 수면비 청구 (단체)</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputPriceClaimGroup_01" value="0">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputPriceClaimOwn_01">위 내시경 수면비 청구 (개인)</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputPriceClaimOwn_01" value="0">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputPriceClaimGroup_02">대장 내시경 수면비 청구 (단체)</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputPriceClaimGroup_02" value="0">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputPriceClaimOwn_02">대장 내시경 수면비 청구 (개인)</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputPriceClaimOwn_02" value="0">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputPriceClaimGroup_03">위+대장 내시경 수면비 청구 (단체)</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputPriceClaimGroup_03" value="0">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputPriceClaimOwn_03">위+대장 내시경 수면비 청구 (개인)</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputPriceClaimOwn_03" value="0">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputSpecialClaim">특검청구설정</label>
+                                                <div class="c-select">
+                                                    <select id="inputSpecialClaim">
+                                                        <option value="" selected>청구안함</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel card-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">검진 항목 설정</h5>
+                                        <div class="buttons">
+                                            <!-- 버튼 비활성화 disabled 처리 -->
+                                            <button type="button" class="c-btn is-outline-blue-1" disabled><span>항목 설정</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="row c-card-article type02">
+                                        <div class="col">
+                                            <div class="c-card type05">
+                                                <dl>
+                                                    <dt class="txt">전체</dt>
+                                                    <dd class="cnt"><span>512</span></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="c-card type05">
+                                                <dl>
+                                                    <dt class="txt">공통검사</dt>
+                                                    <dd class="cnt"><span>12</span></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="c-card type05">
+                                                <dl>
+                                                    <dt class="txt">선택검사 1</dt>
+                                                    <dd class="cnt"><span>1</span><span class="slash">/</span><span>1</span></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="c-card type05">
+                                                <dl>
+                                                    <dt class="txt">선택검사 2</dt>
+                                                    <dd class="cnt"><span>2</span><span class="slash">/</span><span>3</span></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="c-card type05">
+                                                <dl>
+                                                    <dt class="txt">선택검사 3</dt>
+                                                    <dd class="cnt"><span>5</span><span class="slash">/</span><span>5</span></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="c-card type05">
+                                                <dl>
+                                                    <dt class="txt">선택검사 4</dt>
+                                                    <dd class="cnt"><span>-</span></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="c-card type05">
+                                                <dl>
+                                                    <dt class="txt">선택검사 5</dt>
+                                                    <dd class="cnt"><span>-</span></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="c-article input-list c-textarea-article">
+                                        <div class="row">
+                                            <div class="col label-input">
+                                                <label for="inpuTxtA01" class="sr-only">상품 정보 설명</label>
+                                                <div class="c-txtarea-field">
+                                                    <textarea id="inpuTxtA01" class="c-txt-area" readonly="readonly">
+ Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto veniam dicta atque rem consequuntur expedita reprehenderit iste sit cum perspiciatis, dolores minus nulla quia dolorum nemo qui corporis. Obcaecati necessitatibus aliquam possimus reiciendis dignissimos fugit inventore eum, porro doloribus est sequi asperiores veniam accusamus qui pariatur laboriosam accusantium modi eligendi!</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--
+											.check : 선택 된 데이터 시각적 아이콘 출력
+											.uncheck : 선택 되지 않은 데이터 시각적 아이콘 출력
+											button : disabled 속성 넣을 시 버튼 비활성화
+									-->
+                                <div class="c-panel card-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">검진 기관 선택</h5>
+                                        <div class="buttons">
+                                            <button type="button" class="c-btn is-outline-blue-1"><span>검진기간 선택</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="row c-card-article type03">
+                                        <div class="col-2">
+                                            <div class="c-card type02">
+                                                <dl>
+                                                    <dt class="txt">서울</dt>
+                                                    <dd class="cnt">
+                                                        <i class="check"><span class="sr-only">선택</span></i>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="c-card type02">
+                                                <dl>
+                                                    <dt class="txt">경기도</dt>
+                                                    <dd class="cnt">
+                                                        <i class="uncheck"><span class="sr-only">선택</span></i>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="c-card type02">
+                                                <dl>
+                                                    <dt class="txt">인천</dt>
+                                                    <dd class="cnt">
+                                                        <i>-</i>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="c-card type02">
+                                                <dl>
+                                                    <dt class="txt">부산</dt>
+                                                    <dd class="cnt">
+                                                        <i>-</i>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="c-card type02">
+                                                <dl>
+                                                    <dt class="txt">대구</dt>
+                                                    <dd class="cnt">
+                                                        <i>-</i>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="c-card type02">
+                                                <dl>
+                                                    <dt class="txt">울산</dt>
+                                                    <dd class="cnt">
+                                                        <i>-</i>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="c-card type02">
+                                                <dl>
+                                                    <dt class="txt">세종</dt>
+                                                    <dd class="cnt">
+                                                        <i>-</i>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="c-card type02">
+                                                <dl>
+                                                    <dt class="txt">강원도</dt>
+                                                    <dd class="cnt">
+                                                        <i>-</i>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="c-card type02">
+                                                <dl>
+                                                    <dt class="txt">충청도</dt>
+                                                    <dd class="cnt">
+                                                        <i>-</i>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="c-card type02">
+                                                <dl>
+                                                    <dt class="txt">전라도</dt>
+                                                    <dd class="cnt">
+                                                        <i>-</i>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="c-card type02">
+                                                <dl>
+                                                    <dt class="txt">경상도</dt>
+                                                    <dd class="cnt">
+                                                        <i>-</i>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="c-article input-list c-textarea-article">
+                                        <div class="row">
+                                            <div class="col label-input">
+                                                <label for="inpuTxtA02" class="sr-only">검진 항목 설명</label>
+                                                <div class="c-txtarea-field">
+                                                    <textarea id="inpuTxtA02" class="c-txt-area" readonly="readonly">
+ Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto veniam dicta atque rem consequuntur expedita reprehenderit iste sit cum perspiciatis, dolores minus nulla quia dolorum nemo qui corporis. Obcaecati necessitatibus aliquam possimus reiciendis dignissimos fugit inventore eum, porro doloribus est sequi asperiores veniam accusamus qui pariatur laboriosam accusantium modi eligendi!</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+                            <!-- modal-footer -->
+                            <div class="modal-footer c-btn-field justify-content-end">
+                                <div class="buttons">
+                                    <button type="button" class="c-btn is-outline-blue-1" data-dismiss="modal"><span>닫기</span></button>
+                                    <button type="button" class="c-btn bg-blue-3"><span>등록하기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- = type03  -->
+                <!-- [ // layer popup] -->
+            </section>
+            <!-- // Contents -->
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+
+    <script>
+        $(function() {
+            // Guide전용 스크립트 (개발 소스 적용 X)
+            $('[data-target]').trigger('click');
+        });
+    </script>
+</body>
+
+</html>

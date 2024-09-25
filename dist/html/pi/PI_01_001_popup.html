@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Contents -->
+            <section class="contents">
+                <!-- popup source -->
+                <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupInqChkupPrdClient01_01"><span>고객사 조회 POPUP</span></button>
+
+                <div class="c-layer-popup type04 modal fade" id="popupInqChkupPrdClient01_01" role="dialog" aria-labelledby="popupInqChkupPrdClient01_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <!-- modal Header -->
+                            <div class="modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupInqChkupPrdClient01_Label01">고객사 조회</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업
+                                        닫기</span></button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="c-panel">
+                                    <div class="c-article input-list02">
+                                        <div class="row">
+                                            <div class="col-6 label-input">
+                                                <label for="inputClientInq01_01">고객사 코드</label>
+                                                <input type="text" class="c-input" id="inputClientInq01_01" value="">
+                                            </div>
+                                            <div class="col-6 label-input">
+                                                <label for="inputClientInq01_02">대표 고객사명</label>
+                                                <input type="text" class="c-input" id="inputClientInq01_02" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel">
+                                    <div class="c-table-field">
+                                        <div class="c-table striped">
+                                            <table class="table">
+                                                <!--caption 내용 기재 -->
+                                                <caption>
+                                                    고객사 정보 : 항목선택, NO, 고객사코드, 대표 고객사명, 관계고객사명, 사업자등록번호에 대한 정보
+                                                </caption>
+                                                <colgroup>
+                                                    <col class="checkbox">
+                                                    <col class="no">
+                                                    <col>
+                                                    <col>
+                                                    <col>
+                                                    <col>
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col"></th>
+                                                        <th scope="col">NO</th>
+                                                        <th scope="col">고객사코드</th>
+                                                        <th scope="col">대표 고객사명</th>
+                                                        <th scope="col">관계고객사명</th>
+                                                        <th scope="col">사업자등록번호</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- input 생성 시  for/id 매칭 -->
+                                                    <tr>
+                                                        <td>
+                                                            <div class="c-chkbox">
+                                                                <input type="checkbox" id="chk01">
+                                                                <label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>1</td>
+                                                        <td>A00054</td>
+                                                        <td>삼성전자㈜</td>
+                                                        <td>삼성전자㈜</td>
+                                                        <td>452-5568-41425</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+
+                            <div class="modal-footer justify-cont-sb">
+                                <div class="buttons">
+                                    <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>조회</span></button>
+                                </div>
+                                <div class="buttons">
+                                    <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>취소</span></button>
+                                    <button class="c-btn bg-blue-1" data-dismiss="modal"><span>선택하기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // popup source -->
+            </section>
+            <!-- // Contents -->
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <p class="copyright">Copyright© KMI.All Rights Reserved.</p>
+                </div>
+            </footer>
+
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

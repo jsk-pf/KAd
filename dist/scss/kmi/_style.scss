@@ -1,0 +1,3126 @@
+/*
+=Login
+*/
+.login-wrapper {
+  background: url($image-path + 'login_bg.jpg') center/cover no-repeat;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-field {
+  width: 460px;
+  padding: 40px 32px;
+  background-color: $color-white-1;
+  text-align: left;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  border-radius: $radius-20;
+
+  h1 {
+    text-align: center;
+  }
+  .copyright {
+    margin-top: 40px;
+    line-height: $g-lineheight-2;
+    font-size: $fs-normal;
+    text-align: center;
+    color: $color-black-op4;
+  }
+}
+.login-input {
+  margin-top: $gap-40;
+  input[type='text'],
+  input[type='password'] {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+
+.c-btn {
+  &.btn-login {
+    margin-top: 40px;
+    border-radius: $radius-4;
+    width: 100%;
+    padding: {
+      top: 16px;
+      bottom: 16px;
+    }
+    color: $color-white-1;
+    line-height: 20px;
+  }
+}
+
+/*
+= bread crumb
+*/
+.c-breadcrumb {
+  .breadcrumb-list {
+    &:after {
+      @include after;
+    }
+    > li {
+      position: relative;
+      margin-right: $gap-8;
+      float: left;
+      font: {
+        size: $fs-small-m;
+      }
+      color: $color-gray-3;
+
+      & ~ li {
+        &:before {
+          float: left;
+          padding-right: $gap-8;
+          color: $color-gray-3;
+          content: '/';
+        }
+      }
+
+      &.on {
+        color: $color-navy-1;
+      }
+    }
+  }
+}
+
+.top_head {
+  .c-breadcrumb {
+    & + .c-title-field {
+      :after {
+        @include after;
+      }
+      [class*='title-'] {
+        color: $color-black-1;
+      }
+      position: relative;
+      margin-top: $gap-12;
+      padding-bottom: $gap-12;
+      .buttons {
+        position: absolute;
+        top: -6px;
+        right: 0;
+      }
+    }
+  }
+}
+
+/*
+	= Tab list
+*/
+.c-title-field {
+  & + .c-tab-field {
+    margin-top: 12px;
+  }
+}
+.c-tab-field {
+  .c-tab-list {
+    display: flex;
+    align-items: center;
+
+    > li {
+      display: table-cell;
+      text-align: center;
+
+      ~ li {
+        padding-left: 12px;
+      }
+      &.on {
+        a,
+        button {
+          color: $color-white-1;
+          border-color: $color-blue-1;
+          background-color: $color-blue-1;
+          display: block;
+        }
+      }
+
+      a {
+        font-size: $fs-normal;
+        color: $color-gray-1;
+        background-color: $color-gray-9;
+        padding: 4px 8px;
+        border: 0.5px solid $color-gray-4;
+        border-radius: $radius-8;
+        line-height: $input-basic-lineheight;
+        display: inline-block;
+
+        &.is-disable {
+          background-color: $color-white-1;
+          border-color: $color-gray-4;
+          color: $color-gray-4;
+          &:hover {
+            cursor: no-drop;
+          }
+        }
+      }
+    }
+
+    &.type02 {
+      > li {
+        a {
+          padding: 2px 4px;
+        }
+      }
+    }
+
+    &.type03 {
+      > li {
+        & ~ li {
+          padding-left: 0;
+        }
+        a {
+          padding: 6px 8px;
+          border-bottom: 0;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
+  // + tab-scroll
+  &.tab-scroll {
+    font-size: 0;
+    display: block;
+    @include scrollType04;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 5px;
+  }
+
+  &.type02 {
+    & + .c-tab-contents {
+      margin-top: 0;
+    }
+  }
+}
+
+[class*='-field'] {
+  & ~ [class*='-field'],
+  & + .c-tab-contents {
+    margin-top: $gap-12;
+  }
+
+  & + .c-tab-contents.type02 {
+    margin-top: 0;
+  }
+}
+.c-tab-contents {
+  .tab-cont {
+    display: none;
+    &.on {
+      display: block;
+    }
+  }
+}
+
+// = c-titcont-list
+.c-titcont-list {
+  display: flex;
+  align-items: center;
+  > dl {
+    display: table;
+    & ~ dl {
+      margin-left: $gap-20;
+    }
+    dt,
+    dd {
+      font: {
+        size: $fs-small;
+        weight: $weight-400;
+      }
+      display: table-cell;
+      font-size: $fs-small;
+    }
+    dt {
+      color: $color-gray-2;
+    }
+    dd {
+      padding-left: $gap-12;
+      color: $color-gray-3;
+    }
+  }
+}
+.c-txtarea-field {
+  & + .c-titcont-list {
+    margin-top: $gap-12;
+  }
+}
+
+// =Memo
+.c-memo-card {
+  > a {
+    border: 1px solid #e9e9e9;
+    background-color: #fff;
+    border-radius: $radius-12;
+    padding: 12px 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    align-items: flex-start;
+
+    > .col-cont.on {
+      & + .col-name {
+        > i {
+          transform: rotate(-180deg);
+        }
+      }
+      .col-name {
+        i {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+  .col-date,
+  .col-name {
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+  .col-date {
+    width: 110px;
+  }
+  .col-cont {
+    padding-right: 40px;
+    flex-grow: 1;
+    overflow: hidden;
+    height: 24px;
+
+    &.on {
+      .detail-cont {
+        &.on {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .detail-cont {
+      min-height: 24px;
+      line-height: 24px;
+      position: relative;
+      word-break: break-all;
+      &.on {
+        &:after {
+          content: '...';
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: inline-block;
+          padding-left: 1px;
+          background-color: $color-white-1;
+        }
+      }
+    }
+  }
+  .col-name {
+    width: 100px;
+    &:after {
+      @include after;
+    }
+    > .name {
+      display: inline-block;
+    }
+    i {
+      float: right;
+    }
+  }
+
+  .arrow {
+    background: url($image-ico-path + 'ico_arrow_07.svg') 0/20px no-repeat;
+    width: 20px;
+    height: 20px;
+    content: '';
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+}
+
+// = c-card-panel
+
+/*
+	= Card Type
+*/
+.c-title-field {
+  & + .c-card-article {
+    margin-top: $gap-12;
+  }
+}
+
+.c-card-article {
+  & + .c-card-article {
+    margin-top: $gap-10;
+  }
+}
+
+.row {
+  &.c-card-article {
+    @include rowGridSpacingCardArticle;
+  }
+}
+.c-card-article {
+  .c-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: $color-white-2;
+    border-radius: $radius-8;
+    border: 1px solid $color-gray-5;
+    font-size: $fs-normal;
+  }
+  &.type03 {
+    > .col-2 {
+      &:nth-child(n + 7) {
+        margin: {
+          top: $gap-12;
+        }
+      }
+    }
+  }
+}
+
+.c-card-article {
+  &.type01 {
+    [class='col-3'] {
+      padding: {
+        top: $gap-12;
+        bottom: $gap-12;
+        left: $gap-12;
+        right: $gap-12;
+      }
+    }
+  }
+}
+
+.c-card {
+  &[class*='type'] {
+    height: 100%;
+  }
+  .check,
+  .uncheck {
+    &:after {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 12px;
+      background: url($image-ico-path + 'ico_check.svg') center center no-repeat;
+      margin: 10px auto 0;
+      text-align: center;
+    }
+  }
+  .uncheck {
+    &:after {
+      background: url($image-ico-path + 'ico_uncheck.svg') center center no-repeat;
+    }
+  }
+  .cnt {
+    line-height: 1.6;
+    color: $color-navy-1;
+    position: relative;
+    font: {
+      weight: $weight-500;
+      size: $fs-large;
+    }
+    .slash {
+      color: #a4a4a4;
+      padding: 0 5px;
+      font-size: 18px;
+    }
+  }
+  //+ type01 (추가 대상자)
+  &.type01 {
+    $card-type01-padding: 0.428rem; // 6px
+    position: relative;
+    width: 100%;
+    .card-body {
+      padding: 0.428rem; // 6px
+    }
+
+    .add-entry {
+      display: flex;
+      @include justify-row;
+      align-items: center;
+      padding-right: 0.928rem;
+    }
+
+    .info > ul {
+      &:after {
+        @include after;
+      }
+      > li {
+        padding: $card-type01-padding;
+        float: left;
+      }
+    }
+
+    .c-btn-del {
+      background: url($image-ico-path + 'ico_del_01.svg') center/100% no-repeat;
+      width: 24px;
+      height: 24px;
+    }
+
+    & + .add-entry {
+      margin-top: 12px;
+      align-items: center;
+    }
+  }
+
+  // + type02 {
+  &.type02 {
+    padding: 14px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    .txt {
+      line-height: 1.7;
+      font-weight: $weight-400;
+    }
+  }
+
+  &.type03 {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 20px;
+    width: 100%;
+    .name {
+      font-size: $fs-small;
+    }
+    .c-multi-input-group-02 {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+      display: flex;
+      table-layout: fixed;
+      overflow: hidden;
+      width: 100%;
+      .input-col {
+        &.time {
+          margin-left: 8px;
+          > input[type='text'] {
+            text-align: center;
+            padding: 2px;
+            width: 40px;
+            height: 29px;
+            min-width: auto;
+          }
+        }
+      }
+    }
+  }
+  &.type05 {
+    padding: 14px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    .txt {
+      line-height: 1.7;
+      font-weight: $weight-400;
+    }
+  }
+  // + 지역 card
+  &.type06 {
+    align-items: center;
+    background-color: $color-white-1;
+    flex-direction: row;
+    > dl {
+      width: 100%;
+      flex: 1 1 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    padding: 4px 10px;
+    display: flex;
+    text-align: center;
+    .txt {
+      line-height: 1.7;
+      font-weight: $weight-400;
+    }
+    .cnt {
+      line-height: 1;
+    }
+    i {
+      &::after {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+//  + c-plan-chk-group
+.c-plan-chk-group {
+  display: flex;
+  align-items: center;
+  .c-multi-input-group-02 {
+    display: inline-block;
+  }
+}
+
+.c-top-cont {
+  margin-bottom: 12px;
+}
+
+// = reservation-detail
+.c-layout-type01 {
+  overflow: hidden;
+  .left-wrap,
+  .right-wrap {
+    height: calc(100vh - 330px);
+    overflow: hidden;
+    > .c-inner {
+      height: 100%;
+      overflow-y: auto;
+      padding-right: 10px;
+
+      @include scrollType01;
+    }
+  }
+}
+
+.reservation-detail {
+  .right-wrap {
+    width: 43%;
+    max-width: 43%;
+  }
+}
+
+// = c-arrow-move-field
+.c-arrow-move-field {
+  position: relative;
+
+  @include colOuterHSpacingNormal;
+
+  [class*='column'] {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+
+    @include colInnerHSpacingNormal;
+  }
+  > [class*='column'] > .c-article {
+    flex: 1 1 auto;
+  }
+
+  .column {
+    width: calc(50% - 20px);
+  }
+
+  .c-btn-group {
+    position: absolute;
+    left: calc(50% - 20px);
+    bottom: calc(50% - 45px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40px;
+    .buttons {
+      flex-direction: column;
+    }
+  }
+}
+
+// + c-arrow-btn
+.c-arrow-btn {
+  width: 22px;
+  height: 23px;
+  border-radius: $radius-4;
+  background: url($image-ico-path + 'ico_arrow_08.svg') $color-navy-1 center/6px auto no-repeat;
+
+  & ~ .c-arrow-btn {
+    margin-top: 20px;
+  }
+
+  &.left {
+    transform: rotate(-180deg);
+  }
+}
+
+// [Calendar]
+// = c-tbl-calendar
+.c-calendar-container {
+  padding: 24px 20px;
+  background-color: $color-white-1;
+  border-radius: $radius-8;
+  border: 1px solid $color-gray-5;
+}
+.c-calendar-wrap {
+  .top-field {
+    position: relative;
+    border-bottom: 2px solid $color-gray-5;
+    padding-bottom: 20px;
+    &:after {
+      @include after;
+    }
+
+    .c-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .year-month {
+        padding: 0 20px;
+        > p {
+          font: {
+            size: 28px;
+            weight: $weight-500;
+          }
+          line-height: 41px;
+        }
+      }
+      > button {
+        width: 20px;
+        height: 21px;
+        border-radius: $radius-4;
+        background: url($image-ico-path + 'ico_arrow_08.svg') $color-navy-1 center/6px auto no-repeat;
+        transform: rotate(-180deg);
+
+        &.btn-next {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    .c-badge-info {
+      position: absolute;
+      top: 7px;
+      right: 0;
+      display: flex;
+      > li {
+        display: flex;
+        align-items: center;
+        i {
+          display: inline-flex;
+          width: 18px;
+          height: 18px;
+          border: 1px solid $color-gray-4;
+          border-radius: $radius-4;
+        }
+        span {
+          display: inline-block;
+          margin-left: 8px;
+          color: $color-gray-2;
+          line-height: 24px;
+        }
+        & ~ li {
+          margin-left: 24px;
+        }
+      }
+    }
+  }
+
+  background-color: $color-white-1;
+
+  .weekdays {
+    display: flex;
+
+    > li {
+      text-align: center;
+      padding: 29px 0;
+      border-bottom: 2px solid $color-gray-5;
+      background-color: $color-white-1;
+      line-height: 23px;
+      font: {
+        size: 16px;
+        weight: $weight-500;
+      }
+    }
+  }
+  .weekdays,
+  .calendar_days {
+    > li {
+      width: calc(100% / 7);
+      display: inline-block;
+    }
+  }
+
+  // + calendar_days
+  .calendar_days {
+    display: flex;
+    flex-wrap: wrap;
+    > li {
+      padding: 12px;
+      height: 157px;
+      border-radius: $radius-8;
+      border: 1px solid $color-gray-5;
+      background-color: #fff;
+
+      &.is-holiday,
+      &.is-reserve-unable,
+      &.is-reserve-closed {
+        background-color: $color-gray-5;
+        opacity: 0.5;
+        border-color: $color-white-1;
+      }
+
+      &.is-reserve-unable {
+        .day {
+          color: $color-black-op4;
+        }
+      }
+      &.is-reserve-closed {
+        .day {
+          color: $color-black-op8;
+        }
+      }
+    }
+  }
+
+  .day-top {
+    display: flex;
+    align-items: center;
+    .day {
+      font: {
+        size: $fs-large;
+        weight: $weight-500;
+      }
+      line-height: 29px;
+    }
+    .state {
+      margin-left: 10px;
+      > span {
+        border-radius: $radius-8;
+        background-color: $color-orange-1;
+        text-align: center;
+        display: inline-block;
+        padding: 2px 16px;
+        font-size: $fs-small;
+        line-height: 20px;
+        color: $color-white-1;
+      }
+
+      .holiday {
+        background-color: $color-orange-1;
+      }
+      .reserve-available {
+        background-color: $color-blue-1;
+      }
+      .reserve-unable {
+        background-color: $color-gray-3;
+      }
+      .reserve-closed {
+        background-color: $color-navy-1;
+      }
+    }
+  }
+
+  .day-cont {
+    margin-top: 8px;
+  }
+
+  .reserve-list {
+    > li {
+      > a {
+        color: $color-blue-1;
+        text-decoration: underline;
+        font-size: $fs-normal;
+        line-height: 24px;
+      }
+    }
+  }
+  .txt-sun {
+    color: $color-orange-1;
+  }
+}
+
+.c-article {
+  &.mod-reservation-02 {
+    padding: $gap-12;
+    height: 384px;
+    width: 100%;
+    display: flex;
+    .c-inner-left,
+    .c-inner-right {
+      height: 100%;
+      overflow-x: hidden;
+    }
+    .c-inner-left {
+      width: 180px;
+    }
+
+    .c-inner-right {
+      padding-left: 24px;
+      flex-grow: 1;
+    }
+
+    .rsv-mod-list01 {
+      > li {
+        padding-right: 12px;
+        button {
+          text-align: left;
+          padding: 10px 20px;
+          display: block;
+          min-width: 160px;
+          display: block;
+          border-radius: $radius-6;
+          background-color: $color-white-1;
+          span {
+            color: $color-black-1;
+            font {
+              size: $fs-normal;
+            }
+            line-height: $g-lineheight-2;
+          }
+
+          &.on {
+            background-color: $color-navy-1;
+            span {
+              color: $color-white-1;
+            }
+          }
+        }
+      }
+    }
+
+    .rsv-mode-list02 {
+      > li {
+        padding-right: 12px;
+        & + li {
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .rsv-mod-detail {
+      padding: 12px;
+      border: 1px solid $color-gray-5;
+      border-radius: $radius-8;
+      display: flex;
+      width: 100%;
+      align-items: center;
+
+      color: $color-gray-2;
+
+      .c-chkbox {
+        flex-grow: 1;
+      }
+      .region {
+        padding: 2px 16px;
+      }
+
+      .link {
+        margin-left: 12px;
+        padding: 2px 16px;
+      }
+    }
+  }
+}
+
+.c-arrow-fixed-field {
+  position: relative;
+
+  @include colOuterHSpacingNormal;
+  [class*='column'] {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+
+    @include colInnerHSpacingNormal;
+  }
+  > [class*='column'] > .c-article {
+    flex: 1 1 auto;
+  }
+
+  .column {
+    width: calc(50% - 20px);
+  }
+
+  .c-btn-group {
+    // position: absolute;
+    left: calc(50% - 20px);
+    bottom: calc(50% - 45px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40px;
+    .buttons {
+      flex-direction: column;
+    }
+
+    .c-arrow-btn {
+      width: 22px;
+      height: 23px;
+      border-radius: $radius-4;
+      background: url($image-ico-path + 'ico_arrow_08.svg') $color-navy-1 center/6px auto no-repeat;
+
+      & ~ .c-arrow-btn {
+        margin-top: 20px;
+      }
+
+      &.left {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  .examination-item {
+    width: calc(100% - 640px - 50px);
+    flex: inherit;
+  }
+  .inspection-item {
+    width: 640px;
+    position: fixed;
+    right: 50px;
+    flex: inherit;
+  }
+}
+
+// = [PI]
+
+// + 검진항목
+
+// + tbl-chkup-category
+table {
+  &.tbl-chkup-category {
+    table-layout: fixed;
+    tbody {
+      td {
+        text-align: left;
+        &[rowspan] {
+          vertical-align: top;
+        }
+      }
+    }
+    .btn-open-chkup-infotxt {
+      height: 20px;
+      padding: 0;
+    }
+  }
+}
+
+.c-tbl-vertical-field .c-vertical-scroll {
+  table.tbl-chkup-category02 {
+    col.checkbox {
+      width: 40px;
+    }
+    th.checkbox {
+      width: 40px;
+    }
+    thead {
+      .checkbox {
+        margin-left: -1px;
+      }
+    }
+    tbody {
+      td {
+        // text-align: left;
+        padding: {
+          left: 4px;
+          right: 4px;
+        }
+      }
+      .c-chkbox {
+        input[type='checkbox'] {
+          & + .chk-label {
+            i {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.majordepth-name {
+  position: relative;
+  .name {
+    padding-left: 20px;
+    display: inline-block;
+  }
+  > .btn-open-chkup-infotxt {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.chkup-info-detail {
+  font-size: 0;
+  vertical-align: top;
+}
+.chkup-ctg-arrow-field {
+  &.floating {
+    position: absolute;
+    right: 0;
+  }
+  &.row {
+    flex-wrap: nowrap;
+
+    margin: {
+      left: 0;
+      right: 0;
+    }
+  }
+  display: flex;
+
+  .column {
+    &.left {
+      flex: 1 1 0;
+      width: calc(100% - 660px);
+      flex-basis: 904px;
+    }
+    &.right {
+      flex: 0 0 660px;
+      width: 660px;
+      .inner {
+        display: flex;
+        align-items: center;
+      }
+      .arrow-btns {
+        width: 60px;
+        min-width: 60px;
+      }
+      .tbl-list {
+        display: block;
+        width: calc(100% - 60px);
+        .c-tbl-vertical-field {
+          .c-vertical-scroll {
+            max-height: 850px;
+          }
+        }
+      }
+
+      .c-title-field {
+        margin-top: 12px;
+      }
+      .c-tab-field {
+        overflow: hidden;
+      }
+      .c-tab-list {
+        font-size: 0;
+        display: block;
+        @include scrollType04;
+        width: 100%;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 5px;
+        &:after {
+          @include after;
+        }
+        > li {
+          display: inline-block;
+        }
+      }
+
+      .tbl-list {
+        .c-input-search {
+          width: auto;
+          > input {
+            width: 200px;
+          }
+        }
+        .c-select {
+          select {
+            width: 180px;
+            @include ellipsisLine01;
+            padding-right: 32px;
+          }
+        }
+      }
+    }
+  }
+
+  .c-btn-group {
+    flex: 0 0 60px;
+
+    .buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &.evt-arrow-floating {
+    .tbl-chkup-category {
+      .c-select {
+        select {
+          min-width: auto;
+          padding-right: 20px;
+        }
+      }
+      @media screen and (max-width: 1920px) {
+        .c-select {
+          select {
+            max-width: 120px;
+          }
+          &:after {
+            right: 3px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// + tbl-view-chkup-category
+.tbl-view-chkup-category {
+  input[type='text'],
+  input[type='password'] {
+    text-align: left;
+    &[readonly='readonly'] {
+      border-bottom: 0;
+    }
+  }
+  @at-root .c-table.striped {
+    .tbl-view-chkup-category {
+      tr {
+        &:nth-of-type(even) {
+          &:hover {
+            background-color: $color-white-2;
+          }
+        }
+        &:nth-of-type(odd) {
+          &:hover {
+            background-color: $color-white-2;
+          }
+        }
+      }
+      th {
+        text-align: center;
+      }
+      td {
+        text-align: left;
+      }
+    }
+  }
+}
+
+// = Accordion
+.co-accrodion-list {
+  // + type01
+  &.type01 {
+    > li {
+      & ~ li {
+        margin-top: 12px;
+      }
+    }
+    .btn-accrodion,
+    .accrodion-panel {
+      border: 1px solid $color-gray-5;
+      border-radius: 12px;
+    }
+
+    .accrodion-panel {
+      margin-top: 12px;
+      margin-bottom: 20px;
+    }
+  }
+
+  // + on
+  .co-accordion {
+    &.on {
+      .btn-accrodion,
+      .accrodion-panel {
+        border-color: $color-blue-1;
+      }
+
+      .btn-accrodion {
+        .txt {
+          color: $color-blue-1;
+        }
+
+        .ico-accordion {
+          > span {
+            background-image: url($image-ico-path + 'ico_arrow_11.svg');
+          }
+        }
+      }
+    }
+  }
+}
+.co-accordion {
+  overflow: hidden;
+
+  .accrodion-panel {
+    background-color: $color-white-1;
+    display: none;
+    .panel-cont {
+      padding: 20px;
+    }
+  }
+
+  .btn-accrodion {
+    display: flex;
+    flex: 1 1 auto;
+    max-width: 100%;
+    justify-content: space-between;
+    font-size: 0;
+    padding: 13px 20px;
+    .col {
+      padding: {
+        left: 0;
+        right: 0;
+      }
+    }
+    .inner {
+      display: flex;
+      align-items: center;
+    }
+    .txt {
+      @include coTxtBasic;
+      padding-right: 60px;
+      @include ellipsisLine01;
+    }
+  }
+}
+
+.ico-accordion {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+
+  > span {
+    width: 20px;
+    height: 20px;
+    padding: 6px 5px;
+    background: url($image-ico-path + 'ico_arrow_10.svg') center/8px auto no-repeat;
+  }
+}
+
+// [ETC]
+// + error
+#container {
+  .etc-wrapper {
+    min-width: 1200px;
+    width: 100%;
+    padding-left: 0;
+    min-height: 100%;
+    background-color: $color-white-3;
+    text-align: center;
+
+    color: $color-black-op8;
+    .title {
+      @include fontStyle(60px, 87px, 700);
+    }
+
+    .info-cont {
+      margin-top: 40px;
+      @include coTxtTitle;
+    }
+
+    .sub-cont {
+      margin-top: 8px;
+      @include coTxtBasic;
+    }
+
+    .link {
+      margin-top: 40px;
+      .btn-go-back {
+        min-width: 134px;
+      }
+      .c-btn {
+        > span {
+          @include fontStyle(14px, 30px, 500);
+        }
+      }
+    }
+  }
+
+  .c-full-info-wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+}
+
+// = Loading
+.is-loading {
+  overflow: hidden;
+}
+.c-loading-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.75);
+  z-index: 3000;
+
+  .is-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    // = spinner
+    .spinner-field {
+      position: absolute;
+      top: 0%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      display: block;
+
+      > div {
+        @include position(50%, 50%);
+      }
+    }
+    .spinner {
+      border: 6px solid #e7e9ea;
+      border-radius: 50%;
+      width: 58px;
+      height: 58px;
+      animation: spinner 1.5s linear infinite;
+      position: relative;
+      &:after {
+        content: '';
+        background: url($image-path + 'spinner.svg') 0 0/28px auto no-repeat;
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        top: -6px;
+        left: 23px;
+      }
+    }
+
+    @keyframes spinner {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+// = Main
+
+.main-wrapper {
+  .contents {
+    padding: {
+      left: 40px;
+      right: 40px;
+    }
+  }
+  .col {
+    padding: {
+      left: 16px;
+      right: 16px;
+    }
+  }
+  .footer {
+    padding-top: 0;
+  }
+}
+.main-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: {
+    left: -$main-gap;
+    right: -$main-gap;
+  }
+
+  & ~ .main-row {
+    margin-top: 28px;
+  }
+  > [class*='col-'] {
+    padding: {
+      left: $main-gap;
+      right: $main-gap;
+    }
+  }
+  &.col-full-height {
+    [class*='col'] {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &.align-item-c {
+      align-items: center;
+    }
+
+    .m-article {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.m-article {
+  background-color: $color-white-1;
+  border: 1px solid $color-gray-5;
+  border-radius: $radius-8;
+  box-shadow: 2px 2px 12px 0 rgba(0, 0, 0, 0.04);
+
+  // + type01
+  &.type01 {
+    .c-title-box {
+      padding: 12px 20px;
+      border-bottom: 1px solid $color-gray-5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .title {
+        @include coTxtSubTitle;
+        color: $color-gray-1;
+      }
+      .date {
+        color: $color-gray-3;
+        @include fontStyle(12px, 20px, 400, -0.3px);
+      }
+    }
+
+    .cont-box {
+      padding: 12px 20px 20px;
+    }
+  }
+}
+.stats-card {
+  padding: 24px 44px 24px 36px;
+  .top-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    @include coTxtSubTitle;
+    color: $color-black-1;
+  }
+
+  .stats-ico {
+    width: 43px;
+    height: 43px;
+    border-radius: $radius-12;
+    margin-right: 12px;
+    background: {
+      image: url($image-ico-path + 'ico_stats_01.svg');
+      size: auto 62px;
+      position-y: -10px;
+      repeat: no-repeat;
+    }
+
+    &.ico01 {
+      background-position-x: -10px;
+    }
+    &.ico02 {
+      background-position-x: -62px;
+    }
+    &.ico03 {
+      background-position-x: -114px;
+    }
+    &.ico04 {
+      background-position-x: -166px;
+    }
+  }
+  .figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include coTxtSubTitle;
+    color: $color-gray-4;
+    .num {
+      padding-right: 8px;
+    }
+    &.is-down,
+    &.is-up {
+      i {
+        width: 8px;
+        height: 4px;
+        background: {
+          size: 8px auto;
+          position: center;
+          repeat: no-repeat;
+        }
+      }
+    }
+
+    &.is-maintenance {
+      color: $color-gray-3;
+      i {
+        width: 8px;
+        height: 2px;
+        background-color: $color-gray-3;
+      }
+    }
+
+    &.is-up {
+      color: $color-navy-1;
+      i {
+        background-image: url($image-ico-path + '/ico_arrow_12.svg');
+      }
+    }
+
+    &.is-down {
+      color: $color-orange-1;
+      i {
+        background-image: url($image-ico-path + 'ico_arrow_13.svg');
+      }
+    }
+  }
+
+  .btm-box {
+    margin-top: 20px;
+    .num {
+      @include fontStyle(28px, 32px, 500, -0.3px);
+      display: flex;
+      align-items: center;
+
+      .slash {
+        padding: 0 8px;
+      }
+
+      color: $color-gray-4;
+      > em {
+        color: $color-navy-1;
+      }
+    }
+  }
+}
+
+.c-more-btn {
+  @include coTxtBasic;
+  color: $color-gray-3;
+  > span {
+    position: relative;
+    padding-right: 20px;
+    &:after {
+      margin-top: 1px;
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      width: 20px;
+      height: 20px;
+      background: url($image-ico-path + 'ico_arrow_14.svg') center/20px auto no-repeat;
+    }
+  }
+}
+
+.main-slide-swiper {
+  overflow: hidden;
+  position: relative;
+  .slide {
+    img {
+      width: 100%;
+    }
+  }
+  .slide-card {
+    position: relative;
+    width: 100%;
+    border-radius: $radius-12;
+    overflow: hidden;
+    height: 260px;
+    max-height: 260px;
+    background: {
+      position: center;
+      repeat: no-repeat;
+      size: cover;
+    }
+  }
+
+  .main-banner-pagination {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    bottom: 12px;
+    z-index: 10;
+
+    .swiper-pagination-bullet {
+      background-color: $color-gray-6;
+      opacity: 1;
+      margin: 0 6px;
+      &.swiper-pagination-bullet-active {
+        width: 20px;
+        border-radius: 20px;
+        background-color: $color-blue-1;
+      }
+    }
+  }
+
+  .main-slide-btn-next,
+  .main-slide-btn-prev {
+    z-index: 1;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: {
+      size: 28px auto;
+      position: center;
+      repeat: no-repeat;
+    }
+  }
+  .main-slide-btn-prev {
+    left: 20px;
+    background-image: url($image-ico-path + 'slide_arrow_ico_01.png');
+  }
+  .main-slide-btn-next {
+    right: 20px;
+    background-image: url($image-ico-path + 'slide_arrow_ico_02.png');
+  }
+}
+
+//
+.main-tab-list {
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+
+  > li {
+    display: inline-block;
+    border: 0.5px solid $color-gray-4;
+    border-radius: 8px;
+    padding: 4px 16px;
+
+    & ~ li {
+      margin-left: 8px;
+    }
+
+    > a {
+      @include coTxtBtnSmall;
+      color: $color-gray-1;
+      display: block;
+    }
+
+    &.on {
+      border-color: $color-navy-1;
+      background-color: $color-navy-1;
+      a {
+        color: $color-white-1;
+      }
+    }
+  }
+}
+
+.main-tab-area {
+  display: flex;
+  flex: 1 0 auto;
+}
+.main-stats-tab-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-stats-row {
+  $gap: 8px;
+  margin: {
+    left: -$gap;
+    right: -$gap;
+  }
+  .col-6 {
+    padding: {
+      left: $main-gap;
+      right: $main-gap;
+    }
+  }
+  & ~ .main-stats-row {
+    margin-top: $gap-28;
+  }
+}
+
+.title-w-tab {
+  display: flex;
+  align-items: center;
+  .title {
+    margin-right: 20px;
+  }
+}
+
+.row {
+  &.chart-list {
+    padding: 0 20px;
+    $gap: 40px;
+
+    margin: {
+      left: -$gap;
+      right: -$gap;
+    }
+    [class*='col-'] {
+      padding: {
+        left: $gap;
+        right: $gap;
+      }
+    }
+
+    .title {
+      @include fontStyle(14px, 20px, 500, -0.3px);
+      color: $color-gray-1;
+    }
+  }
+}
+
+.progress-rate-chart {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  width: 100%;
+  height: 280px;
+  canvas {
+    max-height: 100%;
+    min-width: 100%;
+    width: auto;
+    margin: 0 auto;
+  }
+}
+
+$preferenceChartWidth: 300px;
+.preference-chart-card {
+  .chart-area {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    flex: 1 1 100%;
+  }
+  .chart-mark {
+    width: 300px !important;
+    height: 100% !important;
+  }
+
+  .info-cont {
+    padding-left: 32px;
+    width: calc(100% - 300px);
+    > ul {
+      li {
+        padding: 6px 8px;
+        background-color: $color-white-3;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & ~ li {
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .ctg {
+      @include coTxtBasic;
+      font-weight: 400;
+      color: $color-gray-2;
+      @include ellipsisLine01;
+    }
+    .percent {
+      > em {
+        color: $color-gray-2;
+        margin-right: 4px;
+      }
+      color: $color-gray-3;
+    }
+  }
+}
+
+.chart-card {
+  .title {
+    @include fontStyle(14px, 20px, 500, -0.3px);
+  }
+  .chart-area {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+  }
+}
+.col-4-half {
+  flex: 0 0 37.5%;
+  max-width: 37.5%;
+}
+
+.main-col-type02 {
+  height: 100%;
+  margin: {
+    left: -16px;
+    right: -16px;
+  }
+  > .col {
+    &:first-child {
+      padding-bottom: $gap-28;
+    }
+  }
+}
+
+.list-info {
+  display: flex;
+  flex-wrap: wrap;
+  > li {
+    width: 50%;
+    align-items: center;
+    margin-top: 6px;
+  }
+  .title,
+  .cont {
+    @include coTxtBasic;
+    font-weight: 400;
+    display: inline-block;
+  }
+  .title {
+    color: $color-gray-3;
+    min-width: 44px;
+    padding-right: 12px;
+  }
+  .cont {
+    color: $color-gray-1;
+  }
+  @media screen and (max-width: 1700px) {
+    > li {
+      min-width: 50%;
+      width: auto;
+    }
+  }
+}
+
+// @media screen and (max-width: 2200px) {
+//   .preference-chart-card {
+//     margin: 0 auto;
+
+//     .chart-area {
+//       display: block;
+//       text-align: center;
+//     }
+//     .chart-mark {
+//       margin: 0 auto;
+//     }
+//     .info-cont {
+//       width: 300px;
+//       padding-left: 0;
+//       margin-top: 20px;
+//       margin: 50px auto 0;
+//     }
+//   }
+// }
+
+@media screen and (max-width: 2200px) {
+  .preference-chart-card {
+    .chart-mark {
+      width: 200px !important;
+    }
+    .info-cont {
+      width: calc(100% - 200px);
+    }
+  }
+  .row.chart-list [class*='col-'] {
+    @include colInnerHSpacingNormal;
+  }
+}
+
+// [OS[
+// = 검진예약현황
+
+.c-layer-popup {
+  &.reservation-detail-popup {
+    // + rsvdtl-popup-type01
+    &.rsvdtl-popup-type01 {
+      &.show {
+        padding-left: 0 !important;
+      }
+      .c-article {
+        background-color: $color-white-1;
+      }
+      .modal-body {
+        height: inherit;
+        display: flex;
+      }
+      .reservation-dtl-status-layout {
+        .row.c-input-email-group .input-email-01:after {
+          right: -6px;
+          bottom: 7px;
+        }
+      }
+    }
+    .c-layout-type01 > .row > .col {
+      @include colInnerHSpacingNormal;
+      .request-box {
+        white-space: wrap;
+      }
+    }
+
+    .c-article.input-list > .row {
+      &.type-rsv-request {
+        .col-2 {
+          flex: 0 0 58px;
+          max-width: 58px;
+        }
+      }
+      & > [class*='col'] {
+        padding: 8px 10px;
+      }
+    }
+    .input-list {
+      .row {
+        margin: {
+        }
+        &.inner {
+          [class*='col'] {
+            @include colInnerHSpacingSmall;
+          }
+        }
+      }
+    }
+    .modal-content {
+      min-width: 1860px;
+      width: 100%;
+      margin: 0 auto;
+      .reservation-detail {
+        .row.c-input-phone-group {
+          .input-phone-01 {
+            flex: 0 0 60px;
+          }
+        }
+      }
+
+      .c-input-unit input[type='text'] {
+        padding-right: 15px;
+      }
+    }
+
+    // + rsvdtl-popup-type03
+    &.rsvdtl-popup-type03 {
+      .c-article.input-list > .row > [class*='col'] {
+        padding: 8px 10px;
+      }
+      .input-list .row {
+        @include colOuterHSpacingSmall;
+      }
+      .modal-content {
+        min-width: 1880px;
+        width: 100%;
+        margin: 0 auto;
+        .reservation-detail {
+          .row.c-input-phone-group {
+            .input-phone-01 {
+              flex: 0 0 60px;
+            }
+          }
+        }
+
+        .c-input-unit input[type='text'] {
+          padding-right: 15px;
+        }
+      }
+      .c-panel + .c-panel {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.rsvdtl-info-panel {
+  .c-title-field {
+    .in-left {
+      .title-md {
+        margin-right: 12px;
+      }
+    }
+  }
+  .date-box {
+    .title {
+      @include fontStyle(10px, 16px, 500);
+      color: $color-gray-2;
+    }
+    .date {
+      padding-left: 12px;
+      color: $color-gray-3;
+    }
+    & ~ .date-box {
+      margin-left: 20px;
+    }
+  }
+}
+
+// + mod-reservatio
+.mod-reservation {
+  padding: $gap-12;
+  height: 350px;
+  width: 100%;
+  display: flex;
+  .c-inner-left,
+  .c-inner-right {
+    height: 100%;
+  }
+  .c-inner-left {
+    width: 156px;
+    overflow-y: hidden;
+    flex: 0 0 auto;
+  }
+
+  .c-inner-right {
+    overflow: hidden;
+    flex-grow: 1;
+
+    .c-tab-contents {
+      height: 100%;
+
+      .tab-cont {
+        height: 100%;
+
+        .c-table {
+          margin-bottom: 2px;
+        }
+      }
+    }
+
+    .modrsv-scroll {
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      max-width: 100%;
+      @include scrollType04;
+      &.type01 {
+        padding-right: 10px;
+      }
+      > .inner {
+        height: 100%;
+        width: 100%;
+      }
+      .co-accrodion-list {
+        height: 100%;
+        position: relative;
+        overflow-y: auto;
+        @include scrollType04;
+      }
+    }
+  }
+
+  .rsv-mod-list01 {
+    padding-right: 20px;
+    > li {
+      border-radius: $radius-6;
+      > a,
+      > button {
+        text-align: left;
+        padding: 10px 20px;
+        width: 100%;
+        display: block;
+        border-radius: $radius-6;
+        span {
+          color: $color-black-1;
+          @include ellipsisLine01;
+          font {
+            size: $fs-normal;
+          }
+          line-height: $g-lineheight-2;
+        }
+      }
+      &.on {
+        background-color: $color-navy-1;
+        a {
+          color: $color-white-1;
+        }
+      }
+    }
+  }
+
+  .rsv-mode-list02 {
+    > li {
+      padding-right: 12px;
+      & + li {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .rsv-mod-detail {
+    padding: 12px;
+    border: 1px solid $color-gray-5;
+    border-radius: $radius-8;
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    color: $color-gray-2;
+
+    .c-chkbox {
+      flex-grow: 1;
+    }
+    .region {
+      padding: 2px 16px;
+    }
+
+    .link {
+      margin-left: 12px;
+      padding: 2px 16px;
+    }
+  }
+}
+
+.mod-rsv-setting-field {
+  .inner-title {
+    .date-box {
+      margin-left: 20px;
+      @include ellipsisLine01;
+    }
+  }
+  .date-box {
+    > dl {
+      display: flex;
+      position: relative;
+      dt {
+        color: $color-gray-2;
+      }
+      dd {
+        padding-left: 8px;
+        color: $color-gray-3;
+        @include ellipsisLine01;
+      }
+      & + dl {
+        flex: 1 0 auto;
+        padding-left: 12px;
+        min-width: 160px;
+        &:before {
+          position: absolute;
+          top: 1px;
+          left: 4px;
+          content: '/';
+          @include coTxtCaption;
+        }
+      }
+    }
+  }
+  .mod-rsv-setting-title {
+    flex-wrap: nowrap;
+    .in-left {
+      @include ellipsisLine01;
+    }
+    .in-right {
+      .buttons {
+        > .c-btn {
+          padding: 9px 10px;
+        }
+      }
+    }
+  }
+  .c-table {
+    .table {
+      .link {
+        font-size: 0;
+        line-height: 1;
+      }
+      a.c-bs-link,
+      .c-bs-link {
+        font-size: 12px;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+// = c-horizontal-field
+.c-rsvdtl-horizontal-field {
+  position: relative;
+
+  @include colOuterHSpacingNormal;
+  [class*='column'] {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+
+    @include colInnerHSpacingNormal;
+  }
+  > [class*='column'] > .c-article {
+    flex: 1 1 auto;
+  }
+
+  .column {
+    width: calc(50% - 20px);
+
+    .c-title-field {
+      & ~ .c-article {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.c-filter-field {
+  display: flex;
+
+  label {
+    @include coTxtTypography;
+    color: $color-gray-1;
+  }
+  & + .modrsv-scroll {
+    margin-top: 12px;
+  }
+  .c-select {
+    margin-left: 12px;
+    select {
+      min-width: 80px;
+    }
+  }
+
+  &.chk-cnt {
+    label {
+      & + .c-input {
+        margin-left: 12px;
+      }
+    }
+    .c-input {
+      text-align: center;
+      width: 50px;
+      flex: 0 0 50px;
+    }
+  }
+}
+
+.c-inner-field {
+  height: 100%;
+  .top-inner {
+    flex-shrink: 0;
+  }
+  &.type-scroll {
+    height: 100%;
+    @include scrollType02;
+    overflow-y: auto;
+  }
+}
+
+// + set-modrsv-tab
+.set-modrsv-tab {
+  // + tab-01
+  &.tab-01 {
+    .cont-body {
+      padding-top: 12px;
+      height: calc(100% - 40px);
+    }
+
+    .c-table-field {
+      height: 100%;
+    }
+
+    .c-table {
+      max-height: 100%;
+    }
+  }
+
+  // + tab-06
+  &.tab-06 {
+    .c-label-txt {
+      min-width: 100px;
+    }
+    .c-input-email-group {
+      .input-email-01 {
+        flex: 0 0 35%;
+        max-width: 35%;
+      }
+      .input-email-02 {
+        flex: 0 0 65%;
+        max-width: 65%;
+      }
+    }
+  }
+
+  // + tab-07
+  &.tab-07 {
+    .c-inner-field {
+      > .c-article {
+        margin-top: 24px;
+        padding: {
+          left: 12px;
+          right: 12px;
+        }
+      }
+    }
+  }
+}
+
+.tbl-cost-dtl {
+  .prd-cont {
+    @include ellipsisLine01;
+  }
+  .cont-list {
+    @include ellipsisLine01;
+    > li {
+      white-space: normal;
+      padding-left: 0;
+      position: relative;
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        display: inline-block;
+        content: '';
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+
+        background-color: $color-gray-2;
+      }
+    }
+    &.disc {
+      > li {
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+// = Scroll Customizing
+
+.content-wrapper {
+  .scroll-content {
+    padding-right: 10px;
+  }
+  .scrollbar-thumb {
+    width: 4px;
+  }
+  .scrollbar-track {
+    background-color: $color-white-1;
+    opacity: 1;
+    transition: none;
+  }
+  .scrollbar-thumb {
+    margin-left: 2px;
+    background-color: $color-gray-5;
+    opacity: 1;
+    border-radius: 5px;
+  }
+}
+
+//+ list-send-person-scroll
+.list-send-person {
+  .scrollbar-track-y {
+    top: 4px;
+    bottom: 4px;
+    right: 4px;
+    overflow: hidden;
+    height: auto;
+  }
+}
+
+.c-table {
+  &.tbl-modrsv-type01,
+  &.tbl-modrsv-selectchk {
+    tbody {
+      td {
+        padding: {
+          left: 8px;
+          right: 8px;
+        }
+        .c-chkbox {
+          width: 18px;
+        }
+
+        &.in-chklabel {
+          padding-left: 5px;
+        }
+
+        .c-chkbox {
+          input {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
+// + 선택검사 Tab Contents
+.set-modrsv-tab {
+  &.tab-03 {
+    .co-accordion {
+      .btn-accrodion {
+        padding: {
+          left: 8px;
+          right: 8px;
+        }
+      }
+      .accrodion-panel {
+        .panel-cont {
+          padding: {
+            left: 8px;
+            right: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.c-table {
+  &.tbl-modrsv-selectchk {
+    col,
+    th {
+      &.price {
+        width: 76px;
+      }
+      &.date {
+        width: 105px;
+      }
+      &.chkdelay {
+        width: 50px;
+      }
+    }
+    tbody {
+      td {
+        text-overflow: clip;
+        white-space: normal;
+      }
+    }
+  }
+
+  .in-chklabel {
+    > label {
+      font-size: 12px;
+    }
+  }
+}
+
+// = E 검진예약현황
+.region-article {
+  padding : {
+    top: 20px;
+    bottom: 20px;
+  }
+  .c-card-article > [class*='col'],
+  .c-card-article > [class*='col-'] {
+    padding {
+      left: 8px;
+      right: 8px;
+    }
+  }
+}
+
+// = 채용 알림
+
+.c-reg-sms-field {
+  position: relative;
+
+  @include colOuterHSpacingNormal;
+  [class*='column'] {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+
+    @include colInnerHSpacingNormal;
+  }
+  > [class*='column'] > .c-article {
+    flex: 1 1 auto;
+  }
+  .c-input-unit {
+    input[type='text'] {
+      &[readonly='readonly'] {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .sms-txtarea01 {
+    height: 500px;
+    min-height: 500px;
+  }
+
+  .column {
+    &.template {
+      width: calc(70% - 20px);
+    }
+
+    &.send-list {
+      width: calc(30% - 20px);
+      .total-cnt {
+        display: flex;
+        border: 1px solid $color-gray-5;
+        border-radius: 4px;
+        align-items: center;
+        height: 36px;
+        flex: 1 1 auto;
+        width: 100%;
+        > label {
+          padding: {
+            left: 20px;
+            right: 20px;
+          }
+          line-height: 38px;
+          background-color: $color-gray-9;
+          flex: 0 0 auto;
+        }
+        .c-input-unit {
+          margin-right: 15px;
+        }
+        input[type='text'] {
+          line-height: 1.5;
+          text-align: right;
+          padding-right: 20px;
+          &[readonly='readonly'] {
+            border-bottom: 0;
+          }
+        }
+      }
+
+      .btm-all-cotrol {
+        .col-6 {
+          &:last-of-type {
+            align-items: end;
+          }
+        }
+      }
+
+      > .input-list {
+        > .row {
+          > .col-6 {
+            & ~ .col-6 {
+              .buttons {
+                .c-btn {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .list-send-person {
+    height: 500px;
+    border: 1px solid $color-gray-4;
+    border-radius: $radius-8;
+    padding: 10px 5px 10px 10px;
+    overflow: {
+      x: hidden;
+      y: auto;
+    }
+    //overflow-y: auto;
+    @include scrollType04;
+  }
+  .sms-send-list {
+    > li {
+      & ~ li {
+        margin-top: 10px;
+      }
+    }
+  }
+  .hp-info {
+    display: flex;
+    align-items: center;
+    position: relative;
+    @include fontStyle(14px, 30px, 400, -0.4px);
+    color: $color-gray-3;
+    word-wrap: break-word;
+    background-color: $color-white-2;
+    border-radius: 8px;
+    border: 1px solid $color-gray-5;
+    font-size: 12px;
+    justify-content: space-between;
+
+    align-items: center;
+    padding: 2px 8px;
+
+    .name {
+      color: $color-gray-1;
+      & + .number {
+        margin-left: 7px;
+      }
+    }
+    .btn-del {
+      margin-left: 7px;
+    }
+  }
+  .btn-del {
+    align-items: flex-end;
+    margin-left: 4px;
+    flex-basis: 20px;
+    background: url($image-ico-path + '/ico_del_01.svg') 0/20px no-repeat;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    max-width: 20px;
+  }
+}
+
+.tbl-notice-sms-list {
+  table {
+    table-layout: fixed;
+  }
+}
+
+// + 공지사항 등록
+.sms-template-view {
+  display: flex;
+  flex: 1 1 auto; // flex IE 대응
+  align-items: center;
+  > div {
+    border: 1px solid $color-gray-5;
+    border-radius: $radius-8;
+    padding: 12px;
+    height: 260px;
+    min-height: 260px;
+    overflow: {
+      x: hidden;
+      y: auto;
+    }
+    word-break: keep-all;
+    white-space: normal;
+    @include scrollType04;
+  }
+}
+
+.in-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// + 공지관리 목록
+.tbl-send-sms-result {
+  table {
+    table-layout: fixed;
+  }
+}
+
+// + 서비스 문의
+.c-service-inquiry-field {
+  .c-txt-area {
+    height: 400px;
+  }
+  textarea {
+    &[readonly='readonly'] {
+      border: 1px solid $color-gray-5;
+      background-color: $color-gray-5;
+    }
+  }
+}
+
+.reservation-dtl-status-layout {
+  display: flex;
+  flex: 1 1 100%;
+
+  @include colOuterHSpacingSmall;
+  .left-wrap,
+  .right-wrap {
+    @include colInnerHSpacingSmall;
+  }
+
+  .left-wrap {
+    width: calc(100% - $callcenter-right-col-width);
+    flex: 0 0 calc(100% - $callcenter-right-col-width);
+    max-width: calc(100% - $callcenter-right-col-width);
+
+    .col-6 {
+      flex-basis: 50%;
+      .c-input-phone-group {
+        .col:nth-of-type(2) {
+          flex: 0 1 auto;
+        }
+      }
+    }
+
+    > .c-panel:first-of-type {
+      .c-input-search {
+        input[type='text'] {
+          width: 0;
+        }
+      }
+    }
+  }
+  .right-wrap {
+    width: $callcenter-right-col-width;
+    flex: 0 0 $callcenter-right-col-width;
+    max-width: $callcenter-right-col-width;
+    min-width: 620px;
+
+    .c-article.input-list {
+      &.type03 {
+        .c-input-email-group {
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+// # 회원가입 및 비밀번호 찾기 UI
+// + 로그인
+.login-field {
+  .membership-account {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    li {
+      display: inline;
+    }
+    li:nth-of-type(1) {
+      padding-right: 16px;
+      position: relative;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 4px;
+        right: 8px;
+        width: 1px;
+        height: 15px;
+        background-color: $color-gray-4;
+      }
+    }
+
+    button {
+      > span {
+        position: relative;
+      }
+    }
+    a,
+    button {
+      color: $color-gray-3;
+      padding: 0;
+    }
+  }
+}
+
+// + 고객사 회원가입
+.login-field {
+  &.membership-join {
+    .login-input {
+      margin-top: 30px;
+      > .row {
+        @include rowGridSpacing(0);
+        > .col {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+        > [class^='col'] {
+          margin: 10px 0;
+        }
+      }
+      .row {
+        &.inner {
+          flex: 1 1 auto;
+        }
+      }
+      & + .c-chkbox {
+        margin-top: 10px;
+        display: inline-block;
+      }
+    }
+    h1 {
+      @include coTxtTitle;
+      font-weight: $weight-700;
+    }
+    [class^='col'] {
+      display: flex;
+      align-items: center;
+      &.label-input {
+        label {
+          min-width: $input-label-min-width04;
+          margin-bottom: 0;
+        }
+        input[type='text'],
+        input[type='password'] {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .c-input-pw-row {
+      & + .c-input-pw-row {
+        > [class*='col'] {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .c-input-email-group {
+      .row {
+        flex: 1 1 auto;
+      }
+      .input-email-02 {
+        .row {
+          flex-wrap: nowrap;
+          flex-basis: 100%;
+        }
+        .col-7 {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+        .col-5 {
+          flex: 0 0 fit-content;
+          max-width: fit-content;
+        }
+        .c-btn {
+          padding: 9px;
+        }
+        > .row {
+          @include rowGridSpacing(6px);
+        }
+      }
+    }
+
+    .c-input-phone-group {
+      .col {
+        margin: 0;
+      }
+    }
+
+    .alr-login {
+      text-align: center;
+      color: $color-gray-2;
+      a {
+        color: $color-gray-1;
+        font-weight: bold;
+      }
+    }
+    .c-btn {
+      &.btn-login {
+        padding: $join-btn-login;
+        display: flex;
+        margin: $join-btn-margin;
+        justify-content: center;
+      }
+    }
+    .c-input-phone-group {
+      padding: {
+        left: 6px;
+        right: 6px;
+      }
+      > [class*='col'] {
+        padding: {
+          left: 6px;
+          right: 6px;
+        }
+      }
+    }
+    .rechk-label {
+      margin-top: -18px;
+    }
+  }
+}
+
+// + 비밀번호 찾기
+.pw-sch-cont {
+  .pw-sch-txt {
+    p {
+      @include coPwTitle;
+    }
+    span {
+      @include coPwSubTitle;
+      color: $color-gray-2;
+    }
+  }
+  .pw-sch-input {
+    margin: 40px 0;
+    .col {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      padding: {
+        left: 0;
+        right: 0;
+      }
+      label {
+        margin-bottom: 0;
+        min-width: $pw-sch-input;
+      }
+    }
+    .pw-chk {
+      margin-top: 6px;
+    }
+  }
+  .pw-sch-field {
+    color: $color-gray-2;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid $color-gray-5;
+    background-color: $color-white-2;
+
+    ul {
+      li {
+        position: relative;
+        padding-left: 10px;
+        &:before {
+          position: absolute;
+          top: 8px;
+          left: 0;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: $color-gray-2;
+          display: inline-block;
+          content: '';
+        }
+        ~ li {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
+
+//+ 중복확인 alert\\
+.join-confirm {
+  p {
+    text-align: center;
+    .email-possible {
+      color: $color-blue-1;
+    }
+  }
+}
+
+//+ 계정관리
+.contents {
+  &.service-ad {
+    .c-field {
+      justify-content: flex-end;
+    }
+  }
+}
+
+//+ 검진센터 조회 popup
+.center-sch {
+  .c-article {
+    [class^='col'] {
+      label {
+        min-width: $input-label-w-default;
+      }
+    }
+  }
+}
+
+// ! 삭제 예정 (검진예약 상세보기 - popup type)
+/**
+@ 검진예약현황 - 상세보기 팝업 (UI 변경 스타일 반영 이후 Delete)
+*/
+
+// [OS[
+// = 검진예약현황
+
+.c-layer-popup:not(.type-callcenter) {
+  &.reservation-detail-popup {
+    // + rsvdtl-popup-type01
+
+    .label-input {
+      label,
+      .c-label-txt {
+        flex: 0 0 auto;
+        margin: {
+          right: 15px;
+        }
+      }
+    }
+    .c-m-input-list {
+      .input-col {
+        margin-bottom: 8px;
+      }
+    }
+    &.rsvdtl-popup-type01 {
+      &.show {
+        padding-left: 0 !important;
+      }
+      .c-article {
+        background-color: $color-white-1;
+      }
+      .modal-body {
+        padding: 0;
+        height: inherit;
+        display: flex;
+        flex: 1 1 auto;
+      }
+      .reservation-dtl-layout {
+        display: flex;
+        width: 100%;
+        flex: 1 1 auto;
+
+        .in-layout {
+          padding: 20px 25px;
+        }
+
+        .row.c-input-email-group .input-email-01:after {
+          right: -6px;
+          bottom: 7px;
+        }
+      }
+      .left-wrap,
+      .right-wrap {
+        padding {
+          left: 20px;
+          right: 20px;
+        }
+      }
+      .left-wrap {
+        width: 36%;
+        flex: 0 0 36%;
+        min-width: 680px;
+        background-color: $color-gray-9;
+      }
+    }
+    .c-input-badge-group {
+      min-height: 33px;
+    }
+    .c-input-phone-group,
+    .c-input-address-group,
+    .c-input-email-group {
+      flex-grow: 1;
+    }
+    .tab-06 {
+      .c-label-txt,
+      .label-input label {
+        min-width: 100px;
+      }
+      .col-12 {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+// ! 삭제 예정 (검진예약 상세보기 - popup type)
+
+.mod-reservation {
+  .c-tab-contents {
+    position: relative;
+    .tab-cont {
+      top: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      opacity: 1;
+      z-index: 1;
+      display: block;
+      background-color: $color-white-1;
+      &.on {
+        z-index: 3;
+      }
+    }
+  }
+}
+
+// + dataTables Style
+.dataTables_scrollHead {
+  background-color: $color-navy-1;
+}
+
+.popup-memo-list {
+  z-index: -1;
+  opacity: 0;
+  display: block;
+  &.fade {
+    transition: all 0s;
+  }
+  &.show {
+    opacity: 1;
+    z-index: 1049;
+    display: block;
+  }
+}

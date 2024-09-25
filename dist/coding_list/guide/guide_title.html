@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Layout Guide</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- guide css -->
+	<link rel="stylesheet" href="../css/base.css">
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<script src="../../lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="wrap" class="coding_guide">
+		<h1 class="h1_guide">Title</h1>
+
+		<div class="title-box">
+			<h2 class="h2_guide">공통</h2>
+		</div>
+		<div class="guide_descbox">
+			<h3 class="g-title"></h3>
+			<div class="inner_desc">
+				<ul>
+					<li>타이틀 요소 h1, p, div.. 태그 요소 무관/ 클래스명 유지</li>
+					<li>h1~h6 태그 사용하는 경우 시멘틱 구조 고려하여 사용</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- ===================================== Title -->
+		<div class="title-box">
+			<h2 class="h2_guide">Title</h2>
+		</div>
+		<!-- [Title] -->
+		<h3 class="h3_guide">Title</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<h1 class="title-lg">title-lg</h1>
+			<p class="title-md">title-md</p>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<h1 class="title-lg">title-lg</h1>
+				<p class="title-md">title-md</p>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+
+		<!--  [ //Title] -->
+
+		<!-- ===================================== // Title -->
+
+		<!-- ===================================== Title Field -->
+		<div class="title-box">
+			<h2 class="h2_guide">Title Field</h2>
+		</div>
+		<!-- [Title] -->
+		<h3 class="h3_guide">Title</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="c-title-field">
+				<h2 class="title-md">대상자 개별등록</h2>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="c-title-field">
+					<h2 class="title-md">대상자 개별등록</h2>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<!-- [Title] -->
+		<h3 class="h3_guide">Title + Date</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="c-title-field">
+				<h2 class="title-md">대상자 개별등록</h2>
+				<p class="date">등록일 <span>2020.05.01</span></p>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="c-title-field">
+					<h2 class="title-md">대상자 개별등록</h2>
+					<p class="date">등록일 <span>2020.05.01</span></p>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<!-- [Title + Button] -->
+		<h3 class="h3_guide">Title + Button</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="c-title-field">
+				<p class="title-md">검진 정책</p>
+				<div class="buttons">
+					<button class="c-btn bg-gray-3"><span>조회</span></button>
+				</div>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="c-title-field">
+					<p class="title-md">검진 정책</p>
+					<div class="buttons">
+						<button class="c-btn bg-gray-3"><span>조회</span></button>
+					</div>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+
+		<!--  [ // Title + Button] -->
+
+		<!-- [Title + Checkbox] -->
+		<h3 class="h3_guide">Title + Checkbox</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="c-title-field">
+				<p class="title-md">검진 정책</p>
+				<div class="c-chkbox">
+					<!-- label / id 동일 네이밍 부여 -->
+					<input type="checkbox" id="chk01">
+					<label for="chk01" class="chk-label"><i></i><span>이전 연도와 동일 구성</span></label>
+				</div>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="c-title-field">
+					<p class="title-md">검진 정책</p>
+					<div class="c-chkbox">
+						<!-- label / id 동일 네이밍 부여 -->
+						<input type="checkbox" id="chk01">
+						<label for="chk01" class="chk-label"><i></i><span>이전 연도와 동일 구성</span></label>
+					</div>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+
+		<!--  [ // Title + Checkbox] -->
+
+
+		<!-- ===================================== Select + Button -->
+		<div class="title-box">
+			<h2 class="h2_guide">Select + Button</h2>
+		</div>
+		<h3 class="h3_guide">Select + Button</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="c-panel">
+				<div class="c-field">
+					<div class="c-select">
+						<!-- title 속성 : 해당 항목 내용 입력 -->
+						<select title="조회 기준 목록 선택">
+							<option value="" selected>선택</option>
+							<option value="">option</option>
+							<option value="">option</option>
+							<option value="">option</option>
+						</select>
+					</div>
+					<div class="buttons">
+						<button class="c-btn bg-navy-1" type="button"><span>수정</span></button>
+						<button class="c-btn bg-navy-2" type="button"><span>메모등록</span></button>
+						<button class="c-btn bg-blue-1" type="button"><span>추가등록</span></button>
+					</div>
+				</div>
+			</div>
+			<!-- ? view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="c-panel">
+					<div class="c-field">
+						<div class="c-select">
+							<!-- title 속성 : 해당 항목 내용 입력 -->
+							<select title="조회 기준 목록 선택">
+								<option value="" selected>선택</option>
+								<option value="">option</option>
+								<option value="">option</option>
+								<option value="">option</option>
+							</select>
+						</div>
+						<div class="buttons">
+							<button class="c-btn bg-navy-1" type="button"><span>수정</span></button>
+							<button class="c-btn bg-navy-2" type="button"><span>메모등록</span></button>
+							<button class="c-btn bg-blue-1" type="button"><span>추가등록</span></button>
+						</div>
+					</div>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div><keygen>
+		<!-- [// Select + Button] -->
+	</div>
+	<!-- guide script -->
+	<script src="../js/pretty.js"></script>
+
+	<script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+	<script defer src="../../js/common.js"></script>
+</body>
+
+</html>

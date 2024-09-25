@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Layout Guide</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- guide css -->
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../../css/style.css">
+	<script src="../../lib/jquery/jquery.min.js"></script>
+</head>
+<body>
+	<div id="wrap" class="coding_guide">
+		<h1 class="h1_guide">Tab</h1>
+
+		<!-- [Tab - 페이지 이동 ] -->
+		<div class="title-box">
+			<h2 class="h2_guide">Tab</h2>
+		</div>
+		<h3 class="h3_guide">Basic</h3>
+		<div class="d_desc code">
+
+			<!-- ? view -->
+			<div class="c-panel tab-panel">
+				<div class="c-tab-field">
+					<ul class="c-tab-list" role="tablist">
+						<li role="tab" id="tab01"><a href="javascript:;">대상자조회</a></li>
+						<li class="on" role="tab"><a href="javascript:;">대상자 개별등록</a></li>
+						<li role="tab" id="tab02"><a href="javascript:;">대상자 일괄등록</a></li>
+						<li role="tab" id="tab03"><a href="javascript:;">출장 일정 관리</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="c-panel" aria-labelledby="tab1"></div>
+			<div class="c-panel" aria-labelledby="tab2"></div>
+			<div class="c-panel" aria-labelledby="tab3"></div>
+
+			<!-- ? // view -->
+
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript"> /* * [class="c-panel"] 클래스 추가 : tab-panel - tab-panel - 탭 다음에 오는 패널
+				여백 조정 관리 * sample 소스 내 id 임의값, 적절한 naming 부여하여 tab list + 탭 콘텐츠 부분에 aria-labelledby 속성값과 매칭 */ </xmp>
+
+			<!-- ! // code -->
+		</div>
+
+		<!-- [ // Tab - 페이지 이동 ] -->
+
+		<!-- [Tab - 페이지 내 탭 이동 ] -->
+		<div class="title-box">
+			<h2 class="h2_guide">Tab</h2>
+		</div>
+		<div class="c-panel tab-panel">
+			<div class="c-tab-field">
+				<h3 class="h3_guide">페이지 내 탭 이동</h3>
+
+				<!-- ? view -->
+				<div class="c-panel">
+					<div class="c-field">
+						<div class="c-tab-field">
+							<ul class="c-tab-list" role="tablist">
+								<li class="on" role="presentation">
+									<a id="tabList_01" href="javascript:;" role="tab" aria-controls="tabContent_01"
+										aria-selected="true">Tab01</a>
+								</li>
+								<li role="presentation">
+									<a id="tabList_02" href="javascript:;" role="tab" aria-controls="tabContent_02"
+										aria-selected="false">Tab02</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="c-tab-contents">
+
+						<!-- tab content 01 -->
+						<div class="tab-cont on" id="tabContent_01" role="tabpanel" aria-labelledby="tabList_01">tabContent_01</div>
+
+						<!-- tab content 02 -->
+						<div class="tab-cont" id="tabContent_02" role="tabpanel" aria-labelledby="tabList_02">tabContent_02</div>
+					</div>
+				</div>
+
+				<!-- ? // view -->
+
+				<!-- ! code -->
+				<xmp class="prettyprint linenums javascript"> /* * [.c-panel] 클래스 추가 : tab-panel - tab-panel - 탭 다음에 오는 패널 여백 조정
+					관리 * sample 소스 내 id 임의값, 적절한 naming 부여하여 tab list + 탭 콘텐츠 부분에 aria-labelledby 속성값과 매칭 * a href / 탭 콘텐츠 * 속성값
+					동일 네이밍 : [.c-tab-list > li > a] 의 aria-controls == [.c-tab-contents > .tab-cont] 의 id * 속성값 동일 네이밍 :
+					[.c-tab-list > li > a] 의 id == [.c-tab-contents > .tab-cont] 의 aria-labelledby */ </xmp>
+
+				<!-- ! // code -->
+			</div>
+
+			<!-- [ // Tab - 페이지 이동 ] -->
+		</div>
+
+		<!-- [ // Tab - 페이지 내 탭 이동 ] -->
+
+		<!-- [Tab - 가로스크롤 ] -->
+		<div class="title-box">
+			<h2 class="h2_guide">Tab</h2>
+		</div>
+		<h3 class="h3_guide">탭 가로스크롤</h3>
+		<div class="d_desc code">
+
+			<!-- ? view -->
+			<div class="c-panel tab-panel">
+				<div class="c-tab-field tab-scroll">
+					<ul class="c-tab-list" role="tablist">
+						<li role="tab" id="tab01"><a href="javascript:;">대상자조회</a></li>
+						<li class="on" role="tab"><a href="javascript:;">대상자 개별등록</a></li>
+						<li role="tab" id="tab02"><a href="javascript:;">대상자 일괄등록</a></li>
+						<li role="tab" id="tab03"><a href="javascript:;">출장 일정 관리</a></li>
+						<li role="tab" id="tab04"><a href="javascript:;">대상자 정보</a></li>
+						<li role="tab" id="tab05"><a href="javascript:;">검진예약 정보</a></li>
+						<li role="tab" id="tab06"><a href="javascript:;">비용 내역</a></li>
+						<li role="tab" id="tab07"><a href="javascript:;">수납내역</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="c-panel" aria-labelledby="tab1"></div>
+			<div class="c-panel" aria-labelledby="tab2"></div>
+			<div class="c-panel" aria-labelledby="tab3"></div>
+
+			<!-- ? // view -->
+		</div>
+
+		<!-- [ // Tab - 가로스크롤 ] -->
+	</div>
+
+	<!-- guide script -->
+	<script src="../js/pretty.js"></script>
+	<script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+	<script defer src="../../js/common.js"></script>
+</body>
+</html>

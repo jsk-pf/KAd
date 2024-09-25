@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMI</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+
+        <!-- Contents -->
+        <section class="contents">
+            <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupRsvConfirm_01"><span>예약확정
+                    alert 창 </span></button>
+
+            <!-- = popup Source (※ 개발 적용 시 해당 부분만 소스 적용) -->
+            <div class="c-layer-popup type01 modal fade rsv-confirm" id="popupRsvConfirm_01" role="dialog" aria-labelledby="popupRsvConfirm_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <h4 class="c-title skip" id="popupRsvConfirm_Label01">예약 확정</h4>
+                            <p><span class="c-highlight-txt">2023년 08월 07일</span>에 예약을 확정하시겠습니까?</p>
+                            <div class="c-chkbox">
+                                <input type="checkbox" id="rsvConfirmChk">
+                                <label for="rsvConfirmChk" class="chk-label"><i></i><span>확정일 알림톡 발송</span></label>
+                            </div>
+                        </div>
+                        <div class="modal-footer type01">
+                            <div class="buttons row">
+                                <div class="col">
+                                    <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>아니요</span></button>
+                                </div>
+                                <div class="col">
+                                    <button class="c-btn bg-blue-1" data-dismiss="modal"><span>예</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- = // popup Source -->
+        </section>
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script>
+        // guide 용 소스 스크립트 (DEV 제외)
+        $('.c-btn').trigger('click');
+    </script>
+</body>
+
+</html>

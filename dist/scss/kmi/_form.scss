@@ -1,0 +1,1205 @@
+/*
+	Common
+*/
+
+// 1= Input
+
+input {
+  padding: 8px 12px;
+
+  &[type='text'],
+  &[type='password'],
+  &[type='number'] {
+    flex: 1 1 auto;
+    @include inputBasic;
+    @include ellipsisLine01;
+    + span {
+      display: inline-block;
+    }
+    &:focus {
+      @include formFocus;
+    }
+
+    &[readonly='readonly'] {
+      @include inputDetail;
+      &:focus {
+        @include inputDetailFocus;
+      }
+    }
+  }
+}
+
+input {
+  @at-root textarea,
+    &[type='text'],
+    &[type='password'],
+    &[type='number'] {
+    &::placeholder {
+      font: 400 12px/20px 'NotoSansKR';
+      color: $color-gray-3;
+    }
+
+    &:disabled {
+      border-color: $input-disabled-border-color;
+      background-color: $input-disabled-bg-color;
+      color: $input-disabled-font-color;
+    }
+  }
+}
+
+// 1= c-input
+.c-input {
+  width: 100%;
+}
+[class*='c-input'] {
+  [readonly='readonly'] {
+    + span,
+    + button {
+      right: 0;
+      background-size: auto;
+      i {
+        right: 0;
+        & .date-btn {
+          right: 0;
+        }
+      }
+    }
+    a {
+      &:after {
+        right: 0;
+      }
+    }
+  }
+  &[type='text'],
+  &[type='password'] {
+    &.bdb-none {
+      border-bottom: 0;
+    }
+  }
+}
+
+.c-input-mark,
+.c-input-date,
+.c-input-unit {
+  input[type='text'],
+  input[type='number'] {
+    padding-right: $input-ico-spacing-01;
+  }
+}
+
+// 1= label
+.label-input {
+  label,
+  .c-label-txt {
+    font: {
+      size: 12px;
+      weight: $weight-400;
+    }
+    color: $color-gray-1;
+    margin-bottom: $gap-8;
+    display: flex;
+  }
+  .c-select {
+    width: 100%;
+  }
+}
+
+label.title-md {
+  color: $color-gray-1;
+}
+
+// 2= search-input
+input[type='text'] {
+  &.search-input {
+    border-radius: 0;
+    border: none;
+    min-width: 186px;
+    &:focus {
+      transition: none;
+      box-shadow: none;
+      border-color: inherit;
+    }
+  }
+}
+
+// 2= c-input-group
+.c-input-group {
+  min-height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  > [class*='col'] {
+    &:first-child {
+      > .c-input-date,
+      > .c-input-box {
+        position: relative;
+        &:after {
+          content: '~';
+          position: absolute;
+          top: 50%;
+          right: -22px;
+          transform: translateY(-50%);
+          color: $color-gray-2;
+        }
+      }
+    }
+  }
+
+  // 2= input group range
+  &.range {
+    flex: 1 1 auto;
+
+    // 3= inner
+    &.inner {
+      @include rowGridSpacingNormal;
+      > [class*='col'] {
+        > .c-input-date,
+        > .c-input-box {
+          &:after {
+            right: -22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//2= c-input-pw-group
+.c-input-pw-row {
+  & + .c-input-pw-row {
+    > [class*='col'] {
+      margin-top: -10px;
+    }
+  }
+}
+.pw-rechk {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+.c-input-info-txt {
+  margin-top: 4px;
+  color: $color-blue-1;
+  line-height: 1;
+  &.is-error {
+    color: $color-red-1;
+  }
+}
+
+.c-inquiry-date-group {
+  display: flex;
+  margin: {
+    left: -6px;
+    right: -6px;
+  }
+  .c-input-date,
+  .buttons {
+    padding: {
+      left: 6px;
+      right: 6px;
+    }
+  }
+  > .col {
+    flex: {
+      grow: 1;
+      shrink: 1;
+      basis: 100%;
+    }
+  }
+  .buttons {
+    flex: {
+      shrink: 0;
+      basis: auto;
+    }
+    width: auto;
+    @supports (min-width: fit-content) {
+      min-width: fit-content;
+    }
+    .c-btn {
+      min-width: auto;
+      padding: 9px 10px;
+      @include coTxtCaption;
+    }
+  }
+}
+
+// 2= c-input-btn-group
+.c-input-btn-group {
+  display: flex;
+  @include spacingInputGrp;
+  > [class*='col'] {
+    flex: 1 1 max-content;
+    max-width: initial;
+  }
+
+  > .input-button {
+    flex: 0 0 fit-content;
+    .c-btn {
+      min-width: max-content;
+    }
+  }
+  // 3= inner
+  &.inner {
+    @include rowGridSpacingSmall;
+    .c-btn {
+      & ~ .c-btn {
+        margin-left: calc($spacing-inputgrp * 2);
+      }
+    }
+  }
+
+  // 3= certify-grp
+  &.certify-grp {
+    @include rowGridSpacing(6px);
+  }
+}
+
+// 1= c-btn
+.c-btn {
+  &.input-btn {
+    width: 100%;
+    height: 100%;
+    span {
+      line-height: $input-basic-lineheight;
+      display: block;
+    }
+  }
+}
+
+// 2= c-input-search
+.c-input-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  @include ellipsisLine01;
+
+  input[type='text'] {
+    padding-right: 38px;
+  }
+
+  .btn-search {
+    content: '';
+    position: absolute;
+    background: url($image-ico-path + 'ico_search_01.svg') 0 / auto no-repeat;
+    background: {
+      size: 18px;
+      repeat: no-repeat;
+    }
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  &.input-view {
+    .btn-search {
+      right: 0;
+    }
+  }
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  input {
+    flex: 1 1 auto;
+  }
+}
+
+.is-nec {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 0;
+  margin: {
+    top: 4px;
+    left: 1px;
+  }
+
+  &:before {
+    content: '*';
+    color: $color-orange-1;
+    font: {
+      size: 13px;
+      weight: $weight-400;
+    }
+    line-height: 1;
+  }
+  width: 8px;
+  height: 11px;
+}
+
+// 2= c-input-unit
+.c-input-unit {
+  position: relative;
+  input[type='text'] {
+    font-size: $fs-normal;
+    + .unit {
+      @include position(null, 50%);
+      font-size: $fs-small-m;
+    }
+    &[readonly='readonly'] {
+      + .unit {
+        padding-right: 2px;
+      }
+    }
+  }
+  .unit {
+    right: 12px;
+    color: $color-gray-3;
+    text-align: right;
+  }
+}
+
+// 2= c-input-mark
+.c-input-mark {
+  display: flex;
+  align-items: center;
+  position: relative;
+  .is-rate {
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+    font-size: $fs-small;
+    text-align: right;
+    > span {
+      font-size: $fs-small-m;
+    }
+  }
+}
+
+// 2= c-input-download
+.c-input-download {
+  position: relative;
+  width: 100%;
+
+  .btn-download {
+    position: relative;
+    padding: 8px 28px 8px 0;
+    min-height: 40px;
+    display: block;
+
+    &:after {
+      background: url($image-ico-path + 'ico_download_01.svg') 0/24px no-repeat;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      content: '';
+      display: inline-block;
+      overflow: hidden;
+      content: '';
+    }
+  }
+  .filename {
+    border-bottom: 1px solid $color-blue-1;
+    color: $color-blue-1;
+    max-width: 100%;
+    display: inline-block;
+    @include ellipsisLine01;
+  }
+
+  &.input-view {
+    border-bottom: 1px solid $color-gray-5;
+    .btn-download {
+      min-height: auto;
+      padding: 0 28px $input-detail-spacing-btm 0;
+    }
+  }
+}
+
+// 2= c-input-url
+.c-input-url {
+  padding-bottom: $input-detail-spacing-btm;
+  font-size: 0;
+  > a {
+    color: $color-blue-1;
+    border-bottom: 1px solid $color-blue-1;
+    @include inputViewFontStyle;
+  }
+
+  &.input-view {
+    border-bottom: 1px solid $color-gray-5;
+  }
+}
+
+// 2=  checkbox, Radio
+.c-chkbox,
+.c-rdochk {
+  position: relative;
+  input {
+    width: $input-check-size;
+    height: $input-check-size;
+    position: absolute;
+    left: 1px;
+
+    &[type='checkbox'],
+    &[type='radio'] {
+      opacity: 0;
+      cursor: pointer;
+
+      &:checked {
+        + .chk-label i {
+          background-position: -56px 0;
+        }
+        &:disabled {
+          + .chk-label i {
+            cursor: default;
+            background-position: -84px 0;
+          }
+        }
+      }
+      &:disabled {
+        + .chk-label i {
+          cursor: default;
+          background-position: -28px 0;
+        }
+      }
+    }
+    & + .chk-label,
+    & + label.chk-label {
+      line-height: 1;
+      display: table;
+
+      i {
+        cursor: pointer;
+        content: '';
+        display: inline-block;
+        width: $input-check-size;
+        height: $input-check-size;
+        background: {
+          position: 0 0;
+          size: auto 18px;
+          repeat: no-repeat;
+        }
+        & + span:not(.skip) {
+          padding-left: 8px;
+        }
+      }
+    }
+  }
+
+  .chk-label,
+  label.chk-label {
+    margin-bottom: 0;
+  }
+}
+
+.c-chkbox {
+  input[type='checkbox'] {
+    & + .chk-label {
+      i {
+        background-image: url($image-ico-path + 'ico_sprites_chkbox.svg');
+      }
+    }
+  }
+}
+
+// 3= check group
+.c-chk-group {
+  width: 100%;
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  .c-chk-list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .c-chkbox,
+    .c-rdochk {
+      & ~ .c-chkbox,
+      & ~ .c-rdochk,
+      & ~ .c-multi-input-group {
+        margin-left: $spacing-inputgrp;
+      }
+    }
+  }
+}
+
+.c-multi-input-group {
+  > .c-chkbox {
+    margin-right: 8px;
+  }
+}
+
+.c-article {
+  &.input-list {
+    .input-chk-wrap {
+      .c-chk-list {
+        padding-bottom: 12px;
+      }
+    }
+  }
+}
+
+// 2=  Radio box
+.c-rdochk {
+  input[type='radio'] {
+    & + .chk-label {
+      i {
+        background-image: url($image-ico-path + 'ico_sprites_radio.svg');
+      }
+    }
+  }
+}
+
+// 2= c-m-input-list
+.c-m-input-list {
+  @include align-items-center;
+  flex: 1 1 auto;
+  width: 100%;
+  white-space: nowrap;
+  .input-col {
+    padding: 0;
+    & ~ .input-col {
+      margin-left: calc($spacing-inputgrp * 2);
+    }
+  }
+  display: flex;
+  // flex: 1 0 auto;
+
+  &.row.inner {
+    margin: {
+      left: 0;
+      right: 0;
+    }
+    .c-chk-group {
+      padding: {
+        left: $gap-6;
+        right: $gap-6;
+      }
+    }
+    .c-multi-input-group {
+      width: 100%;
+      input[type='text'] {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// 2= c-multi-input-group
+.c-multi-input-group {
+  @include align-items-center;
+  flex-wrap: nowrap;
+  .c-rdochk,
+  .c-chkbox {
+    & + input[type='text'] {
+      margin-left: 0.857rem;
+    }
+  }
+  .input-date-group {
+    margin-left: 0;
+  }
+  .c-btn {
+    margin-left: 1.714rem;
+  }
+}
+
+.label-input {
+  .c-input-group {
+    min-height: 40px;
+  }
+}
+
+.chk-label {
+  > i,
+  > span {
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+}
+
+.chk-label > span {
+  font: {
+    size: $fs-normal;
+  }
+  color: $color-gray-2;
+}
+
+// 1= textarea
+textarea,
+.c-txt-area {
+  display: block;
+  height: 120px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: $gap-12;
+  font-size: $fs-normal-m;
+  line-height: $input-basic-lineheight;
+  color: $color-gray-1;
+  border: 1px solid $input-border-color;
+  border-radius: $input-border-radius;
+
+  @include scrollType04;
+  border-r &.type02 {
+    &[readonly='readonly'] {
+      height: 240px;
+    }
+  }
+  &.type03 {
+    height: 68px;
+  }
+}
+textarea {
+  &[readonly='readonly'],
+  &.ta-r-only {
+    @include txtareaDetail;
+    min-height: initial;
+    //height: 100%;
+    overflow: auto;
+    border-radius: $radius-8;
+    &:focus {
+      box-shadow: none;
+      transition: none;
+    }
+  }
+}
+
+.c-textarea-article {
+  > .row {
+    @include rowGridSpacingNormal;
+  }
+}
+
+.c-txtarea-field {
+  width: 100%;
+}
+.c-title-field {
+  & + .c-textarea-article {
+    > .row > [class*='col'] {
+      padding-top: 0;
+    }
+  }
+}
+
+.c-layer-popup {
+  .c-txt-box {
+    &[role='textbox'] {
+      &[aria-readonly='true'] {
+        padding: 0;
+        height: auto;
+      }
+    }
+  }
+}
+
+// 2= Select
+.c-select {
+  position: relative;
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #a3a2a3;
+    border-radius: 3px;
+    position: absolute;
+    right: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  select {
+    min-width: $select-w-default;
+    border: 1px solid $input-border-color;
+    border-radius: $input-border-radius;
+    background-color: $color-white-1;
+    color: $color-gray-1;
+    width: 100%;
+    padding: 8px 30px 8px 12px;
+    line-height: $input-basic-lineheight;
+    font-size: 12px;
+    @include ellipsisLine01;
+    &:focus {
+      @include formFocus;
+    }
+    &:disabled {
+      $input-disabled-border-color: $color-gray-4;
+      $input-disabled-bg-color: $color-gray-5;
+      $input-disabled-font-color: $color-gray-2;
+    }
+
+    &::ms-expand {
+      display: none;
+    }
+  }
+  & + .c-select {
+    margin-left: 8px;
+  }
+
+  &.min-wa {
+    select {
+      min-width: auto;
+    }
+  }
+}
+
+// # 230810
+
+.c-select-list {
+  display: flex;
+}
+
+.c-select-field-01 {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+  > label {
+    @include coTxtBasic;
+
+    & + .c-select {
+      margin-left: 20px;
+      select {
+        width: 80px;
+        min-width: auto;
+      }
+    }
+  }
+
+  &.view {
+    span {
+      margin-left: 20px;
+      text-align: right;
+    }
+  }
+}
+
+// 2= c-input-file-group
+.c-input-file-group {
+  position: relative;
+  width: 100%;
+  height: 40px;
+
+  input.c-input-file {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+  }
+  input.c-input-file,
+  .c-file-label {
+    padding: 8px 12px 8px 107px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: $color-white-1;
+  }
+
+  label:focus {
+    @include formFocus;
+  }
+  .c-file-label {
+    @include inputBasic;
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    //height: 100%;
+    font: {
+      size: $fs-normal;
+      weight: $weight-400;
+    }
+    display: inline-block;
+    @include ellipsisLine01;
+
+    &:after {
+      position: absolute;
+      left: -1px;
+      right: auto;
+      top: -1px;
+      bottom: -1px;
+      z-index: 3;
+      display: block;
+      padding: 7px 20px;
+      line-height: 1.7;
+      color: $color-gray-1;
+      content: '파일 선택';
+      background-color: $color-gray-5;
+      border-left: inherit;
+      overflow: hidden;
+      border-radius: 0;
+    }
+  }
+}
+.c-input-file-list {
+  margin-top: 12px;
+  > li {
+    margin-top: 4px;
+  }
+
+  .file-info {
+    display: flex;
+    align-items: center;
+    flex: 1 0 100%;
+    width: 100%;
+  }
+
+  .name {
+    @include ellipsisLine01;
+    flex-grow: 1;
+  }
+  .btn-del {
+    margin-left: 4px;
+    flex-basis: 20px;
+    background: url($image-ico-path + '/ico_del_01.svg') 0/20px no-repeat;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    max-width: 20px;
+  }
+}
+
+// 2=  c-input-email-group
+.c-input-email-group,
+.c-input-email-group02 {
+  @include spacingInputGrp;
+  &:not(.row) {
+    display: flex;
+  }
+
+  .input-email-01 {
+    position: relative;
+
+    &:after {
+      content: '@';
+      @include position(null, 50%);
+      right: -6px;
+      color: $color-gray-3;
+      font: {
+        size: $fs-normal;
+        weight: $weight-400;
+      }
+      line-height: $g-lineheight-2;
+    }
+  }
+  .input-email-02 {
+    > .row {
+      @include rowGridSpacingSmall;
+    }
+  }
+
+  select {
+    min-width: auto;
+  }
+}
+
+// 2= c-input-email-group02
+.c-input-email-group02 {
+  .c-btn {
+    padding: 9px;
+  }
+
+  .input-email-02 {
+    > .row {
+      @include rowGridSpacing(6px);
+    }
+    .col {
+      padding: {
+        top: 0;
+        bottom: 0;
+      }
+      &:nth-of-type(2) {
+        flex: 0 0 fit-content;
+      }
+    }
+  }
+}
+
+// 2= c-input-phone-group
+.c-input-phone-group {
+  @include spacingInputGrp;
+  .input-phone-01 {
+    @include colFixedWidth(50px, 10px);
+    .c-select {
+      select {
+        width: $input-w-phone;
+        min-width: $input-w-phone;
+      }
+    }
+  }
+}
+
+// 2= c-input-address-group
+.row.c-input-address-group,
+.c-input-address-group {
+  > .row {
+    @include spacingInputGrp;
+    & ~ .row {
+      margin-top: $gap-12;
+    }
+  }
+
+  &.inner {
+    @include rowGridSpacingSmall;
+  }
+  .input-addr-01,
+  .col.input-addr-01 {
+    @include colFixedWidth(100px, 6px);
+  }
+  .input-addr-03,
+  .col.input-addr-03 {
+    @include colFixedWidth(74px, 6px);
+    .c-btn {
+      padding: 0;
+    }
+  }
+
+  // + view
+  &.input-view {
+    > .row {
+      margin: 0;
+      display: block;
+      > .col {
+        padding: 0;
+        display: inline-block;
+      }
+    }
+    input[type='text'] {
+      border-bottom: 0;
+    }
+  }
+}
+
+// 2= c-input-date-group
+.row {
+  &.inner {
+    &.c-input-date-group {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.c-input-date-group {
+  @at-root .c-multi-input-group {
+    .row.c-input-date-group {
+      margin-left: 5px;
+      flex: 1 1 auto;
+    }
+  }
+
+  &.type05 {
+    > [class*='col'] {
+      &:first-child {
+        > .c-input-date {
+          position: relative;
+          &:after {
+            content: '~';
+            position: absolute;
+            top: 50%;
+            right: -14px;
+            transform: translateY(-50%);
+            color: $color-gray-2;
+          }
+        }
+      }
+    }
+  }
+}
+
+.row {
+  &.c-input-date-group {
+    @include spacingInputGrp;
+    @include justify-row;
+
+    .input-email-01 {
+      position: relative;
+      &:after {
+        content: '@';
+        position: absolute;
+        bottom: 10px;
+        right: -7px;
+        color: $color-gray-3;
+        font: {
+          size: $fs-normal;
+          weight: $weight-400;
+        }
+        line-height: $g-lineheight-2;
+      }
+    }
+    .input-email-02 {
+      > .row {
+        margin: {
+          left: -$gap-6;
+          right: -$gap-6;
+        }
+        > .col-6 {
+          padding: {
+            left: $gap-6;
+            right: $gap-4;
+          }
+        }
+      }
+    }
+  }
+}
+
+.c-article {
+  &.input-list {
+    .input-date-group {
+      [class*='col-'] {
+        padding: {
+          top: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// + input date
+.c-input-date {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  input[type='text'] {
+    &::-ms-clear {
+      display: none;
+    }
+  }
+  // + span {
+  //   display: inline-block;
+
+  i {
+    background: url(../images/ico/ico_date.svg) right center/100% no-repeat;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    content: '';
+    display: inline-block;
+    overflow: hidden;
+  }
+}
+
+// 2= c-input-select-group
+.row {
+  &.c-input-select-group {
+    $gap: $spacing-small;
+    @include rowGridSpacingSmall;
+    @include justify-row;
+    .c-select {
+      select {
+        min-width: auto;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+// + detail input
+.c-input-search {
+  &.detail-input {
+    input[type='text'] {
+      @include inputDetail;
+
+      &:focus {
+        @include inputDetailFocus;
+      }
+    }
+  }
+}
+
+// 2= c-input-badge-group
+.c-input-badge-group {
+  border-bottom: 1px solid $input-detail-border-color;
+  padding-bottom: 2px;
+  display: flex;
+  align-items: center;
+  .c-badge-list {
+    margin: {
+      left: -4px;
+      right: -4px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .badge-card {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+  }
+}
+.c-badge {
+  padding: 2px 12px;
+  background-color: $color-navy-1;
+  border-radius: $radius-8;
+  > span {
+    line-height: 1.7;
+    color: $color-white-1;
+  }
+  & + .c-badge-detail {
+    padding-left: 12px;
+  }
+}
+.c-badge-detail {
+  line-height: 1.7;
+  padding: 2px 0;
+}
+
+.c-badge02 {
+  background-color: $color-blue-5;
+  padding: 2px 12px;
+  border-radius: $radius-6;
+  word-break: keep-all;
+  > span {
+    color: $color-navy-1;
+  }
+}
+
+// 1= input List Detail
+.input-list {
+  &.detail-list {
+    padding: $spacing-normal $gap-40;
+    .row {
+      @include rowGridSpacingNormal;
+    }
+  }
+}
+
+.label-input {
+  &.detail {
+    > label,
+    .c-label-txt {
+      margin-bottom: 0;
+    }
+    .input-view {
+      line-height: $g-lineheight-2;
+      color: $color-gray-1;
+
+      input[type='text'],
+      input[type='password'] {
+        @include ellipsisLine01;
+        padding-left: 0;
+        width: 100%;
+        border: 0;
+        border-radius: 0;
+        cursor: default;
+
+        &:focus {
+          transition: none;
+          box-shadow: none;
+        }
+      }
+      border-bottom: 1px solid $input-detail-border-color;
+    }
+  }
+}

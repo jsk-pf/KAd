@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Layout Guide</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- guide css -->
+	<link rel="stylesheet" href="../css/base.css">
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<script src="../../lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="wrap" class="coding_guide">
+		<h1 class="h1_guide">Table</h1>
+		<div class="title-box">
+			<h2 class="h2_guide">공통</h2>
+		</div>
+
+		<!-- [가로 스크롤] -->
+		<h3 class="h3_guide">가로 세로 스크롤</h3>
+
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="c-table-field c-tbl-vh-field">
+				<!-- c-horizontal-scroll -->
+				<div class="c-table striped" style="max-height:200px;">
+					<table class="table">
+						<caption>
+							검진 정보 : 항목 선택, No, 신청일, 고객사, 검진자, 생년월일, 휴대폰, 성별, 기관, 상품명, 희망일, 확정일, 연기검사 신청일, 연기검사 확정일, 연기검사 확정일에 대한 정보
+						</caption>
+						<colgroup>
+							<col class="checkbox">
+							<col class="no">
+							<col>
+							<col class="name">
+							<col>
+							<col class="phone">
+							<col class="gender">
+							<col>
+							<col style="width: 25%">
+							<col>
+							<col>
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">
+									<div class="c-chkbox">
+										<input type="checkbox" id="allchk">
+										<label for="allchk" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</th>
+								<th scope="col">No</th>
+								<th scope="col">신청일</th>
+								<th scope="col">고객사</th>
+								<th scope="col">검진자</th>
+								<th scope="col">생년월일</th>
+								<th scope="col">휴대폰</th>
+								<th scope="col">성별</th>
+								<th scope="col">기관</th>
+								<th scope="col">상품명</th>
+								<th scope="col">희망일</th>
+								<th scope="col">확정일</th>
+								<th scope="col">연기검사 신청일</th>
+								<th scope="col">연기검사 확정일</th>
+								<th scope="col">연기검사 확정일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+							<tr>
+								<td>
+									<!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk01">
+										<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+									</div>
+								</td>
+								<td>1</td>
+								<td>2022-04-29</td>
+								<td>삼성전자</td>
+								<td><span class="c-bs-link">홍○동</span></td>
+								<td>770101</td>
+								<td>010-1234-5678</td>
+								<td>남</td>
+								<td>한국의학연구소 여의도</td>
+								<td>정밀 종합</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+								<td>2022-04-29</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- ? // view -->
+		</div>
+	</div>
+	<!-- guide script -->
+	<script src="../js/pretty.js"></script>
+
+	<script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+	<script defer src="../../js/common.js"></script>
+</body>
+
+</html>

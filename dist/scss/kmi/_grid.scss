@@ -1,0 +1,397 @@
+/*
+	= Panel
+*/
+
+.c-panel {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  + .c-panel {
+    margin-top: $gap-28;
+  }
+  // + top_head
+  &.top_head {
+    border-bottom: 1px solid $color-gray-5;
+
+    .c-title-field {
+      padding-bottom: $gap-6;
+    }
+  }
+}
+
+.c-field,
+.c-title-field,
+.c-btn-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-title-field {
+  .inner-title,
+  .date-box {
+    display: flex;
+    align-items: center;
+  }
+
+  // + type-tab
+  &.type-tab {
+    .c-tab-list {
+      display: flex;
+
+      > li {
+        position: relative;
+        > a {
+          color: $color-gray-3;
+          @include fontStyle(16px, 24px, 500, 0.3px);
+        }
+        &.on {
+          > a {
+            color: $color-black-op8;
+          }
+        }
+        & + li {
+          padding-left: 23px;
+          &:before {
+            position: absolute;
+            left: 8px;
+            top: 3px;
+            color: $color-gray-6;
+            content: '/';
+          }
+        }
+      }
+    }
+  }
+
+  & + .tab-panel {
+    margin-top: $gap-12;
+  }
+  .label-input {
+    .c-input-search {
+      width: 200px;
+    }
+  }
+  &.with-btn {
+    min-height: 38px;
+  }
+}
+
+/*
+		[c-article]
+*/
+.c-article {
+  border: 1px solid $color-gray-5;
+  background-color: $color-white-1;
+  border-radius: $radius-8;
+  @include colInnerVSpacingSmall;
+  @include colInnerHSpacingNormal;
+
+  margin: {
+    top: $gap-12;
+    bottom: $gap-12;
+  }
+
+  // - 타입 별  padding 상하 값 조정
+
+  // = Input List
+
+  // + input-list02
+  &.input-list02 {
+    padding: {
+      left: 0;
+      right: 0;
+    }
+    //$gap: 20px;
+    $gap: $spacing-normal;
+    > .row {
+      @include rowGridSpacingNormal;
+    }
+
+    @at-root {
+      .c-layer-popup {
+        .c-article {
+          &.input-list02 {
+            border: 0;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  // + input-list03
+  &.input-list03 {
+    background-color: $color-white-1;
+    margin: 0;
+    padding: 0;
+    > .row {
+      > [class*='col'] {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    @at-root {
+      .c-layer-popup {
+        .c-article {
+          &.input-list03 {
+            border: 0;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  // = Content
+  &.c-contents {
+    .c-content-field {
+      padding {
+        top: 16px;
+        bottom: 16px;
+      }
+    }
+    .c-cont-list {
+      margin-top: 12px;
+      line-height: $g-lineheight-2;
+
+      // + asterisk
+      & > li {
+        position: relative;
+        padding-left: 10px;
+        &:before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: inline-block;
+        }
+      }
+      &.asterisk {
+        > li {
+          &:before {
+            content: '*';
+          }
+        }
+      }
+      &.disc,
+      &.number {
+        > li {
+          list-style-type: disc;
+          left: 20px;
+          padding: {
+            left: 0;
+            right: 20px;
+          }
+        }
+      }
+      &.number {
+        > li {
+          list-style-type: decimal;
+        }
+      }
+    }
+
+    &.type01 {
+      .title {
+        font-size: $fs-normal-m;
+        color: $color-gray-3;
+      }
+    }
+    &.type02 {
+      border-color: $color-gray-7;
+      background-color: $color-gray-7;
+      .cont-box {
+        color: $color-gray-2;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+// + list
+.input-list,
+.input-list03 {
+  [class*='col'] {
+    @include colInnerVSpacingSmall;
+  }
+  .row {
+    > [class*='col-'] {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+/*
+	= Field
+*/
+// + c-field
+.c-field {
+  ~ .c-field {
+    margin-top: $gap-20;
+  }
+
+  :not(.row) {
+    > .label-input {
+      + .label-input {
+        margin-left: $gap-12;
+      }
+    }
+  }
+  .c-input-search {
+    display: inline-block;
+    width: auto;
+    input[type='text'] {
+      width: 240px;
+      flex: 0 0 auto;
+    }
+  }
+  .c-select {
+    select {
+      min-width: 120px;
+    }
+    + .c-select {
+      margin-left: $gap-8;
+    }
+  }
+  & + .c-calendar-container {
+    margin-top: $gap-12;
+  }
+}
+
+.c-breadcrumb {
+  & + .c-breadcrumb {
+    margin-top: $gap-12;
+  }
+}
+
+/*
+  = Row Common
+*/
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 20px;
+  margin-left: 20px;
+  // inner
+  &:not(.inner) {
+    @include rowGridSpacingNormal;
+  }
+  &.inner {
+    [class*='col'] {
+      padding: {
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  &.col-full-height {
+    [class*='col-'] {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &.align-item-c {
+      align-items: center;
+    }
+
+    .c-article {
+      flex: 1 1 auto;
+    }
+  }
+
+  // + row-per-5 (수납내역)
+  &.row-cols-5 {
+    padding: {
+      top: 0;
+      bottom: 0;
+    }
+    > .col {
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
+  }
+
+  &.number {
+    .col-4 {
+      @include colInnerHSpacingSmall;
+    }
+  }
+}
+
+/*
+  = Column Common
+*/
+
+@for $i from 1 to 12 {
+  [class='col-#{$i}'] {
+    padding: {
+      left: $gap-12;
+      right: $gap-12;
+    }
+  }
+}
+
+.col {
+  @include colInnerHSpacingNormal;
+  max-width: 100%;
+  flex-basis: 0;
+  flex: 1; // IE 10
+}
+
+@mixin make-col($size, $columns: $grid-columns) {
+  flex: 0 0 percentage(divide($size, $columns));
+  // Add a `max-width` to ensure content within each column does not blow out
+  // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+  // do not appear to require this.
+  max-width: percentage(divide($size, $columns));
+}
+
+$colWidths: (8.333%, 16.666%, 25%, 33.333%, 41.667%, 50%, 58.333%, 66.667%, 75%, 83.333%, 91.7%, 100%);
+@each $col in $colWidths {
+  $i: index($colWidths, $col);
+  .col-#{$i} {
+    flex: 0 0 $col;
+    max-width: $col;
+  }
+}
+
+// = layout type
+.c-layout-type01 {
+  & > .row {
+    $gap: $spacing-small;
+    @include rowGridSpacingSmall;
+  }
+  .right-wrap {
+    position: relative;
+  }
+  .c-floating-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.c-info-aritcle {
+  &.type01 {
+    .row {
+      & > .col {
+        display: flex;
+      }
+    }
+    .label-input {
+      > label {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  & + .c-table-field {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMI</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Contents -->
+        <section class="contents">
+            <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupReSearch_01"><span>비밀번호
+                    재설정</span></button>
+            <!-- = popup Source  -->
+            <div class="c-layer-popup type04 modal fade pw-sch-cont" id="popupReSearch_01" role="dialog" aria-labelledby="popupReSearch_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <!-- modal Header -->
+                        <div class="modal-header">
+                            <div class="c-modal-title-field">
+                                <h4 class="c-title" id="popupReSearch_Label01">비밀번호 찾기</h4>
+                            </div>
+                            <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업 닫기</span></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="pw-sch-txt">
+                                <p>비밀번호 재설정</p>
+                                <span>회원님의 개인정보 보호를 위해 비밀번호를 변경하여 주시기 바랍니다.</span>
+                            </div>
+                            <div class="pw-sch-input">
+                                <div class="col">
+                                    <label for="pwSearch01">이메일/아이디 입력<i class="is-nec">필수입력</i></label>
+                                    <input type="text" id="pwSearch01">
+                                </div>
+                                <div class="col">
+                                    <label for="pwSearch02">새 비밀번호 입력<i class="is-nec">필수입력</i></label>
+                                    <input type="password" id="pwSearch02">
+                                </div>
+                                <div class="col">
+                                    <label for="pwSearch03" class="rechk-label">새 비밀번호 확인<i class="is-nec">필수입력</i></label>
+                                    <div class="pw-rechk">
+                                        <input type="password" id="pwSearch03">
+                                        <!-- [ comment (230622) ]
+
+								일치하지 않을 경우 class: is-error 추가
+							-->
+                                        <p class="c-input-info-txt">일치합니다.</p>
+                                        <!-- <p class="c-input-info-txt is-error"> 일치하지 않습니다. </p> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pw-sch-field">
+                                <ul>
+                                    <li>비밀번호 생성 시 영문자, 소문자, 특수문자 중 2가지 이상 조합하여 8자리 이상 만들어 주세요.</li>
+                                    <li>특수문자 중 -,…, //(하이픈, 마침표, 슬래시 연달아 2개)는 사용이 불가합니다.</li>
+                                    <li>숫자, 영문자의 조합으로 8~12자리로 입력해주세요.</li>
+                                    <li>연속된 문자열 (123또는 4321. abcd, dcba 등)을 4자 이상 사용 할 수 없습니다.</li>
+                                    <li>이전 비밀번호는 다시 사용 불가 합니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- // modal body -->
+                        <div class="modal-footer">
+                            <div class="buttons">
+                                <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>취소</span></button>
+                                <button class="c-btn bg-blue-1" data-dismiss="modal"><span>확인</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- = // popup Source -->
+        </section>
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script>
+        $(function() {
+            // Guide전용 스크립트 (개발 소스 적용 X)
+            $('[data-target]').trigger('click');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KMI</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Contents -->
+            <section class="contents">
+                <!-- = Popup Source -->
+                <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupMemoList"><span>메모리스트</span></button>
+                <div class="c-layer-popup type04 modal fade popup-memo-list" id="popupMemoList" role="dialog" aria-labelledby="popupMemoList_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <!-- modal Header -->
+                            <div class="modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupMemoList_Label01">메모리스트</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업
+                                        닫기</span></button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="tab-cont">
+                                    <div class="c-table-field">
+                                        <div class="c-table striped tbl-fixed memo-lists">
+                                            <table class="table">
+                                                <caption> 메모 리스트 : 날짜, 내용, 등록자에 대한 정보 </caption>
+                                                <colgroup>
+                                                    <col class="date" />
+                                                    <col />
+                                                    <col class="name" />
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">날짜</th>
+                                                        <th scope="col">내용</th>
+                                                        <th scope="col">등록자</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- input 생성 시  for/id 매칭 -->
+                                                    <tr>
+                                                        <td>YYYY.MM.DD <br />HH.MM.SS</td>
+                                                        <td class="ta-l">
+                                                            <div class="memo-list">
+                                                                <div class="memo-contarea">
+                                                                    <div class="memo-cont"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                                        Alias reiciendis tenetur in deserunt officiis. Beatae suscipit doloribus </div>
+                                                                </div>
+                                                                <div class="memo-btnarea">
+                                                                    <button type="button" class="memo-cont-btn"><span class="skip">메모이력보기</span></button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>홍길동<br />(VITA)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>YYYY.MM.DD <br />HH.MM.SS</td>
+                                                        <td class="ta-l">
+                                                            <div class="memo-list">
+                                                                <div class="memo-contarea">
+                                                                    <div class="memo-cont"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                                        Alias reiciendis tenetur in deserunt officiis. Beatae suscipit doloribus
+                                                                        consequuntur maxime libero possimus aut veritatis, dolorum, laborum odit reiciendis
+                                                                        accusantium ducimus voluptate. Natus vel obcaecati explicabo, dicta omnis beatae
+                                                                        incidunt mollitia ipsum eum corporis necessitatibus nisi ullam aut ab error quidem
+                                                                        animi. Repellendus alias nihil expedita impedit, animi ut esse quasi adipisci.
+                                                                        Tempore maxime ipsa impedit nesciunt, deleniti modi veritatis ad laboriosam
+                                                                        praesentium, eos earum ducimus inventore dolore magnam culpa quaerat in esse sint
+                                                                        atque! Aliquid cupiditate obcaecati quae incidunt provident distinctio! Placeat
+                                                                        eaque dolor, sequi voluptates excepturi molestias earum sit minus quod odio autem
+                                                                        ratione, aut commodi? Sint officia perferendis iure, unde, impedit obcaecati
+                                                                        nesciunt totam numquam eaque suscipit ipsam consequuntur! Vitae excepturi dolore
+                                                                        voluptas adipisci soluta quam eos enim voluptates commodi eum perspiciatis quos quod
+                                                                        molestiae, magni hic voluptatibus, fugit sunt maiores necessitatibus! Neque maiores
+                                                                        voluptatibus ab, dolorem laboriosam est? necessitatibus! Neque maiores voluptatibus
+                                                                        ab, dolorem laboriosam est? necessitatibus! Neque maiores voluptatibus ab, dolorem
+                                                                        laboriosam est? necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam
+                                                                        est? necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est? </div>
+                                                                </div>
+                                                                <div class="memo-btnarea">
+                                                                    <button type="button" class="memo-cont-btn"><span class="skip">메모이력보기</span></button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>홍길동<br />(VITA)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>YYYY.MM.DD <br />HH.MM.SS</td>
+                                                        <td class="ta-l">
+                                                            <div class="memo-list">
+                                                                <div class="memo-contarea">
+                                                                    <div class="memo-cont"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                                        Alias reiciendis tenetur in deserunt officiis. Beatae suscipit doloribus
+                                                                        consequuntur maxime libero possimus aut veritatis, dolorum, laborum odit reiciendis
+                                                                        accusantium ducimus voluptate. Natus vel obcaecati explicabo, dicta omnis beatae
+                                                                        incidunt mollitia ipsum eum corporis necessitatibus nisi ullam aut ab error quidem
+                                                                        animi. Repellendus alias nihil expedita impedit, animi ut esse quasi adipisci.
+                                                                        Tempore maxime ipsa impedit nesciunt, deleniti modi veritatis ad laboriosam
+                                                                        praesentium, eos earum ducimus inventore dolore magnam culpa quaerat in esse sint
+                                                                        atque! Aliquid cupiditate obcaecati quae incidunt provident distinctio! Placeat
+                                                                        eaque dolor, sequi voluptates excepturi molestias earum sit minus quod odio autem
+                                                                        ratione, aut commodi? Sint officia perferendis iure, unde, impedit obcaecati
+                                                                        nesciunt totam numquam eaque suscipit ipsam consequuntur! Vitae excepturi dolore
+                                                                        voluptas adipisci soluta quam eos enim voluptates commodi eum perspiciatis quos quod
+                                                                        molestiae, magni hic voluptatibus, fugit sunt maiores necessitatibus! Neque maiores
+                                                                        voluptatibus ab, dolorem laboriosam est? necessitatibus! Neque maiores voluptatibus
+                                                                        ab, dolorem laboriosam est? necessitatibus! Neque maiores voluptatibus ab, dolorem
+                                                                        laboriosam est? necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam
+                                                                        est? necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est? </div>
+                                                                </div>
+                                                                <div class="memo-btnarea">
+                                                                    <button type="button" class="memo-cont-btn"><span class="skip">메모이력보기</span></button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>홍길동<br />(VITA)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>YYYY.MM.DD <br />HH.MM.SS</td>
+                                                        <td class="ta-l">
+                                                            <div class="memo-list">
+                                                                <div class="memo-contarea">
+                                                                    <div class="memo-cont"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                                        Alias reiciendis tenetur in deserunt officiis. Beatae suscipit doloribus
+                                                                        consequuntur maxime libero possimus aut veritatis, dolorum, laborum odit reiciendis
+                                                                        accusantium ducimus voluptate. Natus vel obcaecati explicabo, dicta omnis beatae
+                                                                        incidunt mollitia ipsum eum corporis necessitatibus nisi ullam aut ab error quidem
+                                                                        animi. Repellendus alias nihil expedita impedit, animi ut esse quasi adipisci.
+                                                                        Tempore maxime ipsa impedit nesciunt, deleniti modi veritatis ad laboriosam
+                                                                        praesentium, eos earum ducimus inventore dolore magnam culpa quaerat in esse sint
+                                                                        atque! Aliquid cupiditate obcaecati quae incidunt provident distinctio! Placeat
+                                                                        eaque dolor, sequi voluptates excepturi molestias earum sit minus quod odio autem
+                                                                        ratione, aut commodi? Sint officia perferendis iure, unde, impedit obcaecati
+                                                                        nesciunt totam numquam eaque suscipit ipsam consequuntur! Vitae excepturi dolore
+                                                                        voluptas adipisci soluta quam eos enim voluptates commodi eum perspiciatis quos quod
+                                                                        molestiae, magni hic voluptatibus, fugit sunt maiores necessitatibus! Neque maiores
+                                                                        voluptatibus ab, dolorem laboriosam est? necessitatibus! Neque maiores voluptatibus
+                                                                        ab, dolorem laboriosam est? necessitatibus! Neque maiores voluptatibus ab, dolorem
+                                                                        laboriosam est? necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam
+                                                                        est? necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est? </div>
+                                                                </div>
+                                                                <div class="memo-btnarea">
+                                                                    <button type="button" class="memo-cont-btn"><span class="skip">메모이력보기</span></button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>홍길동<br />(VITA)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>YYYY.MM.DD <br />HH.MM.SS</td>
+                                                        <td class="ta-l">
+                                                            <div class="memo-list">
+                                                                <div class="memo-contarea">
+                                                                    <div class="memo-cont"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                                        Alias reiciendis tenetur in deserunt officiis. Beatae suscipit doloribus
+                                                                        consequuntur maxime libero possimus aut veritatis, dolorum, laborum odit reiciendis
+                                                                        accusantium ducimus voluptate. Natus vel obcaecati explicabo, dicta omnis beatae
+                                                                        incidunt mollitia ipsum eum corporis necessitatibus nisi ullam aut ab error quidem
+                                                                        animi. Repellendus alias nihil expedita impedit, animi ut esse quasi adipisci.
+                                                                        Tempore maxime ipsa impedit nesciunt, deleniti modi veritatis ad laboriosam
+                                                                        praesentium, eos earum ducimus inventore dolore magnam culpa quaerat in esse sint
+                                                                        atque! Aliquid cupiditate obcaecati quae incidunt provident distinctio! Placeat
+                                                                        eaque dolor, sequi voluptates excepturi molestias earum sit minus quod odio autem
+                                                                        ratione, aut commodi? Sint officia perferendis iure, unde, impedit obcaecati
+                                                                        nesciunt totam numquam eaque suscipit ipsam consequuntur! Vitae excepturi dolore
+                                                                        voluptas adipisci soluta quam eos enim voluptates commodi eum perspiciatis quos quod
+                                                                        molestiae, magni hic voluptatibus, fugit sunt maiores necessitatibus! Neque maiores
+                                                                        voluptatibus ab, dolorem laboriosam est? necessitatibus! Neque maiores voluptatibus
+                                                                        ab, dolorem laboriosam est? necessitatibus! Neque maiores voluptatibus ab, dolorem
+                                                                        laboriosam est? necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam
+                                                                        est? necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est?
+                                                                        necessitatibus! Neque maiores voluptatibus ab, dolorem laboriosam est? </div>
+                                                                </div>
+                                                                <div class="memo-btnarea">
+                                                                    <button type="button" class="memo-cont-btn"><span class="skip">메모이력보기</span></button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>홍길동<br />(VITA)</td>
+                                                    </tr>
+                                                    <!-- + 데이터가 없는 경우 -->
+                                                    <!-- <tr class="blt-list-none">
+																			<td colspan="3">
+																				<div class="tbl-none-field">
+																					<div>
+																						<p class="cont">등록된 데이터가 없습니다.</p>
+																					</div>
+																				</div>
+																			</td>
+																		</tr> -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- c-tbl-paging -->
+                                        <div class="c-tbl-paging">
+                                            <p class="page-info">Total Page <em>01</em> page</p>
+                                            <nav class="c-pagination">
+                                                <ul>
+                                                    <li>
+                                                        <a class="page-link" href="javascript:;" aria-label="처음">
+                                                            <span class="is-blind p-first">처음</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="page-link" href="javascript:;" aria-label="이전">
+                                                            <span class="is-blind p-prev">이전</span>
+                                                        </a>
+                                                    </li>
+                                                    <li><a class="page-link is-active" href="javascript:;">1</a></li>
+                                                    <li><a class="page-link" href="javascript:;">2</a></li>
+                                                    <li><a class="page-link" href="javascript:;">3</a></li>
+                                                    <li><a class="page-link" href="javascript:;">4</a></li>
+                                                    <li><a class="page-link" href="javascript:;">5</a></li>
+                                                    <li>
+                                                        <a class="page-link" href="javascript:;" aria-label="다음">
+                                                            <span class="is-blind p-next">다음</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="page-link" href="javascript:;" aria-label="끝">
+                                                            <span class="is-blind p-end">끝</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                        <div class="target-memo-cont">
+                                            <div class="buttons justify-cont-e">
+                                                <button class="c-btn is-outline-navy-1"><span>버튼</span></button>
+                                                <button class="c-btn"><span>메모등록</span></button>
+                                            </div>
+                                            <div class="c-article input-list memo-lists target-memo">
+                                                <div class="row">
+                                                    <div class="col date">YYYY.MM.DD <br />HH.MM.SS</div>
+                                                    <div class="col target-cont">
+                                                        <div class="memo-list">
+                                                            <div class="memo-contarea">
+                                                                <div class="memo-cont"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
+                                                                    reiciendis tenetur in deserunt officiis. Beatae suscipit doloribus consequuntur maxime
+                                                                    libero possimus aut veritatis, dolorum, laborum odit reiciendis accusantium ducimus
+                                                                    voluptate. Natus vel obcaecati explicabo, dicta omnis beatae incidunt mollitia ipsum
+                                                                    eum corporis necessitatibus nisi ullam aut ab error quidem animi. Repellendus alias
+                                                                    nihil expedita impedit, animi ut esse quasi adipisci. Tempore maxime ipsa impedit
+                                                                    nesciunt, deleniti modi veritatis </div>
+                                                            </div>
+                                                            <div class="memo-btnarea">
+                                                                <button type="button" class="memo-cont-btn"><span class="skip">메모이력보기</span></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col name">홍길동<br />(VITA)</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+                            <div class="modal-footer">
+                                <div class="buttons">
+                                    <button class="c-btn is-outline-navy-1" data-dismiss="modal"><span>등록</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- = // Popup Source -->
+            </section>
+            <!-- // Contents -->
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script>
+        tblToggleMemoAccordion();
+        targetMemoAccordion();
+        // guide 용 소스 스크립트 (DEV 제외)
+        $('.c-btn').trigger('click');
+    </script>
+</body>
+
+</html>

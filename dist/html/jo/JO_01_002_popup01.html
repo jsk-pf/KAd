@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMI</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Contents -->
+        <section class="contents">
+            <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupEmail_01"><span>이메일 중복확인
+                    alert 창 01 (사용가능)</span></button>
+            <!-- = popup Source  -->
+            <div class="c-layer-popup type01 modal fade join-confirm" id="popupEmail_01" role="dialog" aria-labelledby="popupEmail_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <h4 class="c-title skip" id="popupEmail_Label01">중복 확인</h4>
+                            <p><span class="email-possible">abc@naer.com</span> 은 사용가능한 이메일/ID 입니다.</p>
+                        </div>
+                        <!-- // modal body -->
+                        <div class="modal-footer type01">
+                            <div class="buttons row">
+                                <div class="col">
+                                    <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>사용하기</span></button>
+                                </div>
+                                <div class="col">
+                                    <button class="c-btn bg-blue-1" data-dismiss="modal"><span>닫기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- = // popup Source -->
+            <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupEmail_02"><span>이메일 중복확인
+                    alert 창 02 (사용중)</span></button>
+            <!-- = popup Source  -->
+            <div class="c-layer-popup type01 modal fade join-confirm" id="popupEmail_02" role="dialog" aria-labelledby="popupEmail_Label02" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <h4 class="c-title skip" id="popupEmail_Label02">중복 확인</h4>
+                            <p><span class="email-possible">abc@naer.com</span> 은 사용중인 이메일/ID 입니다.</p>
+                        </div>
+                        <!-- // modal body -->
+                        <div class="modal-footer type01">
+                            <div class="buttons row">
+                                <div class="col">
+                                    <button class="c-btn bg-blue-1" data-dismiss="modal"><span>닫기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- = // popup Source -->
+        </section>
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

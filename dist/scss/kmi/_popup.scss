@@ -1,0 +1,493 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zindex-modal;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+
+  &.modal-static {
+    .modal-dialog {
+      -webkit-transform: none !important;
+      transform: none !important;
+    }
+  }
+}
+
+.modal-open {
+  overflow: hidden;
+
+  .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+// + modal-dialog
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: $modal-dialog-margin;
+  pointer-events: none;
+  max-height: calc(100% - 200px);
+  padding: {
+    top: 100px;
+    bottom: 100px;
+  }
+  .modal.fade & {
+    @include transition($modal-transition);
+    transform: $modal-fade-transform;
+  }
+  .modal.show & {
+    transform: $modal-show-transform;
+  }
+
+  // When trying to close, animate focus to scale
+  .modal.modal-static & {
+    transform: $modal-scale-transform;
+  }
+}
+
+.modal-dialog-scrollable {
+  //display: flex; // IE10/11
+  //max-height: subtract(100%, $modal-dialog-margin * 2);
+
+  .modal-content {
+    overflow: hidden;
+    max-height: subtract(100vh, $modal-dialog-margin * 2); // IE10/11
+  }
+
+  .modal-header,
+  .modal-footer {
+    flex-shrink: 0;
+  }
+
+  .modal-body {
+    @include scrollType01;
+    overflow-y: auto;
+  }
+}
+
+// Actual modal
+// + modal-content
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: $color-gray-1;
+  pointer-events: auto;
+  background-color: $color-white-1;
+  background-clip: padding-box;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border: $modal-content-border-width solid $modal-content-border-color;
+  border-radius: $gap-12;
+  outline: 0;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zindex-modal-backdrop;
+  width: 100vw;
+  height: 100vh;
+  background-color: $modal-backdrop-bg;
+  & + .modal-backdrop {
+    opacity: 0;
+    // # 230714 추가
+    // z-index: 1052;
+  }
+  // Fade for backdrop
+  &.fade {
+    opacity: 0;
+  }
+  &.show {
+    opacity: $modal-backdrop-opacity;
+  }
+}
+
+// + modal header
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: $modal-header-padding;
+  border-bottom: $modal-header-border-width solid $modal-header-border-color;
+  position: relative;
+  padding: 12px 40px;
+  border: 0;
+  border-radius: 0;
+  background-color: $color-black-2;
+  @include border-top-radius($modal-content-inner-border-radius);
+  .close {
+    padding: $modal-header-padding;
+    margin: (-$modal-header-padding-y) (-$modal-header-padding-x) (-$modal-header-padding-y) auto;
+  }
+}
+
+.modal-title {
+  margin-bottom: 0;
+  line-height: $modal-title-line-height;
+}
+
+.c-modal-title-field {
+  height: 32px;
+  overflow: hidden;
+  margin-right: 44px;
+  .c-title {
+    @include ellipsisLine01;
+    color: $color-white-1;
+    font: {
+      size: $fs-large;
+      weight: $weight-500;
+    }
+    line-height: 1.45;
+  }
+}
+
+// + modal Body
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: $gap-20 $gap-40;
+  line-height: $g-lineheight-2;
+
+  &::after {
+    display: block;
+    min-height: inherit;
+    font-size: 0;
+    content: '';
+  }
+
+  .c-article {
+    & + .c-table-field {
+      margin-top: 24px;
+    }
+  }
+}
+
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: subtract(100%, $modal-dialog-margin * 2);
+  justify-content: center;
+
+  &::before {
+    display: block; // IE10
+    height: subtract(100vh, $modal-dialog-margin * 2);
+    height: min-content; // Reset height to 0 except on IE
+    content: '';
+  }
+
+  &.modal-dialog-scrollable {
+    flex-direction: column;
+    //justify-content: center;
+    height: 100%;
+
+    .modal-content {
+      max-height: none;
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+}
+/*
+= Common
+*/
+
+// = layer popup
+.c-layer-popup {
+  .buttons {
+    justify-content: center;
+    .c-btn {
+      min-width: 80px;
+    }
+  }
+  .c-tab-field {
+    .c-tab-list {
+      > li {
+        a {
+          background-color: $color-white-1;
+        }
+      }
+    }
+  }
+
+  .c-article {
+    background-color: $color-white-2;
+  }
+
+  .c-title-field {
+    @at-root .c-article {
+      // margin-top: 0;
+      &.c-textarea-article {
+        background-color: $color-white-1;
+        border: 0;
+        padding: 0;
+      }
+    }
+  }
+  .c-panel {
+    *:not(.c-title-field) {
+      + .c-article {
+        margin: {
+          top: 10px;
+          bottom: 10px;
+        }
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // 반반 나누는 화면
+  .c-layout-type01 {
+    overflow: hidden;
+    .left-wrap,
+    .right-wrap {
+      height: auto;
+      overflow: hidden;
+      > .c-inner {
+        height: 100%;
+        overflow-y: auto;
+        padding-right: 10px;
+
+        @include scrollType01;
+      }
+    }
+  }
+}
+
+// + modal-row
+.modal-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: {
+    left: -$gap-12;
+    right: -$gap-12;
+  }
+}
+
+.popup-cls-btn {
+  position: absolute;
+  top: 12px;
+  right: 40px;
+  background: url($image-ico-path + '/ico_del_02.svg') center/32px no-repeat;
+  width: 32px;
+  height: 32px;
+}
+
+.c-layer-popup {
+  // = type01
+  &.type01 {
+    .modal-content {
+      width: 360px;
+    }
+    .modal-body {
+      padding-top: 32px;
+    }
+    // # 230714 추가
+    // &.modal {
+    //   z-index: 1053;
+    // }
+  }
+  // = type02
+  &.type02 {
+    .modal-content {
+      width: 480px;
+    }
+    .modal-body {
+      padding-top: 32px;
+    }
+  }
+  // = type03
+  &.type03 {
+    .modal-content {
+      width: 1200px;
+    }
+  }
+  // = type04
+  &.type04 {
+    .modal-content {
+      width: 720px;
+    }
+  }
+  // = type05
+  &.type05 {
+    overflow-x: auto;
+    padding-right: 5px !important;
+    .modal-content {
+      min-width: 1600px;
+      min-height: calc(100vh - 40px);
+      height: 100%;
+      overflow: hidden;
+    }
+
+    &.modal {
+      padding-right: 20px !important;
+      overflow-y: auto;
+    }
+
+    .modal-dialog {
+      min-height: 100%;
+      min-width: 100%;
+      max-height: initial;
+      padding: 10px;
+      margin: 0;
+    }
+
+    .modal-body {
+      flex: 1 0 auto;
+    }
+
+    &.fix-width {
+      min-width: 1920px;
+    }
+  }
+}
+
+// = modal footer
+
+// + modal-footer
+.modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: $gap-20 $gap-40;
+  border-top: 1px solid $color-gray-5;
+  //padding: 20px 35px;
+  justify-content: flex-end;
+  @include border-bottom-radius($modal-content-inner-border-radius);
+
+  > * {
+    margin: 0;
+  }
+
+  &.c-btn-field {
+    justify-content: flex-end;
+  }
+
+  &.type01 {
+    padding: {
+      top: 0;
+      bottom: 32px;
+    }
+    border-top: 0;
+    justify-content: center;
+    .buttons {
+      width: 100%;
+      .col {
+        @include paddingH(5px);
+      }
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  .c-btn {
+    &.bg-blue-1 {
+      background-color: $color-navy-1 !important;
+    }
+  }
+}
+
+// + 개인정보수집 약관동의 modal
+
+.c-modal-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s linear;
+  .c-modal-cont {
+    // + type06
+    &.type06 {
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      background-color: $color-white-1;
+      border-radius: 12px;
+      box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+      position: relative;
+      top: -100px;
+      transition: top 0.25s linear;
+
+      .modal-header {
+        border-top: {
+          left-radius: 12px;
+          right-radius: 12px;
+        }
+
+        .modal-title {
+          color: $color-white-1;
+          padding-right: 50px;
+          @include ellipsisLine01;
+          @include modalTermsTitle;
+        }
+      }
+
+      .modal-footer {
+        padding: 14px 40px;
+      }
+    }
+
+    // + c-terms-area
+    &.c-terms-area {
+      .modal-body {
+        .terms-section ~ .terms-section {
+          margin-top: 20px;
+        }
+        li {
+          color: $color-gray-14;
+          @include modalTermsTxt;
+        }
+      }
+    }
+  }
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    .c-modal-cont {
+      &.type06 {
+        top: 0;
+      }
+    }
+  }
+}
+
+// + 검진예약일괄처리 발송이력 팝업
+.rsv-confirm {
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .c-chkbox {
+      margin-top: 10px;
+    }
+  }
+}

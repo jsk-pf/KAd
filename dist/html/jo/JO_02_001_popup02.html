@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMI</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <button type="button" class="c-btn bg-blue-1 c-modal-btn" data-toggle="modal" data-modal="#popupTerms_01">약관동의 팝업</button>
+        <div class="c-modal-wrap">
+            <!-- type06 -->
+            <div class="c-modal-cont type06 c-terms-area" id="popupTerms_01" role="dialog" aria-labelledby="popupTerms_Label01" aria-hidden="true">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="popupTerms_Label01">개인정보 수집/이용동의 약관</h2>
+                    <button type="button" class="popup-cls-btn c-popup-close-btn">
+                        <span class="skip">팝업닫기</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="terms-section">
+                        <ol>
+                            <li>- 본인은 정보통신망법, 개인정보보호법 등 기타 개인정보에 관한 법률을 준수하겠습니다.</li>
+                            <li>- 본인은 본인의 접속 계정을 제3자에게 양도 및 대여를 하지 않겠습니다.</li>
+                            <li>- 본인은 직무전환, 퇴사 등의 이유로 “시스템” 관련 업무에 더 이상 관여하지 않을 경우에는 지체없이 시스템 관리자에게 통보하겠습니다.</li>
+                        </ol>
+                    </div>
+                    <div class="terms-section">
+                        <ol>
+                            <li>
+                                <ol>
+                                    <li><b>가. 개인정보 수집/이용 목적</b></li>
+                                    <li>- WITH KMI에서 수집되는 개인정보는 정보주체의 동의를 얻어 시스템 계정 등록을 목적으로 이용됩니다.</li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><b>나. 개인정보 수집 항목</b></li>
+                                    <li>- 고객사명, 소속부터, 성명, 이메일, 일반전화, 휴대전화번호</li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><b>다. 개인정보의 보유 및 수집/이용 기간</b></li>
+                                    <li>- 본인은 WITH KMI에서 본인의 개인정보를 수집/이용하는 것에 동의합니다.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="c-btn is-outline-navy-1 c-popup-close-btn"><span>닫기</span></button>
+                </div>
+            </div>
+            <!-- // type06 -->
+        </div>
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script>
+        // + UI 화면 확인 전용 스크립트 (상용 소스 내 미적용)
+        $('.c-modal-btn').trigger('click');
+    </script>
+</body>
+
+</html>

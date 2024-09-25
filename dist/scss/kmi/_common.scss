@@ -1,0 +1,300 @@
+/*
+	Common
+*/
+
+//	= Font
+$fonts: (
+  'Thin': 100,
+  'Light': 300,
+  'Regular': 400,
+  'Medium': 500,
+  'Bold': 700,
+  'Black': 900,
+);
+
+@each $name, $size in $fonts {
+  @font-face {
+    font: {
+      family: #{$font-name};
+      weight: $size;
+      style: normal;
+    }
+
+    src: url('#{$font-path}#{$font-name}-#{$name}.woff') format('woff'), url('#{$font-path}#{$font-name}-#{$name}.woff2') format('woff2'), url('#{$font-path}#{$font-name}-#{$name}.otf') format('opentype');
+  }
+}
+
+// + link
+a.c-bs-link,
+.c-bs-link {
+  display: inline-block;
+  text-decoration: underline;
+  color: $color-blue-1;
+  overflow: hidden;
+  line-height: 1.7;
+  > span {
+    position: relative;
+  }
+}
+
+// + size
+
+// title
+$title-list: (
+  'lg': 20px,
+  'md': 16px,
+);
+@each $name, $size in $title-list {
+  .title-#{$name} {
+    font-size: #{$size};
+  }
+}
+
+[class*='title-'] {
+  font-weight: $weight-500;
+  color: $color-gray-2;
+  letter-spacing: -0.3px;
+}
+.title-lg {
+  font: {
+    //size: 20px;
+    weight: $weight-500;
+  }
+}
+
+.c-fs-sm {
+  @include coTxtCaption;
+}
+
+// = color
+
+$color-list: (
+  white-1: $color-white-1,
+  white-2: $color-white-2,
+  black-1: $color-black-1,
+  black-2: $color-black-2,
+  blue-1: $color-blue-1,
+  blue-4: $color-blue-4,
+  navy-1: $color-navy-1,
+  navy-2: $color-navy-2,
+  green-1: $color-green-1,
+  orange-1: $color-orange-1,
+  gray-1: $color-gray-1,
+  gray-2: $color-gray-2,
+  gray-3: $color-gray-3,
+  gray-4: $color-gray-4,
+  gray-5: $color-gray-5,
+  gray-6: $color-gray-6,
+  gray-7: $color-gray-7,
+  gray-8: $color-gray-8,
+  gray-9: $color-gray-8,
+  gray-10: $color-gray-10,
+);
+
+// + font
+@each $class, $color in $color-list {
+  .is-#{$class} {
+    color: #{$color} !important;
+  }
+}
+
+// + background color
+@each $class, $bg-color in $color-list {
+  .bg-#{$class} {
+    background-color: #{$bg-color} !important;
+  }
+}
+
+// + font-color
+.c-highlight-txt {
+  color: $color-blue-1;
+}
+
+// = skip-navigation
+.skip-navigation {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  p {
+    a {
+      position: absolute;
+      top: -200px;
+      &:focus,
+      &:active {
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        color: $color-white-1;
+        padding: 5px 3px 0 3px;
+        text-align: center;
+        font-weight: $weight-700;
+        background: $color-blue-1;
+      }
+    }
+  }
+}
+
+// + skip
+.skip {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+}
+.menu-toggle {
+  width: 59px;
+  height: 43px;
+}
+
+.is-blind {
+  @include is-blind;
+}
+
+$spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42, 45, 50, 60, 80, 100, 120);
+$rules: (
+  mt: margin-top,
+  ml: margin-left,
+  mr: margin-right,
+  mb: margin-bottom,
+  pt: padding-top,
+  pl: padding-left,
+  pr: padding-right,
+  pb: padding-bottom,
+);
+
+@each $i in $spacing {
+  @each $class, $name in $rules {
+    .#{$class}-#{$i} {
+      #{$name}: #{$i}px !important;
+    }
+  }
+}
+// + align
+.ta-l {
+  text-align: left !important;
+}
+.ta-c {
+  text-align: center !important;
+}
+.ta-r {
+  text-align: right !important;
+}
+
+// flex-align
+.justify-cont-s {
+  justify-content: flex-start !important;
+}
+.justify-cont-c {
+  justify-content: center !important;
+}
+.justify-cont-sb {
+  justify-content: space-between !important;
+}
+
+.justify-cont-e {
+  justify-content: flex-end !important;
+}
+// flex-align
+.align-itme-s,
+.align-item-s {
+  align-items: flex-start !important;
+}
+.align-itme-e,
+.align-item-e {
+  align-items: flex-end !important;
+}
+.align-itme-c,
+.align-item-c {
+  align-items: center !important;
+}
+
+// + table header
+.h300 {
+  height: 300px;
+}
+
+// + width
+@for $i from 1 to 10 {
+  .w-#{$i*10} {
+    width: ($i * 10%) !important;
+  }
+}
+
+// + 말줄임
+.c-truncate01 {
+  @include ellipsisLine01;
+}
+
+// text
+.c-in-price {
+  @include coTxtTypography;
+  color: $color-gray-2;
+  .unit {
+    padding-left: 2px;
+    color: $color-gray-3;
+  }
+}
+
+// + Contents
+// + c-cost-list
+.c-cost-list {
+  &.type01 {
+    width: 140px;
+    dl {
+      display: flex;
+      align-items: center;
+      flex: 1 0 auto;
+      justify-content: space-between;
+      dt,
+      dd {
+        @include coTxtTypography;
+        font-weight: 400;
+      }
+      dt {
+        width: 60px;
+        text-align: left;
+      }
+      dd {
+        min-width: 60px;
+        text-align: right;
+        @include ellipsisLine01;
+      }
+    }
+  }
+}
+
+.in-cont-box {
+  &.type01 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title {
+      @include coTxtTypography;
+      color: $color-gray-2;
+    }
+  }
+}
+
+.flx-full,
+.ta-full {
+  display: flex;
+  > .col {
+    flex: 1 1 100% !important;
+  }
+}
+
+.col-w-full {
+  flex: 1 1 100% !important;
+}
+
+
+.c-min-w-auto {
+	min-width: auto;
+}

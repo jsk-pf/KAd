@@ -1,0 +1,355 @@
+// + type-horizontal
+.content-wrapper.type-horizontal,
+.c-layer-popup.type-horizontal {
+  // 콜센터 내 레이어팝업 제어위한 상속
+
+  input {
+    &[type='text'],
+    &[type='password'] {
+      min-width: $input-w-default;
+      width: 0;
+
+      &[readonly='readonly'] {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .label-input {
+    label,
+    .label-input,
+    .c-label-txt {
+      margin-bottom: 0;
+
+      display: inline-flex;
+      flex: none;
+      width: auto;
+
+      //display: table; //ie
+      white-space: nowrap;
+      padding-right: 10px;
+
+      @supports (min-width: fit-content) {
+        min-width: $input-label-w-default;
+      }
+    }
+
+    .c-m-input-list,
+    .c-input-date {
+      width: auto;
+    }
+  }
+  .c-article {
+    @include colInnerHSpacingSmall;
+    &.input-list {
+      display: flex;
+      flex-wrap: wrap;
+      > .row {
+        margin: {
+          left: 0;
+          right: 0;
+        }
+      }
+
+      // + textarea
+      &.c-textarea-article {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+        .col {
+          display: flex;
+          flex-direction: row;
+          &.label-input {
+            flex: 0 0 100%;
+          }
+        }
+      }
+
+      // = Grid
+      > .row {
+        & > [class^='col'] {
+          max-width: 100%;
+
+          > .row {
+            flex: 1 0 auto;
+          }
+          .c-input-address-group {
+            .c-btn {
+              padding: 10px;
+            }
+          }
+        }
+      }
+
+      // == Form
+      .c-input-unit,
+      .c-input {
+        > input[type='text'],
+        > input[type='password'],
+        > input[type='number'] {
+          width: 100%;
+        }
+      }
+
+      .row {
+        > [class^='col'] {
+          @include colInnerHSpacingSmall;
+          flex: 0 1 auto;
+          flex-direction: row;
+          align-items: center;
+          display: flex;
+        }
+        .c-input-file-group {
+          width: auto;
+        }
+
+        //+ address
+        .c-input-address-group {
+          .input-addr-01 {
+            input[type='text'] {
+              width: $input-w-postcode;
+              min-width: $input-w-postcode;
+
+              &[readonly='readonly'] {
+                width: $input-w-postcode-readonly;
+                min-width: $input-w-postcode-readonly;
+              }
+            }
+          }
+          .input-addr-02 {
+            input[type='text'] {
+              &[readonly='readonly'] {
+                min-width: $input-w-address-readonly;
+              }
+            }
+          }
+        }
+        //+ phone
+        .c-input-phone-group {
+          .input-phone-01 {
+            input[type='text'] {
+              &[readonly='readonly'] {
+                width: $input-w-phone-readonly;
+                min-width: $input-w-phone-readonly;
+              }
+            }
+          }
+        }
+
+        // +  c-input-group (range)
+        &.c-input-group.range {
+          flex: none;
+          input[type='text'] {
+            width: fit-content;
+          }
+        }
+
+        // + c-input-email-group
+        &.c-input-email-group {
+          > [class^='col'] {
+            max-width: 100%;
+          }
+          .input-email-02 {
+            max-width: 100%;
+
+            > .row {
+              flex-grow: 1;
+            }
+            input {
+              min-width: $input-w-email;
+            }
+          }
+          select {
+            width: $input-w-email;
+          }
+        }
+
+        &.inner {
+          @include colOuterHSpacingSmall;
+          &.c-input-address-group,
+          &.c-input-email-group {
+            > [class^='col'] {
+              .col-6 {
+                max-width: none;
+                flex: 1 0 auto;
+              }
+              > .row {
+                flex: 1 0 100%;
+                @include colOuterHSpacingSmall;
+              }
+            }
+            .input-email-02 {
+              > .row {
+                flex-wrap: nowrap;
+                flex: 1 0 auto;
+              }
+            }
+          }
+          // + .c-input-phone-group
+          &.c-input-phone-group {
+            :not(.input-phone-01) {
+              input {
+                width: $input-w-phone;
+                min-width: $input-w-phone;
+                &[readonly='readonly'] {
+                  min-width: $input-w-phone-readonly;
+                  width: $input-w-phone-readonly;
+                }
+              }
+            }
+          }
+
+          &.c-input-date-group,
+          &.c-input-group.range {
+            .col-6 {
+              flex: 1 0 auto;
+              max-width: none;
+            }
+          }
+        }
+
+        &.c-ta-row {
+          flex: 1 1 100%;
+          > [class^='col'] {
+            flex-basis: 100%;
+          }
+        }
+      }
+
+      &.type03 {
+        .c-input-unit {
+          width: 100%;
+        }
+        > .row {
+          flex: 1 1 100%;
+        }
+
+        .c-inquiry-date-group {
+          flex: 1 1 auto;
+        }
+      }
+    }
+  }
+
+  .c-m-input-list {
+    .input-col {
+      & ~ .input-col {
+        margin-left: calc($spacing-inputgrp-02 * 2);
+      }
+    }
+  }
+
+  .c-input-group {
+    > [class*='col'] {
+      &:first-child {
+        > .c-input-date,
+        > .c-input-box {
+          &:after {
+            right: -12px;
+          }
+        }
+      }
+    }
+  }
+
+  .c-file-field {
+    flex-wrap: wrap;
+    .c-input-file-group {
+      flex: 1 1 auto;
+      max-width: 100%;
+    }
+    > .c-input-file-list {
+      flex-basis: 100%;
+    }
+  }
+  .c-rdochk,
+  .c-chkbox {
+    font-size: 0;
+    > .chk-label {
+      display: table;
+    }
+  }
+  .c-input-mark {
+    .is-rate {
+      @include position(null, 50%);
+      bottom: 0;
+    }
+  }
+  .o-chkbox {
+    .chk-label {
+      margin: 0 auto;
+    }
+  }
+
+  .input-button {
+    .c-btn {
+      &.input-btn {
+        > span {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .c-input-download {
+    &.input-view .btn-download {
+      padding-bottom: 0;
+    }
+  }
+
+  .c-reg-sms-field {
+    .template {
+      .input-list {
+        label {
+          min-width: $input-label-min-width01;
+        }
+        .row:last-of-type {
+          padding-bottom: 60px;
+        }
+      }
+    }
+    .send-list {
+      .input-list {
+        flex-direction: column;
+
+        > .row {
+          justify-content: flex-end;
+          > .col {
+            flex: 1 1 auto;
+          }
+        }
+        .row:last-of-type {
+          justify-content: flex-end;
+          .col-6 {
+            max-width: 50%;
+          }
+        }
+      }
+
+      .total-cnt {
+        height: 40px;
+        .c-input-unit {
+          input[type='text'] {
+            min-width: auto;
+          }
+        }
+      }
+    }
+    .list-send-person {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.row {
+  &.c-file-row {
+    max-width: 100%;
+    .c-input-download {
+      &.input-view {
+        width: auto;
+        max-width: 100%;
+        overflow: hidden;
+      }
+    }
+  }
+}

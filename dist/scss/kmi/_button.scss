@@ -1,0 +1,119 @@
+/*
+	button
+*/
+
+.buttons {
+  display: flex;
+}
+
+button.c-btn,
+a.c-btn,
+.c-btn {
+  padding: 9px 20px;
+  border-radius: $radius-8;
+  text-align: center;
+  color: $color-white-1;
+  transition: opacity 0.3s;
+  border-radius: $radius-8;
+  background-color: $color-navy-1;
+  display: inline-block;
+  line-height: 20px;
+  vertical-align: top;
+  //cursor: pointer;
+
+  > span {
+    position: relative;
+    text-align: center;
+  }
+  + .c-btn {
+    margin: {
+      left: $gap-12;
+    }
+  }
+
+  &:not(:disabled) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  // + outline btn
+  $btn-outline: (
+    blue-1: $color-blue-1,
+    navy-1: $color-navy-1,
+    gray-1: $color-gray-1,
+    gray-2: $color-gray-2,
+    gray-10: $color-gray-10,
+    gray-3: $color-gray-3,
+    gray-6: $color-gray-6,
+    green-1: $color-green-1,
+    blue-2: $color-blue-2,
+    blue-3: $color-blue-3,
+    blue-4: $color-blue-4,
+  );
+  @each $class, $line in $btn-outline {
+    &.is-outline-#{$class} {
+      border-width: 1px;
+      border-style: solid;
+      background-color: transparent;
+      border-color: $line;
+      color: $line;
+
+      &:not(:disabled) {
+        &:hover {
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+
+  &.is-outline-blue-1 {
+    font-weight: 500;
+    &.type02 {
+      background-color: $color-gray-9;
+    }
+  }
+}
+
+a,
+button {
+  &.c-btn {
+    &:disabled {
+      background-color: $color-white-1;
+      border-color: $color-gray-4;
+      color: $color-gray-4;
+      &:hover {
+        cursor: no-drop;
+      }
+    }
+  }
+  &.btn-is-disable {
+    background-color: $color-white-1;
+    border-color: $color-gray-4;
+    color: $color-gray-4;
+    &:hover {
+      cursor: no-drop;
+    }
+  }
+}
+
+.c-btn-refresh {
+  font-size: 0;
+  width: 38px;
+  height: 38px;
+  background-color: $color-white-1;
+  border-radius: $radius-8;
+  border: 1px solid $color-gray-4;
+  > span {
+    @include hide;
+    background: url($image-ico-path + 'ico_refresh.svg');
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+  }
+}
+
+// + 조회 버튼
+.c-btn-inquiry {
+  background-color: $color-navy-1;
+}

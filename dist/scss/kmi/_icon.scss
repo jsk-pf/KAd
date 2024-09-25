@@ -1,0 +1,48 @@
+$ico-sprite01-res: 10; // 첫번째 x
+.time-1 {
+  background-position: 0 #{-$result}px;
+}
+
+$ico-type01-size: 28px;
+$ico-type01-bg-size: 1226px auto;
+
+$color-list: (map, home, profile, arrow01, arrow02, arrow03, arrow04, date01, date02, document-search, menu, bell, cog, user, info01, info02, listsearch, search, add01, add02, check01, check02, close, download, upload, time, nav01, nav02, nav03, nav04, nav05);
+
+.ico-type01 {
+  $size: 28px !default;
+  background: {
+    image: url($image-ico-sprite01);
+    size: 1226px auto;
+    repeat: no-repeat;
+  }
+  width: $size;
+  height: $size;
+  display: inline-block;
+  @include is-blind;
+
+  @each $icon in $color-list {
+    $ico-sprite01-res: $ico-sprite01-res + 38;
+
+    &.t-i-#{$icon} {
+      background-position: #{-$ico-sprite01-res}px $ico-sprite01-t-y;
+    }
+  }
+}
+
+.ico-search {
+  background: url($image-ico-path + 'ico_search_01.svg') center/100% no-repeat;
+  width: 17px;
+  height: 17px;
+}
+
+.ico-c-help {
+  background: {
+    image: url($image-ico-path + 'ico-help.svg');
+    size: 20px auto;
+    repeat: no-repeat;
+  }
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  @include is-blind;
+}

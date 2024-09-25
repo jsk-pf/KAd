@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검진 제안서 상세 보기</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+
+            <!-- Contents -->
+            <section class="contents">
+                <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupDtlChkupProposal01"><span>Popup Sample</span></button>
+
+                <!-- [ layer popup] -->
+                <div class="c-layer-popup type05 modal fade" id="popupDtlChkupProposal01" role="dialog" aria-labelledby="popupDtlChkupProposalLabel01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- modal Header -->
+                            <div class="modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupDtlChkupProposalLabel01">검진 제안서 상세 보기</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업
+                                        닫기</span></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">대표 고객사 기본정보</h5>
+                                    </div>
+                                    <div class="c-article input-list">
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal01_01">고객사명</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal01_01" value="삼성전자" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal01_02">대표자명</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal01_02" value="홍길동" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal01_03">사업자 등록번호</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal01_03" value="106-88-65257" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">관계 고객사 기본정보</h5>
+                                    </div>
+                                    <div class="c-article input-list">
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal02_01">관계 고객사 기본정보</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal02_01" value="삼성전자" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal02_02">대표자명</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal02_02" value="홍길동" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal02_03">사업자 등록번호</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal02_03" value="106-88-65257" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal02_04">담당자명</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal02_04" value="106-88-65257" readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal02_05">소속부서</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal02_05" value="직원만족팀" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label>연락처</label>
+                                                <div class="row inner c-input-phone-group">
+                                                    <div class="col input-phone-01">
+                                                        <input type="text" class="c-input" title="휴대폰 전화번호 잎 3자리 입력" value="010" readonly="readonly">
+                                                    </div>
+                                                    <div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 중간 4자리 입력" readonly="readonly"></div>
+                                                    <div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 끝 3자리 입력" readonly="readonly"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">검진제안정보</h5>
+                                    </div>
+                                    <div class="c-article input-list">
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal03_01">제안서명</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal03_01" value="정밀 종합검진 일반형" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal03_02">검진가격</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputDtlProposal03_02" value="500,000" readonly="readonly">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal03_03">제안서 상태</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal03_03" value="진행중" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal03_04">검진연도</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal03_04" value="2022" readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal03_05">검진대상인원</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputDtlProposal03_05" value="500,000" readonly="readonly">
+                                                    <span class="unit">명</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="row inner c-input-date-group">
+                                                    <div class="col-6 label-input">
+                                                        <label for="inputDtlProposal03_06">제안기간 (시작)</label>
+                                                        <div class="c-input-date">
+                                                            <input type="text" class="c-input" id="inputDtlProposal03_06" placeholder="YYYY-MM-DD" value="2022-06-11" readonly="readonly">
+                                                            <span><i class="date-btn"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 label-input">
+                                                        <label for="inputDtlProposal03_07">제안기간 (종료)</label>
+                                                        <div class="c-input-date">
+                                                            <input type="text" class="c-input" id="inputDtlProposal03_07" placeholder="YYYY-MM-DD" value="2022-06-11" readonly="readonly">
+                                                            <span><i class="date-btn"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal03_08">상품구분</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal03_08" value="신규" readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal03_09">검진구분</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal03_09" value="종합검진" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal03_10">공단비용차감</label>
+                                                <input type="text" class="c-input" id="inputDtlProposal03_10" value="종합검진" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlProposal03_11">예상매출</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputDtlProposal03_11" value="9,000,000" readonly="readonly">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">검진제안 요청사항</h5>
+                                    </div>
+                                    <div class="c-article input-list c-textarea-article">
+                                        <div class="row">
+                                            <div class="col label-input">
+                                                <div class="c-txtarea-field">
+                                                    <textarea class="c-txt-area" readonly="readonly">
+삼성전자 임직원 만을 위한 정밀종합검진 프로그램 입니다.
+필수적인 건강검진 프로그램으로 각종 질환의 조기 발견 및 위험요인 평가, 성인병 예방, 건강유지에 필요한 검사 입니다.
+삼성전자 임직원 만을 위한 정밀종합검진 프로그램 입니다.
+필수적인 건강검진 프로그램으로 각종 질환의 조기 발견 및 위험요인 평가, 성인병 예방, 건강유지에 필요한 검사 입니다.
+삼성전자 임직원 만을 위한 정밀종합검진 프로그램 입니다.
+필수적인 건강검진 프로그램으로 각종 질환의 조기 발견 및 위험요인 평가, 성인병 예방, 건강유지에 필요한 검사 입니다.
+			</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="c-title-field">
+                                                <h5 class="title-md">검진항목</h5>
+                                                <div class="buttons">
+                                                    <button type="button" class="c-btn is-outline-blue-1"><span>미리보기</span></button>
+                                                </div>
+                                            </div>
+                                            <div class="row c-card-article type02">
+                                                <div class="col">
+                                                    <div class="c-card type05">
+                                                        <dl>
+                                                            <dt class="txt">전체</dt>
+                                                            <dd class="cnt"><span>512</span></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="c-card type05">
+                                                        <dl>
+                                                            <dt class="txt">공통검사</dt>
+                                                            <dd class="cnt"><span>12</span></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="c-card type05">
+                                                        <dl>
+                                                            <dt class="txt">선택검사 1</dt>
+                                                            <dd class="cnt"><span>1</span><span class="slash">/</span><span>1</span></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="c-card type05">
+                                                        <dl>
+                                                            <dt class="txt">선택검사 2</dt>
+                                                            <dd class="cnt"><span>2</span><span class="slash">/</span><span>3</span></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="c-card type05">
+                                                        <dl>
+                                                            <dt class="txt">선택검사 3</dt>
+                                                            <dd class="cnt"><span>5</span><span class="slash">/</span><span>5</span></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="c-card type05">
+                                                        <dl>
+                                                            <dt class="txt">선택검사 4</dt>
+                                                            <dd class="cnt"><span>-</span></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="c-card type05">
+                                                        <dl>
+                                                            <dt class="txt">선택검사 5</dt>
+                                                            <dd class="cnt"><span>-</span></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-article input-list c-textarea-article">
+                                                <div class="row">
+                                                    <div class="col label-input">
+                                                        <label for="inpuTxtA01" class="sr-only">상품 정보 설명</label>
+                                                        <div class="c-txtarea-field">
+                                                            <textarea id="inpuTxtA01" class="c-txt-area" readonly="readonly">
+(95개) : 장비검사-상복부초음파(간,담낭, 췌장,신장 등) / 장비- 흉부X-선(정면) / 장비-유방X-RAY(여)
+선택검사1 : 위장조형촬영 / 위내시경(수면) / 위내시경(비수면)  중 택 1선택검사2 : NK
+세포활성도검사 / 알레르기(흡인성)+알래르기(식이성) / 추가선택 - CT촬영(흉부CT,요추CT,경추CT 택 1) / 심장초음파 / 유방초음파(여) / 유전자검사(일반5대질환) / 대장암검사  중 택 3
+																	</textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="c-title-field">
+                                                <h5 class="title-md">검진기관 지역설정</h5>
+                                                <div class="c-tab-field">
+                                                    <ul class="c-tab-list" role="tablist">
+                                                        <li role="tab" class="on"><a href="javascript:;">전체</a></li>
+                                                        <li role="tab"><a href="javascript:;">서울</a></li>
+                                                        <li role="tab"><a href="javascript:;">경기도</a></li>
+                                                        <li role="tab"><a href="javascript:;">인천</a></li>
+                                                        <li role="tab"><a href="javascript:;">부산</a></li>
+                                                        <li role="tab"><a href="javascript:;">대구</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="c-table-field c-tbl-vertical-field type02">
+                                                <div class="c-table striped c-vertical-scroll">
+                                                    <table class="table">
+                                                        <caption> 검진기관 지역 : 지역, 검진기관, 결제사용 구분, 정산가격, 진행상태, 가능에 대한 목록 </caption>
+                                                        <colgroup>
+                                                            <col>
+                                                            <col>
+                                                            <col>
+                                                            <col>
+                                                            <col>
+                                                            <col>
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">지역</th>
+                                                                <th scope="col" style="width: atuo">검진기관</th>
+                                                                <th scope="col">결제사용 구분</th>
+                                                                <th scope="col">정산가격</th>
+                                                                <th scope="col">진행상태</th>
+                                                                <th scope="col">가능</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>서울</td>
+                                                                <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                <td>온라인결제</td>
+                                                                <td><span>270,000</span>원</td>
+                                                                <td>진행중</td>
+                                                                <td>
+                                                                    <button type="button" class="c-btn is-outline-blue-1"><span>세부 보기</span></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>서울</td>
+                                                                <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                <td>온라인결제</td>
+                                                                <td><span>270,000</span>원</td>
+                                                                <td>진행중</td>
+                                                                <td>
+                                                                    <button type="button" class="c-btn is-outline-blue-1"><span>세부 보기</span></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>서울</td>
+                                                                <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                <td>온라인결제</td>
+                                                                <td><span>270,000</span>원</td>
+                                                                <td>진행중</td>
+                                                                <td>
+                                                                    <button type="button" class="c-btn is-outline-blue-1"><span>세부 보기</span></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>서울</td>
+                                                                <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                <td>온라인결제</td>
+                                                                <td><span>270,000</span>원</td>
+                                                                <td>진행중</td>
+                                                                <td>
+                                                                    <button type="button" class="c-btn is-outline-blue-1"><span>세부 보기</span></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>서울</td>
+                                                                <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                <td>온라인결제</td>
+                                                                <td><span>270,000</span>원</td>
+                                                                <td>진행중</td>
+                                                                <td>
+                                                                    <button type="button" class="c-btn is-outline-blue-1"><span>세부 보기</span></button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <!-- paging -->
+                                                <div class="c-tbl-paging">
+                                                    <p class="page-info">Total Page <em>01</em> page</p>
+                                                    <nav class="c-pagination">
+                                                        <ul>
+                                                            <li>
+                                                                <a class="page-link" href="javascript:;" aria-label="처음">
+                                                                    <span class="is-blind p-first">처음</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="page-link" href="javascript:;" aria-label="이전">
+                                                                    <span class="is-blind p-prev">이전</span>
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="page-link is-active" href="javascript:;">1</a></li>
+                                                            <li><a class="page-link" href="javascript:;">2</a></li>
+                                                            <li><a class="page-link" href="javascript:;">3</a></li>
+                                                            <li><a class="page-link" href="javascript:;">4</a></li>
+                                                            <li><a class="page-link" href="javascript:;">5</a></li>
+                                                            <li>
+                                                                <a class="page-link" href="javascript:;" aria-label="다음">
+                                                                    <span class="is-blind p-next">다음</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="page-link" href="javascript:;" aria-label="끝">
+                                                                    <span class="is-blind p-end">끝</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- // modal body -->
+                            <div class="modal-footer type02">
+                                <div class="buttons">
+                                    <button class="c-btn bg-navy-1" data-dismiss="modal"><span>확인</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- = type05  -->
+
+                    <!-- [ // layer popup] -->
+                </div>
+            </section>
+
+
+        </div>
+        <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="../../js/common.js"></script>
+
+        <script>
+            $(function() {
+                // Guide전용 스크립트
+                $('[data-target]').trigger('click');
+            });
+        </script>
+</body>
+
+</html>

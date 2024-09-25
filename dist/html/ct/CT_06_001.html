@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객사 조회 및 등록</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body> <!-- [ mod(220602) ] -->
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+    <!-- [ // mod(220602) ] -->
+    <div id="container"> <!-- Side Navigation -->
+        <nav id="sideNav">
+            <!-- Sidebar -->
+            <div class="sidenav-wrapper">
+                <div class="top-area">
+                    <div class="top-logo">
+                        <h1 class="logo">
+                            <!-- [ mod(230202) ] -->
+                            <a href="javascript:;"><img src="../../images/logo/logo_01.svg" alt="WITH KMI"></a>
+                        </h1>
+                    </div>
+                    <p style="color:#fff">UI개발 화면 일부 목록</p>
+                </div>
+                <div class="sidebar-wrap">
+                    <ul class="sidebar-menu">
+                        <li><a href="../vgt/VGT_01_001.html">메인</a></li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>회원가입/로그인</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../jo/JO_01_002.html" target="_blank">고객사 회원가입</a></li>
+                                <li><a href="../jo/JO_02_001.html" target="_blank">협력병원 회원가입</a></li>
+                                <li><a href="../LO/LO_01_001.html">로그인</a></li>
+                                <li><a href="../LO/LO_01_001_popup01.html">비밀번호 재설정(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진예약현황</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cs/CS_01_001.html">예약 진행 현황</a></li>
+                                <li><a href="../cs/CS_01_001_03_popup.html" target="_blank">연기검사 조회(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진상품관리</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../pi/PI_01_001.html">검진상품제안관리</a></li>
+                                <li><a href="../pi/PI_02_001.html">검진상품 조회</a></li>
+                                <li><a href="../pi/PI_01_001_1.html" target="_blank">검진제안서 상세보기(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002.html" target="_blank">검진제안서 등록(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002_1.html" target="_blank">검진제안서 불러오기(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진예약</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cs/CS_01_001.html">예약 진행 현황</a></li>
+                                <li><a href="../pi/CS_01_001_03_popup.html" target="_blank">연기검사 조회 (팝업)</a></li>
+                                <li><a href="../pi/CS_01_001_04_popup.html" target="_blank">메모목록 (팝업)</a></li>
+                                <li><a href="../pi/PI_01_001_1.html" target="_blank">검진제안서 상세보기(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002.html" target="_blank">검진제안서 등록(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002_1.html" target="_blank">검진제안서 불러오기(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>계정관리</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cjo/CJO_01_001.html">계정관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- [ mod(230130) ] -->
+            <div class="btm-info">
+                <p class="time">오전 07:00 ~ 오후 18:00</p>
+                <p class="tel">1533-0505</p>
+                <div class="btm-info"> (토요일 07:00~12:30)<br> (일/공휴일 휴무) </div>
+            </div>
+            <!-- [ // mod(230130) ] -->
+            <!-- // Side Navigation -->
+        </nav>
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper"> <!-- Header-->
+            <header class="header">
+                <div class="wrap">
+                    <div class="top-left">
+                        <button class="sidebar-toggle" type="button">
+                            <span class="ico-type01 t-i-menu is-blind">사이드메뉴</span>
+                        </button>
+                        <div class="total-search">
+                            <i class="ico-search"></i>
+                            <input type="text" placeholder="검색" class="search-input">
+                            <!-- - 검색어 입력에 따른 연관 검색어 노출 처리 -->
+                            <div class="search-related-field" style="display: none">
+                                <ul class="search-list">
+                                    <li><a href="javascript:;">검진정책관리</a></li>
+                                    <li><a href="javascript:;">검진상품관리</a></li>
+                                    <li><a href="javascript:;">검진항목관리</a></li>
+                                    <li class="on"><a href="javascript:;">검진상품승인관리</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-right">
+                        <!-- [ mod(221031) ]
+				- 부서, 로그아웃 버튼 추가
+			-->
+                        <div class="user-team">운영지원팀</div>
+                        <div class="user-infobox">
+                            <a href="javascript:;" role="button" class="c-top-usercontrol btn-open-usercontrol">
+                                <div class="user-name">
+                                    <p>홍길동님</p>
+                                </div>
+                                <div class="user-img"><img src="../../images/ico/ico_user_profile.svg" alt=""></div>
+                            </a>
+                            <div class="user-control">
+                                <ul>
+                                    <li><a href="javascript:;">로그아웃</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- // Header--> <!-- Contents -->
+            <section class="contents">
+                <!-- [ mod(220607) ] -
+					- bread crumb 추가 반영 (design) 및 .c-title-field 위치 변경
+				-->
+                <div class="c-panel top_head">
+                    <nav class="c-breadcrumb" aria-label="breadcrumb">
+                        <ol class="breadcrumb-list">
+                            <li>공지관리</li>
+                            <li class="on" aria-current="page">공지관리</li>
+                        </ol>
+                    </nav>
+                    <div class="c-title-field">
+                        <h1 class="title-lg">공지관리</h1>
+                        <div class="buttons">
+                            <button class="c-btn bg-navy-1"><span>조회</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-panel">
+                    <div class="c-article input-list">
+                        <div class="row">
+                            <!-- for/id 매칭 입력 필수 -->
+                            <div class="col-3 label-input">
+                                <label for="noticeSmsMng01_01">고객사</label>
+                                <div class="c-input-search">
+                                    <input type="text" id="noticeSmsMng01_01">
+                                    <button type="button" class="btn-search"><span class="skip">검색</span></button>
+                                </div>
+                            </div>
+                            <div class="col-3 label-input">
+                                <div class="row inner c-input-date-group">
+                                    <div class="col-6 label-input">
+                                        <label class="c-label-txt" for="noticeSmsMng01_02">발송일 (시작)</label>
+                                        <div class="c-input-date">
+                                            <input type="text" class="c-input" placeholder="YYYY-MM-DD" value="" title="시작일 선택" id="noticeSmsMng01_02">
+                                            <span><i class="date-btn"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 label-input">
+                                        <label class="c-label-txt" for="noticeSmsMng01_03">발송일 (종료)</label>
+                                        <div class="c-input-date">
+                                            <input type="text" class="c-input" placeholder="YYYY-MM-DD" value="" title="종료일 선택" id="noticeSmsMng01_03">
+                                            <span><i class="date-btn"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 label-input">
+                                <label for="noticeSmsMng01_04">검색어 구분</label>
+                                <div class="c-select">
+                                    <select title="항목 선택" id="noticeSmsMng01_04">
+                                        <option value="" selected>선택</option>
+                                        <option value="">템플릿명</option>
+                                        <option value="">발송자명</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-3 label-input">
+                                <label for="noticeSmsMng01_05">검색어</label>
+                                <input type="text" class="c-input" id="noticeSmsMng01_05" placeholder="검색">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-panel">
+                    <div class="c-table-field">
+                        <!-- c-table -->
+                        <div class="c-table striped sorting tbl-send-sms-result">
+                            <table class="table">
+                                <!-- [ mod(220607) ]
+										- caption 추가
+									-->
+                                <caption> 공지관리 목록 :No, 발송일, 고객사 명, 템플릿명, 발송건수, 발송자, 비고에 대한 정보 </caption>
+                                <colgroup>
+                                    <col style="width: 100px">
+                                    <col class="date">
+                                    <col>
+                                    <col style="width: 180px">
+                                    <col style="width: 100px">
+                                    <col style="width: 180px">
+                                    <col style="width: 140px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">발송일</th>
+                                        <th scope="col">고객사명</th>
+                                        <th scope="col">템플릿명</th>
+                                        <th scope="col">발송건수</th>
+                                        <th scope="col">발송자</th>
+                                        <th scope="col">비고</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2022-11-11</td>
+                                        <td class="ta-l">동우디지털트윈 선릉롯데골드로즈2관리사무소동우디지털트윈 선릉롯데골드로즈2관리사무소</td>
+                                        <td class="ta-l">채용검진 시작</td>
+                                        <td>3,000건</td>
+                                        <td>김기영</td>
+                                        <td>
+                                            <button type="button" class="c-bs-link"><span>발송결과보기</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>2022-11-11</td>
+                                        <td class="ta-l">동우디지털트윈 선릉롯데골드로즈2관리사무소</td>
+                                        <td class="ta-l">채용검진 시작</td>
+                                        <td>3,000건</td>
+                                        <td>김기영</td>
+                                        <td>
+                                            <button type="button" class="c-bs-link"><span>발송결과보기</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>2022-11-11</td>
+                                        <td class="ta-l">동우디지털트윈 선릉롯데골드로즈2관리사무소</td>
+                                        <td class="ta-l">채용검진 시작</td>
+                                        <td>3,000건</td>
+                                        <td>김기영</td>
+                                        <td>
+                                            <button type="button" class="c-bs-link"><span>발송결과보기</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>2022-11-11</td>
+                                        <td class="ta-l">동우디지털트윈 선릉롯데골드로즈2관리사무소</td>
+                                        <td class="ta-l">채용검진 시작</td>
+                                        <td>3,000건</td>
+                                        <td>김기영</td>
+                                        <td>
+                                            <button type="button" class="c-bs-link"><span>발송결과보기</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>2022-11-11</td>
+                                        <td class="ta-l">동우디지털트윈 선릉롯데골드로즈2관리사무소</td>
+                                        <td class="ta-l">채용검진 시작</td>
+                                        <td>3,000건</td>
+                                        <td>김기영</td>
+                                        <td>
+                                            <button type="button" class="c-bs-link"><span>발송결과보기</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>2022-11-11</td>
+                                        <td class="ta-l">동우디지털트윈 선릉롯데골드로즈2관리사무소</td>
+                                        <td class="ta-l">채용검진 시작</td>
+                                        <td>3,000건</td>
+                                        <td>김기영</td>
+                                        <td>
+                                            <button type="button" class="c-bs-link"><span>발송결과보기</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>2022-11-11</td>
+                                        <td class="ta-l">동우디지털트윈 선릉롯데골드로즈2관리사무소</td>
+                                        <td class="ta-l">채용검진 시작</td>
+                                        <td>3,000건</td>
+                                        <td>김기영</td>
+                                        <td>
+                                            <button type="button" class="c-bs-link"><span>발송결과보기</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>2022-11-11</td>
+                                        <td class="ta-l">동우디지털트윈 선릉롯데골드로즈2관리사무소</td>
+                                        <td class="ta-l">채용검진 시작</td>
+                                        <td>3,000건</td>
+                                        <td>김기영</td>
+                                        <td>
+                                            <button type="button" class="c-bs-link"><span>발송결과보기</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>2022-11-11</td>
+                                        <td class="ta-l">동우디지털트윈 선릉롯데골드로즈2관리사무소</td>
+                                        <td class="ta-l">채용검진 시작</td>
+                                        <td>3,000건</td>
+                                        <td>김기영</td>
+                                        <td>
+                                            <button type="button" class="c-bs-link"><span>발송결과보기</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>2022-11-11</td>
+                                        <td class="ta-l">동우디지털트윈 선릉롯데골드로즈2관리사무소</td>
+                                        <td class="ta-l">채용검진 시작</td>
+                                        <td>3,000건</td>
+                                        <td>김기영</td>
+                                        <td>
+                                            <button type="button" class="c-bs-link"><span>발송결과보기</span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- c-tbl-paging -->
+                        <div class="c-tbl-paging">
+                            <p class="page-info">Total Page <em>01</em> page</p>
+                            <nav class="c-pagination">
+                                <ul>
+                                    <li>
+                                        <a class="page-link" href="javascript:;" aria-label="처음">
+                                            <span class="is-blind p-first">처음</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="page-link" href="javascript:;" aria-label="이전">
+                                            <span class="is-blind p-prev">이전</span>
+                                        </a>
+                                    </li>
+                                    <li><a class="page-link is-active" href="javascript:;">1</a></li>
+                                    <li><a class="page-link" href="javascript:;">2</a></li>
+                                    <li><a class="page-link" href="javascript:;">3</a></li>
+                                    <li><a class="page-link" href="javascript:;">4</a></li>
+                                    <li><a class="page-link" href="javascript:;">5</a></li>
+                                    <li>
+                                        <a class="page-link" href="javascript:;" aria-label="다음">
+                                            <span class="is-blind p-next">다음</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="page-link" href="javascript:;" aria-label="끝">
+                                            <span class="is-blind p-end">끝</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="../../js/common.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약 내역 &gt; 예약 진행 현황</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <!-- [ mod(220602) ] -->
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+    <!-- [ // mod(220602) ] -->
+
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper type-horizontal type-callcenter type-platformsystem"><!-- Contents -->
+            <section class="contents">
+                <!-- [ mod(230519) ] -
+		- bread crumb 추가 반영 (design) 및 .c-title-field 위치 변경
+		- bread crumb 삭제
+	-->
+                <div class="c-panel top_head">
+                    <div class="c-title-field">
+                        <h1 class="title-lg">검진 예약 관리</h1>
+                    </div>
+                </div>
+                <!-- [ // mod(230519) ] -->
+                <div class="c-panel reservation-dtl-status-layout">
+                    <!-- + left-wrap -->
+                    <div class="col in-layout left-wrap">
+                    </div>
+                    <!-- + right-wrap -->
+                    <div class="col in-layout right-wrap">
+                        <div class="c-inner">
+                            <!-- c-panel -->
+                            <div class="c-panel">
+                                <div class="buttons justify-cont-e">
+                                    <button class="c-btn is-outline-navy-1" type="button"><span>취소하기</span></button>
+                                    <button class="c-btn is-outline-green-1" type="button"><span>변경하기</span></button>
+                                    <button class="c-btn bg-gray-10" type="button"><span>초기화</span></button>
+                                </div>
+                                <div class="c-field justify-cont-e">
+                                    <div class="c-tab-field tab-scroll">
+                                        <ul class="c-tab-list" role="tablist">
+                                            <li class="on" role="presentation">
+                                                <a id="tabList_01" href="javascript:;" role="tab" aria-controls="tabContent_01" aria-selected="true">대상자 정보</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="c-tab-contents">
+                                    <div class="tab-cont on" id="tabContent_01" role="tabpanel" aria-labelledby="tabList_01">
+                                        <!-- [ mod(230712) ]
+							- 수정, 저장 위치
+						-->
+                                        <div class="buttons justify-cont-e">
+                                            <button class="c-btn is-outline-navy-1"><span>수정</span></button>
+                                            <button class="c-btn bg-blue-3"><span>저장</span></button>
+                                        </div>
+                                        <div class="c-panel">
+                                            <!-- 대상자 정보 수정  -->
+                                            <div class="c-article input-list type03">
+                                                <div class="row">
+                                                    <div class="col-3 label-input">
+                                                        <label for="rosterInfo_supGenderCd">고객사명</label>
+                                                        <input type="text" class="c-input" id="rosterInfo_supGenderCd" value="로스트아크로스트아크로스트아크" />
+                                                    </div>
+                                                    <div class="col-3 label-input">
+                                                        <label for="rosterInfo_supName">임직원 이름</label>
+                                                        <div class="c-input-mark">
+                                                            <input type="text" class="c-input" id="rosterInfo_supName" value="홍길동홍길동홍길동홍길동홍길동" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 label-input">
+                                                        <label for="rosterInfo_supBirthday">임직원 생년월일</label>
+                                                        <div class="c-input">
+                                                            <input type="text" class="c-input" id="rosterInfo_supBirthday" value="850102" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 label-input">
+                                                        <label for="rosterInfo_supDomestic">임직원 부서</label>
+                                                        <input type="text" class="c-input" id="rosterInfo_supDomestic" value="kmi" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-3 label-input">
+                                                        <label for="inputRsvUserInfo02_01">이름</label>
+                                                        <div class="c-input-mark">
+                                                            <input type="text" class="c-input" id="inputRsvUserInfo02_01" value="홍길동홍길동홍길동홍길동홍길동" />
+                                                            <div class="is-rate"><span class="is-orange-1">VIP</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 label-input">
+                                                        <label for="inputRsvUserInfo02_02">생년월일</label>
+                                                        <div class="c-input">
+                                                            <input type="text" class="c-input" id="inputRsvUserInfo02_02" value="850102" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 label-input">
+                                                        <label for="inputRsvUserInfo02_03">성별</label>
+                                                        <input type="text" class="c-input" id="inputRsvUserInfo02_03" value="남" />
+                                                    </div>
+                                                    <div class="col-3 label-input">
+                                                        <label for="inputRsvUserInfo02_04">국적</label>
+                                                        <input type="text" class="c-input" id="inputRsvUserInfo02_04" value="내국인" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-3 label-input">
+                                                        <label for="inputRsvUserInfo02_05">검진구분</label>
+                                                        <input type="text" class="c-input" id="inputRsvUserInfo02_05" value="종합검진 / 특수검진" />
+                                                    </div>
+                                                    <div class="col-3 label-input">
+                                                        <label for="inputRsvUserInfo02_06">임직원과의 관계</label>
+                                                        <input type="text" class="c-input" id="inputRsvUserInfo02_06" value="본인" />
+                                                    </div>
+                                                    <div class="col-3 label-input">
+                                                        <label class="c-label-txt" for="inputRsvUserInfo02_07">휴대폰 전화번호</label>
+                                                        <input type="text" class="c-input" id="inputRsvUserInfo02_07" value="01012341234" />
+                                                    </div>
+                                                    <div class="col-3 label-input">
+                                                        <label class="c-label-txt" for="inputRsvUserInfo02_08">전화번호</label>
+                                                        <input type="text" class="c-input" id="inputRsvUserInfo02_08" title="휴대폰 전화번호 앞 3자리 입력" value="01012341234" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-3 label-input">
+                                                        <label class="c-label-txt" for="inputRsvUserInfo02_09">회사지원금</label>
+                                                        <div class="c-input-unit">
+                                                            <input type="text" class="c-input" id="inputRsvUserInfo02_09" value="300,000" />
+                                                            <span class="unit">원</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 label-input">
+                                                        <label class="c-label-txt" for="inputRsvUserInfo02_10">공단대상자</label>
+                                                        <input type="text" class="c-input" id="inputRsvUserInfo02_10" value="대상자" />
+                                                    </div>
+                                                    <div class="col-3 label-input">
+                                                        <label class="c-label-txt" for="inputRsvUserInfo02_11">특수검진</label>
+                                                        <input type="text" class="c-input" id="inputRsvUserInfo02_11" value="대상자" />
+                                                    </div>
+                                                    <div class="col-3 label-input">
+                                                        <label class="c-label-txt" for="inputRsvUserInfo02_12">출장검진</label>
+                                                        <div class="c-input">
+                                                            <input type="text" class="c-input" id="inputRsvUserInfo02_12" value="대상자 아님" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6 label-input">
+                                                        <label class="c-label-txt">이메일</label>
+                                                        <div class="row inner c-input-email-group">
+                                                            <div class="col-6 input-email-01">
+                                                                <input type="text" class="c-input" title="이메일 계정입력" value="test" aria-label="이메일 계정입력" />
+                                                            </div>
+                                                            <div class="col-6 input-email-02">
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <input type="text" class="c-input" title="이메일 도메인 입력" value="hanmail.net" aria-label="이메일 도메인 입력" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 label-input">
+                                                        <label class="c-label-txt">주소</label>
+                                                        <div class="row inner c-input-address-group">
+                                                            <div class="col input-addr-01">
+                                                                <input type="text" class="c-input" title="우편번호 입력" value="1234" placeholder="우편번호" />
+                                                            </div>
+                                                            <div class="col input-addr-02"><input type="text" class="c-input" title="주소 입력" /></div>
+                                                            <div class="col input-addr-03">
+                                                                <button type="button" class="c-btn input-btn"><span>검색</span></button>
+                                                            </div>
+                                                            <div class="col input-addr-04">
+                                                                <input type="text" class="c-input" id="detailAddress" title="상세주소 입력" value="광화문 빌딩 2층" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- [ mod(230519) ]
+														+ 클래스 추가 col-w-full
+														-->
+                                                    <div class="col label-input col-w-full">
+                                                        <label for="rosterInfo_note">특이사항</label>
+                                                        <div class="c-txtarea-field">
+                                                            <textarea id="rosterInfo_note" class="c-txt-area ta-r-only type03"> </textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Contents -->
+        </div>
+
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script>
+        targetMemoAccordion();
+    </script>
+</body>
+
+</html>

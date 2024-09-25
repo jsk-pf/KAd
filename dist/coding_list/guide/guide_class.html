@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Layout Guide</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- guide css -->
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../../css/style.css">
+	<script src="../../lib/jquery/jquery.min.js"></script>
+</head>
+<body>
+	<div id="wrap" class="coding_guide">
+		<h1 class="h1_guide">공통 클래스</h1>
+		<div class="title-box">
+			<h2 class="h2_guide">공통</h2>
+		</div>
+		<div class="guide_descbox">
+			<h3 class="g-title"></h3>
+			<div class="inner_desc">
+				<ul>
+					<li>스타일 적용 공통 클래스 사용</li>
+					<li>태그 무관</li>
+					<li>하단 리스트 이외의 정렬 등으로 인한 클래스 사용 필요 시 bootstrap 내장 클래스 응용</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- ===================================== INPUT -->
+		<div class="title-box">
+			<h2 class="h2_guide">Class</h2>
+		</div>
+
+		<!-- [COLOR] -->
+		<h3 class="h3_guide">color</h3>
+		<div class="d_desc code" style="background-color: #ddd">
+
+			<!-- ? view -->
+			<p class="is-white-1">is-white-1</p>
+			<p class="is-white-2">is-white-2</p>
+			<p class="is-black-1">is-black-1</p>
+			<p class="is-black-2">is-black-2</p>
+			<p class="is-blue-1">is-blue-1</p>
+			<p class="is-navy-1">is-navy-1</p>
+			<p class="is-navy-2">is-navy-2</p>
+			<p class="is-orange-1">is-orange-1</p>
+			<p class="is-gray-1">is-gray-1</p>
+			<p class="is-gray-2">is-gray-2</p>
+			<p class="is-gray-3">is-gray-3</p>
+			<p class="is-gray-4">is-gray-4</p>
+			<p class="is-gray-5">is-gray-5</p>
+			<p class="is-gray-6">is-gray-6</p>
+			<p class="is-gray-7">is-gray-7</p>
+			<p class="is-gray-8">is-gray-8</p>
+			<p class="is-gray-9">is-gray-9</p>
+			<p class="is-gray-10">is-gray-10</p>
+
+			<!-- ? // view -->
+
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<p class="is-white-1">is-white-1</p>
+				<p class="is-white-2">is-white-2</p>
+				<p class="is-black-1">is-black-1</p>
+				<p class="is-black-2">is-black-2</p>
+				<p class="is-blue-1">is-blue-1</p>
+				<p class="is-navy-1">is-navy-1</p>
+				<p class="is-navy-2">is-navy-2</p>
+				<p class="is-orange-1">is-orange-1</p>
+				<p class="is-gray-1">is-gray-1</p>
+				<p class="is-gray-2">is-gray-2</p>
+				<p class="is-gray-3">is-gray-3</p>
+				<p class="is-gray-4">is-gray-4</p>
+				<p class="is-gray-5">is-gray-5</p>
+				<p class="is-gray-6">is-gray-6</p>
+				<p class="is-gray-7">is-gray-7</p>
+				<p class="is-gray-8">is-gray-8</p>
+				<p class="is-gray-9">is-gray-9</p>
+				<p class="is-gray-10">is-gray-10</p>
+			</xmp>
+
+			<!-- ! // code -->
+		</div>
+
+		<!-- [Background-color] -->
+		<h3 class="h3_guide">Background-color</h3>
+
+		<!-- ? view -->
+		<div class="d_desc code">
+			<p class="bg-white-1">bg-white-1</p>
+			<p class="bg-white-2">bg-white-2</p>
+			<p class="bg-black-1"><span class="is-white-1">bg-black-1</span></p>
+			<p class="bg-black-2"><span class="is-white-1">bg-black-2</span></p>
+			<p class="bg-blue-1">bg-blue-1</p>
+			<p class="bg-navy-1">bg-navy-1</p>
+			<p class="bg-navy-2">bg-navy-2</p>
+			<p class="bg-orange-1">bg-orange-1</p>
+			<p class="bg-gray-1">bg-gray-1</p>
+			<p class="bg-gray-2">bg-gray-2</p>
+			<p class="bg-gray-3">bg-gray-3</p>
+			<p class="bg-gray-4">bg-gray-4</p>
+			<p class="bg-gray-5">bg-gray-5</p>
+			<p class="bg-gray-6">bg-gray-6</p>
+			<p class="bg-gray-7">bg-gray-7</p>
+			<p class="bg-gray-8">bg-gray-8</p>
+			<p class="bg-gray-9">bg-gray-9</p>
+			<p class="bg-gray-10">bg-gray-10</p>
+		</div>
+
+		<!-- ? // view -->
+
+		<!-- ! code -->
+		<xmp class="prettyprint linenums javascript">
+			<p class="bg-white-1">bg-white-1</p>
+			<p class="bg-white-2">bg-white-2</p>
+			<p class="bg-black-1"><span class="is-white-1">bg-black-1</span></p>
+			<p class="bg-black-2"><span class="is-white-1">bg-black-2</span></p>
+			<p class="bg-blue-1">bg-blue-1</p>
+			<p class="bg-navy-1">bg-navy-1</p>
+			<p class="bg-navy-2">bg-navy-2</p>
+			<p class="bg-orange-1">bg-orange-1</p>
+			<p class="bg-gray-1">bg-gray-1</p>
+			<p class="bg-gray-2">bg-gray-2</p>
+			<p class="bg-gray-3">bg-gray-3</p>
+			<p class="bg-gray-4">bg-gray-4</p>
+			<p class="bg-gray-5">bg-gray-5</p>
+			<p class="bg-gray-6">bg-gray-6</p>
+			<p class="bg-gray-7">bg-gray-7</p>
+			<p class="bg-gray-8">bg-gray-8</p>
+			<p class="bg-gray-9">bg-gray-9</p>
+			<p class="bg-gray-10">bg-gray-10</p>
+		</xmp>
+
+		<!-- ! // code -->
+
+		<!-- [Spacing] -->
+		<h3 class="h3_guide">Spacing</h3>
+
+		<!-- ? view -->
+		<div class="guide_descbox">
+			<div class="inner_desc">
+				<ul>
+					<li>Spacing 태그 사용 지양</li>
+					<li>여백 스타일에 따른 number 부여 <span class="e_code">0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35,
+							40, 42, 45, 50, 60, 80, 100, 120</span></li>
+					<li>margin-top: .mt-* / margin-bottom: .mb-* / margin-left: .ml-* / margin-right: .mr-*</li>
+					<li>padding-top: .pt-* / padding-bottom: .pb-* / padding-left .pl-* / padding-right: .pr-*</li>
+				</ul>
+			</div>
+		</div>
+		<div class="d_desc code">
+
+			<!-- ? // view -->
+
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="mt-12"></div>
+			</xmp>
+		</div>
+
+		<!-- ! // code -->
+
+		<!-- [ // Spacing] -->
+
+		<!-- [Text Align] -->
+		<h3 class="h3_guide">Text Align</h3>
+		<div class="guide_descbox">
+			<h3 class="g-title"></h3>
+		</div>
+
+		<!-- ? view -->
+		<div class="d_desc code">
+			<p class="ta-l">text Align Left</p>
+			<p class="ta-c">text Align Center</p>
+			<p class="ta-r">text Align Right</p>
+
+			<!-- ? // view -->
+
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<p class="ta-l">text Align Left</p>
+				<p class="ta-c">text Align Center</p>
+				<p class="ta-r">text Align Right</p>
+			</xmp>
+
+			<!-- ! // code -->
+		</div>
+
+		<!-- [ // Text Align] -->
+
+		<!-- [Flex Align] -->
+		<h3 class="h3_guide">Flex Align</h3>
+		<div class="guide_descbox">
+			<div class="inner_desc">
+				<ul>
+					<li>display : flex 스타일 적용 영역 - 정렬 변경 필요 시 클래스 추가</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- ? view -->
+		<div class="d_desc code">
+
+			<!-- ? // view -->
+
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="justify-cont-s">수평 left 정렬- flex-start</div>
+				<div class="justify-cont-e">수평 right 정렬- flex-end</div>
+				<div class="justify-cont-c">수평 center 정렬- flex-center</div>
+				<div class="justify-cont-sb">수평 좌우 정렬</div>
+				<div class="align-item-s">수직 top 정렬 - flex-start</div>
+				<div class="align-item-e">수직 bottom 정렬 - flex-end</div>
+				<div class="align-item-c">수직 center 정렬 - flex-center</div>
+			</xmp>
+
+			<!-- ! // code -->
+		</div>
+	</div>
+
+	<!-- [ // Flex Align] -->
+
+	<!-- guide script -->
+	<script src="../js/pretty.js"></script>
+	<script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+	<script defer src="../../js/common.js"></script>
+</body>
+</html>

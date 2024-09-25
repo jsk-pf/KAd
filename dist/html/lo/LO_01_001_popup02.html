@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMI</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+
+        <!-- Contents -->
+        <section class="contents">
+            <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupSearch_01"><span>비밀번호 찾기 관련
+                    alert 창</span></button>
+
+            <!-- = popup Source  -->
+            <div class="c-layer-popup type01 modal fade" id="popupSearch_01" role="dialog" aria-labelledby="#popupSearch_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <h4 class="c-title skip" id="popupSearch_Label01">비밀번호 찾기 관련 안내</h4>
+                            <p class="ta-c">비밀번호 변경이 완료되었습니다.</p>
+
+                            <!-- <p class="ta-c">등록된 회원이 없습니다.</p> -->
+                        </div>
+                        <div class="modal-footer type01">
+                            <div class="buttons row">
+                                <div class="col">
+                                    <button class="c-btn bg-blue-1" data-dismiss="modal"><span>확인</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- = // popup Source -->
+        </section>
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

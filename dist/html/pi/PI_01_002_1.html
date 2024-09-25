@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검진 제안서 불러오기</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <!-- [ mod(220602) ] -->
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+    <!-- [ // mod(220602) ] -->
+
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Contents -->
+            <section class="contents">
+                <!-- [popup source] -->
+                <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupCallChkupProposal01" aria-labelledby="popupCallChkupProposal01_Label" aria-hidden="true"><span>Popup Sample</span></button>
+                <!-- [ layer popup] -->
+                <div class="c-layer-popup type05 modal fade" id="popupCallChkupProposal01" role="dialog" aria-labelledby="popupCallChkupProposal01_Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- modal Header -->
+                            <div class="modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupCallChkupProposal01_Label">검진 제안서 불러오기</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업
+                                        닫기</span></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="c-panel">
+                                    <div class="row">
+                                        <!-- left-wrap -->
+                                        <div class="col-5 left-wrap">
+                                            <div class="c-panel">
+                                                <div class="c-title-field">
+                                                    <h5 class="title-md">고객사 정보</h5>
+                                                </div>
+                                                <div class="c-article input-list">
+                                                    <div class="row">
+                                                        <div class="col-7 label-input">
+                                                            <label for="inputCompanyName">관계 고객사명</label>
+                                                            <input type="text" class="c-input" id="inputCompanyName" value="(주)삼성전자" readonly="readonly">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-panel">
+                                                <div class="c-title-field">
+                                                    <h5 class="title-md">제안서 목록</h5>
+                                                    <div class="label-input">
+                                                        <label for="inputDate1" class="sr-only">제안서 날짜 선택</label>
+                                                        <div class="c-select">
+                                                            <select id="inputDate1">
+                                                                <option value="" selected="">2021</option>
+                                                                <option value="">option</option>
+                                                                <option value="">option</option>
+                                                                <option value="">option</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="c-table-field c-tbl-vertical-field type02">
+                                                    <div class="c-table striped c-vertical-scroll">
+                                                        <table class="table">
+                                                            <caption>
+                                                                제안서 목록 : 번호, 검진연도, 제안서 명, 검진구분, 검진가격
+                                                            </caption>
+                                                            <colgroup>
+                                                                <col class="no">
+                                                                <col class="date">
+                                                                <col style="width: auto">
+                                                                <col style="width: 20%">
+                                                                <col style="width: 20%">
+                                                                <col style="width: 91px">
+                                                            </colgroup>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col" class="no">NO</th>
+                                                                    <th scope="col" class="date">검진연도</th>
+                                                                    <th scope="col" style="width: auto">제안서 명</th>
+                                                                    <th scope="col" style="width: 20%">검진구분</th>
+                                                                    <th scope="col" style="width: 20%">검진가격</th>
+                                                                    <th scope="col" style="width: 91px"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>01</td>
+                                                                    <td>YYYY.MM.DD</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td>종합검진</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>02</td>
+                                                                    <td>YYYY.MM.DD</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td>종합검진</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>03</td>
+                                                                    <td>YYYY.MM.DD</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td>종합검진</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>04</td>
+                                                                    <td>YYYY.MM.DD</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td>종합검진</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>05</td>
+                                                                    <td>YYYY.MM.DD</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td>종합검진</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-panel">
+                                                <div class="c-title-field">
+                                                    <h5 class="title-md">공통 제안서 목록</h5>
+                                                    <div class="label-input">
+                                                        <label for="inputDate2" class="sr-only">제안서 날짜 선택</label>
+                                                        <div class="c-select">
+                                                            <select id="inputDate2">
+                                                                <option value="" selected="">2021</option>
+                                                                <option value="">option</option>
+                                                                <option value="">option</option>
+                                                                <option value="">option</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="c-table-field c-tbl-vertical-field type02">
+                                                    <div class="c-table striped c-vertical-scroll">
+                                                        <table class="table">
+                                                            <caption>
+                                                                공통 제안서 목록 : 번호, 검진연도, 제안서 명, 검진구분, 검진가격
+                                                            </caption>
+                                                            <colgroup>
+                                                                <col class="no">
+                                                                <col class="date">
+                                                                <col style="width: auto">
+                                                                <col style="width: 20%">
+                                                                <col style="width: 20%">
+                                                                <col style="width: 91px">
+                                                            </colgroup>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col" class="no">NO</th>
+                                                                    <th scope="col" class="date">검진연도</th>
+                                                                    <th scope="col" style="width: auto">제안서 명</th>
+                                                                    <th scope="col" style="width: 20%">검진구분</th>
+                                                                    <th scope="col" style="width: 20%">검진가격</th>
+                                                                    <th scope="col" style="width: 91px"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>01</td>
+                                                                    <td>YYYY.MM.DD</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td>종합검진</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>02</td>
+                                                                    <td>YYYY.MM.DD</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td>종합검진</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>03</td>
+                                                                    <td>YYYY.MM.DD</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td>종합검진</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>04</td>
+                                                                    <td>YYYY.MM.DD</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td>종합검진</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>05</td>
+                                                                    <td>YYYY.MM.DD</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td>종합검진</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>05</td>
+                                                                    <td>YYYY.MM.DD</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td>종합검진</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>05</td>
+                                                                    <td>YYYY.MM.DD</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td>종합검진</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-7 right-wrap">
+                                            <div class="c-panel">
+                                                <div class="c-title-field">
+                                                    <h5 class="title-md">상품 정보</h5>
+                                                    <div class="c-chkbox">
+                                                        <input type="checkbox" id="chk01">
+                                                        <label for="chk01" class="chk-label"><i></i><span>기존 상품과 동일 설정</span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="c-article input-list">
+                                                    <div class="row">
+                                                        <div class="col-3 label-input">
+                                                            <label for="inputProductName">상품명</label>
+                                                            <input type="text" class="c-input" id="inputProductName" value="정밀 종합검진 일반형" readonly="readonly">
+                                                        </div>
+                                                        <div class="col-3 label-input">
+                                                            <label for="inputCheckYear">검진연도</label>
+                                                            <input type="text" class="c-input" id="inputCheckYear" value="2021" readonly="readonly">
+                                                        </div>
+                                                        <div class="col-3 label-input">
+                                                            <label for="inputProductCheck">검진구분</label>
+                                                            <input type="text" class="c-input" id="inputProductCheck" value="종합검진" readonly="readonly">
+                                                        </div>
+                                                        <div class="col-3 label-input">
+                                                            <label for="inputCheckPrice">검진가격</label>
+                                                            <div class="c-input-unit">
+                                                                <input type="text" class="c-input" id="inputCheckPrice" value="0" readonly="readonly">
+                                                                <span class="unit">원</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-3 label-input">
+                                                            <label for="inputPriceClaimGroup_01">위 내시경 수면비 청구 (단체)</label>
+                                                            <div class="c-input-unit">
+                                                                <input type="text" class="c-input" id="inputPriceClaimGroup_01" value="0" readonly="readonly">
+                                                                <span class="unit">원</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3 label-input">
+                                                            <label for="inputPriceClaimOwn_01">위 내시경 수면비 청구 (개인)</label>
+                                                            <div class="c-input-unit">
+                                                                <input type="text" class="c-input" id="inputPriceClaimOwn_01" value="0" readonly="readonly">
+                                                                <span class="unit">원</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3 label-input">
+                                                            <label for="inputPriceClaimGroup_02">대장 내시경 수면비 청구 (단체)</label>
+                                                            <div class="c-input-unit">
+                                                                <input type="text" class="c-input" id="inputPriceClaimGroup_02" value="0" readonly="readonly">
+                                                                <span class="unit">원</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3 label-input">
+                                                            <label for="inputPriceClaimOwn_02">대장 내시경 수면비 청구 (개인)</label>
+                                                            <div class="c-input-unit">
+                                                                <input type="text" class="c-input" id="inputPriceClaimOwn_02" value="0" readonly="readonly">
+                                                                <span class="unit">원</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-3 label-input">
+                                                            <label for="inputPriceClaimGroup_03">위+대장 내시경 수면비 청구 (단체)</label>
+                                                            <div class="c-input-unit">
+                                                                <input type="text" class="c-input" id="inputPriceClaimGroup_03" value="0" readonly="readonly">
+                                                                <span class="unit">원</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3 label-input">
+                                                            <label for="inputPriceClaimOwn_03">위+대장 내시경 수면비 청구 (개인)</label>
+                                                            <div class="c-input-unit">
+                                                                <input type="text" class="c-input" id="inputPriceClaimOwn_03" value="0" readonly="readonly">
+                                                                <span class="unit">원</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3 label-input">
+                                                            <label for="inputProductProgress">공단1차 진행여부</label>
+                                                            <input type="text" class="c-input" id="inputProductProgress" value="진행" readonly="readonly">
+                                                        </div>
+                                                        <div class="col-3 label-input">
+                                                            <label for="inputSpecialClaim">특검청구설정</label>
+                                                            <input type="text" class="c-input" id="inputSpecialClaim" value="청구안함" readonly="readonly">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-panel">
+                                                <div class="c-title-field">
+                                                    <h5 class="title-md">상품 정보 요청사항</h5>
+                                                </div>
+                                                <div class="c-article input-list c-textarea-article">
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label for="inputExplanText" class="sr-only">상품 정보 요청사항 설명</label>
+                                                            <div class="c-txtarea-field">
+                                                                <textarea id="inputExplanText" class="c-txt-area" readonly="readonly">
+삼성전자 임직원 만을 위한 정밀종합검진 프로그램 입니다.
+필수적인 건강검진 프로그램으로 각종 질환의 조기 발견 및 위험요인 평가, 성인병 예방, 건강유지에 필요한 검사 입니다.
+삼성전자 임직원 만을 위한 정밀종합검진 프로그램 입니다.
+필수적인 건강검진 프로그램으로 각종 질환의 조기 발견 및 위험요인 평가, 성인병 예방, 건강유지에 필요한 검사 입니다.
+삼성전자 임직원 만을 위한 정밀종합검진 프로그램 입니다.
+필수적인 건강검진 프로그램으로 각종 질환의 조기 발견 및 위험요인 평가, 성인병 예방, 건강유지에 필요한 검사 입니다.
+																	</textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-panel card-panel">
+                                                <div class="c-title-field">
+                                                    <h5 class="title-md">검진 항목</h5>
+                                                </div>
+                                                <div class="row c-card-article type02">
+                                                    <div class="col">
+                                                        <div class="c-card type05">
+                                                            <dl>
+                                                                <dt class="txt">전체</dt>
+                                                                <dd class="cnt"><span>512</span></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="c-card type05">
+                                                            <dl>
+                                                                <dt class="txt">공통검사</dt>
+                                                                <dd class="cnt"><span>12</span></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="c-card type05">
+                                                            <dl>
+                                                                <dt class="txt">선택검사 1</dt>
+                                                                <dd class="cnt"><span>1</span><span class="slash">/</span><span>1</span></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="c-card type05">
+                                                            <dl>
+                                                                <dt class="txt">선택검사 2</dt>
+                                                                <dd class="cnt"><span>2</span><span class="slash">/</span><span>3</span></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="c-card type05">
+                                                            <dl>
+                                                                <dt class="txt">선택검사 3</dt>
+                                                                <dd class="cnt"><span>5</span><span class="slash">/</span><span>5</span></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="c-card type05">
+                                                            <dl>
+                                                                <dt class="txt">선택검사 4</dt>
+                                                                <dd class="cnt"><span>-</span></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="c-card type05">
+                                                            <dl>
+                                                                <dt class="txt">선택검사 5</dt>
+                                                                <dd class="cnt"><span>-</span></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="c-article input-list c-textarea-article">
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label for="inpuTxtA02" class="sr-only">상품 정보 설명</label>
+                                                            <div class="c-txtarea-field">
+                                                                <textarea id="inpuTxtA02" class="c-txt-area" readonly="readonly">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui voluptates omnis rem, reprehenderit, odit quis soluta quasi voluptas, quos sequi veritatis vel itaque aperiam ea alias. Atque, illum voluptatum modi nesciunt, velit alias, distinctio vel delectus nihil earum pariatur beatae? Cum voluptate beatae unde molestias animi laborum nihil tempore voluptatibus. </textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- [ mod(220819) ] 정렬 변경 -->
+                                            <div class="c-panel">
+                                                <div class="c-title-field">
+                                                    <h5 class="title-md">검진기관 항목</h5>
+                                                    <div class="c-field">
+                                                        <div class="label-input">
+                                                            <label for="inputSearch" class="sr-only">검색</label>
+                                                            <div class="c-input-search">
+                                                                <input type="text" id="inputSearch" placeholder="검진기관명을 입력하세요.">
+                                                                <button type="button" class="btn-search"><span class="skip">검색</span></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="label-input">
+                                                            <div class="c-select">
+                                                                <select title="정렬 기준 선택">
+                                                                    <option value="" selected="">지역순</option>
+                                                                    <option value="">option</option>
+                                                                    <option value="">option</option>
+                                                                    <option value="">option</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="c-table-field c-tbl-vertical-field type02">
+                                                    <div class="c-table striped">
+                                                        <table class="table">
+                                                            <caption>
+                                                                제안서 목록 : 번호, 검진연도, 제안서 명, 검진구분, 검진가격
+                                                            </caption>
+                                                            <colgroup>
+                                                                <col class="name">
+                                                                <col style="width: auto">
+                                                                <col class="price">
+                                                                <col style="width: 144px">
+                                                            </colgroup>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col" class="name">지역</th>
+                                                                    <th scope="col" style="width: atuo">검진기관명</th>
+                                                                    <th scope="col" class="price">검진가격</th>
+                                                                    <th scope="col" style="width: 144px"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>서울</td>
+                                                                    <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                                                                    <td><span>270,000</span>원</td>
+                                                                    <td>
+                                                                        <button type="button" class="c-btn is-outline-blue-1"><span>자세히보기</span></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!-- paging -->
+                                                    <div class="c-tbl-paging">
+                                                        <p class="page-info">Total Page <em>01</em> page</p>
+                                                        <nav class="c-pagination">
+                                                            <ul>
+                                                                <li>
+                                                                    <a class="page-link" href="javascript:;" aria-label="처음">
+                                                                        <span class="is-blind p-first">처음</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="page-link" href="javascript:;" aria-label="이전">
+                                                                        <span class="is-blind p-prev">이전</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li><a class="page-link is-active" href="javascript:;">1</a></li>
+                                                                <li><a class="page-link" href="javascript:;">2</a></li>
+                                                                <li><a class="page-link" href="javascript:;">3</a></li>
+                                                                <li><a class="page-link" href="javascript:;">4</a></li>
+                                                                <li><a class="page-link" href="javascript:;">5</a></li>
+                                                                <li>
+                                                                    <a class="page-link" href="javascript:;" aria-label="다음">
+                                                                        <span class="is-blind p-next">다음</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="page-link" href="javascript:;" aria-label="끝">
+                                                                        <span class="is-blind p-end">끝</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </nav>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+                            <!-- modal-footer -->
+                            <div class="modal-footer c-btn-field justify-content-end">
+                                <div class="buttons">
+                                    <button type="button" class="c-btn is-outline-blue-1" data-dismiss="modal"><span>닫기</span></button>
+                                    <button type="button" class="c-btn bg-blue-3"><span>불러오기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- = type05  -->
+                    <!-- [ // layer popup] -->
+                </div>
+
+                <!-- [ // popup source] -->
+            </section>
+            <!-- // Contents -->
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+
+    <script>
+        $(function() {
+            // Guide전용 스크립트
+            $('[data-target]').trigger('click');
+        });
+    </script>
+</body>
+
+</html>

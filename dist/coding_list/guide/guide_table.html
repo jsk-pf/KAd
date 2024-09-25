@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Layout Guide</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- guide css -->
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="wrap" class="coding_guide">
+      <h1 class="h1_guide">Table</h1>
+      <div class="title-box">
+        <h2 class="h2_guide">공통</h2>
+      </div>
+      <div class="guide_descbox">
+        <div class="inner_desc">
+          <ul>
+            <li>caption 태그 내용 형식 : '<em class="e_code">제목 : th, th, th 에 대한 정보</em>'</li>
+            <li>고정 너비 클래스 선언 [col class="값"] : no, checkbox, date, date02, birthdy, name, phone, gender, link / 이 외 컬럼 너비 적용 필요 시 col 태그 width 값 지정</li>
+            <li>분류 기능 적용 table [class='c-table'] 클래스 추가 : sorting</li>
+            <li>table 내 input 요소 추가 시 labe for / input id 값 매칭</li>
+          </ul>
+        </div>
+      </div>
+      <div class="title-box">
+        <h2 class="h2_guide">Table</h2>
+      </div>
+
+      <!-- [Table Basic] -->
+      <h3 class="h3_guide">Basic</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="c-table-field">
+          <div class="c-table striped">
+            <table class="table">
+              <caption>
+                고객사 : 항목선택 , 고객사명, 고객사코드, ID/사번, 이름, 부서에 대한 정보
+              </caption>
+              <colgroup>
+                <col class="checkbox" />
+                <col />
+                <col />
+                <col class="name" />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <div class="c-chkbox">
+                      <input type="checkbox" id="allchk_01" />
+                      <label for="allchk_01" class="chk-label"><i></i><span class="skip">전체선택</span></label>
+                    </div>
+                  </th>
+                  <th scope="col">고객사명</th>
+                  <th scope="col">고객사코드</th>
+                  <th scope="col">ID/사번</th>
+                  <th scope="col">이름</th>
+                  <th scope="col">부서</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!--  input 생성 시 for/id 매칭-->
+                <tr>
+                  <td>
+                    <div class="c-chkbox">
+                      <input type="checkbox" id="chk01" />
+                      <label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                    </div>
+                  </td>
+                  <td>버거킹</td>
+                  <td>A0215122</td>
+                  <td>011144</td>
+                  <td>홍길동</td>
+                  <td>삼성역점(파트타임)</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="c-chkbox">
+                      <input type="checkbox" id="chk02" />
+                      <label for="chk02" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                    </div>
+                  </td>
+                  <td>버거킹</td>
+                  <td>A0215122</td>
+                  <td>011144</td>
+                  <td>홍길동</td>
+                  <td>삼성역점(파트타임)</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="c-chkbox">
+                      <input type="checkbox" id="chk03" />
+                      <label for="chk03" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                    </div>
+                  </td>
+                  <td>버거킹</td>
+                  <td>A0215122</td>
+                  <td>011144</td>
+                  <td>홍길동</td>
+                  <td>삼성역점(파트타임)</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="c-chkbox">
+                      <input type="checkbox" id="chk04" />
+                      <label for="chk04" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                    </div>
+                  </td>
+                  <td>버거킹</td>
+                  <td>A0215122</td>
+                  <td>011144</td>
+                  <td>홍길동</td>
+                  <td>삼성역점(파트타임)</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="c-chkbox">
+                      <input type="checkbox" id="chk05" />
+                      <label for="chk05" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                    </div>
+                  </td>
+                  <td>버거킹</td>
+                  <td>A0215122</td>
+                  <td>011144</td>
+                  <td>홍길동</td>
+                  <td>삼성역점(파트타임)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- c-tbl-paging -->
+          <div class="c-tbl-paging">
+            <p class="page-info">Total Page <em>01</em> page</p>
+            <nav class="c-pagination">
+              <ul>
+                <li>
+                  <a class="page-link" href="javascript:;" aria-label="처음">
+                    <span class="is-blind p-first">처음</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="page-link" href="javascript:;" aria-label="이전">
+                    <span class="is-blind p-prev">이전</span>
+                  </a>
+                </li>
+                <li><a class="page-link is-active" href="javascript:;">1</a></li>
+                <li><a class="page-link" href="javascript:;">2</a></li>
+                <li><a class="page-link" href="javascript:;">3</a></li>
+                <li><a class="page-link" href="javascript:;">4</a></li>
+                <li><a class="page-link" href="javascript:;">5</a></li>
+                <li>
+                  <a class="page-link" href="javascript:;" aria-label="다음">
+                    <span class="is-blind p-next">다음</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="page-link" href="javascript:;" aria-label="끝">
+                    <span class="is-blind p-end">끝</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="c-table-field">
+					<div class="c-table striped">
+						<table class="table">
+							<!--caption 내용 기재 -->
+							<caption> 고객사 : 항목선택 , 고객사명, 고객사코드, ID/사번, 이름, 부서에 대한 정보 </caption>
+							<colgroup>
+								<col class="checkbox">
+								<col>
+								<col>
+								<col class="name">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">
+										<div class="c-chkbox">
+											<input type="checkbox" id="allchk_01">
+											<label for="allchk_01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+										</div>
+									</th>
+									<th scope="col">고객사명</th>
+									<th scope="col">고객사코드</th>
+									<th scope="col">ID/사번</th>
+									<th scope="col">이름</th>
+									<th scope="col">부서</th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<!-- input 생성 시  for/id 매칭 -->
+								<tr>
+									<td>
+										<div class="c-chkbox">
+											<input type="checkbox" id="chk01">
+											<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+										</div>
+									</td>
+									<td>버거킹</td>
+									<td>A0215122</td>
+									<td>011144</td>
+									<td>홍길동</td>
+									<td>삼성역점(파트타임)</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!-- c-tbl-paging -->
+					<div class="c-tbl-paging">
+						<p class="page-info">Total Page <em>01</em> page</p>
+						<nav class="c-pagination">
+							<ul>
+								<li>
+									<a class="page-link" href="javascript:;" aria-label="처음">
+										<span class="is-blind p-first">처음</span>
+									</a>
+								</li>
+								<li>
+									<a class="page-link" href="javascript:;" aria-label="이전">
+										<span class="is-blind p-prev">이전</span>
+									</a>
+								</li>
+								<li><a class="page-link is-active" href="javascript:;">1</a></li>
+								<li><a class="page-link" href="javascript:;">2</a></li>
+								<li><a class="page-link" href="javascript:;">3</a></li>
+								<li><a class="page-link" href="javascript:;">4</a></li>
+								<li><a class="page-link" href="javascript:;">5</a></li>
+								<li>
+									<a class="page-link" href="javascript:;" aria-label="다음">
+										<span class="is-blind p-next">다음</span>
+									</a>
+								</li>
+								<li>
+									<a class="page-link" href="javascript:;" aria-label="끝">
+										<span class="is-blind p-end">끝</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Title box] -->
+
+      <!-- [가로 스크롤] -->
+      <h3 class="h3_guide">가로 스크롤</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="c-table-field">
+          <!-- c-horizontal-scroll -->
+          <div class="c-table striped c-horizontal-scroll">
+            <table class="table">
+              <caption>
+                검진 정보 : 항목 선택, No, 신청일, 고객사, 검진자, 생년월일, 휴대폰, 성별, 기관, 상품명, 희망일, 확정일, 연기검사 신청일, 연기검사 확정일, 연기검사 확정일에 대한 정보
+              </caption>
+              <colgroup>
+                <col class="checkbox" />
+                <col class="no" />
+                <col />
+                <col class="name" />
+                <col />
+                <col class="phone" />
+                <col class="gender" />
+                <col />
+                <col style="width: 25%" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <div class="c-chkbox">
+                      <input type="checkbox" id="allchk" />
+                      <label for="allchk" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                    </div>
+                  </th>
+                  <th scope="col">No</th>
+                  <th scope="col">신청일</th>
+                  <th scope="col">고객사</th>
+                  <th scope="col">검진자</th>
+                  <th scope="col">생년월일</th>
+                  <th scope="col">휴대폰</th>
+                  <th scope="col">성별</th>
+                  <th scope="col">기관</th>
+                  <th scope="col">상품명</th>
+                  <th scope="col">희망일</th>
+                  <th scope="col">확정일</th>
+                  <th scope="col">연기검사 신청일</th>
+                  <th scope="col">연기검사 확정일</th>
+                  <th scope="col">연기검사 확정일</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <!-- [comment]
+												input 생성 시  for/id 매칭
+											 -->
+                    <div class="c-chkbox">
+                      <input type="checkbox" id="chk01" />
+                      <label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                    </div>
+                  </td>
+                  <td>1</td>
+                  <td>2022-04-29</td>
+                  <td>삼성전자</td>
+                  <td><span class="c-bs-link">홍○동</span></td>
+                  <td>770101</td>
+                  <td>010-1234-5678</td>
+                  <td>남</td>
+                  <td>한국의학연구소 여의도</td>
+                  <td>정밀 종합</td>
+                  <td>2022-04-29</td>
+                  <td>2022-04-29</td>
+                  <td>2022-04-29</td>
+                  <td>2022-04-29</td>
+                  <td>2022-04-29</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="c-table-field">
+
+					<!-- c-horizontal-scroll -->
+					<div class="c-table striped c-horizontal-scroll">
+						<table class="table">
+							<caption> 검진 정보 : 항목 선택, No, 신청일, 고객사, 검진자, 생년월일, 휴대폰, 성별, 기관, 상품명, 희망일, 확정일, 연기검사 신청일, 연기검사 확정일, 연기검사
+								확정일에 대한 정보 </caption>
+							<colgroup>
+								<col class="checkbox">
+								<col class="no">
+								<col>
+								<col class="name">
+								<col>
+								<col class="phone">
+								<col class="gender">
+								<col>
+								<col style="width: 25%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">
+										<div class="c-chkbox">
+											<input type="checkbox" id="allchk">
+											<label for="allchk" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+										</div>
+									</th>
+									<th scope="col">No</th>
+									<th scope="col">신청일</th>
+									<th scope="col">고객사</th>
+									<th scope="col">검진자</th>
+									<th scope="col">생년월일</th>
+									<th scope="col">휴대폰</th>
+									<th scope="col">성별</th>
+									<th scope="col">기관</th>
+									<th scope="col">상품명</th>
+									<th scope="col">희망일</th>
+									<th scope="col">확정일</th>
+									<th scope="col">연기검사 신청일</th>
+									<th scope="col">연기검사 확정일</th>
+									<th scope="col">연기검사 확정일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+
+										<!-- [comment]
+													input 생성 시  for/id 매칭
+												 -->
+										<div class="c-chkbox">
+											<input type="checkbox" id="chk01">
+											<label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+										</div>
+									</td>
+									<td>1</td>
+									<td>2022-04-29</td>
+									<td>삼성전자</td>
+									<td><span class="c-bs-link">홍○동</span></td>
+									<td>770101</td>
+									<td>010-1234-5678</td>
+									<td>남</td>
+									<td>한국의학연구소 여의도</td>
+									<td>정밀 종합</td>
+									<td>2022-04-29</td>
+									<td>2022-04-29</td>
+									<td>2022-04-29</td>
+									<td>2022-04-29</td>
+									<td>2022-04-29</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // 가로 스크롤] -->
+
+      <!-- [세로스크롤] -->
+      <h3 class="h3_guide">세로 스크롤</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="c-table-field c-tbl-vertical-field type02">
+          <div class="c-table striped c-vertical-scroll">
+            <table class="table">
+              <caption>
+                제안서 목록 : 번호, 검진연도, 제안서 명, 검진구분, 검진가격
+              </caption>
+              <colgroup>
+                <col class="no" />
+                <col class="date" />
+                <col style="width: auto" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 91px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" class="no">NO</th>
+                  <th scope="col" class="date">검진연도</th>
+                  <th scope="col" style="width: auto">제안서 명</th>
+                  <th scope="col" style="width: 20%">검진구분</th>
+                  <th scope="col" style="width: 20%">검진가격</th>
+                  <th scope="col" style="width: 91px"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                  <td>종합검진</td>
+                  <td><span>270,000</span>원</td>
+                  <td>
+                    <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>02</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                  <td>종합검진</td>
+                  <td><span>270,000</span>원</td>
+                  <td>
+                    <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>03</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                  <td>종합검진</td>
+                  <td><span>270,000</span>원</td>
+                  <td>
+                    <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>04</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                  <td>종합검진</td>
+                  <td><span>270,000</span>원</td>
+                  <td>
+                    <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>05</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                  <td>종합검진</td>
+                  <td><span>270,000</span>원</td>
+                  <td>
+                    <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>05</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                  <td>종합검진</td>
+                  <td><span>270,000</span>원</td>
+                  <td>
+                    <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>05</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                  <td>종합검진</td>
+                  <td><span>270,000</span>원</td>
+                  <td>
+                    <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>05</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+                  <td>종합검진</td>
+                  <td><span>270,000</span>원</td>
+                  <td>
+                    <button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="c-table-field c-tbl-vertical-field">
+          <!--  c-vertical-scroll -->
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="c-table-field c-tbl-vertical-field type02">
+					<div class="c-table striped c-vertical-scroll">
+						<table class="table">
+							<caption> 제안서 목록 : 번호, 검진연도, 제안서 명, 검진구분, 검진가격 </caption>
+							<colgroup>
+								<col class="no">
+								<col class="date">
+								<col style="width: auto">
+								<col style="width: 20%">
+								<col style="width: 20%">
+								<col style="width: 91px">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="no">NO</th>
+									<th scope="col" class="date">검진연도</th>
+									<th scope="col" style="width: auto">제안서 명</th>
+									<th scope="col" style="width: 20%">검진구분</th>
+									<th scope="col" style="width: 20%">검진가격</th>
+									<th scope="col" style="width: 91px"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>01</td>
+									<td>YYYY.MM.DD</td>
+									<td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+									<td>종합검진</td>
+									<td><span>270,000</span>원</td>
+									<td>
+										<button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>02</td>
+									<td>YYYY.MM.DD</td>
+									<td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+									<td>종합검진</td>
+									<td><span>270,000</span>원</td>
+									<td>
+										<button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>03</td>
+									<td>YYYY.MM.DD</td>
+									<td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+									<td>종합검진</td>
+									<td><span>270,000</span>원</td>
+									<td>
+										<button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>04</td>
+									<td>YYYY.MM.DD</td>
+									<td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+									<td>종합검진</td>
+									<td><span>270,000</span>원</td>
+									<td>
+										<button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>05</td>
+									<td>YYYY.MM.DD</td>
+									<td>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</td>
+									<td>종합검진</td>
+									<td><span>270,000</span>원</td>
+									<td>
+										<button type="button" class="c-btn is-outline-blue-1"><span>선택</span></button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // 세로 스크롤] -->
+
+      <!-- [데이터 없는 경우] -->
+      <h3 class="h3_guide">데이터 없는 경우</h3>
+      <div class="guide_descbox">
+        <div class="inner_desc">
+          <ul>
+            <li>paging 표시 안됨</li>
+          </ul>
+        </div>
+      </div>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="c-table-field">
+          <div class="c-table striped">
+            <table class="table">
+              <caption>
+                고객사 : 항목선택 , 고객사명, 고객사코드, ID/사번, 이름, 부서에 대한 정보
+              </caption>
+              <colgroup>
+                <col class="checkbox" />
+                <col />
+                <col />
+                <col class="name" />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <div class="c-chkbox">
+                      <input type="checkbox" id="allchk_2" />
+                      <label for="allchk_2" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                    </div>
+                  </th>
+                  <th>고객사명</th>
+                  <th>고객사코드</th>
+                  <th>ID/사번</th>
+                  <th>이름</th>
+                  <th>부서</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- [comment]
+								 -->
+                <tr class="tbl-list-none">
+                  <td colspan="6">
+                    <div class="tbl-none-field">
+                      <div>
+                        <p class="cont">등록된 데이터가 없습니다.</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="c-table-field">
+					<div class="c-table striped">
+						<table class="table">
+							<caption> 고객사 : 항목선택 , 고객사명, 고객사코드, ID/사번, 이름, 부서에 대한 정보 </caption>
+							<colgroup>
+								<col class="checkbox">
+								<col>
+								<col>
+								<col class="name">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">
+										<div class="c-chkbox">
+											<input type="checkbox" id="allchk_2">
+											<label for="allchk_2" class="chk-label"><i></i><span class="skip">전체선택</span></label>
+										</div>
+									</th>
+									<th scope="col">고객사명</th>
+									<th scope="col">고객사코드</th>
+									<th scope="col">ID/사번</th>
+									<th scope="col">이름</th>
+									<th scope="col">부서</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="blt-list-none">
+									<td colspan="6">
+										<div class="tbl-none-field">
+											<div>
+												<p class="cont">등록된 데이터가 없습니다.</p>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // 데이터 없는 경우] -->
+    </div>
+
+    <!-- guide script -->
+    <script src="../js/pretty.js"></script>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script defer src="../../js/common.js"></script>
+  </body>
+</html>

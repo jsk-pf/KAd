@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Layout Guide</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- guide css -->
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../../css/style.css">
+	<script src="../../lib/jquery/jquery.min.js"></script>
+</head>
+<body>
+	<div id="wrap" class="coding_guide">
+		<h1 class="h1_guide">Date</h1>
+
+		<!-- [Common] -->
+		<div class="title-box">
+			<h2 class="h2_guide">공통</h2>
+		</div>
+		<div class="guide_descbox">
+			<div class="inner_desc">
+				<ul>
+					<li>datepicker 기능 적용 필요</li>
+					<li> label + input 결합 시 =&gt; label(1) : input (1) 경우 동일 네이밍<br> : <span class="e_code">ex) label
+							for="userName" == input id="userName"</span>
+					</li>
+					<li> label + input 결합 시 =&gt; label(1) : input (n) 경우label for, input id 부여 X / <br>각 input 태그 title 속성값 선언
+						<em class="fc-yellow">input title='해당 인풋 요소에 대한 설명'</em>
+					</li>
+					<li>label for, input id 선언 시 퍼블리싱 소스의 속성값은 임의값으로 해당 항목에 따른 <em class="fc-yellow">적절한 값으로 수정하여 사용 필요</em></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- ===================================== Date -->
+		<div class="title-box">
+			<h2 class="h2_guide">Date</h2>
+		</div>
+
+		<!-- [Date type01] -->
+		<h3 class="h3_guide">Date type01</h3>
+		<div class="d_desc code">
+
+			<!-- ? view -->
+			<div class="row">
+				<div class="col">
+					<div class="row inner c-input-date-group">
+
+						<!-- for/id 매칭 필수 -->
+						<div class="col-6 label-input">
+							<label for="startDate01">시작일 (시작)</label>
+							<div class="c-input-date">
+								<input type="text" class="c-input" id="startDate01" placeholder="YYYY-MM-DD" value="2022-06-11">
+								<span><i class="date-btn"></i></span>
+							</div>
+						</div>
+						<div class="col-6 label-input">
+							<label for="endDate01">종료일 (종료)</label>
+							<div class="c-input-date">
+								<input type="text" class="c-input" id="endDate01" placeholder="YYYY-MM-DD" value="2022-06-11">
+								<span><i class="date-btn"></i></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- ? // view -->
+
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col">
+						<div class="row inner c-input-date-group">
+
+							<!-- for/id 매칭 필수 -->
+							<div class="col-6 label-input">
+								<label for="startDate01">시작일 (시작)</label>
+								<div class="c-input-date">
+									<input type="text" class="c-input" id="startDate01" placeholder="YYYY-MM-DD" value="2022-06-11">
+									<span><i class="date-btn"></i></span>
+								</div>
+							</div>
+							<div class="col-6 label-input">
+								<label for="endDate01">종료일 (종료)</label>
+								<div class="c-input-date">
+									<input type="text" class="c-input" id="endDate01" placeholder="YYYY-MM-DD" value="2022-06-11">
+									<span><i class="date-btn"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+			<!-- ! // code -->
+		</div>
+
+		<!-- [ // Date type01] -->
+
+		<!-- [Date type02] -->
+		<h3 class="h3_guide">Date type02</h3>
+		<div class="d_desc code">
+
+			<!-- ? view -->
+			<div class="row">
+				<div class="col label-input">
+					<div class="row inner c-input-date-group">
+						<div class="col label-input">
+							<label for="date">date</label>
+							<div class="c-input-date">
+								<input type="text" class="c-input" id="date" placeholder="YYYY-MM-DD">
+								<span><i class="date-btn"></i></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- ? // view -->
+
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col label-input">
+						<div class="row inner c-input-date-group">
+							<div class="col label-input">
+								<label for="date">date</label>
+								<div class="c-input-date">
+									<input type="text" class="c-input" id="date" placeholder="YYYY-MM-DD">
+									<span><i class="date-btn"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+			<!-- ! // code -->
+		</div>
+
+		<!-- [ // Date type02] -->
+
+		<!-- [Date type02-01] -->
+		<h3 class="h3_guide">Date type02-01</h3>
+		<div class="d_desc code">
+
+			<!-- ? view -->
+			<div class="row">
+				<div class="col label-input">
+					<div class="c-inquiry-date-group">
+						<div class="c-input-date">
+							<input type="text" class="c-input btn-date-picker" id="rsvHopeDate02_01" placeholder="YYYY-MM-DD"
+								autocomplete="off">
+							<span><i class="date-btn"></i></span>
+						</div>
+						<div class="buttons">
+							<button type="button" class="c-btn bg-navy-1"><span>조희</span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- ? // view -->
+
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col label-input">
+						<div class="c-inquiry-date-group">
+							<div class="c-input-date">
+								<input type="text" class="c-input btn-date-picker" id="rsvHopeDate02_01" placeholder="YYYY-MM-DD"
+									autocomplete="off">
+								<span><i class="date-btn"></i></span>
+							</div>
+							<div class="buttons">
+								<button type="button" class="c-btn bg-navy-1"><span>조희</span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+			<!-- ! // code -->
+		</div>
+
+		<!-- [ // Date type02] -->
+
+		<!-- [ Date type03] -->
+		<h3 class="h3_guide">Date Type03</h3>
+		<div class="d_desc code">
+
+			<!-- ? view -->
+			<div class="row">
+				<div class="col label-input">
+					<label for="">개인비용 가족검진 기간설정</label>
+
+					<!-- c-m-input-list -->
+					<div class="c-m-input-list">
+						<div class="input-col">
+							<div class="inner">
+								<div class="c-rdochk">
+									<input type="radio" id="rdo02_01" name="rdogrp02">
+									<label for="rdo02_01" class="chk-label"><i></i><span>상시 진행</span></label>
+								</div>
+							</div>
+						</div>
+
+						<!-- w-100 input size  제어  -->
+						<div class="input-col w-100">
+							<div class="c-multi-input-group">
+								<div class="c-rdochk">
+									<input type="radio" id="rdo02_02" name="rdogrp02">
+									<label for="rdo02_02" class="chk-label"><i></i><span>기간설정</span></label>
+								</div>
+								<div class="row inner c-input-date-group">
+
+									<!-- for/id 매칭 필수 -->
+									<div class="col-6 label-input">
+										<div class="c-input-date">
+											<input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="시작일 선택">
+											<span><i class="date-btn"></i></span>
+										</div>
+									</div>
+									<div class="col-6 label-input">
+										<div class="c-input-date">
+											<input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="종료일 선택">
+											<span><i class="date-btn"></i></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- ? // view -->
+
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col label-input">
+						<label for="">개인비용 가족검진 기간설정</label>
+						<div class="c-m-input-list">
+							<div class="input-col">
+								<div class="inner">
+									<div class="c-rdochk">
+										<input type="radio" id="rdo02_01" name="rdogrp02">
+										<label for="rdo02_01" class="chk-label"><i></i><span>상시 진행</span></label>
+									</div>
+								</div>
+							</div>
+
+							<!-- w-100 input size  제어  -->
+							<div class="input-col w-100">
+								<div class="c-multi-input-group">
+									<div class="c-rdochk">
+										<input type="radio" id="rdo02_02" name="rdogrp02">
+										<label for="rdo02_02" class="chk-label"><i></i><span>기간설정</span></label>
+									</div>
+									<div class="row inner c-input-date-group">
+
+										<!-- for/id 매칭 필수 -->
+										<div class="col-6 label-input">
+											<div class="c-input-date">
+												<input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="시작일 선택">
+												<span><i class="date-btn"></i></span>
+											</div>
+										</div>
+										<div class="col-6 label-input">
+											<div class="c-input-date">
+												<input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="종료일 선택">
+												<span><i class="date-btn"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+			<!-- ! // code -->
+		</div>
+
+		<!-- [ // Date type03] -->
+
+		<!-- [ Date type04] -->
+		<h3 class="h3_guide">Date type04</h3>
+		<div class="d_desc code">
+
+			<!-- ? view -->
+			<div class="row">
+				<div class="col label-input">
+					<label class="c-label-txt">기간선택</label>
+					<div class="row inner c-input-date-group">
+						<div class="col-6 label-input">
+							<div class="c-input-date">
+								<input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="시작일 선택">
+								<span><i class="date-btn"></i></span>
+							</div>
+						</div>
+						<div class="col-6 label-input">
+							<div class="c-input-date">
+								<input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="종료일 선택">
+								<span><i class="date-btn"></i></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col label-input">
+					<label class="c-label-txt">기간선택</label>
+					<div class="row inner c-input-date-group">
+						<div class="col-3 label-input">
+							<div class="c-input-date">
+								<input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="시작일 선택">
+								<span><i class="date-btn"></i></span>
+							</div>
+						</div>
+						<div class="col-3 label-input">
+							<div class="c-input-date">
+								<input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="종료일 선택">
+								<span><i class="date-btn"></i></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- ? // view -->
+
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col label-input">
+						<label class="c-label-txt">기간선택</label>
+						<div class="row inner c-input-date-group">
+							<div class="col-6 label-input">
+								<div class="c-input-date">
+									<input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="시작일 선택">
+									<span><i class="date-btn"></i></span>
+								</div>
+							</div>
+							<div class="col-6 label-input">
+								<div class="c-input-date">
+									<input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="종료일 선택">
+									<span><i class="date-btn"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--  col-3  -->
+				<div class="row">
+					<div class="col label-input">
+						<label class="c-label-txt">기간선택</label>
+						<div class="row inner c-input-date-group">
+							<div class="col-3 label-input">
+								<div class="c-input-date">
+									<input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="시작일 선택">
+									<span><i class="date-btn"></i></span>
+								</div>
+							</div>
+							<div class="col-3 label-input">
+								<div class="c-input-date">
+									<input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="종료일 선택">
+									<span><i class="date-btn"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+			<!-- ! // code -->
+		</div>
+
+		<!-- [ // Date type04] -->
+
+		<!-- [Date type05 ~ 표시] -->
+		<h3 class="h3_guide">Date type05 - ~ 표시 type</h3>
+		<div class="d_desc code">
+
+			<!-- ? view -->
+			<div class="row">
+				<div class="col">
+					<div class="row inner c-input-date-group type05">
+
+						<!-- for/id 매칭 필수 -->
+						<div class="col-6 label-input">
+							<label for="startDate01">시작일 (시작)</label>
+							<div class="c-input-date">
+								<input type="text" class="c-input" id="startDate01" placeholder="YYYY-MM-DD" value="2022-06-11">
+								<span><i class="date-btn"></i></span>
+							</div>
+						</div>
+						<div class="col-6 label-input">
+							<label for="endDate01">종료일 (종료)</label>
+							<div class="c-input-date">
+								<input type="text" class="c-input" id="endDate01" placeholder="YYYY-MM-DD" value="2022-06-11">
+								<span><i class="date-btn"></i></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- ? // view -->
+
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col">
+
+						<!-- 클래스 추가 : type05  -->
+						<div class="row inner c-input-date-group type05">
+
+							<!-- for/id 매칭 필수 -->
+							<div class="col-6 label-input">
+								<label for="startDate01">시작일 (시작)</label>
+								<div class="c-input-date">
+									<input type="text" class="c-input" id="startDate01" placeholder="YYYY-MM-DD" value="2022-06-11">
+									<span><i class="date-btn"></i></span>
+								</div>
+							</div>
+							<div class="col-6 label-input">
+								<label for="endDate01">종료일 (종료)</label>
+								<div class="c-input-date">
+									<input type="text" class="c-input" id="endDate01" placeholder="YYYY-MM-DD" value="2022-06-11">
+									<span><i class="date-btn"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+			<!-- ! // code -->
+		</div>
+
+		<!-- [ // [Date type05 ~ 표시] -->
+	</div>
+	<script src="../js/pretty.js"></script>
+	<script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+	<script defer src="../../js/common.js"></script>
+</body>
+</html>

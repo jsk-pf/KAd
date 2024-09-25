@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/chart.js/dist/Chart.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- [ mod(220602) ] -->
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+    <!-- [ // mod(220602) ] -->
+
+    <div id="container">
+        <!-- Side Navigation -->
+        <nav id="sideNav">
+            <!-- Sidebar -->
+            <div class="sidenav-wrapper">
+                <div class="top-area">
+                    <div class="top-logo">
+                        <h1 class="logo">
+                            <!-- [ mod(230202) ] -->
+                            <a href="javascript:;"><img src="../../images/logo/logo_01.svg" alt="WITH KMI"></a>
+                        </h1>
+                    </div>
+                    <p style="color:#fff">UI개발 화면 일부 목록</p>
+                </div>
+                <div class="sidebar-wrap">
+                    <ul class="sidebar-menu">
+                        <li><a href="../vgt/VGT_01_001.html">메인</a></li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>회원가입/로그인</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../jo/JO_01_002.html" target="_blank">고객사 회원가입</a></li>
+                                <li><a href="../jo/JO_02_001.html" target="_blank">협력병원 회원가입</a></li>
+                                <li><a href="../LO/LO_01_001.html">로그인</a></li>
+                                <li><a href="../LO/LO_01_001_popup01.html">비밀번호 재설정(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진예약현황</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cs/CS_01_001.html">예약 진행 현황</a></li>
+                                <li><a href="../cs/CS_01_001_03_popup.html" target="_blank">연기검사 조회(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진상품관리</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../pi/PI_01_001.html">검진상품제안관리</a></li>
+                                <li><a href="../pi/PI_02_001.html">검진상품 조회</a></li>
+                                <li><a href="../pi/PI_01_001_1.html" target="_blank">검진제안서 상세보기(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002.html" target="_blank">검진제안서 등록(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002_1.html" target="_blank">검진제안서 불러오기(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진예약</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cs/CS_01_001.html">예약 진행 현황</a></li>
+                                <li><a href="../pi/CS_01_001_03_popup.html" target="_blank">연기검사 조회 (팝업)</a></li>
+                                <li><a href="../pi/CS_01_001_04_popup.html" target="_blank">메모목록 (팝업)</a></li>
+                                <li><a href="../pi/PI_01_001_1.html" target="_blank">검진제안서 상세보기(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002.html" target="_blank">검진제안서 등록(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002_1.html" target="_blank">검진제안서 불러오기(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>계정관리</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cjo/CJO_01_001.html">계정관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- [ mod(230130) ] -->
+            <div class="btm-info">
+                <p class="time">오전 07:00 ~ 오후 18:00</p>
+                <p class="tel">1533-0505</p>
+                <div class="btm-info"> (토요일 07:00~12:30)<br> (일/공휴일 휴무) </div>
+            </div>
+            <!-- [ // mod(230130) ] -->
+            <!-- // Side Navigation -->
+        </nav>
+
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper main-wrapper">
+            <!-- Header-->
+            <header class="header">
+                <div class="wrap">
+                    <div class="top-left">
+                        <button class="sidebar-toggle" type="button">
+                            <span class="ico-type01 t-i-menu is-blind">사이드메뉴</span>
+                        </button>
+                        <div class="total-search">
+                            <i class="ico-search"></i>
+                            <input type="text" placeholder="검색" class="search-input">
+                            <!-- - 검색어 입력에 따른 연관 검색어 노출 처리 -->
+                            <div class="search-related-field" style="display: none">
+                                <ul class="search-list">
+                                    <li><a href="javascript:;">검진정책관리</a></li>
+                                    <li><a href="javascript:;">검진상품관리</a></li>
+                                    <li><a href="javascript:;">검진항목관리</a></li>
+                                    <li class="on"><a href="javascript:;">검진상품승인관리</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-right">
+                        <div class="user-alert">
+                            <a href="javascript:;" role="button" class="btn-open-notice-sidebar" title="알림내역 열기">
+                                <div class="t-badge">
+                                    <span class="num">9+</span>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- [ mod(221031) ]
+				- 부서, 로그아웃 버튼 추가
+			-->
+                        <div class="user-team">운영지원팀</div>
+                        <div class="user-infobox">
+                            <a href="javascript:;" role="button" class="c-top-usercontrol btn-open-usercontrol">
+                                <div class="user-name">
+                                    <p>홍길동님</p>
+                                </div>
+                                <div class="user-img"><img src="../../images/ico/ico_user_profile.svg" alt=""></div>
+                            </a>
+                            <div class="user-control">
+                                <ul>
+                                    <li><a href="javascript:;">로그아웃</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- // Header-->
+            <!-- Contents -->
+            <section class="contents">
+                <div class="main-row col-full-height">
+                    <h1 class="skip">검진 관련 현황</h1>
+                    <div class="col-6">
+                        <div class="main-tab-area">
+                            <div class="main-stats-tab-wrap">
+                                <ul class="main-tab-list type01 c-tab-list" role="tablist">
+                                    <li class="on"><a href="javascript:;" role="tab" aria-selected="true" id="mainStatsTab01" aria-controls="mainStatsTabPanel01">전체</a></li>
+                                    <li><a href="javascript:;" role="tab" aria-selected="false" id="mainStatsTab02" aria-controls="mainStatsTabPanel02">종합검진 + 특수검진</a></li>
+                                    <li><a href="javascript:;" role="tab" aria-selected="false" id="mainStatsTab03" aria-controls="mainStatsTabPanel03">종합검진</a></li>
+                                    <li><a href="javascript:;" role="tab" aria-selected="false" id="mainStatsTab04" aria-controls="mainStatsTabPanel04">특수검진</a></li>
+                                    <li><a href="javascript:;" role="tab" aria-selected="false" id="mainStatsTab05" aria-controls="mainStatsTabPanel05">채용검진</a></li>
+                                    <li><a href="javascript:;" role="tab" aria-selected="false" id="mainStatsTab06" aria-controls="mainStatsTabPanel06">기타</a></li>
+                                </ul>
+                                <div class="c-tab-contents">
+                                    <!-- mainStatsTab_02 -->
+                                    <div class="tab-cont on" role="tabpanel" id="mainStatsTabPanel01" aria-labelledby="mainStatsTab01">
+                                        <div class="main-stats-field">
+                                            <div class="row main-stats-row">
+                                                <div class="col-6">
+                                                    <div class="m-article">
+                                                        <div class="stats-card">
+                                                            <div class="top-box">
+                                                                <div class="title">
+                                                                    <i class="stats-ico ico01"></i>
+                                                                    검진 대상자
+                                                                </div>
+                                                                <div class="figure is-maintenance">
+                                                                    <em class="num">0</em><i><span class="skip">변동없음</span></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btm-box">
+                                                                <div class="num"><em>1216</em></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="m-article">
+                                                        <div class="stats-card">
+                                                            <div class="top-box">
+                                                                <div class="title">
+                                                                    <i class="stats-ico ico03"></i>
+                                                                    미신청자
+                                                                </div>
+                                                                <div class="figure is-down">
+                                                                    <em class="num">12</em><i><span class="skip">감소</span></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btm-box">
+                                                                <div class="num"><em>585</em></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row main-stats-row">
+                                                <div class="col-6">
+                                                    <div class="m-article">
+                                                        <div class="stats-card">
+                                                            <div class="top-box">
+                                                                <div class="title">
+                                                                    <i class="stats-ico ico02"></i>
+                                                                    예약 진행 중
+                                                                </div>
+                                                                <div class="figure is-up">
+                                                                    <em class="num">12</em><i><span class="skip">증가</span></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btm-box">
+                                                                <div class="num"><em>178</em></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="m-article">
+                                                        <div class="stats-card">
+                                                            <div class="top-box">
+                                                                <div class="title">
+                                                                    <i class="stats-ico ico04"></i>
+                                                                    검진 완료
+                                                                </div>
+                                                                <div class="figure is-up">
+                                                                    <em class="num">456</em><i><span class="skip">증가</span></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btm-box">
+                                                                <div class="num"><em>631</em> <span class="slash">/</span> <span class="total">1216</span></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- mainStatsTab_02 -->
+                                    <div class="tab-cont" role="tabpanel" id="mainStatsTabPanel02" aria-labelledby="mainStatsTab02">tab
+                                        contents02</div>
+                                    <div class="tab-cont" role="tabpanel" id="mainStatsTabPanel03" aria-labelledby="mainStatsTab03">tab
+                                        contents3</div>
+                                    <div class="tab-cont" role="tabpanel" id="mainStatsTabPanel04" aria-labelledby="mainStatsTab04">tab
+                                        contents4</div>
+                                    <div class="tab-cont" role="tabpanel" id="mainStatsTabPanel05" aria-labelledby="mainStatsTab05">tab
+                                        contents5</div>
+                                    <div class="tab-cont" role="tabpanel" id="mainStatsTabPanel06" aria-labelledby="mainStatsTab06">tab
+                                        contents6</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="m-article type01 col-full-height">
+                            <div class="c-title-box">
+                                <h1 class="title">검진 진행율</h1>
+                                <div class="date">2022-05 ~ 2023-05 (최근 1년)</div>
+                            </div>
+                            <div class="cont-box">
+                                <div class="progress-rate-chart">
+                                    <canvas id="progressRateChart" style="width: 100%; height: auto"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="main-row">
+                    <div class="col">
+                        <div class="m-article type01 preference-field">
+                            <div class="c-title-box">
+                                <div class="left title-w-tab">
+                                    <h1 class="title">연령별 선호도</h1>
+                                    <ul class="main-tab-list c-tab-list" role="tablist">
+                                        <li class="on"><a href="javascript:;" role="tab" aria-selected="true" id="mainPreferenceTab01" aria-controls="mainPreferenceTabPanel01">20대</a></li>
+                                        <li><a href="javascript:;" role="tab" aria-selected="false" id="mainPreferenceTab02" aria-controls="mainPreferenceTabPanel02">30대</a></li>
+                                        <li><a href="javascript:;" role="tab" aria-selected="false" id="mainPreferenceTab03" aria-controls="mainPreferenceTabPanel03">40대</a></li>
+                                        <li><a href="javascript:;" role="tab" aria-selected="false" id="mainPreferenceTab04" aria-controls="mainPreferenceTabPanel04">50대</a></li>
+                                    </ul>
+                                </div>
+                                <div class="right">
+                                    <div class="date">2022-01 ~ 2022-08(3개월)</div>
+                                </div>
+                            </div>
+                            <div class="cont-box">
+                                <div class="c-tab-contents">
+                                    <!-- mainStatsTab_02 -->
+                                    <div class="tab-cont on" role="tabpanel" id="mainPreferenceTabPanel01" aria-labelledby="mainPreferenceTab01">
+                                        <div class="row chart-list">
+                                            <div class="col-4">
+                                                <h2 class="title">검진센터 선호도</h2>
+                                                <div class="preference-chart-card">
+                                                    <div class="chart-area">
+                                                        <div class="chart-mark">
+                                                            <canvas id="preferenceChart01" class="chart" width="100%" height="100%" role="img"></canvas>
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            <ul>
+                                                                <li>
+                                                                    <div class="ctg">KMI 광화문 검진센터</div>
+                                                                    <div class="percent">
+                                                                        <em>42</em>
+                                                                        %
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="ctg">KMI 강남 검진센터</div>
+                                                                    <div class="percent">
+                                                                        <em>31</em>
+                                                                        %
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="ctg">KMI 여의도 검진센터</div>
+                                                                    <div class="percent">
+                                                                        <em>15</em>
+                                                                        %
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="ctg">KMI 수원 검진센터</div>
+                                                                    <div class="percent">
+                                                                        <em>8</em>
+                                                                        %
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="ctg">KMI 부산 검진센터</div>
+                                                                    <div class="percent">
+                                                                        <em>5</em>
+                                                                        %
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="chart-card">
+                                                    <h2 class="title">선택 검진항목 선호도</h2>
+                                                    <div class="preference-chart-card">
+                                                        <div class="chart-area">
+                                                            <div class="chart-mark">
+                                                                <canvas id="preferenceChart02" class="chart" width="100%" height="100%" role="img"></canvas>
+                                                            </div>
+                                                            <div class="info-cont">
+                                                                <ul>
+                                                                    <li>
+                                                                        <div class="ctg">위장검사</div>
+                                                                        <div class="percent">
+                                                                            <em>42</em>
+                                                                            %
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="ctg">뇌 MRA</div>
+                                                                        <div class="percent">
+                                                                            <em>31</em>
+                                                                            %
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="ctg">혈액 검사</div>
+                                                                        <div class="percent">
+                                                                            <em>15</em>
+                                                                            %
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="ctg">스켈링 (치아)</div>
+                                                                        <div class="percent">
+                                                                            <em>8</em>
+                                                                            %
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="ctg">자궁 경부암 검사 (여성검사)</div>
+                                                                        <div class="percent">
+                                                                            <em>5</em>
+                                                                            %
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="chart-card">
+                                                    <h2 class="title">추가 검진항목 선호도</h2>
+                                                    <div class="preference-chart-card">
+                                                        <div class="chart-area">
+                                                            <div class="chart-mark">
+                                                                <canvas id="preferenceChart03" class="chart" width="100%" height="100%" role="img"></canvas>
+                                                            </div>
+                                                            <div class="info-cont">
+                                                                <ul>
+                                                                    <li>
+                                                                        <div class="ctg">위장검사</div>
+                                                                        <div class="percent">
+                                                                            <em>42</em>
+                                                                            %
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="ctg">뇌 MRA</div>
+                                                                        <div class="percent">
+                                                                            <em>31</em>
+                                                                            %
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="ctg">혈액 검사</div>
+                                                                        <div class="percent">
+                                                                            <em>15</em>
+                                                                            %
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="ctg">스켈링 (치아)</div>
+                                                                        <div class="percent">
+                                                                            <em>8</em>
+                                                                            %
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="ctg">자궁 경부암 검사 (여성검사)</div>
+                                                                        <div class="percent">
+                                                                            <em>5</em>
+                                                                            %
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- mainStatsTab_02 -->
+                                    <div class="tab-cont" role="tabpanel" id="mainPreferenceTabPanel02" aria-labelledby="mainPreferenceTab02">tab contents2</div>
+                                    <div class="tab-cont" role="tabpanel" id="mainPreferenceTabPanel03" aria-labelledby="mainPreferenceTab03">tab contents3</div>
+                                    <div class="tab-cont" role="tabpanel" id="mainPreferenceTabPanel04" aria-labelledby="mainPreferenceTab04">tab contents4</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-row main-row-type02 col-full-height">
+                    <div class="col-4-half">
+                        <div class="m-article type01">
+                            <div class="c-title-box">
+                                <h1 class="title">청구관리</h1>
+                                <div class="btns">
+                                    <a href="javascript:;" class="c-more-btn"><span>더보기</span></a>
+                                </div>
+                            </div>
+                            <div class="cont-box">
+                                <div class="c-table-field">
+                                    <div class="c-table striped type01 tbl-fixed"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4-half">
+                        <div class="m-article type01">
+                            <div class="c-title-box">
+                                <h1 class="title">공지사항</h1>
+                                <div class="btns">
+                                    <a href="javascript:;" class="c-more-btn"><span>더보기</span></a>
+                                </div>
+                            </div>
+                            <div class="cont-box">
+                                <div class="c-table-field">
+                                    <div class="c-table striped type01 tbl-fixed">
+                                        <table class="table">
+                                            <!--caption 내용 기재 -->
+                                            <caption>
+                                                청구관리 : No, 분류, 제목, 작성일자에 대한 정보
+                                            </caption>
+                                            <colgroup>
+                                                <col class="no">
+                                                <col style="width: 88px">
+                                                <col>
+                                                <col class="date">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">분류</th>
+                                                    <th scope="col">제목</th>
+                                                    <th scope="col">작성일자</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>115</td>
+                                                    <td>서비스 공지</td>
+                                                    <td class="ta-l">[주간동아] 성인 남성 돌연사 주범 심근경색, 혈관 관리로 막아라</td>
+                                                    <td>2022-08-12</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>114</td>
+                                                    <td>서비스 공지</td>
+                                                    <td class="ta-l">하계 건강검진 캠페인 안내드립니다</td>
+                                                    <td>2022-08-12</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>113</td>
+                                                    <td>검진 공지</td>
+                                                    <td class="ta-l">하계 건강검진 캠페인 안내드립니다</td>
+                                                    <td>2022-08-12</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>112</td>
+                                                    <td>서비스 공지</td>
+                                                    <td class="ta-l">하계 건강검진 캠페인 안내드립니다</td>
+                                                    <td>2022-08-12</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="row main-col-type02">
+                            <div class="col">
+                                <div class="m-article type01">
+                                    <div class="c-title-box co-article">
+                                        <h1 class="title">영업 담당자 정보</h1>
+                                    </div>
+                                    <div class="cont-box">
+                                        <ul class="list-info">
+                                            <li>
+                                                <span class="title">이름</span>
+                                                <p class="cont">김영업</p>
+                                            </li>
+                                            <li>
+                                                <span class="title">이메일</span>
+                                                <p class="cont"><a href="mailto:Test@test.com">Test@test.com</a></p>
+                                            </li>
+                                            <li>
+                                                <span class="title">내선번호</span>
+                                                <p class="cont">02-1234-5678</p>
+                                            </li>
+                                            <li>
+                                                <span class="title">휴대전화</span>
+                                                <p class="cont">010-1234-5678</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="m-article type01">
+                                    <div class="c-title-box co-article">
+                                        <h1 class="title">운영 담당자 정보</h1>
+                                    </div>
+                                    <div class="cont-box">
+                                        <ul class="list-info">
+                                            <li>
+                                                <span class="title">이름</span>
+                                                <p class="cont">김운영</p>
+                                            </li>
+                                            <li>
+                                                <span class="title">이메일</span>
+                                                <p class="cont">-</p>
+                                            </li>
+                                            <li>
+                                                <span class="title">내선번호</span>
+                                                <p class="cont">02-1234-5678</p>
+                                            </li>
+                                            <li>
+                                                <span class="title">휴대전화</span>
+                                                <p class="cont">-</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Contents -->
+
+            <!-- notify Side Navigation -->
+            <nav id="noticeSideNav">
+                <!-- Sidebar -->
+                <div class="top-area">
+                    <a href="javascript:;" role="button" class="btn-close-notice-sidebar"><span class="skip">알림내역 닫기</span></a>
+                </div>
+
+                <div class="side-notice-list-wrap">
+                    <div class="side-notice-list-field">
+                        <div class="s-notice-card">
+                            <p class="month">2022년 12월</p>
+                            <ul class="sub-notice-list">
+                                <li>
+                                    <a href="javascript:;" class="card">
+                                        <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                        <div class="top-info">
+                                            청구
+                                            <p class="date">12-26 / 21:01</p>
+                                        </div>
+                                        <p class="cont">담당자님! “제목” 청구 검토 요청 건이 있습니다.</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="card">
+                                        <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                        <div class="top-info">
+                                            청구
+                                            <p class="date">12-26 / 21:01</p>
+                                        </div>
+                                        <p class="cont">담당자님! “제목” 청구 검토 요청 건이 있습니다.</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- [comment] 
+					- 해당 알림에 대한 페이지를 방문한적이 있는 경우 background color 변경 클래스 제어 : .is-visited
+				-->
+                        <div class="s-notice-card">
+                            <p class="month">2022년 9월</p>
+                            <ul class="sub-notice-list">
+                                <li>
+                                    <a href="javascript:;" class="card is-visited">
+                                        <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                        <div class="top-info">
+                                            자료관리
+                                            <p class="date">09-26 / 09:15</p>
+                                        </div>
+                                        <p class="cont">담당자님! “제목” 자료등룍 완료 되었습니다.</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="s-notice-card">
+                            <p class="month">2022년 9월</p>
+                            <ul class="sub-notice-list">
+                                <li>
+                                    <a href="javascript:;" class="card is-visited">
+                                        <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                        <div class="top-info">
+                                            자료관리
+                                            <p class="date">09-26 / 09:15</p>
+                                        </div>
+                                        <p class="cont">담당자님! “제목” 자료등룍 완료 되었습니다.</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- [comment] 
+				- 알림 내역이 없는 경우
+			-->
+                        <div class="s-notice-card">
+                            <div class="no-list">
+                                <p>알림 내역이 없습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // notify Navigation -->
+            </nav>
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <p class="copyright">Copyright© KMI.All Rights Reserved.</p>
+                </div>
+            </footer>
+
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script src="../../lib/chart.js/dist/Chart.min.js"></script>
+    <script>
+        /*
+					[comment]
+					- data별 포인트 색상(border-color)에 맞추어 label의 font 색상이 바뀔 수 있도록 script 추가 구현 필요
+				*/
+
+        const progressRateCtx = document.getElementById('progressRateChart');
+        const progressRateChart = new Chart(progressRateCtx, {
+            type: 'line',
+            data: {
+                labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                datasets: [{
+                        fill: false,
+                        label: '미신청',
+                        lineTension: 0,
+                        data: [700, 500, 300, 250, 120, 322, 700, 500, 300, 250, 120, 322],
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        pointRadius: 4,
+                        backgroundColor: '#FFD9D5',
+                        borderColor: '#FF7B6D',
+                        borderWidth: 2,
+                    },
+                    {
+                        fill: false,
+                        label: '예약진행',
+                        lineTension: 0,
+                        data: [500, 220, 170, 340, 100, 622, 500, 220, 170, 340, 100, 622],
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        pointRadius: 4,
+                        backgroundColor: '#A2EEE5',
+                        borderColor: '#39B4A5',
+                        borderWidth: 2,
+                    },
+                    {
+                        fill: false,
+                        label: '검진완료',
+                        lineTension: 0,
+                        data: [322, 100, 200, 150, 420, 0, 322, 100, 200, 150, 420, 0],
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        pointRadius: 4,
+                        backgroundColor: '#74AAEA',
+                        borderColor: '#2F7AD3',
+                        borderWidth: 2,
+                    },
+                ],
+            },
+            options: {
+                maintainAspectRatio: false,
+                legend: {
+                    display: true,
+                    labels: {
+                        defaultFontFamily: 'NotoSansKR',
+                        usePointStyle: true,
+                        padding: 16,
+                        fontColor: '#000',
+                        fontSize: 10,
+                        pointStyle: 'circle',
+                        lineWidth: 1,
+                        borderWidth: 1,
+                    },
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            min: 0,
+                            max: 800,
+                            stepSize: 200,
+                            beginAtZero: 0,
+                        },
+                    }, ],
+                },
+            },
+        });
+
+        // + preferenceChart
+        const preferenceOptions = {
+            legend: {
+                display: true,
+                defaultFontColor: '#777776',
+                fontSize: 6,
+                position: 'top',
+                align: 'start',
+                lineWidth: 2,
+
+                labels: {
+                    defaultFontFamily: 'NotoSansKR',
+                    usePointStyle: true,
+                    padding: 16,
+                    fontColor: '#000',
+                    fontSize: 10,
+                    align: 'start',
+                    usePointStyle: true,
+                    fontColor: '#000',
+                    pointStyle: 'circle',
+                },
+            },
+            scale: {
+                ticks: {
+                    fontSize: 10,
+                },
+            },
+        };
+
+        const preferenceCtx01 = document.getElementById('preferenceChart01');
+        const preferenceChart01 = new Chart(preferenceCtx01, {
+            type: 'radar',
+            data: {
+                labels: ['KMI 광화문', 'KMI 강남', 'KMI 여의도', 'KMI 수원', 'KMI 부산'],
+                cornerRadius: 50,
+                datasets: [{
+                        fill: true,
+                        label: '남성',
+                        pointStyle: 'circle',
+                        fontColor: '#2F7AD3',
+                        data: [10, 40, 80, 50, 20],
+                        backgroundColor: 'rgba(47, 122, 211, 0.2)',
+                        borderColor: '#2F7AD3',
+                        borderWidth: 1,
+                    },
+                    {
+                        label: '여성',
+                        pointStyle: 'circle',
+                        data: [60, 10, 20, 20, 50],
+                        backgroundColor: 'rgba(255, 104, 89, 0.2)',
+                        borderColor: '#FF6859',
+                        borderWidth: 1,
+                    },
+                ],
+            },
+            options: preferenceOptions,
+        });
+
+        const preferenceCtx02 = document.getElementById('preferenceChart02');
+        const preferenceChart02 = new Chart(preferenceCtx02, {
+            type: 'radar',
+            data: {
+                labels: ['위장검사', 'KMI 강남', 'KMI 여의도', 'KMI 수원', 'KMI 부산'],
+                cornerRadius: 50,
+                datasets: [{
+                        fill: true,
+                        label: '남성',
+                        pointStyle: 'circle',
+                        fontColor: '#2F7AD3',
+                        data: [10, 40, 80, 50, 20],
+                        backgroundColor: 'rgba(47, 122, 211, 0.2)',
+                        borderColor: '#2F7AD3',
+                        borderWidth: 1,
+                    },
+                    {
+                        label: '여성',
+                        pointStyle: 'circle',
+                        data: [60, 10, 20, 20, 50],
+                        backgroundColor: 'rgba(255, 104, 89, 0.2)',
+                        borderColor: '#FF6859',
+                        borderWidth: 1,
+                    },
+                ],
+            },
+            options: preferenceOptions,
+        });
+        const preferenceCtx03 = document.getElementById('preferenceChart03');
+        const preferenceChart03 = new Chart(preferenceCtx03, {
+            type: 'radar',
+            data: {
+                labels: ['위장검사', '뇌 MRA', '혈액 검사', '스켈링 (치아)', '대장  내시경'],
+                cornerRadius: 50,
+                datasets: [{
+                        fill: true,
+                        label: '남성',
+                        pointStyle: 'circle',
+                        fontColor: '#2F7AD3',
+                        data: [10, 40, 80, 50, 20],
+                        backgroundColor: 'rgba(47, 122, 211, 0.2)',
+                        borderColor: '#2F7AD3',
+                        borderWidth: 1,
+                    },
+                    {
+                        label: '여성',
+                        pointStyle: 'circle',
+                        data: [60, 10, 20, 20, 50],
+                        backgroundColor: 'rgba(255, 104, 89, 0.2)',
+                        borderColor: '#FF6859',
+                        borderWidth: 1,
+                    },
+                ],
+            },
+            options: preferenceOptions,
+        });
+
+        $(window).on('load', function() {
+            closeNoticeSideBar();
+            openNoticeSideBar();
+        });
+    </script>
+</body>
+
+</html>

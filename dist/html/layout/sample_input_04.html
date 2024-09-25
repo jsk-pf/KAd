@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객사 조회 및 등록</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body> <!-- [ mod(220602) ] -->
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+    <!-- [ // mod(220602) ] -->
+    <div id="container"> <!-- Side Navigation -->
+        <nav id="sideNav">
+            <!-- Sidebar -->
+            <div class="sidenav-wrapper">
+                <div class="top-area">
+                    <div class="top-logo">
+                        <h1 class="logo">
+                            <!-- [ mod(230202) ] -->
+                            <a href="javascript:;"><img src="../../images/logo/logo_01.svg" alt="WITH KMI"></a>
+                        </h1>
+                    </div>
+                    <p style="color:#fff">UI개발 화면 일부 목록</p>
+                </div>
+                <div class="sidebar-wrap">
+                    <ul class="sidebar-menu">
+                        <li><a href="../vgt/VGT_01_001.html">메인</a></li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>회원가입/로그인</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../jo/JO_01_002.html" target="_blank">고객사 회원가입</a></li>
+                                <li><a href="../jo/JO_02_001.html" target="_blank">협력병원 회원가입</a></li>
+                                <li><a href="../LO/LO_01_001.html">로그인</a></li>
+                                <li><a href="../LO/LO_01_001_popup01.html">비밀번호 재설정(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진예약현황</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cs/CS_01_001.html">예약 진행 현황</a></li>
+                                <li><a href="../cs/CS_01_001_03_popup.html" target="_blank">연기검사 조회(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진상품관리</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../pi/PI_01_001.html">검진상품제안관리</a></li>
+                                <li><a href="../pi/PI_02_001.html">검진상품 조회</a></li>
+                                <li><a href="../pi/PI_01_001_1.html" target="_blank">검진제안서 상세보기(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002.html" target="_blank">검진제안서 등록(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002_1.html" target="_blank">검진제안서 불러오기(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진예약</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cs/CS_01_001.html">예약 진행 현황</a></li>
+                                <li><a href="../pi/CS_01_001_03_popup.html" target="_blank">연기검사 조회 (팝업)</a></li>
+                                <li><a href="../pi/CS_01_001_04_popup.html" target="_blank">메모목록 (팝업)</a></li>
+                                <li><a href="../pi/PI_01_001_1.html" target="_blank">검진제안서 상세보기(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002.html" target="_blank">검진제안서 등록(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002_1.html" target="_blank">검진제안서 불러오기(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>계정관리</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cjo/CJO_01_001.html">계정관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- [ mod(230130) ] -->
+            <div class="btm-info">
+                <p class="time">오전 07:00 ~ 오후 18:00</p>
+                <p class="tel">1533-0505</p>
+                <div class="btm-info"> (토요일 07:00~12:30)<br> (일/공휴일 휴무) </div>
+            </div>
+            <!-- [ // mod(230130) ] -->
+            <!-- // Side Navigation -->
+        </nav>
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper"> <!-- Header-->
+            <header class="header">
+                <div class="wrap">
+                    <div class="top-left">
+                        <button class="sidebar-toggle" type="button">
+                            <span class="ico-type01 t-i-menu is-blind">사이드메뉴</span>
+                        </button>
+                        <div class="total-search">
+                            <i class="ico-search"></i>
+                            <input type="text" placeholder="검색" class="search-input">
+                            <!-- - 검색어 입력에 따른 연관 검색어 노출 처리 -->
+                            <div class="search-related-field" style="display: none">
+                                <ul class="search-list">
+                                    <li><a href="javascript:;">검진정책관리</a></li>
+                                    <li><a href="javascript:;">검진상품관리</a></li>
+                                    <li><a href="javascript:;">검진항목관리</a></li>
+                                    <li class="on"><a href="javascript:;">검진상품승인관리</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-right">
+                        <!-- [ mod(221031) ]
+				- 부서, 로그아웃 버튼 추가
+			-->
+                        <div class="user-team">운영지원팀</div>
+                        <div class="user-infobox">
+                            <a href="javascript:;" role="button" class="c-top-usercontrol btn-open-usercontrol">
+                                <div class="user-name">
+                                    <p>홍길동님</p>
+                                </div>
+                                <div class="user-img"><img src="../../images/ico/ico_user_profile.svg" alt=""></div>
+                            </a>
+                            <div class="user-control">
+                                <ul>
+                                    <li><a href="javascript:;">로그아웃</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- // Header--> <!-- Contents -->
+            <section class="contents">
+                <!-- [ mod(220607) ] -
+					- bread crumb 추가 반영 (design) 및 .c-title-field 위치 변경
+				-->
+                <div class="c-panel top_head">
+                    <nav class="c-breadcrumb" aria-label="breadcrumb">
+                        <ol class="breadcrumb-list">
+                            <li>고객사</li>
+                            <li>고객사 조회 등록</li>
+                            <li class="on" aria-current="page">고객사 상세보기</li>
+                        </ol>
+                    </nav>
+                    <div class="c-title-field">
+                        <h1 class="title-lg">고객사 상세보기</h1>
+                        <div class="buttons">
+                            <button class="c-btn bg-gray-3"><span>조회</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-panel c-inquiry-field">
+                    <div class="c-article input-list">
+                        <div class="row" style="flex:1 1 auto">
+                            <div class="col-3 label-input">
+                                <label for="inputText01">회원번호</label>
+                                <input type="text" class="c-input" id="inputText01" value="11442222" disabled>
+                            </div>
+                            <div class="col-3 label-input">
+                                <label for="inputName01_01">이름</label>
+                                <input type="text" class="c-input" id="inputName01_01" value="홍길동">
+                            </div>
+                            <div class="col-3 label-input">
+                                <label for="inputName01_02">이름</label>
+                                <input type="text" class="c-input" id="inputName01_02" value="홍길동">
+                            </div>
+                            <div class="col-3 label-input">
+                                <label for="inputName01_03">이름</label>
+                                <input type="text" class="c-input" id="inputName01_03" value="홍길동">
+                            </div>
+                            <div class="col-6 label-input">
+                                <label class="c-label-txt">휴대폰 전화번호</label>
+                                <div class="row inner c-input-phone-group">
+                                    <div class="col input-phone-01">
+                                        <div class="c-select">
+                                            <select title="휴대폰 전화번호 앞 3자리 선택">
+                                                <option value="" selected>010</option>
+                                                <option value="">option</option>
+                                                <option value="">option</option>
+                                                <option value="">option</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 중간 4자리 입력"></div>
+                                    <div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 끝 3자리 입력"></div>
+                                </div>
+                            </div>
+                            <div class="col-6 label-input">
+                                <label class="c-label-txt">이메일</label>
+                                <div class="row inner c-input-email-group">
+                                    <div class="col-6 input-email-01">
+                                        <input type="text" class="c-input" title="이메일 계정입력" value="test">
+                                    </div>
+                                    <div class="col-6 input-email-02">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input type="text" class="c-input" title="이메일 도메인 입력" value="hanmail.net">
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="c-select">
+                                                    <select title="이메일 도메인 선택">
+                                                        <option value="" selected>직접입력</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                        <option value="">option</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 label-input">
+                                <label for="inputGender01">성별</label>
+                                <input type="text" class="c-input" id="inputGender01">
+                            </div>
+                            <div class="col-3 label-input">
+                                <label for="inputId">ID</label>
+                                <input type="text" class="c-input" id="inputId" value="jks10951" disabled>
+                            </div>
+                            <div class="col-3 label-input">
+                                <label for="inputPw">비밀번호</label>
+                                <input type="text" class="c-input" id="inputPw" value="dddd" disabled>
+                            </div>
+                            <div class="col-6 label-input">
+                                <label class="c-label-txt">주소</label>
+                                <div class="row inner c-input-address-group">
+                                    <div class="col input-addr-01">
+                                        <input type="text" class="c-input" title="우편번호 입력" placeholder="우편번호">
+                                    </div>
+                                    <div class="col input-addr-02"><input type="text" class="c-input" title="주소 입력"></div>
+                                    <div class="col input-addr-03">
+                                        <button type="button" class="c-btn input-btn"><span>검색</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 label-input">
+                                <label for="detailAddress">상세주소</label>
+                                <input type="text" class="c-input" id="detailAddress" title="상세주소 입력" value="광화문 빌딩 2층">
+                            </div>
+                            <!-- for/id 매칭 필수 -->
+                            <div class="col-6 label-input">
+                                <label for="range01">금액설정</label>
+                                <div class="c-input-date">
+                                    <input type="text" class="c-input" id="range01">
+                                </div>
+                            </div>
+                            <div class="col-6 label-input">
+                                <label for="range02">label</label>
+                                <div class="c-input-date">
+                                    <input type="text" class="c-input" id="range02">
+                                </div>
+                            </div>
+                            <div class="col-6 label-input">
+                                <label class="c-label-txt">기간선택</label>
+                                <div class="row inner c-input-date-group">
+                                    <div class="col-6 label-input">
+                                        <div class="c-input-date">
+                                            <input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="시작일 선택">
+                                            <span><i class="date-btn"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 label-input">
+                                        <div class="c-input-date">
+                                            <input type="text" class="c-input" placeholder="YYYY-MM-DD" value="2022-06-11" title="종료일 선택">
+                                            <span><i class="date-btn"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- [ // mod(220607) ] -->
+                <div class="c-panel">
+                    <div class="c-field">
+                        <div class="c-select">
+                            <!-- [ mod(220602) ]
+								- title 속성 추가
+								-->
+                            <select id="" title="검색범위">
+                                <option value="" selected>선택</option>
+                                <option value="">option</option>
+                                <option value="">option</option>
+                                <option value="">option</option>
+                            </select>
+                        </div>
+                        <div class="buttons">
+                            <button class="c-btn bg-navy-1" type="button"><span>수정</span></button>
+                            <button class="c-btn bg-navy-2" type="button"><span>메모등록</span></button>
+                            <button class="c-btn bg-blue-1" type="button"><span>추가등록</span></button>
+                        </div>
+                    </div>
+                    <div class="c-table-field">
+                        <!-- c-table -->
+                        <div class="c-table striped sorting">
+                            <table class="table">
+                                <!-- [ mod(220607) ]
+										- caption 추가
+									-->
+                                <caption> 고객사 상세정보 : 항목 선텍, No, 고객사 코드, 대표 고객사명, 관계고객사명, 사업자등록번호, 담당자명, 영업담당자, 비고에 대한 정보 </caption>
+                                <colgroup>
+                                    <col class="checkbox">
+                                    <col class="no">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col style="width: 25%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <!--  [comment]
+												- for/id 값 매칭
+												- sorting 기능 적용 시 '오름차순/내림차순' text 변경 필요
+											-->
+                                        <th>
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="allchk">
+                                                <label for="allchk" class="chk-label"><i></i><span class="skip">전체선택</span></label>
+                                            </div>
+                                        </th>
+                                        <th>No</th>
+                                        <th>
+                                            <div class="tbl-sorting">
+                                                <span>고객사 코드</span>
+                                                <button type="button" class="sort-btn active"><span class="skip">오름차순</span></button>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="tbl-sorting">
+                                                <span>대표 고객사명</span>
+                                                <button type="button" class="sort-btn"><span class="skip">오름차순</span></button>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="tbl-sorting">
+                                                <span>관계고객사명</span>
+                                                <button type="button" class="sort-btn"><span class="skip">오름차순</span></button>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="tbl-sorting">
+                                                <span>사업자등록번호</span>
+                                                <button type="button" class="sort-btn"><span class="skip">오름차순</span></button>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="tbl-sorting">
+                                                <span>담당자명</span>
+                                                <button type="button" class="sort-btn"><span class="skip">오름차순</span></button>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="tbl-sorting">
+                                                <span>영업담당자</span>
+                                                <button type="button" class="sort-btn"><span class="skip">오름차순</span></button>
+                                            </div>
+                                        </th>
+                                        <th>비고</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="">
+                                                <label for="" class="chk-label"><i></i><span class="skip">전체 선택</span></label>
+                                            </div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>A0215145</td>
+                                        <td>삼성전자</td>
+                                        <td>삼성전자</td>
+                                        <td>104-55-42567</td>
+                                        <td>홍난희</td>
+                                        <td>홍길동</td>
+                                        <td>
+                                            <a href="javascript:;" class="c-bs-link"><span>상세보기</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="">
+                                                <label for="" class="chk-label"><i></i></label>
+                                            </div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>A0215145</td>
+                                        <td>삼성전자</td>
+                                        <td>삼성전자</td>
+                                        <td>104-55-42567</td>
+                                        <td>홍난희</td>
+                                        <td>홍길동</td>
+                                        <td>
+                                            <a href="javascript:;" class="c-bs-link"><span>상세보기</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="">
+                                                <label for="" class="chk-label"><i></i></label>
+                                            </div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>A0215145</td>
+                                        <td>삼성전자</td>
+                                        <td>삼성전자</td>
+                                        <td>104-55-42567</td>
+                                        <td>홍난희</td>
+                                        <td>홍길동</td>
+                                        <td>
+                                            <a href="javascript:;" class="c-bs-link"><span>상세보기</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="">
+                                                <label for="" class="chk-label"><i></i><span class="skip">전체 선택</span></label>
+                                            </div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>A0215145</td>
+                                        <td>삼성전자</td>
+                                        <td>삼성전자</td>
+                                        <td>104-55-42567</td>
+                                        <td>홍난희</td>
+                                        <td>홍길동</td>
+                                        <td>
+                                            <a href="javascript:;" class="c-bs-link"><span>상세보기</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="">
+                                                <label for="" class="chk-label"><i></i><span class="skip">전체 선택</span></label>
+                                            </div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>A0215145</td>
+                                        <td>삼성전자</td>
+                                        <td>삼성전자</td>
+                                        <td>104-55-42567</td>
+                                        <td>홍난희</td>
+                                        <td>홍길동</td>
+                                        <td>
+                                            <a href="javascript:;" class="c-bs-link"><span>상세보기</span></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- c-tbl-paging -->
+                        <div class="c-tbl-paging">
+                            <p class="page-info">Total Page <em>01</em> page</p>
+                            <nav class="c-pagination">
+                                <ul>
+                                    <li>
+                                        <a class="page-link" href="javascript:;" aria-label="처음">
+                                            <span class="is-blind p-first">처음</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="page-link" href="javascript:;" aria-label="이전">
+                                            <span class="is-blind p-prev">이전</span>
+                                        </a>
+                                    </li>
+                                    <li><a class="page-link is-active" href="javascript:;">1</a></li>
+                                    <li><a class="page-link" href="javascript:;">2</a></li>
+                                    <li><a class="page-link" href="javascript:;">3</a></li>
+                                    <li><a class="page-link" href="javascript:;">4</a></li>
+                                    <li><a class="page-link" href="javascript:;">5</a></li>
+                                    <li>
+                                        <a class="page-link" href="javascript:;" aria-label="다음">
+                                            <span class="is-blind p-next">다음</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="page-link" href="javascript:;" aria-label="끝">
+                                            <span class="is-blind p-end">끝</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="../../js/common.js"></script>
+</body>
+
+</html>

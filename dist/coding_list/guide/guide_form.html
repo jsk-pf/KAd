@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Layout Guide</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- guide css -->
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="wrap" class="coding_guide">
+      <h1 class="h1_guide">Form</h1>
+      <div class="title-box">
+        <h2 class="h2_guide">공통</h2>
+      </div>
+      <div class="guide_descbox">
+        <h3 class="g-title"></h3>
+        <div class="inner_desc">
+          <ul>
+            <li>[class="row"] row 별 요소 배치</li>
+            <li>row 당 최대 column 개수 : 4</li>
+            <li>
+              [class='col-*'] : (column max : 12), column에 비례 [col-*] 클래스 숫자를 부여하여 컬럼 너비 적용<br />
+              ex) <em class="e_code">[class="col-1 ~ col-12"], 또는 [class="col"] </em>
+            </li>
+            <li>
+              label + input 결합 시 =&gt; label(1) : input (1) 경우 동일 네이밍<br />
+              : <span class="e_code">ex) label for="userName" == input id="userName"</span>
+            </li>
+            <li>label + input 결합 시 =&gt; label(1) : input (n) 경우<br />label for, input id 부여 X / <br />각 input 태그 title 속성값 선언 <em class="fc-yellow">input title='해당 인풋 요소에 대한 설명'</em></li>
+            <li>label for, input id 선언 시 퍼블리싱 소스의 속성값이나 공란에 대해 해당 항목에 따른 <em class="fc-yellow">적절한 네이밍으로 수정하여 사용 필요</em></li>
+            <li>샘플 페이지 : <a href="../../html/sample_input.html" target="_blank" class="fc-blue">sample_input.html</a></li>
+            <li>form 입력/출력 형식 : 휴대폰, 전화번호, 생년월일 : 하이픈(-) 처리</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ===================================== INPUT -->
+      <div class="title-box">
+        <h2 class="h2_guide">INPUT</h2>
+      </div>
+
+      <!-- [Input Text] -->
+      <h3 class="h3_guide">Input Text</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <input type="text" class="c-input" value="text" />
+        <input type="text" class="c-input" value="text" readonly="readonly" />
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<input type="text" class="c-input" value="text">
+				<input type="text" class="c-input" value="text" readonly="readonly">
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Input Text] -->
+
+      <!-- [Label + Input Text] -->
+      <h3 class="h3_guide">Label + input Text</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="row">
+          <div class="col-6 label-input">
+            <label for="code">고객사 코드<i class="is-nec">필수입력</i></label>
+            <input type="text" class="c-input" id="code" />
+          </div>
+          <div class="col-6 label-input">
+            <label for="code02">고객사 코드<i class="is-nec">필수입력</i></label>
+            <input type="text" class="c-input" id="code02" />
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col-6 label-input">
+						<label for="code">고객사 코드<i class="is-nec">필수입력</i></label>
+						<input type="text" class="c-input" id="code">
+					</div>
+					<div class="col-6 label-input">
+						<label for="code02">고객사 코드<i class="is-nec">필수입력</i></label>
+						<input type="text" class="c-input" id="code02">
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [Label + Input Text] -->
+      <h3 class="h3_guide">Label + input Text</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="row c-input-pw-row">
+          <div class="col label-input">
+            <label for="partnerJoin02">PW<i class="is-nec">필수입력</i></label>
+            <input type="password" class="c-input" id="partnerJoin02" />
+          </div>
+        </div>
+        <br />
+        <div class="row c-input-pw-row">
+          <div class="col label-input">
+            <label for="partnerJoin03" class="rechk-label">PW확인<i class="is-nec">필수입력</i></label>
+            <div class="pw-rechk">
+              <input type="password" class="c-input" id="partnerJoin03" />
+              <p class="c-input-info-txt">일치합니다.</p>
+
+              <!-- <p class="c-input-info-txt is-error"> 일치하지 않습니다. </p> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="row c-input-pw-row">
+					<div class="col label-input">
+						<label for="partnerJoin02">PW<i class="is-nec">필수입력</i></label>
+						<input type="password" class="c-input" id="partnerJoin02">
+					</div>
+				</div>
+				<div class="row c-input-pw-row">
+					<div class="col label-input">
+						<label for="partnerJoin03" class="rechk-label">PW확인<i class="is-nec">필수입력</i></label>
+						<div class="pw-rechk">
+							<input type="password" class="c-input" id="partnerJoin03">
+							<p class="c-input-info-txt">일치합니다.</p>
+
+							<!-- <p class="c-input-info-txt is-error"> 일치하지 않습니다. </p> -->
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [input text range ] -->
+      <h3 class="h3_guide">input Text Range</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="row c-input-group range">
+          <!-- for/id 매칭 필수 -->
+          <div class="col-6 label-input">
+            <label for="range01">label</label>
+            <div class="c-input-date">
+              <input type="text" class="c-input" id="range01" />
+            </div>
+          </div>
+          <div class="col-6 label-input">
+            <label for="range02">label</label>
+            <div class="c-input-date">
+              <input type="text" class="c-input" id="range02" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col label-input">
+            <label for="range01">금액설정</label>
+            <div class="row inner c-input-group range">
+              <!-- for/id 매칭 및 값 변경 필수 -->
+              <div class="col-6 label-input">
+                <div class="c-input-box">
+                  <input type="text" class="c-input" />
+                </div>
+              </div>
+              <div class="col-6 label-input">
+                <div class="c-input-box">
+                  <input type="text" class="c-input" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="row c-input-group range">
+
+					<!-- for/id 변경 필수 -->
+					<div class="col-6 label-input">
+						<label for="range01">label</label>
+						<div class="c-input-box">
+							<input type="text" class="c-input" id="range01">
+						</div>
+					</div>
+					<div class="col-6 label-input">
+						<label for="range02">label</label>
+						<div class="c-input-box">
+							<input type="text" class="c-input" id="range02">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+
+					<!-- 각 input 태그 title 속성값 선언 input title='해당 인풋 요소에 대한 설명' -->
+					<div class="col label-input">
+						<label class="c-label-txt">금액설정</label>
+						<div class="row inner c-input-group range">
+							<div class="col-6 label-input">
+								<div class="c-input-date">
+									<input type="text" class="c-input" title="">
+								</div>
+							</div>
+							<div class="col-6 label-input">
+								<div class="c-input-date">
+									<input type="text" class="c-input" title="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [input text range ] -->
+
+      <!-- [Input Text] -->
+      <h3 class="h3_guide">Input Text</h3>
+
+      <!-- ? view -->
+      <div class="d_desc code">
+        <div class="row">
+          <div class="col-3 label-input">
+            <label for="inputName02">고객사명<i class="is-nec">필수입력</i></label>
+            <input type="text" class="c-input" id="inputName02" value="11442222" disabled />
+          </div>
+          <div class="col-3 label-input">
+            <label for="inputSearch">검색</label>
+            <div class="c-input-search">
+              <input type="text" id="inputSearch" />
+              <button type="button" class="btn-search"><span class="skip">검색</span></button>
+            </div>
+          </div>
+          <div class="col-3 label-input">
+            <label for="inputText02">이름</label>
+            <input type="text" class="c-input" id="inputText02" value="홍길동" />
+          </div>
+          <div class="col-3 label-input">
+            <label for="unit">검사대상인원</label>
+            <div class="c-input-unit">
+              <input type="text" class="c-input" id="unit" />
+              <span class="unit">명</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col-3 label-input">
+						<label for="inputName02">고객사명<i class="is-nec">필수입력</i></label>
+						<input type="text" class="c-input" id="inputName02" value="11442222" disabled>
+					</div>
+					<div class="col-3 label-input">
+						<label for="inputSearch">검색</label>
+						<div class="c-input-search">
+							<input type="text" id="inputSearch">
+							<button type="button" class="btn-search"><span class="skip">검색</span></button>
+						</div>
+					</div>
+					<div class="col-3 label-input">
+						<label for="inputText02">이름</label>
+						<input type="text" class="c-input" id="inputText02" value="홍길동">
+					</div>
+					<div class="col-3 label-input">
+						<label for="unit">검사대상인원</label>
+						<div class="c-input-unit">
+							<input type="text" class="c-input" id="unit">
+							<span class="unit">명</span>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Input Text] -->
+
+      <!-- [Input Text + Button] -->
+      <h3 class="h3_guide">Input Text + Button</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="c-input-btn-group">
+          <div class="col-11"><input type="text" class="c-input" id="inputBtn02" value="test" /></div>
+          <div class="col-1 input-button">
+            <div class="buttons">
+              <button class="c-btn bg-blue-1 input-btn"><span>검진추가</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col label-input">
+            <label class="c-label-txt" for="inputBtn01">버튼</label>
+            <div class="row inner c-input-btn-group">
+              <div class="col-10"><input type="text" class="c-input" id="inputBtn01" value="test" /></div>
+              <div class="col-2 input-button">
+                <div class="buttons">
+                  <button class="c-btn bg-blue-1 input-btn"><span>검진추가</span></button>
+                  <button class="c-btn bg-blue-1 input-btn"><span>검진추가</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="c-input-btn-group">
+					<div class="col-11"><input type="text" class="c-input" id="inputBtn02" value="test"></div>
+					<div class="col-1 input-button">
+						<div class="buttons">
+							<button class="c-btn bg-blue-1 input-btn"><span>검진추가</span></button>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col label-input">
+						<label class="c-label-txt" for="inputBtn01">버튼</label>
+						<div class="row inner c-input-btn-group">
+							<div class="col-10"><input type="text" class="c-input" id="inputBtn01" value="test"></div>
+							<div class="col-2 input-button">
+								<div class="buttons">
+									<button class="c-btn bg-blue-1 input-btn"><span>검진추가</span></button>
+									<button class="c-btn bg-blue-1 input-btn"><span>검진추가</span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Input Text] -->
+
+      <!-- ===================================== CHECKBOX -->
+      <div class="title-box">
+        <h2 class="h2_guide">CHECKBOX</h2>
+      </div>
+
+      <!-- [Checkbox] -->
+      <h3 class="h3_guide">Checkbox</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="d_ib">
+          <div class="c-chkbox">
+            <input type="checkbox" id="chk01" />
+            <label for="chk01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+          </div>
+          <div class="c-chkbox">
+            <input type="checkbox" id="" checked />
+            <label for="" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+          </div>
+          <div class="c-chkbox">
+            <input type="checkbox" id="" disabled />
+            <label for="" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+          </div>
+          <div class="c-chkbox">
+            <input type="checkbox" id="" checked disabled />
+            <label for="" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript"></xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Checkbox] -->
+
+      <!-- [Checkbox + Label] -->
+      <h3 class="h3_guide">Checkbox + Label</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="c-chkbox">
+          <input type="checkbox" id="chk01" />
+          <label for="chk01" class="chk-label"><i></i><span>건강검진</span></label>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="c-chkbox">
+					<input type="checkbox" id="chk01">
+					<label for="chk01" class="chk-label"><i></i><span>건강검진</span></label>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Checkbox + Label] -->
+
+      <!-- [Checkbox List] -->
+      <h3 class="h3_guide">Checkbox List</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="row">
+          <div class="col-6 label-input">
+            <label>검진구분</label>
+            <div class="c-m-input-list">
+              <div class="input-col">
+                <div class="inner">
+                  <div class="c-chkbox">
+                    <input type="checkbox" id="chk03_01" />
+                    <label for="chk03_01" class="chk-label"><i></i><span>종합검진</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="inner">
+                  <div class="c-chkbox">
+                    <input type="checkbox" id="chk03_02" />
+                    <label for="chk03_02" class="chk-label"><i></i><span>건강검진</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="inner">
+                  <div class="c-chkbox">
+                    <input type="checkbox" id="chk03_03" />
+                    <label for="chk03_03" class="chk-label"><i></i><span>건강검진</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="inner">
+                  <div class="c-chkbox">
+                    <input type="checkbox" id="chk03_04" />
+                    <label for="chk03_04" class="chk-label"><i></i><span>건강검진</span></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 label-input">
+            <label>검진구분</label>
+            <div class="c-m-input-list">
+              <div class="input-col">
+                <div class="inner">
+                  <div class="c-chkbox">
+                    <input type="checkbox" id="chk02_01" />
+                    <label for="chk02_01" class="chk-label"><i></i><span>종합검진</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="inner">
+                  <div class="c-chkbox">
+                    <input type="checkbox" id="chk02_02" />
+                    <label for="chk02_02" class="chk-label"><i></i><span>건강검진</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-col w-100">
+                <div class="c-multi-input-group">
+                  <div class="c-chkbox">
+                    <input type="checkbox" id="chk02_03" />
+                    <label for="chk02_03" class="chk-label"><i></i><span>회사지원</span></label>
+                  </div>
+                  <input type="text" class="c-input" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col-6 label-input">
+						<label>검진구분</label>
+						<div class="c-m-input-list">
+							<div class="input-col">
+								<div class="inner">
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk03_01">
+										<label for="chk03_01" class="chk-label"><i></i><span>종합검진</span></label>
+									</div>
+								</div>
+							</div>
+							<div class="input-col">
+								<div class="inner">
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk03_02">
+										<label for="chk03_02" class="chk-label"><i></i><span>건강검진</span></label>
+									</div>
+								</div>
+							</div>
+							<div class="input-col">
+								<div class="inner">
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk03_03">
+										<label for="chk03_03" class="chk-label"><i></i><span>건강검진</span></label>
+									</div>
+								</div>
+							</div>
+							<div class="input-col">
+								<div class="inner">
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk03_04">
+										<label for="chk03_04" class="chk-label"><i></i><span>건강검진</span></label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 label-input">
+						<label>검진구분</label>
+						<div class="c-m-input-list">
+							<div class="input-col">
+								<div class="inner">
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk02_01">
+										<label for="chk02_01" class="chk-label"><i></i><span>종합검진</span></label>
+									</div>
+								</div>
+							</div>
+							<div class="input-col">
+								<div class="inner">
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk02_02">
+										<label for="chk02_02" class="chk-label"><i></i><span>건강검진</span></label>
+									</div>
+								</div>
+							</div>
+							<div class="input-col w-100">
+								<div class="c-multi-input-group">
+									<div class="c-chkbox">
+										<input type="checkbox" id="chk02_03">
+										<label for="chk02_03" class="chk-label"><i></i><span>회사지원</span></label>
+									</div>
+									<input type="text" class="c-input">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Checkbox + Label] -->
+
+      <!-- ===================================== //CHECKBOX -->
+
+      <!-- ===================================== //RADIO -->
+      <div class="title-box">
+        <h2 class="h2_guide">RADIO</h2>
+      </div>
+
+      <!-- [Radio Basic] -->
+      <h3 class="h3_guide">Radio</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="d_ib">
+          <div class="c-rdochk">
+            <input type="radio" id="rdo01" name="rdochk" />
+            <label for="rdo01" class="chk-label"><i></i><span class="skip">radio</span></label>
+          </div>
+          <div class="c-rdochk">
+            <input type="radio" id="rdo01_02" name="rdochk" checked />
+            <label for="rdo01_02" class="chk-label"><i></i><span class="skip">radio</span></label>
+          </div>
+          <div class="c-rdochk">
+            <input type="radio" id="" name="rdochk" disabled />
+            <label for="" class="chk-label"><i></i><span class="skip">radio</span></label>
+          </div>
+          <div class="c-rdochk">
+            <input type="radio" id="" name="rdochk" checked disabled />
+            <label for="" class="chk-label"><i></i><span class="skip">radio</span></label>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="c-rdochk">
+					<input type="radio" id="">
+					<label for="" class="chk-label"><i></i><span class="skip">radio</span></label>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Radio Basic] -->
+
+      <!-- [Radio + Label] -->
+      <h3 class="h3_guide">Radio + Label</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="row">
+          <div class="col-6 label-input">
+            <label>radio list</label>
+            <div class="c-m-input-list">
+              <div class="input-col">
+                <div class="inner">
+                  <div class="c-rdochk">
+                    <input type="radio" id="rdo01_01" name="rdogrp01" />
+                    <label for="rdo01_01" class="chk-label"><i></i><span>없음</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="inner">
+                  <div class="c-rdochk">
+                    <input type="radio" id="rdo01_02" name="rdogrp01" />
+                    <label for="rdo01_02" class="chk-label"><i></i><span>없음</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="inner">
+                  <div class="c-rdochk">
+                    <input type="radio" id="rdo01_03" name="rdogrp01" />
+                    <label for="rdo01_03" class="chk-label"><i></i><span>없음</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="inner">
+                  <div class="c-rdochk">
+                    <input type="radio" id="rdo01_04" name="rdogrp01" />
+                    <label for="rdo01_04" class="chk-label"><i></i><span>없음</span></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 label-input">
+            <label>radio list</label>
+            <div class="c-m-input-list">
+              <div class="input-col">
+                <div class="inner">
+                  <div class="c-rdochk">
+                    <input type="radio" id="rdo02_01" name="rdoGrp02" />
+                    <label for="rdo02_01" class="chk-label"><i></i><span>없음</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="inner">
+                  <div class="c-rdochk">
+                    <input type="radio" id="rdo02_02" name="rdoGrp02" />
+                    <label for="rdo02_02" class="chk-label"><i></i><span>없음</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-col w-100">
+                <div class="c-multi-input-group">
+                  <div class="c-rdochk">
+                    <input type="radio" id="rdo02_03" name="rdoGrp02" />
+                    <label for="rdo02_03" class="chk-label"><i></i><span>회사지원</span></label>
+                  </div>
+                  <input type="text" class="c-input" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="c-rdochk">
+					<input type="radio" id="">
+					<label for="" class="chk-label"><i></i><span>radio</span></label>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Radio + Label] -->
+
+      <!-- =====================================TEXTAREA -->
+      <div class="title-box">
+        <h2 class="h2_guide">TEXTAREA</h2>
+      </div>
+
+      <!-- [textarea] -->
+      <h3 class="h3_guide">textarea</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="row">
+          <div class="col label-input">
+            <label for="inpuTxtA01">textarea 입력</label>
+            <div class="c-txtarea-field">
+              <textarea id="inpuTxtA01" class="c-txt-area"> </textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col label-input">
+            <div class="c-txtarea-field">
+              <textarea class="c-txt-area" title="내용 입력"> </textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col label-input">
+						<label for="inpuTxtA01">textarea 입력</label>
+						<div class="c-txtarea-field">
+							<textarea id="inpuTxtA01" class="c-txt-area"> </textarea>
+						</div>
+					</div>
+				</div> /* + label 없이 단독 사용 시 textarea id 제거, title 속성 추가 */ <div class="row">
+					<div class="col label-input">
+						<div class="c-txtarea-field">
+							<textarea class="c-txt-area" title="내용 입력"> </textarea>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // textarea] -->
+
+      <!-- ===================================== // TEXTAREA -->
+
+      <!-- ===================================== SELECT -->
+      <div class="title-box">
+        <h2 class="h2_guide">SELECT</h2>
+      </div>
+
+      <!-- [Select Basic] -->
+      <h3 class="h3_guide">select basic</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="c-select">
+          <select title="이메일 도메인 선택">
+            <option value="" selected="">직접입력</option>
+            <option value="">option</option>
+            <option value="">option</option>
+            <option value="">option</option>
+          </select>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript"> /* + label이 없는 select 태그의 경우 title 속성 추가하여 해당 목록을 설명할 수 있는 내용 입력 */
+				<div class="c-select">
+					<select title="항목 선택">
+						<option value="" selected="">직접입력</option>
+						<option value="">option</option>
+						<option value="">option</option>
+						<option value="">option</option>
+					</select>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Select Basic] -->
+
+      <!-- ===================================== // SELECT -->
+
+      <!-- ===================================== File -->
+      <div class="title-box">
+        <h2 class="h2_guide">File</h2>
+      </div>
+
+      <!-- [Input File] -->
+      <h3 class="h3_guide">Input File</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="row">
+          <div class="col label-input">
+            <div class="c-label-txt">작업환경측정서</div>
+            <div class="c-input-file-group">
+              <input type="file" class="c-input-file" id="inputFile01" />
+              <label class="c-file-label" for="inputFile01" tabindex="0">파일 선택</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="col label-input">
+					<div class="c-label-txt">작업환경측정서</div>
+					<div class="c-input-file-group">
+						<input type="file" class="c-input-file" id="inputFile01">
+						<label class="c-file-label" for="inputFile01" tabindex="0">파일 선택</label>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Input File] -->
+
+      <!-- ===================================== // File -->
+
+      <!-- ===================================== Phone -->
+      <div class="title-box">
+        <h2 class="h2_guide">Phone</h2>
+      </div>
+
+      <!-- [Phone] -->
+      <h3 class="h3_guide">Phone</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="row">
+          <div class="col label-input">
+            <label class="c-label-txt">휴대폰 전화번호</label>
+            <div class="row inner c-input-phone-group">
+              <div class="col input-phone-01">
+                <div class="c-select">
+                  <select title="휴대폰 전화번호 앞 3자리 선택">
+                    <option value="" selected="">010</option>
+                    <option value="">option</option>
+                    <option value="">option</option>
+                    <option value="">option</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 중간 4자리 입력" /></div>
+              <div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 끝 4자리 입력" /></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="col label-input">
+					<label class="c-label-txt">휴대폰 전화번호</label>
+					<div class="row inner c-input-phone-group">
+						<div class="col input-phone-01">
+							<div class="c-select">
+								<select title="휴대폰 전화번호 앞 3자리 선택">
+									<option value="" selected="">010</option>
+									<option value="">option</option>
+									<option value="">option</option>
+									<option value="">option</option>
+								</select>
+							</div>
+						</div>
+						<div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 중간 4자리 입력"></div>
+						<div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 끝 3자리 입력"></div>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Phone] -->
+
+      <!-- ===================================== // Phone -->
+
+      <!-- ===================================== Email -->
+      <div class="title-box">
+        <h2 class="h2_guide">Email</h2>
+      </div>
+
+      <!-- [Email type01] -->
+      <h3 class="h3_guide">Email type01</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="row c-input-email-group">
+          <div class="col-6 input-email-01">
+            <input type="text" class="c-input" title="이메일 계정입력" value="test" />
+          </div>
+          <div class="col-6 input-email-02">
+            <div class="row">
+              <div class="col-6">
+                <input type="text" class="c-input" title="이메일 도메인 입력" value="hanmail.net" />
+              </div>
+              <div class="col-6">
+                <div class="c-select">
+                  <select title="이메일 도메인 선택">
+                    <option value="" selected>직접입력</option>
+                    <option value="">option</option>
+                    <option value="">option</option>
+                    <option value="">option</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />inner <br />
+        <div class="row">
+          <div class="col label-input">
+            <label class="c-label-txt">이메일</label>
+            <div class="row inner c-input-email-group">
+              <div class="col-6 input-email-01">
+                <input type="text" class="c-input" title="이메일 계정입력" value="test" />
+              </div>
+              <div class="col-6 input-email-02">
+                <div class="row">
+                  <div class="col-6">
+                    <input type="text" class="c-input" title="이메일 도메인 입력" value="hanmail.net" />
+                  </div>
+                  <div class="col-6">
+                    <div class="c-select">
+                      <select title="이메일 도메인 선택">
+                        <option value="" selected>직접입력</option>
+                        <option value="">option</option>
+                        <option value="">option</option>
+                        <option value="">option</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col-12 label-input">
+						<label class="c-label-txt">이메일</label>
+						<div class="row inner c-input-email-group">
+							<div class="col-6 input-email-01">
+								<input type="text" class="c-input" title="이메일 계정입력" value="test">
+							</div>
+							<div class="col-6 input-email-02">
+								<div class="row">
+									<div class="col-6">
+										<input type="text" class="c-input" title="이메일 도메인 입력" value="hanmail.net">
+									</div>
+									<div class="col-6">
+										<div class="c-select">
+											<select title="이메일 도메인 선택">
+												<option value="" selected>직접입력</option>
+												<option value="">option</option>
+												<option value="">option</option>
+												<option value="">option</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [Email type02] -->
+      <h3 class="h3_guide">Email type02</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="row c-input-email-group02">
+          <div class="col-5 input-email-01">
+            <input type="text" class="c-input" title="이메일 계정입력" value="test" />
+          </div>
+          <div class="col-7 input-email-02">
+            <div class="row">
+              <div class="col">
+                <input type="text" class="c-input" title="이메일 도메인 입력" value="hanmail.net" />
+              </div>
+              <div class="col">
+                <button type="button" class="c-btn input-btn"><span>중복확인</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />inner <br />
+        <div class="row inner c-input-email-group02">
+          <div class="col-6 input-email-01">
+            <input type="text" class="c-input" title="이메일 계정입력" value="test" />
+          </div>
+          <div class="col-6 input-email-02">
+            <div class="row">
+              <div class="col">
+                <input type="text" class="c-input" title="이메일 도메인 입력" value="hanmail.net" />
+              </div>
+              <div class="col">
+                <button type="button" class="c-btn input-btn"><span>중복확인</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="row inner c-input-email-group02">
+					<div class="col-6 input-email-01">
+						<input type="text" class="c-input" title="이메일 계정입력" value="test">
+					</div>
+					<div class="col-6 input-email-02">
+						<div class="row">
+							<div class="col-7">
+								<input type="text" class="c-input" title="이메일 도메인 입력" value="hanmail.net">
+							</div>
+							<div class="col-5">
+								<button type="button" class="c-btn input-btn"><span>중복확인</span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- ===================================== // Email -->
+
+      <!-- ===================================== Address -->
+      <div class="title-box">
+        <h2 class="h2_guide">Address</h2>
+      </div>
+
+      <!-- [Address type01] -->
+      <h3 class="h3_guide">Address type01</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="row">
+          <div class="col label-input">
+            <label class="c-label-txt">주소</label>
+            <div class="row inner c-input-address-group">
+              <div class="col input-addr-01">
+                <input type="text" class="c-input" title="우편번호 입력" placeholder="우편번호" />
+              </div>
+              <div class="col input-addr-02"><input type="text" class="c-input" title="주소 입력" /></div>
+              <div class="col input-addr-03">
+                <button type="button" class="c-btn input-btn"><span>검색</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col label-input">
+						<label class="c-label-txt">주소</label>
+						<div class="row inner c-input-address-group">
+							<div class="col input-addr-01">
+								<input type="text" class="c-input" title="우편번호 입력" placeholder="우편번호">
+							</div>
+							<div class="col input-addr-02"><input type="text" class="c-input" title="주소 입력"></div>
+							<div class="col input-addr-03">
+								<button type="button" class="c-btn input-btn"><span>검색</span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Address type01] -->
+
+      <!-- [Address type02] -->
+      <h3 class="h3_guide">Address type02</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="row">
+          <div class="col label-input">
+            <div class="c-label-txt">주소</div>
+            <div class="c-input-address-group">
+              <div class="row inner">
+                <div class="col input-addr-01">
+                  <input type="text" class="c-input" title="우편번호 입력" placeholder="우편번호" />
+                </div>
+                <div class="col input-addr-02"><input type="text" class="c-input" title="주소 입력" /></div>
+                <div class="col input-addr-03">
+                  <button type="button" class="c-btn input-btn"><span>검색</span></button>
+                </div>
+              </div>
+              <div class="row inner">
+                <div class="col"><input type="text" class="c-input" title="상세주소 입력" placeholder="상세주소" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ? // view -->
+
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col label-input">
+						<div class="c-label-txt">주소</div>
+						<div class="c-input-address-group">
+							<div class="row inner">
+								<div class="col input-addr-01">
+									<input type="text" class="c-input" title="우편번호 입력" placeholder="우편번호">
+								</div>
+								<div class="col input-addr-02"><input type="text" class="c-input" title="주소 입력"></div>
+								<div class="col input-addr-03">
+									<button type="button" class="c-btn input-btn"><span>검색</span></button>
+								</div>
+							</div>
+							<div class="row inner">
+								<div class="col"><input type="text" class="c-input" title="상세주소 입력" placeholder="상세주소"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+
+        <!-- ! // code -->
+      </div>
+
+      <!-- [ // Address type02] -->
+
+      <!-- ===================================== // Address -->
+    </div>
+
+    <!-- guide script -->
+    <script src="../js/pretty.js"></script>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script defer src="../../js/common.js"></script>
+  </body>
+</html>

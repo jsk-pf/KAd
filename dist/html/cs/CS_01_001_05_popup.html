@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KMI</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Contents -->
+            <section class="contents">
+                <!-- = Popup Source -->
+                <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupNewRsvExam01_01"><span>기본검사
+                        리스트 팝업</span></button>
+                <div class="c-layer-popup type04 modal fade" id="popupNewRsvExam01_01" role="dialog" aria-labelledby="popupNewRsvExam01_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <!-- modal Header -->
+                            <div class="modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupNewRsvExam01_Label01">기본검사</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업
+                                        닫기</span></button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <!-- 팝업에 따른 title 부여 -->
+                                <div class="c-table-field">
+                                    <div class="c-table striped tbl-fixed">
+                                        <table class="table">
+                                            <caption> 기본검사 목록 : 대체항목선택, 검사코드, 검사코드명에 대한 정보</caption>
+                                            <colgroup>
+                                                <col style="width:80px">
+                                                <col style="width:150px">
+                                                <col>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">대체</th>
+                                                    <th scope="col">검사코드</th>
+                                                    <th scope="col">검사코드명</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!--
+													[comment]
+													- checkbox 이벤트 제어에 맞추어  for 위치 변경하여 사용 or 스크립트 제어
+													- 대체검사 팝업 실행 함수 제어 : $('#popupRepRsvExam01_01').modal('show')
+												-->
+                                                <tr>
+                                                    <td class="in-chkbox02">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox" id="chk01_01">
+                                                            <label class="chk-label" for="chk01_01"><i></i><span class="skip">checkbox</span></label>
+                                                        </div>
+                                                    </td>
+                                                    <td> GM003</td>
+                                                    <td>검사코드명검사코드명 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="in-chkbox02">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox" id="chk01_02">
+                                                            <label for="chk01_02" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>GM003</td>
+                                                    <td>검사코드명검사코드명 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="in-chkbox02">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox" id="chk01_03">
+                                                            <label for="chk01_03" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>GM003</td>
+                                                    <td>검사코드명검사코드명 </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+                            <div class="modal-footer">
+                                <div class="buttons">
+                                    <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>닫기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- = // Popup Source -->
+                <!-- = Popup Source (대체검사 리스트 팝업) -->
+                <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupRepRsvExam01_01"><span>대체검사
+                        리스트 팝업</span></button>
+                <div class="c-layer-popup type04 modal" id="popupRepRsvExam01_01" role="dialog" aria-labelledby="popupRepRsvExam01_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <!-- modal Header -->
+                            <div class="modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupRepRsvExam01_Label01">대체검사</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업
+                                        닫기</span></button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <!-- 팝업에 따른 title 부여 -->
+                                <div class="c-info-aritcle type01">
+                                    <div class="row">
+                                        <div class="col label-input">
+                                            <label for="rpcExamCodeName">검사코드명</label>
+                                            <input type="text" class="c-inputl" id="rpcExamCodeName" value="대체검사 코드명대체검사 코드명" readonly="readonly">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-table-field">
+                                    <div class="c-table striped tbl-fixed">
+                                        <table class="table">
+                                            <caption> 대체검사 목록 : 대체검사코드, 대체검사명에 대한 정보 </caption>
+                                            <colgroup>
+                                                <col style="width:150px">
+                                                <col>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">대체검사코드</th>
+                                                    <th scope="col">대체검사명</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!--  input 생성 시 for/id 매칭-->
+                                                <tr>
+                                                    <td>GM003</td>
+                                                    <td>검사코드명검사코드명 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>GM003</td>
+                                                    <td>검사코드명검사코드명 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>GM003</td>
+                                                    <td>검사코드명검사코드명 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>GM003</td>
+                                                    <td>검사코드명검사코드명 </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+                            <div class="modal-footer">
+                                <div class="buttons">
+                                    <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>닫기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- = // Popup Source02 -->
+            </section>
+            <!-- // Contents -->
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

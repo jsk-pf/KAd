@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper etc-wrapper">
+            <!-- Header-->
+            <header class="header">
+                <div class="wrap">
+                    <div class="top-left">
+                        <button class="sidebar-toggle" type="button">
+                            <span class="ico-type01 t-i-menu is-blind">사이드메뉴</span>
+                        </button>
+                        <div class="total-search">
+                            <i class="ico-search"></i>
+                            <input type="text" placeholder="검색" class="search-input">
+                            <!-- - 검색어 입력에 따른 연관 검색어 노출 처리 -->
+                            <div class="search-related-field" style="display: none">
+                                <ul class="search-list">
+                                    <li><a href="javascript:;">검진정책관리</a></li>
+                                    <li><a href="javascript:;">검진상품관리</a></li>
+                                    <li><a href="javascript:;">검진항목관리</a></li>
+                                    <li class="on"><a href="javascript:;">검진상품승인관리</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-right">
+                        <!-- [ mod(221031) ]
+				- 부서, 로그아웃 버튼 추가
+			-->
+                        <div class="user-team">운영지원팀</div>
+                        <div class="user-infobox">
+                            <a href="javascript:;" role="button" class="c-top-usercontrol btn-open-usercontrol">
+                                <div class="user-name">
+                                    <p>홍길동님</p>
+                                </div>
+                                <div class="user-img"><img src="../../images/ico/ico_user_profile.svg" alt=""></div>
+                            </a>
+                            <div class="user-control">
+                                <ul>
+                                    <li><a href="javascript:;">로그아웃</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- // Header-->
+            <!-- loading source -->
+            <div class="c-loading-wrapper">
+                <section class="is-loading">
+                    <div class="spinner-field">
+                        <div>
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- // loading source] -->
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+</body>
+
+</html>

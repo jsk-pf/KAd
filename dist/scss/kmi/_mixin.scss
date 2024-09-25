@@ -1,0 +1,510 @@
+@mixin pfxAppearance {
+  appearance: none;
+}
+
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+}
+
+@mixin placeholderC {
+  & ::placeholder {
+    @content;
+  }
+}
+
+@mixin ellipsisLine01 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+@mixin ellipsisMultiline($lineCnt, $lineHeight, $height, $maxHeight) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lineCnt;
+
+  height: $height;
+  word-wrap: break-word;
+  line-height: $lineHeight;
+  max-height: $maxHeight;
+}
+
+@mixin after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+@mixin position($x: null, $y: null) {
+  position: absolute;
+  left: $x;
+  top: $y;
+
+  @if $x == 50% and $y == 50% {
+    transform: translate(-50%, -50%);
+  } @else if $x == 50% {
+    transform: translateX(-50%);
+  } @else if $y == 50% {
+    transform: translateY(-50%);
+  }
+}
+
+@mixin hide {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+// icon
+@mixin arrow($color: transparent) {
+  width: 8px;
+  height: 10px;
+  transform: rotate(90deg);
+  border: 3px solid $color;
+  border-radius: 2px;
+  border-right: 0;
+  border-top: 0;
+  content: ' ';
+  display: block;
+  height: 0.625em;
+  margin-top: -0.4375em;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  width: 0.625em;
+}
+
+@mixin icoType01 {
+  width: 28px;
+  height: 28px;
+  background: {
+    image: url($image-ico-sprite01);
+    size: 1218px auto;
+    repeat: no-repeat;
+  }
+}
+
+@mixin is-blind {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+// = Flex
+@mixin justify-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+// = Form
+@mixin inputBasic {
+  line-height: $input-basic-lineheight;
+  color: $color-gray-1;
+  border: 1px solid $input-border-color;
+  border-radius: $input-border-radius;
+}
+
+@mixin formFocus {
+  transition: all 0.5s;
+  -ms-transition: all 0.5s;
+
+  outline: 0;
+  border-color: $input-focus-border-color;
+  // box-shadow: 0 2px 2px 0 rgba(47, 122, 211, 0.25);
+}
+@mixin formFocus2 {
+  border-color: $input-focus-border-color;
+}
+@mixin inputDetail {
+  color: $color-gray-1;
+  border: 0;
+  border-bottom: 1px solid $input-detail-border-color;
+  border-radius: 0;
+  padding: 0 0 4px 0;
+  background: transparent;
+}
+
+@mixin txtareaDetail {
+  line-height: $input-basic-lineheight;
+  background-color: $color-white-2;
+  border-color: $color-gray-5;
+}
+
+@mixin inputDetailFocus {
+  transition: none;
+  border-color: $input-detail-border-color;
+  box-shadow: none;
+}
+
+@mixin inputDetailIconPos {
+  bottom: 4px;
+  top: auto;
+  transform: translateY(0);
+}
+
+@mixin inputViewFontStyle {
+  font : {
+    size: 12px;
+    weight: 400;
+  }
+  line-height: 20px;
+}
+
+@mixin modalTermsTitle {
+  font: {
+    size: $fs-large;
+    weight: $weight-500;
+  }
+  line-height: 1.45;
+}
+
+@mixin modalTermsTxt {
+  font: {
+    size: $fs-normal;
+    weight: 400;
+  }
+  line-height: 2;
+}
+
+@mixin paddingH($gap) {
+  padding: {
+    left: $gap;
+    right: $gap;
+  }
+}
+@mixin paddingV($gap) {
+  padding: {
+    top: $gap;
+    bottom: $gap;
+  }
+}
+
+@mixin colFixedWidth($width, $gap) {
+  $colWidth: $width + ($gap * 2);
+  $width: $colWidth;
+  flex: 0 0 $colWidth;
+}
+
+// = scroll
+
+@mixin ieScrollType {
+  scrollbar-arrow-color: $color-white-1;
+  scrollbar-track-color: $color-white-1;
+  scrollbar-face-color: $color-gray-5;
+  scrollbar-3dlight-color: $color-gray-5;
+  scrollbar-highlight-color: $color-gray-5;
+  scrollbar-shadow-color: $color-gray-5;
+
+  scrollbar-arrow-color: $color-gray-5;
+  // scrollbar-face-color: #ffffff;
+  // scrollbar-shadow-color: #ddd;
+  // scrollbar-track-color: #faf5f5;
+}
+@mixin sideNavScroll {
+  ::-webkit-scrollbar {
+    width: 8px;
+    background: $color-black-2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $color-gray-11;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: $color-gray-11;
+  }
+  scrollbar-arrow-color: $color-black-2;
+  scrollbar-track-color: $color-black-2;
+  scrollbar-face-color: $color-gray-11;
+  scrollbar-3dlight-color: $color-black-2;
+  scrollbar-highlight-color: $color-gray-11;
+  scrollbar-shadow-color: $color-gray-11;
+
+  // ie
+}
+
+@mixin scrollType01 {
+  &::-webkit-scrollbar {
+    width: $scrollbar-size; // bar size
+    height: $scrollbar-size;
+    background-color: $scrollbar-bg-color;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $scrollbar-bg-color;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 1px solid transparent;
+    background: $scrollbar-color;
+    border-radius: 50px;
+    background-clip: padding-box;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-button:start:decrement,
+  &::-webkit-scrollbar-button:end:increment,
+  &::-webkit-scrollbar-button:horizontal:increment,
+  &::-webkit-scrollbar-button:horizontal:decrement {
+    display: block;
+    width: $scrollbar-size;
+    height: $scrollbar-size;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  @include ieScrollType;
+}
+
+@mixin scrollType02 {
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 10px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-track {
+    margin-block: 25px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    background: $scrollbar-bg-color;
+    border-radius: 50px;
+    background-clip: padding-box;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: $scrollbar-bg-color;
+  }
+
+  &::-webkit-scrollbar-button:start:decrement,
+  &::-webkit-scrollbar-button:end:increment,
+  &::-webkit-scrollbar-button:horizontal:increment,
+  &::-webkit-scrollbar-button:horizontal:decrement {
+    display: block;
+    width: $scrollbar-size;
+    height: $scrollbar-size;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  @include ieScrollType;
+}
+
+@mixin scrollType03 {
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 4px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-track {
+    margin-block: 25px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $scrollbar-bg-color;
+    border-radius: 50px;
+    background-clip: padding-box;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: $scrollbar-bg-color;
+  }
+
+  &::-webkit-scrollbar-button:start:decrement,
+  &::-webkit-scrollbar-button:end:increment,
+  &::-webkit-scrollbar-button:horizontal:increment,
+  &::-webkit-scrollbar-button:horizontal:decrement {
+    display: block;
+    width: $scrollbar-size;
+    height: $scrollbar-size;
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+
+@mixin scrollType04 {
+  &::-webkit-scrollbar {
+    width: 15px; // bar size
+    height: 15px;
+    background-color: $scrollbar-bg-color;
+  }
+
+  ::-webkit-scrollbar-track {
+    margin-block: 0px;
+    background-color: $scrollbar-bg-color;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 5px solid transparent;
+    background: $scrollbar-color;
+    border-radius: 50px;
+    background-clip: padding-box;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-button:start:decrement,
+  &::-webkit-scrollbar-button:end:increment,
+  &::-webkit-scrollbar-button:horizontal:increment,
+  &::-webkit-scrollbar-button:horizontal:decrement {
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  @include ieScrollType;
+}
+
+@mixin fontStyle($font-size, $line-height, $font-weight, $letter-spacing: null) {
+  $calc-line-height: calc($line-height / $font-size);
+  @if ($font-weight == 400) {
+    font: {
+      size: $font-size;
+    }
+  } @else {
+    font: {
+      size: $font-size;
+      weight: $font-weight;
+    }
+  }
+  line-height: #{$calc-line-height};
+  letter-spacing: $letter-spacing;
+}
+
+// = Spacing
+
+@mixin rowGridSpacing($gap) {
+  margin: {
+    left: -$gap;
+    right: -$gap;
+  }
+  > [class^='col'] {
+    padding: {
+      left: $gap;
+      right: $gap;
+    }
+  }
+}
+
+@mixin rowGridSpacingNormal {
+  @include rowGridSpacing($spacing-normal); //20
+}
+@mixin rowGridSpacingSmall {
+  @include rowGridSpacing($spacing-small); // 10
+}
+// related input  group
+@mixin spacingInputGrp {
+  @include rowGridSpacing($spacing-inputgrp); // 12
+}
+
+// c-card-article
+@mixin rowGridSpacingCardArticle {
+  @include rowGridSpacing($spacing-cardgrp); // 12
+}
+
+// +++++++
+@mixin colOuterHSpacingNormal {
+  margin: {
+    left: -20px;
+    right: -20px;
+  }
+}
+@mixin colInnerHSpacingNormal {
+  padding: {
+    left: 20px;
+    right: 20px;
+  }
+}
+@mixin colInnerVSpacingNormal {
+  padding: {
+    top: 20px;
+    bottom: 20px;
+  }
+}
+
+@mixin colOuterHSpacingSmall {
+  margin: {
+    left: -10px;
+    right: -10px;
+  }
+}
+
+@mixin colInnerHSpacingSmall {
+  padding: {
+    left: 10px;
+    right: 10px;
+  }
+}
+
+@mixin colInnerVSpacingSmall {
+  padding: {
+    top: 10px;
+    bottom: 10px;
+  }
+}
+
+// = Font
+@mixin coTxtTitle {
+  @include fontStyle(20px, 32px, 500, -0.3px);
+}
+
+@mixin coTxtSubTitle {
+  @include fontStyle(16px, 24px, 500, -0.3px);
+}
+
+@mixin coTxtBasic {
+  @include fontStyle(12px, 20px, 400, -0.3px);
+}
+
+@mixin coTxtCaption {
+  @include fontStyle(10px, 16px, 500);
+}
+
+@mixin coTxtTime {
+  @include fontStyle(10px, 15px, 500);
+}
+
+@mixin coTxtBtn {
+  @include fontStyle(12px, 20px, 500, -0.3px);
+}
+
+@mixin coTxtBtnSmall {
+  @include fontStyle(12px, 20px, 500, null);
+}
+@mixin coTxtTypography {
+  @include fontStyle(12px, 20px, 400, -0.3px);
+}
+
+// 비밀번호 찾기
+@mixin coPwTitle {
+  @include fontStyle(16px, 32px, 500, null);
+}
+@mixin coPwSubTitle {
+  @include fontStyle(14px, 28px, 300, null);
+}
+
+// = Responsive
+@mixin responsive($device) {
+  @media screen and (max-width: $key) {
+    @content;
+  }
+}

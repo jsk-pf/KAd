@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검진 제안서 불러오기</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <!-- [ mod(220602) ] -->
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+    <!-- [ // mod(220602) ] -->
+
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper" style="height: 1000px">
+            <!-- Contents -->
+            <section class="contents">
+                <!-- [popup source] -->
+                <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupRegChkupCtg01" aria-labelledby="popupRegChkupCtg01_Label" aria-hidden="true"><span>Popup Sample</span></button>
+                <!-- [ layer popup] -->
+                <div class="c-layer-popup type05 modal fade" id="popupRegChkupCtg01" role="dialog" aria-labelledby="popupRegChkupCtg01_Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- modal Header -->
+                            <div class="modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupCallChkupProposal01_Label">검진항목 등록하기</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업 닫기</span></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">검진제안정보</h5>
+                                    </div>
+                                    <div class="c-article input-list">
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputChkupProposalInfo01_01">제안서명 </label>
+                                                <input type="text" class="c-input" id="inputChkupProposalInfo01_01" value="정밀 종합검진 일반형" readonly="readonly" />
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputChkupProposalInfo01_02">검진대상인원</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputChkupProposalInfo01_02" value="31,245" readonly="readonly" />
+                                                    <span class="unit">명</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputChkupProposalInfo01_03">예상매출</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputChkupProposalInfo01_03" value="150,000,000" readonly="readonly" />
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="row inner c-input-date-group">
+                                                    <!-- for/id 매칭 필수 -->
+                                                    <div class="col-6 label-input">
+                                                        <label for="inputChkupProposalInfo01_04">시작일 (시작)</label>
+                                                        <div class="c-input-date">
+                                                            <input type="text" class="c-input" id="inputChkupProposalInfo01_04" placeholder="YYYY-MM-DD" value="2022-06-11" readonly="readonly" />
+                                                            <span><i class="date-btn"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 label-input">
+                                                        <label for="inputChkupProposalInfo01_05">종료일 (종료)</label>
+                                                        <div class="c-input-date">
+                                                            <input type="text" class="c-input" id="inputChkupProposalInfo01_05" placeholder="YYYY-MM-DD" value="2022-06-11" readonly="readonly" />
+                                                            <span><i class="date-btn"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputChkupProposalInfo01_06">공단비용차감</label>
+                                                <input type="text" class="c-input" id="inputChkupProposalInfo01_06" value="미차감" readonly="readonly" />
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputChkupProposalInfo01_07">검진 구분</label>
+                                                <input type="text" class="c-input" id="inputChkupProposalInfo01_07" value="종합검진" readonly="readonly" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputChkupProposalInfo01_08">검진연도</label>
+                                                <input type="text" class="c-input" id="inputChkupProposalInfo01_08" value="2021" readonly="readonly" />
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputChkupProposalInfo01_09">검진가격</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputChkupProposalInfo01_09" value="150,000,000" readonly="readonly" />
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">검진제안 요청사항</h5>
+                                    </div>
+                                    <div class="c-article input-list c-textarea-article">
+                                        <div class="row">
+                                            <div class="col label-input">
+                                                <div class="c-txtarea-field">
+                                                    <textarea id="inputText04" class="c-txt-area" title="검진제안 요청사항 입력" readonly="readonly">
+- 온라인 문진표 제공 가능한지 확인 바랍니다.
+- 월별 SK자체양식의 사후관리소견서 취합이 가능한지 확인바랍니다.
+- 온라인 문진표 제공 가능한지 확인 바랍니다.
+- 월별 SK자체양식의 사후관리소견서 취합이 가능한지 확인바랍니다.
+- 월별 SK자체양식의 사후관리소견서 취합이 가능한지 확인바랍니다.
+- 온라인 문진표 제공 가능한지 확인 바랍니다.
+															</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel c-layout-type03">
+                                    <div class="row chkup-ctg-arrow-field evt-arrow-floating">
+                                        <!-- left -->
+                                        <div class="column left">
+                                            <div class="c-title-field">
+                                                <p class="title-md">검진 항목 <span>(4)</span></p>
+                                                <div class="buttons">
+                                                    <button type="button" class="c-btn is-outline-blue-1"><span>선택 삭제</span></button>
+                                                    <!-- <button type="button" class="c-btn is-outline-blue-1"><span>선택 묶음</span></button> -->
+                                                    <button type="button" class="c-btn is-outline-blue-1" data-toggle="modal" data-target="#popupType01_01"><span>선택 묶음</span></button>
+                                                    <button type="button" class="c-btn is-outline-blue-1"><span>묶음 해제</span></button>
+                                                </div>
+                                            </div>
+                                            <!-- [Comment]
+													- 등록인 경우 아코디언 한개씩 펼쳐짐
+												-->
+                                            <div class="co-accrodion-list-field">
+
+                                                <ul class="co-accrodion-list type01">
+
+
+                                                    <li>
+                                                        <div class="co-accordion">
+                                                            <a href="javascript:;" role="button" class="btn-accrodion">
+                                                                <div class="left">
+                                                                    <p class="txt">공통검사 <span>(4)</span></p>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <div class="ico-accordion"><span class="is-blind">펼치기</span></div>
+                                                                </div>
+                                                            </a>
+                                                            <div class="accrodion-panel">
+                                                                <div class="panel-cont">
+                                                                    <div class="c-select-field-01">
+                                                                        <label class="c-label-txt">선택 항목 갯수</label>
+                                                                        <div class="c-select">
+                                                                            <select>
+                                                                                <option value="" selected="">1</option>
+                                                                                <option value="">option</option>
+                                                                                <option value="">option</option>
+                                                                                <option value="">option</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="c-table-field">
+                                                                        <div class="c-table striped">
+                                                                            <!-- tbl-chkup-category  -->
+                                                                            <table class="table tbl-chkup-category">
+                                                                                <caption>
+                                                                                    검사 항목 : 항목선택, 대분류, 중분류, 검사항목, 성별, 필수검사, 비고에 대한 정보
+                                                                                </caption>
+                                                                                <colgroup>
+                                                                                    <col class="checkbox">
+                                                                                    <col style="width:200px">
+                                                                                    <col style="width:180px">
+                                                                                    <col>
+                                                                                    <col style="width:100px">
+                                                                                    <col style="width:100px">
+                                                                                    <col style="width:240px">
+                                                                                </colgroup>
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th scope="col">
+                                                                                            <div class="c-chkbox">
+                                                                                                <!-- [comment]
+														- allchk-chkup-tbl 클래스 : tableAllCheckBg() 스타일 기능 적용된 상태 ( 전체 table row 배경 색상 변경)
+														- 같은 유형의 테이블의 경우 해당 이벤트 일괄 적용
+														- 전체 선택 시 모든 체크박스에 대한  checked event와 결합하여 동시 구현 필요
+													-->
+                                                                                                <input type="checkbox" id="allchk_01" class="allchk-chkup-tbl">
+                                                                                                <label for="allchk_01" class="chk-label"><i></i><span class="skip">전체항목 선택</span></label>
+                                                                                            </div>
+                                                                                        </th>
+                                                                                        <th scope="col">대분류</th>
+                                                                                        <th scope="col">중분류</th>
+                                                                                        <th scope="col">검사항목</th>
+                                                                                        <th scope="col">성별</th>
+                                                                                        <th scope="col">필수검사</th>
+                                                                                        <th scope="col">비고</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <!-- input 생성 시  for/id 매칭 -->
+                                                                                <!-- 대분류 -->
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td rowspan="2">
+                                                                                            <div class="c-chkbox">
+                                                                                                <input type="checkbox" id="chkboxChkCtg01_01">
+                                                                                                <label for="chkboxChkCtg01_01" class="chk-label"><i></i><span class="skip">검사선택</span></label>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td rowspan="2">
+                                                                                            <div class="majordepth-name">
+                                                                                                <button type="button" class="chkup-info-detail btn-open-chkup-infotxt" data-target="#chkupInfoTxtPopup01_01" data-toggle="modal">
+                                                                                                    <span><i class="ico-c-help"><span>안내 문구 보기</span></i></span>
+                                                                                                </button><span class="name">장비검사</span>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>CT검사</td>
+                                                                                        <td>대장내시경 수면</td>
+                                                                                        <td>미분류(공통)</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>CT검사</td>
+                                                                                        <td>체질량지수,비만도(BMI)</td>
+                                                                                        <td>공통</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <div class="c-chkbox">
+                                                                                                <input type="checkbox" id="chkboxChkCtg01_02">
+                                                                                                <label for="chkboxChkCtg01_02" class="chk-label"><i></i><span class="skip">검사선택</span></label>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>혈액검사(소변)</td>
+                                                                                        <td>소변검사 ※URIN(10종+요침사) </td>
+                                                                                        <td>URIN10종+상피세포,WBC,RBC</td>
+                                                                                        <td>남성</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <div class="c-chkbox">
+                                                                                                <input type="checkbox" id="chkboxChkCtg01_03">
+                                                                                                <label for="chkboxChkCtg01_03" class="chk-label"><i></i><span class="skip">검사선택</span></label>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>장비검사 장비검사 장비검사 장비검사</td>
+                                                                                        <td>CT검사</td>
+                                                                                        <td>흉부 CT촬영</td>
+                                                                                        <td>여성</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td rowspan="3">
+                                                                                            <div class="c-chkbox">
+                                                                                                <input type="checkbox" id="chkboxChkCtg01_04">
+                                                                                                <label for="chkboxChkCtg01_04" class="chk-label"><i></i><span class="skip">검사선택</span></label>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td rowspan="3">
+                                                                                            <div class="majordepth-name">
+                                                                                                <button type="button" class="chkup-info-detail btn-open-chkup-infotxt" data-target="#chkupInfoTxtPopup01_01" data-toggle="modal">
+                                                                                                    <span><i class="ico-c-help"><span>안내 문구 보기</span></i></span>
+                                                                                                </button><span class="name">묶음상품명</span>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>CT검사</td>
+                                                                                        <td>대장내시경 수면</td>
+                                                                                        <td>미분류(공통)</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>CT검사</td>
+                                                                                        <td>체질량지수,비만도(BMI)</td>
+                                                                                        <td>공통</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>CT검사</td>
+                                                                                        <td>체질량지수,비만도(BMI)</td>
+                                                                                        <td>공통</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="co-accordion">
+                                                            <a href="javascript:;" role="button" class="btn-accrodion">
+                                                                <div class="left">
+                                                                    <p class="txt">선택검사 <span>(2)</span></p>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <div class="ico-accordion"><span class="is-blind">펼치기</span></div>
+                                                                </div>
+                                                            </a>
+                                                            <div class="accrodion-panel">
+                                                                <div class="panel-cont">
+                                                                    <div class="c-select-field-01">
+                                                                        <label class="c-label-txt">선택 항목 갯수</label>
+                                                                        <div class="c-select">
+                                                                            <select>
+                                                                                <option value="" selected="">1</option>
+                                                                                <option value="">option</option>
+                                                                                <option value="">option</option>
+                                                                                <option value="">option</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="c-table-field">
+                                                                        <div class="c-table striped">
+                                                                            <!-- tbl-chkup-category  -->
+                                                                            <table class="table tbl-chkup-category">
+                                                                                <caption>
+                                                                                    검사 항목 : 항목선택, 대분류, 중분류, 검사항목, 성별, 필수검사, 비고에 대한 정보
+                                                                                </caption>
+                                                                                <colgroup>
+                                                                                    <col class="checkbox">
+                                                                                    <col style="width:200px">
+                                                                                    <col style="width:180px">
+                                                                                    <col>
+                                                                                    <col style="width:100px">
+                                                                                    <col style="width:100px">
+                                                                                    <col style="width:240px">
+                                                                                </colgroup>
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th scope="col">
+                                                                                            <div class="c-chkbox">
+                                                                                                <!-- [comment]
+														- allchk-chkup-tbl 클래스 : tableAllCheckBg() 스타일 기능 적용된 상태 ( 전체 table row 배경 색상 변경)
+														- 같은 유형의 테이블의 경우 해당 이벤트 일괄 적용
+														- 전체 선택 시 모든 체크박스에 대한  checked event와 결합하여 동시 구현 필요
+													-->
+                                                                                                <input type="checkbox" id="allchk_02" class="allchk-chkup-tbl">
+                                                                                                <label for="allchk_01" class="chk-label"><i></i><span class="skip">전체항목 선택</span></label>
+                                                                                            </div>
+                                                                                        </th>
+                                                                                        <th scope="col">대분류</th>
+                                                                                        <th scope="col">중분류</th>
+                                                                                        <th scope="col">검사항목</th>
+                                                                                        <th scope="col">성별</th>
+                                                                                        <th scope="col">필수검사</th>
+                                                                                        <th scope="col">비고</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <!-- input 생성 시  for/id 매칭 -->
+                                                                                <!-- 대분류 -->
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td rowspan="2">
+                                                                                            <div class="c-chkbox">
+                                                                                                <input type="checkbox" id="chkboxChkCtg02_01">
+                                                                                                <label for="chkboxChkCtg02_01" class="chk-label"><i></i><span class="skip">검사선택</span></label>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td rowspan="2">
+                                                                                            <div class="majordepth-name">
+                                                                                                <button type="button" class="chkup-info-detail btn-open-chkup-infotxt" data-target="#chkupInfoTxtPopup01_01" data-toggle="modal">
+                                                                                                    <span><i class="ico-c-help"><span>안내 문구 보기</span></i></span>
+                                                                                                </button><span class="name">장비검사</span>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>CT검사</td>
+                                                                                        <td>대장내시경 수면</td>
+                                                                                        <td>미분류(공통)</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>CT검사</td>
+                                                                                        <td>체질량지수,비만도(BMI)</td>
+                                                                                        <td>공통</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <div class="c-chkbox">
+                                                                                                <input type="checkbox" id="chkboxChkCtg02_02">
+                                                                                                <label for="chkboxChkCtg02_02" class="chk-label"><i></i><span class="skip">검사선택</span></label>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>혈액검사(소변)</td>
+                                                                                        <td>소변검사 ※URIN(10종+요침사) </td>
+                                                                                        <td>URIN10종+상피세포,WBC,RBC</td>
+                                                                                        <td>남성</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <div class="c-chkbox">
+                                                                                                <input type="checkbox" id="chkboxChkCtg02_03">
+                                                                                                <label for="chkboxChkCtg02_03" class="chk-label"><i></i><span class="skip">검사선택</span></label>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>장비검사 장비검사 장비검사 장비검사</td>
+                                                                                        <td>CT검사</td>
+                                                                                        <td>흉부 CT촬영</td>
+                                                                                        <td>여성</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td rowspan="3">
+                                                                                            <div class="c-chkbox">
+                                                                                                <input type="checkbox" id="chkboxChkCtg02_04">
+                                                                                                <label for="chkboxChkCtg02_04" class="chk-label"><i></i><span class="skip">검사선택</span></label>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td rowspan="3">
+                                                                                            <div class="majordepth-name">
+                                                                                                <button type="button" class="chkup-info-detail btn-open-chkup-infotxt" data-target="#chkupInfoTxtPopup01_01" data-toggle="modal">
+                                                                                                    <span><i class="ico-c-help"><span>안내 문구 보기</span></i></span>
+                                                                                                </button><span class="name">묶음상품명</span>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>CT검사</td>
+                                                                                        <td>대장내시경 수면</td>
+                                                                                        <td>미분류(공통)</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>CT검사</td>
+                                                                                        <td>체질량지수,비만도(BMI)</td>
+                                                                                        <td>공통</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>CT검사</td>
+                                                                                        <td>체질량지수,비만도(BMI)</td>
+                                                                                        <td>공통</td>
+                                                                                        <td>
+                                                                                            <div class="c-select">
+                                                                                                <select title="검사 선택">
+                                                                                                    <option value="">일반</option>
+                                                                                                    <option value="">필수</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="c-input" placeholder="비고 내용을 입력하세요"></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- right -->
+                                        <div class="column right">
+                                            <div class="inner">
+                                                <div class="in-area arrow-btns">
+                                                    <div class="c-btn-group">
+                                                        <div class="buttons">
+                                                            <button type="button" class="c-arrow-btn right"><span class="skip">우로 이동</span></button>
+                                                            <button type="button" class="c-arrow-btn left"><span class="skip">좌로 이동</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="in-area tbl-list">
+                                                    <div class="c-panel">
+                                                        <div class="c-tab-field">
+                                                            <ul class="c-tab-list" role="tablist">
+                                                                <li role="tab"><a href="javascript:;">전체</a></li>
+                                                                <li class="on" role="tab"><a href="javascript:;">기본검사</a></li>
+                                                                <li role="tab"><a href="javascript:;">혈액검사</a></li>
+                                                                <li role="tab"><a href="javascript:;">장비검사</a></li>
+                                                                <li role="tab"><a href="javascript:;">기타검사</a></li>
+                                                                <li role="tab"><a href="javascript:;">혈액검사</a></li>
+                                                                <li role="tab"><a href="javascript:;">장비검사</a></li>
+                                                                <li role="tab"><a href="javascript:;">기타검사</a></li>
+                                                                <li role="tab"><a href="javascript:;">혈액검사</a></li>
+                                                                <li role="tab"><a href="javascript:;">장비검사</a></li>
+                                                                <li role="tab"><a href="javascript:;">기타검사</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="c-title-field">
+                                                        <h5 class="title-md">전체 검사 항목</h5>
+                                                        <div class="c-field">
+                                                            <div class="label-input">
+                                                                <div class="c-input-search">
+                                                                    <input type="text" placeholder="" />
+                                                                    <button type="button" class="btn-search"><span class="skip">검색</span></button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="label-input">
+                                                                <div class="c-select">
+                                                                    <select title="검색 기준 선택">
+                                                                        <option value="" selected="">소변검사 ※URIN(10종+요침사)</option>
+                                                                        <option value="">option</option>
+                                                                        <option value="">option</option>
+                                                                        <option value="">option</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="c-table-field c-tbl-vertical-field type02">
+                                                        <div class="c-table striped c-vertical-scroll">
+                                                            <table class="table tbl-chkup-category02">
+                                                                <caption>
+                                                                    검사항목 : 항목선택, 대분류, 중분류, 검사항목, 성별에 대한 정보
+                                                                </caption>
+                                                                <colgroup>
+                                                                    <col class="checkbox" />
+                                                                    <col style="width: 88px" />
+                                                                    <col style="width: 140px" />
+                                                                    <col />
+                                                                    <col style="width: 88px" />
+                                                                </colgroup>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col" class="checkbox">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="allchk_03" />
+                                                                                <label for="allchk_03" class="chk-label"><i></i><span class="skip">전체 선택</span></label>
+                                                                            </div>
+                                                                        </th>
+                                                                        <th scope="col" style="width: 88px">대분류</th>
+                                                                        <th scope="col" style="width: 140px">중분류</th>
+                                                                        <th scope="col">검사항목</th>
+                                                                        <th scope="col" style="width: 88px">성별</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <!-- input 생성 시  for/id 매칭 -->
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_01" />
+                                                                                <label for="chkboxChkCtg02_01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>기초검사</td>
+                                                                        <td>소변검사 ※URIN(10종+요침사)</td>
+                                                                        <td>URIN10종+상피세포,WBC,RBC</td>
+                                                                        <td>미분류 (공통)</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_02" />
+                                                                                <label for="chkboxChkCtg02_02" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_03" />
+                                                                                <label for="chkboxChkCtg02_03" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_04" />
+                                                                                <label for="chkboxChkCtg02_04" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_05" />
+                                                                                <label for="chkboxChkCtg02_05" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_06" />
+                                                                                <label for="chkboxChkCtg02_06" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_07" />
+                                                                                <label for="chkboxChkCtg02_07" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_08" />
+                                                                                <label for="chkboxChkCtg02_08" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_09" />
+                                                                                <label for="chkboxChkCtg02_09" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_10" />
+                                                                                <label for="chkboxChkCtg02_10" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_11" />
+                                                                                <label for="chkboxChkCtg02_11" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_12" />
+                                                                                <label for="chkboxChkCtg02_12" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_13" />
+                                                                                <label for="chkboxChkCtg02_13" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_14" />
+                                                                                <label for="chkboxChkCtg02_14" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_15" />
+                                                                                <label for="chkboxChkCtg02_15" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_16" />
+                                                                                <label for="chkboxChkCtg02_16" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_17" />
+                                                                                <label for="chkboxChkCtg02_17" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_18" />
+                                                                                <label for="chkboxChkCtg02_18" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_19" />
+                                                                                <label for="chkboxChkCtg02_19" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="ta-c">
+                                                                            <div class="c-chkbox">
+                                                                                <input type="checkbox" id="chkboxChkCtg02_20" />
+                                                                                <label for="chkboxChkCtg02_20" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>혈액검사(소변)20</td>
+                                                                        <td>대장내시경</td>
+                                                                        <td>대장내시경 비수면</td>
+                                                                        <td>공통</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <!-- c-tbl-paging -->
+                                                        <div class="c-tbl-paging">
+                                                            <p class="page-info">Total Page <em>100</em> page</p>
+                                                            <nav class="c-pagination">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a class="page-link" href="javascript:;" aria-label="처음">
+                                                                            <span class="is-blind p-first">처음</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="page-link" href="javascript:;" aria-label="이전">
+                                                                            <span class="is-blind p-prev">이전</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li><a class="page-link is-active" href="javascript:;">1</a></li>
+                                                                    <li><a class="page-link" href="javascript:;">2</a></li>
+                                                                    <li><a class="page-link" href="javascript:;">3</a></li>
+                                                                    <li><a class="page-link" href="javascript:;">4</a></li>
+                                                                    <li><a class="page-link" href="javascript:;">5</a></li>
+                                                                    <li><a class="page-link" href="javascript:;">6</a></li>
+                                                                    <li><a class="page-link" href="javascript:;">7</a></li>
+                                                                    <li><a class="page-link" href="javascript:;">8</a></li>
+                                                                    <li><a class="page-link" href="javascript:;">9</a></li>
+                                                                    <li><a class="page-link" href="javascript:;">10</a></li>
+                                                                    <li>
+                                                                        <a class="page-link" href="javascript:;" aria-label="다음">
+                                                                            <span class="is-blind p-next">다음</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="page-link" href="javascript:;" aria-label="끝">
+                                                                            <span class="is-blind p-end">끝</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // modal body -->
+                            </div>
+
+                            <!-- modal-footer -->
+                            <div class="modal-footer c-btn-field">
+                                <div class="buttons">
+                                    <button type="button" class="c-btn is-outline-blue-1" data-dismiss="modal"><span>닫기</span></button>
+                                    <button type="button" class="c-btn bg-blue-3"><span>불러오기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- = type05  -->
+                        <!-- [ // layer popup] -->
+                    </div>
+                </div>
+                <!-- [ // popup source] -->
+            </section>
+            <!-- // Contents -->
+
+            <!-- 물음표 아이콘 클릭시 팝업 Type-->
+            <div class="c-layer-popup type01 modal fade" id="chkupInfoTxtPopup01_01" role="dialog" aria-labelledby="chkupInfoTxtPopup01_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <!-- 팝업에 따른 title 부여 -->
+                            <h4 class="c-title skip" id="chkupInfoTxtPopup01_Label01">안내문구</h4>
+                            <p class="ta-c">안내 문구 작성</p>
+                        </div>
+                        <!-- // modal body -->
+
+                        <div class="modal-footer type01">
+                            <div class="buttons row">
+                                <div class="col">
+                                    <button class="c-btn bg-blue-1" data-dismiss="modal"><span>확인</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c-layer-popup type01 modal fade" id="popupType01_01" role="dialog" aria-labelledby="popupType01_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <!-- 팝업에 따른 title 부여 -->
+                            <h4 class="c-title skip" id="popupType01_Label01">퇴직처리</h4>
+                            <p class="ta-c">해당 회사에서 퇴직처리 하시겠습니까 ?</p>
+                        </div>
+                        <!-- // modal body -->
+
+                        <div class="modal-footer type01">
+                            <div class="buttons row">
+                                <div class="col">
+                                    <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>아니요</span></button>
+                                </div>
+                                <div class="col">
+                                    <button class="c-btn bg-blue-1" data-dismiss="modal"><span>예</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 물음표 아이콘 클릭시 팝업 -->
+        <!-- // Content-Wrapper -->
+    </div>
+
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+
+    <script>
+        // 검사항목 Event
+        tableAllCheckBg();
+
+        // 우측 Scroll floating 제어
+        $('#popupRegChkupCtg01').on('scroll', function() {
+            var evtArea = $('.chkup-ctg-arrow-field.evt-arrow-floating'),
+                rightFloatingPosY = evtArea.find('.column.right').position().top,
+                nowScrollPosY = $(this).scrollTop(),
+                fieldHeight = evtArea.outerHeight(),
+                paddingValue = parseInt(nowScrollPosY - rightFloatingPosY),
+                rightHeight = parseInt(evtArea.find('.column.right').find('.inner').outerHeight()),
+                chkupFiledHeight = parseInt(rightHeight + paddingValue);
+
+            if (fieldHeight <= chkupFiledHeight) {
+                return 0;
+            } else if (fieldHeight > chkupFiledHeight) {
+                var paddingValue02 = parseInt(nowScrollPosY - rightFloatingPosY);
+                evtArea.find('.column.right').stop().animate({
+                    paddingTop: paddingValue02
+                }, 0);
+            }
+        });
+    </script>
+</body>
+
+</html>

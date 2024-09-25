@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Layout Guide</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- guide css -->
+    <link rel="stylesheet" href="../css/base.css" />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap" class="coding_guide">
+      <h1 class="h1_guide">POPUP</h1>
+
+      <div class="title-box">
+        <h2 class="h2_guide">Common</h2>
+      </div>
+      <div class="guide_descbox">
+        <div class="inner_desc">
+          <ul>
+            <li>sample 소스 내 id, data-target, aria-labelledby 속성값은 임의값으로 <span class="fc-yellow">적절한 name으로 수정하여 사용</span></li>
+            <li>
+              data-target / id 동일 네이밍 선언 <br />
+              ex) <span class="e_code">팝업 버튼 [class="c-btn"] 의 data-target="#popup01" /레이어 팝업 : [ class="c-layer-popup"] 의 id="popup01"</span>
+            </li>
+            <li>
+              data-labelledby / id 동일 네이밍 선언 <br /><span class="e_code">ex) 레이어 팝업 : [ class="c-layer-popup"] 의 aria-labelledby= "popup01_Label" <br />팝업 타이틀 : [class="c-title"] 의 id="popup01_Label"</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- =============================================[popupType01] -->
+      <div class="title-box" style="margin: 20px 0">
+        <h2 class="h2_guide">Popup Type01</h2>
+      </div>
+      <h3 class="h3_guide">type01 - system popup</h3>
+      <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupType01_01"><span>popupType01_01 </span></button>
+
+      <!-- = layer popup (type01-01) -->
+      <div class="c-layer-popup type01 modal fade" id="popupType01_01" role="dialog" aria-labelledby="popupType01_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <!-- Modal body -->
+            <div class="modal-body">
+              <!-- 팝업에 따른 title 부여 -->
+              <h4 class="c-title skip" id="popupType01_Label01">퇴직처리</h4>
+              <p class="ta-c">해당 회사에서 퇴직처리 하시겠습니까 ?</p>
+            </div>
+            <!-- // modal body -->
+
+            <div class="modal-footer type01">
+              <div class="buttons row">
+                <div class="col">
+                  <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>아니요</span></button>
+                </div>
+                <div class="col">
+                  <button class="c-btn bg-blue-1" data-dismiss="modal"><span>예</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- = layer popup (type01-02) -->
+
+      <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupType01_02"><span>popupType01_02</span></button>
+
+      <div class="c-layer-popup type01 modal fade" id="popupType01_02" role="dialog" aria-labelledby="popupType01_Label02" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <!-- Modal body -->
+            <div class="modal-body">
+              <!-- 팝업에 따른 title 부여 -->
+              <h4 class="c-title skip" id="popupType01_Label02">퇴직처리</h4>
+              <p class="ta-c">해당 회사에서 퇴직처리 하시겠습니까 ?</p>
+            </div>
+            <!-- // modal body -->
+
+            <div class="modal-footer type01">
+              <div class="buttons row">
+                <div class="col">
+                  <button class="c-btn bg-blue-1" data-dismiss="modal"><span>확인</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- = // layer popup (type01-02) -->
+
+      <!-- =============================================[ popupType01] -->
+
+      <!-- =============================================[ popupType02] -->
+      <div class="title-box" style="margin: 20px 0">
+        <h2 class="h2_guide">Popup Type02</h2>
+      </div>
+
+      <h3 class="h3_guide">type02 - width:480</h3>
+      <!-- = popupType02_01 -->
+
+      <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupType02_01"><span>popupType02_01</span></button>
+      <div class="c-layer-popup type02 modal fade" id="popupType02_01" role="dialog" aria-labelledby="popupType02_Labe01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <!-- modal Header -->
+            <div class="modal-header">
+              <div class="c-modal-title-field">
+                <h4 class="c-title" id="popupType02_Labe01">타이틀</h4>
+              </div>
+              <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업 닫기</span></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <!-- 팝업에 따른 title 부여 -->
+              <p>기본 건강(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다.</p>
+            </div>
+            <!-- // modal body -->
+
+            <div class="modal-footer">
+              <div class="buttons">
+                <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>아니오</span></button>
+                <button class="c-btn bg-blue-1" data-dismiss="modal"><span>예</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- = // popupType02_01 -->
+
+      <!-- =============================================[popupType03 ] -->
+      <div class="title-box" style="margin: 20px 0">
+        <h2 class="h2_guide">Popup Type03</h2>
+      </div>
+
+      <h3 class="h3_guide">type03 - width:1200</h3>
+      <!-- = popupType03_01 -->
+      <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupType03_01"><span>popupType03_01</span></button>
+
+      <div class="c-layer-popup type03 modal fade" id="popupType03_01" role="dialog" aria-labelledby="popupType03_Labe01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <!-- modal Header -->
+            <div class="modal-header">
+              <div class="c-modal-title-field">
+                <h4 class="c-title" id="popupType03_Labe01">타이틀</h4>
+              </div>
+              <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업 닫기</span></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <!-- 팝업에 따른 title 부여 -->
+              <div class="c-article input-list">
+                <div class="row">
+                  <div class="col-3 label-input">
+                    <label for="">회원번호</label>
+                    <input type="text" class="c-input" id="" value="11442222" disabled />
+                  </div>
+                  <div class="col-3 label-input">
+                    <label for="">이름</label>
+                    <input type="text" class="c-input" id="" value="홍길동" />
+                  </div>
+                  <div class="col-6 label-input">
+                    <div class="c-label-txt">휴대폰 전화번호</div>
+                    <div class="row inner c-input-phone-group">
+                      <div class="col input-phone-01">
+                        <div class="c-select">
+                          <select id="" title="휴대폰 전화번호 앞 3자리 선택">
+                            <option value="" selected>010</option>
+                            <option value="">option</option>
+                            <option value="">option</option>
+                            <option value="">option</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col"><input type="text" class="c-input" id="" title="휴대폰 전화번호 중간 4자리 입력" /></div>
+                      <div class="col"><input type="text" class="c-input" id="" title="휴대폰 전화번호 끝 3자리 입력" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- // modal body -->
+
+            <div class="modal-footer justify-content-between">
+              <div class="buttons">
+                <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>Button</span></button>
+                <button class="c-btn bg-blue-1" data-dismiss="modal"><span>Button</span></button>
+              </div>
+              <div class="buttons">
+                <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>Button</span></button>
+                <button class="c-btn bg-blue-1" data-dismiss="modal"><span>Button</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- = // popupType03_01 -->
+
+      <!-- = popupType03_02 -->
+      <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupType03_02"><span>popupType03_02</span></button>
+
+      <div class="c-layer-popup type03 modal fade" id="popupType03_02" role="dialog" aria-labelledby="popupType03_Labe02" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <!-- modal Header -->
+            <div class="modal-header">
+              <div class="c-modal-title-field">
+                <h4 class="c-title" id="popupType03_Labe02">타이틀</h4>
+              </div>
+              <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업 닫기</span></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <!-- 팝업에 따른 title 부여 -->
+              <div class="c-article input-list">
+                <div class="row">
+                  <div class="col-3 label-input">
+                    <label for="">회원번호</label>
+                    <input type="text" class="c-input" id="" value="text" readonly="readonly" />
+                  </div>
+                  <div class="col-3 label-input">
+                    <label for="">이름</label>
+                    <input type="text" class="c-input" id="" value="홍길동" readonly="readonly" />
+                  </div>
+                </div>
+              </div>
+              <!-- // modal body -->
+            </div>
+
+            <div class="modal-footer justify-content-between">
+              <div class="buttons">
+                <button class="c-btn is-outline-blue-1"><span>Button</span></button>
+                <button class="c-btn bg-blue-1"><span>Button</span></button>
+              </div>
+              <div class="buttons">
+                <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>취소</span></button>
+                <button class="c-btn bg-blue-1"><span>Button</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- = // popupType03_02 -->
+      <!-- =============================================[ // popupType03 ] -->
+
+      <!-- =============================================[popupType04 ] -->
+      <div class="title-box" style="margin: 20px 0">
+        <h2 class="h2_guide">popupType04</h2>
+      </div>
+
+      <h3 class="h3_guide">type04 - width:720</h3>
+      <!-- = popupType04_01 -->
+      <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupType04_01"><span>popupType04_01</span></button>
+
+      <div class="c-layer-popup type04 modal fade" id="popupType04_01" role="dialog" aria-labelledby="popupType04_Labe01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <!-- modal Header -->
+            <div class="modal-header">
+              <div class="c-modal-title-field">
+                <h4 class="c-title" id="popupType04_Labe01">타이틀</h4>
+              </div>
+              <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업 닫기</span></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <!-- 팝업에 따른 title 부여 -->
+              <div class="c-article input-list">
+                <div class="row">
+                  <div class="col-6 label-input">
+                    <label for="">회원번호</label>
+                    <input type="text" class="c-input" id="" value="11442222" disabled />
+                  </div>
+                  <div class="col-6 label-input">
+                    <label for="">이름</label>
+                    <input type="text" class="c-input" id="" value="홍길동" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- // modal body -->
+
+            <div class="modal-footer justify-content-between">
+              <div class="buttons">
+                <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>Button</span></button>
+                <button class="c-btn bg-blue-1" data-dismiss="modal"><span>Button</span></button>
+              </div>
+              <div class="buttons">
+                <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>Button</span></button>
+                <button class="c-btn bg-blue-1" data-dismiss="modal"><span>Button</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- = // popupType04_01 -->
+      <!-- =============================================[ // popupType04 ] -->
+
+      <!-- =============================================[popupType05 ] -->
+      <div class="title-box" style="margin: 20px 0">
+        <h2 class="h2_guide">popupType05</h2>
+      </div>
+
+      <h3 class="h3_guide">type05 - full width</h3>
+      <!-- = popupType05_01 -->
+      <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupType05_01"><span>popupType05_01</span></button>
+      <div class="c-layer-popup type05 modal fade" id="popupType05_01" role="dialog" aria-labelledby="popupType05_Label" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- modal Header -->
+            <div class="modal-header">
+              <div class="c-modal-title-field">
+                <h4 class="c-title" id="popupType05_Label">타이틀</h4>
+              </div>
+              <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업 닫기</span></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <!-- 팝업에 따른 title 부여 -->
+
+              <div class="c-article input-list">
+                <div class="row">
+                  <div class="col-6 label-input">
+                    <label for="">회원번호</label>
+                    <input type="text" class="c-input" id="" value="11442222" disabled />
+                  </div>
+                  <div class="col-6 label-input">
+                    <label for="">이름</label>
+                    <input type="text" class="c-input" id="" value="홍길동" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- // modal body -->
+          </div>
+        </div>
+      </div>
+
+      <!-- = // popupType05_01 -->
+      <!-- =============================================[ // popupType05 ] -->
+
+      <!-- =============================================[popupType06 ] -->
+      <div class="title-box" style="margin: 20px 0">
+        <h2 class="h2_guide">popupType06</h2>
+      </div>
+      <h3 class="h3_guide">type06 - width:600</h3>
+
+      <button type="button" class="c-btn bg-blue-1 c-modal-btn" data-toggle="modal" data-modal="#popupType06">popupType06</button>
+      <div class="c-modal-wrap">
+        <!-- type06 -->
+        <div class="c-modal-cont type06 c-terms-area" id="popupType06" role="dialog" aria-labelledby="popupType06_Label01" aria-hidden="true">
+          <div class="modal-header">
+            <h2 class="modal-title" id="popupType06_Label01">개인정보 수집/이용동의 약관</h2>
+            <button type="button" class="popup-cls-btn c-popup-close-btn">
+              <span class="skip">팝업닫기</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="terms-section">
+              <ol>
+                <li>- 본인은 정보통신망법, 개인정보보호법 등 기타 개인정보에 관한 법률을 준수하겠습니다.</li>
+                <li>- 본인은 본인의 접속 계정을 제3자에게 양도 및 대여를 하지 않겠습니다.</li>
+                <li>- 본인은 직무전환, 퇴사 등의 이유로 “시스템” 관련 업무에 더 이상 관여하지 않을 경우에는 지체없이 시스템 관리자에게 통보하겠습니다.</li>
+              </ol>
+            </div>
+            <div class="terms-section">
+              <ol>
+                <li>
+                  <ol>
+                    <li><b>가. 개인정보 수집/이용 목적</b></li>
+                    <li>- WITH KMI에서 수집되는 개인정보는 정보주체의 동의를 얻어 시스템 계정 등록을 목적으로 이용됩니다.</li>
+                  </ol>
+                </li>
+                <li>
+                  <ol>
+                    <li><b>나. 개인정보 수집 항목</b></li>
+                    <li>- 고객사명, 소속부터, 성명, 이메일, 일반전화, 휴대전화번호</li>
+                  </ol>
+                </li>
+                <li>
+                  <ol>
+                    <li><b>다. 개인정보의 보유 및 수집/이용 기간</b></li>
+                    <li>- 본인은 WITH KMI에서 본인의 개인정보를 수집/이용하는 것에 동의합니다.</li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="c-btn is-outline-navy-1 c-popup-close-btn"><span>닫기</span></button>
+          </div>
+        </div>
+        <!-- // type06 -->
+      </div>
+
+      <!-- =============================================[ // popupType06 ] -->
+    </div>
+
+    <!-- Modal -->
+
+    <!-- guide script -->
+    <script src="../js/pretty.js"></script>
+
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script defer src="../../js/common.js"></script>
+  </body>
+</html>

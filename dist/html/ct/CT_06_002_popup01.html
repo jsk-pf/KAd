@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지하기 등록</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+
+            <!-- Contents -->
+            <section class="contents">
+
+                <!-- = Popup Source -->
+                <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupSendNoticeSms_03"><span>open popup</span></button>
+                <div class="c-layer-popup type03 modal fade" id="popupSendNoticeSms_03" role="dialog" aria-labelledby="popupSendNoticeSms03_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+
+                            <!-- modal Header -->
+                            <div class="modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupSendNoticeSms03_Label01">고객사 조회</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업
+                                        닫기</span></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+
+                                <!-- 팝업에 따른 title 부여 -->
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-lg">고객사 정보</h5>
+                                        <div class="buttons">
+                                            <button class="c-btn bg-gray-3"><span>조회</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="c-article input-list">
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputNoticeInqCustom01_01">고객사 코드</label>
+                                                <input type="text" class="c-input" id="inputNoticeInqCustom01_01" value="">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputNoticeInqCustom01_02">고객사명</label>
+                                                <input type="text" class="c-input" id="inputNoticeInqCustom01_02" value="">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputNoticeInqCustom01_03">고객사 사업자번호</label>
+                                                <input type="text" class="c-input" id="inputNoticeInqCustom01_03" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel">
+                                    <div class="c-table-field">
+                                        <div class="c-table striped">
+                                            <table class="table tbl-notice-inq-customer">
+                                                <caption> 고객사 조회 목록: NO, 고객사코드, 대표 고객사명, 관계고객사명, 사업자등록번호, 담당자명, 비고에 대한 정보 </caption>
+                                                <colgroup>
+                                                    <col style="width: 100px">
+                                                    <col style="width: 180px">
+                                                    <col>
+                                                    <col>
+                                                    <col style="width: 130px">
+                                                    <col style="width: 130px">
+                                                    <col style="width: 100px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">NO</th>
+                                                        <th scope="col">고객사코드</th>
+                                                        <th scope="col">대표 고객사명</th>
+                                                        <th scope="col">관계고객사명</th>
+                                                        <th scope="col">사업자등록번호</th>
+                                                        <th scope="col">담당자명</th>
+                                                        <th scope="col">비고</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>A00054</td>
+                                                        <td>삼성전자㈜</td>
+                                                        <td>㈜삼성전자 수원공장</td>
+                                                        <td>452-5568-41425</td>
+                                                        <td>홍길동</td>
+                                                        <td>
+                                                            <button type="button" class="c-bs-link"><span>선택</span></button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>A00054</td>
+                                                        <td>삼성전자㈜</td>
+                                                        <td>㈜삼성전자 수원공장</td>
+                                                        <td>452-5568-41425</td>
+                                                        <td>홍길동</td>
+                                                        <td>
+                                                            <button type="button" class="c-bs-link"><span>선택</span></button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>A00054</td>
+                                                        <td>삼성전자㈜</td>
+                                                        <td>㈜삼성전자 수원공장</td>
+                                                        <td>452-5568-41425</td>
+                                                        <td>홍길동</td>
+                                                        <td>
+                                                            <button type="button" class="c-bs-link"><span>선택</span></button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>A00054</td>
+                                                        <td>삼성전자㈜</td>
+                                                        <td>㈜삼성전자 수원공장</td>
+                                                        <td>452-5568-41425</td>
+                                                        <td>홍길동</td>
+                                                        <td>
+                                                            <button type="button" class="c-bs-link"><span>선택</span></button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>A00054</td>
+                                                        <td>삼성전자㈜</td>
+                                                        <td>㈜삼성전자 수원공장</td>
+                                                        <td>452-5568-41425</td>
+                                                        <td>홍길동</td>
+                                                        <td>
+                                                            <button type="button" class="c-bs-link"><span>선택</span></button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- c-tbl-paging -->
+                                        <div class="c-tbl-paging">
+                                            <p class="page-info">Total Page <em>01</em> page</p>
+                                            <nav class="c-pagination">
+                                                <ul>
+                                                    <li>
+                                                        <a class="page-link" href="javascript:;" aria-label="처음">
+                                                            <span class="is-blind p-first">처음</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="page-link" href="javascript:;" aria-label="이전">
+                                                            <span class="is-blind p-prev">이전</span>
+                                                        </a>
+                                                    </li>
+                                                    <li><a class="page-link is-active" href="javascript:;">1</a></li>
+                                                    <li><a class="page-link" href="javascript:;">2</a></li>
+                                                    <li><a class="page-link" href="javascript:;">3</a></li>
+                                                    <li><a class="page-link" href="javascript:;">4</a></li>
+                                                    <li><a class="page-link" href="javascript:;">5</a></li>
+                                                    <li>
+                                                        <a class="page-link" href="javascript:;" aria-label="다음">
+                                                            <span class="is-blind p-next">다음</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="page-link" href="javascript:;" aria-label="끝">
+                                                            <span class="is-blind p-end">끝</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- // modal body -->
+                            <div class="modal-footer">
+                                <div class="buttons">
+                                    <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>취소</span></button>
+                                    <button class="c-btn bg-blue-1" data-dismiss="modal"><span>적용</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- = // Popup Source -->
+            </section>
+
+            <!-- // Contents -->
+        </div>
+
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

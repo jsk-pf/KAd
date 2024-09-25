@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지하기 등록</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body> <!-- [ mod(220602) ] -->
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+    <!-- [ // mod(220602) ] -->
+    <div id="container"> <!-- Side Navigation -->
+        <nav id="sideNav">
+            <!-- Sidebar -->
+            <div class="sidenav-wrapper">
+                <div class="top-area">
+                    <div class="top-logo">
+                        <h1 class="logo">
+                            <!-- [ mod(230202) ] -->
+                            <a href="javascript:;"><img src="../../images/logo/logo_01.svg" alt="WITH KMI"></a>
+                        </h1>
+                    </div>
+                    <p style="color:#fff">UI개발 화면 일부 목록</p>
+                </div>
+                <div class="sidebar-wrap">
+                    <ul class="sidebar-menu">
+                        <li><a href="../vgt/VGT_01_001.html">메인</a></li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>회원가입/로그인</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../jo/JO_01_002.html" target="_blank">고객사 회원가입</a></li>
+                                <li><a href="../jo/JO_02_001.html" target="_blank">협력병원 회원가입</a></li>
+                                <li><a href="../LO/LO_01_001.html">로그인</a></li>
+                                <li><a href="../LO/LO_01_001_popup01.html">비밀번호 재설정(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진예약현황</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cs/CS_01_001.html">예약 진행 현황</a></li>
+                                <li><a href="../cs/CS_01_001_03_popup.html" target="_blank">연기검사 조회(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진상품관리</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../pi/PI_01_001.html">검진상품제안관리</a></li>
+                                <li><a href="../pi/PI_02_001.html">검진상품 조회</a></li>
+                                <li><a href="../pi/PI_01_001_1.html" target="_blank">검진제안서 상세보기(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002.html" target="_blank">검진제안서 등록(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002_1.html" target="_blank">검진제안서 불러오기(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진예약</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cs/CS_01_001.html">예약 진행 현황</a></li>
+                                <li><a href="../pi/CS_01_001_03_popup.html" target="_blank">연기검사 조회 (팝업)</a></li>
+                                <li><a href="../pi/CS_01_001_04_popup.html" target="_blank">메모목록 (팝업)</a></li>
+                                <li><a href="../pi/PI_01_001_1.html" target="_blank">검진제안서 상세보기(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002.html" target="_blank">검진제안서 등록(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002_1.html" target="_blank">검진제안서 불러오기(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>계정관리</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cjo/CJO_01_001.html">계정관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- [ mod(230130) ] -->
+            <div class="btm-info">
+                <p class="time">오전 07:00 ~ 오후 18:00</p>
+                <p class="tel">1533-0505</p>
+                <div class="btm-info"> (토요일 07:00~12:30)<br> (일/공휴일 휴무) </div>
+            </div>
+            <!-- [ // mod(230130) ] -->
+            <!-- // Side Navigation -->
+        </nav>
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper"> <!-- Header-->
+            <header class="header">
+                <div class="wrap">
+                    <div class="top-left">
+                        <button class="sidebar-toggle" type="button">
+                            <span class="ico-type01 t-i-menu is-blind">사이드메뉴</span>
+                        </button>
+                        <div class="total-search">
+                            <i class="ico-search"></i>
+                            <input type="text" placeholder="검색" class="search-input">
+                            <!-- - 검색어 입력에 따른 연관 검색어 노출 처리 -->
+                            <div class="search-related-field" style="display: none">
+                                <ul class="search-list">
+                                    <li><a href="javascript:;">검진정책관리</a></li>
+                                    <li><a href="javascript:;">검진상품관리</a></li>
+                                    <li><a href="javascript:;">검진항목관리</a></li>
+                                    <li class="on"><a href="javascript:;">검진상품승인관리</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-right">
+                        <!-- [ mod(221031) ]
+				- 부서, 로그아웃 버튼 추가
+			-->
+                        <div class="user-team">운영지원팀</div>
+                        <div class="user-infobox">
+                            <a href="javascript:;" role="button" class="c-top-usercontrol btn-open-usercontrol">
+                                <div class="user-name">
+                                    <p>홍길동님</p>
+                                </div>
+                                <div class="user-img"><img src="../../images/ico/ico_user_profile.svg" alt=""></div>
+                            </a>
+                            <div class="user-control">
+                                <ul>
+                                    <li><a href="javascript:;">로그아웃</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- // Header--> <!-- Contents -->
+            <section class="contents">
+                <div class="c-panel top_head">
+                    <nav class="c-breadcrumb" aria-label="breadcrumb">
+                        <ol class="breadcrumb-list">
+                            <li>공지관리</li>
+                            <li class="on" aria-current="page">공지하기 등록</li>
+                        </ol>
+                    </nav>
+                    <div class="c-title-field">
+                        <h1 class="title-lg">공지하기 등록</h1>
+                    </div>
+                </div>
+                <div class="c-panel">
+                    <div class="row c-reg-sms-field">
+                        <div class="column template">
+                            <div class="c-title-field justify-cont-e"></div>
+                            <div class="c-article input-list">
+                                <div class="row">
+                                    <div class="col-4 label-input">
+                                        <label for="inputSmsReg01_01">템플릿명</label>
+                                        <div class="c-select" id="inputSmsReg01_01">
+                                            <select title="템플릿 선택">
+                                                <option value="" selected="">선택</option>
+                                                <option value="">검진독려</option>
+                                                <option value="">예약신청</option>
+                                                <option value="">검진기간 시작</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col label-input">
+                                        <label for="inputSmsReg01_02">내용 입력</label>
+                                        <div class="c-txtarea-field">
+                                            <textarea id="inputSmsReg01_02" class="c-txt-area sms-txtarea01" placeholder="템플릿명을 선택하세요"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column send-list">
+                            <div class="c-article input-list">
+                                <div class="row align-item-e">
+                                    <div class="col-6 label-input">
+                                        <label for="inputSmsReg01_03">고객사</label>
+                                        <div class="c-input-search">
+                                            <input type="text" id="inputSmsReg01_03">
+                                            <button type="button" class="btn-search"><span class="skip">검색</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 label-input">
+                                        <div class="buttons justify-cont-e">
+                                            <button class="c-btn is-outline-navy-1"><span>대상자 불러오기</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col label-input">
+                                        <label>받는사람</label>
+                                        <div class="list-send-person">
+                                            <div class="inner">
+                                                <ul class="sms-send-list">
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="hp-info">
+                                                            <div class="info">
+                                                                <span class="name">홍길동</span>
+                                                                <span class="number">010-1234-5678</span>
+                                                            </div>
+                                                            <button type="button" class="btn-del"><span class="skip">삭제</span></button>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- # [ mod(230620) ]
+											-- 삭제 필요
+										-->
+                                        <!-- <div class="c-txtarea-field">
+											<textarea id="inpuTxtA01" class="c-txt-area" placeholder="템플릿명을 선택하세요"></textarea>
+										</div> -->
+                                        <!-- # [// mod(230620) ] -->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="buttons">
+                                            <button class="c-btn is-outline-navy-1"><span>전체 삭제</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="total-cnt">
+                                            <label for="inputSmsReg01_04">전체</label>
+                                            <div class="c-input-unit">
+                                                <input type="text" class="" id="inputSmsReg01_04" value="0" readonly="readonly">
+                                                <span class="unit">명</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-panel">
+                    <div class="c-field c-btn-field justify-content-end">
+                        <div class="buttons">
+                            <button class="c-btn bg-navy-1 btn-sms-send" type="button"><span>발송하기</span></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="../../js/common.js"></script>
+</body>
+
+</html>

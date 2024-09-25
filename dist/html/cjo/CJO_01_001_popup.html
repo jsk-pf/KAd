@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMI</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+
+        <!-- Contents -->
+        <section class="contents">
+            <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupAccount_01"><span>승인처리
+                    alert</span></button>
+
+            <!-- = popup Source  -->
+            <div class="c-layer-popup type01 modal fade join-confirm" id="popupAccount_01" role="dialog" aria-labelledby="popupAccount_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <h4 class="c-title skip" id="popupAccount_Label01">승인처리 완료</h4>
+                            <p>승인처리가 완료되었습니다.</p>
+                        </div>
+                        <div class="modal-footer type01">
+                            <div class="buttons row">
+                                <div class="col">
+                                    <button class="c-btn bg-blue-1" data-dismiss="modal"><span>확인</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- = // popup Source -->
+            <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupAccount_02"><span>PW 초기화
+                    alert</span></button>
+
+            <!-- = popup Source  -->
+            <div class="c-layer-popup type01 modal fade join-confirm" id="popupAccount_02" role="dialog" aria-labelledby="popupAccount_Label02" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <h4 class="c-title skip" id="popupAccount_Label02">PW초기화 완료</h4>
+                            <p>PW초기화가 완료되었습니다.</p>
+                        </div>
+                        <div class="modal-footer type01">
+                            <div class="buttons row">
+                                <div class="col">
+                                    <button class="c-btn bg-blue-1" data-dismiss="modal"><span>확인</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- = // popup Source -->
+            <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupAccount_03"><span>회원삭제
+                    alert</span></button>
+
+            <!-- = popup Source  -->
+            <div class="c-layer-popup type01 modal fade join-confirm" id="popupAccount_03" role="dialog" aria-labelledby="popupAccount_Label03" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <h4 class="c-title skip" id="popupAccount_Label03">회원 삭제</h4>
+                            <p>선택한 회원을 삭제 하시겠습니까?</p>
+                        </div>
+                        <div class="modal-footer type01">
+                            <div class="buttons row">
+                                <div class="col">
+                                    <button class="c-btn is-outline-blue-1"><span>삭제</span></button>
+                                </div>
+                                <div class="col">
+                                    <button class="c-btn bg-blue-1" data-dismiss="modal"><span>닫기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- = // popup Source -->
+            <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupAccount_04"><span>삭제완료
+                    alert</span></button>
+
+            <!-- = popup Source  -->
+            <div class="c-layer-popup type01 modal fade join-confirm" id="popupAccount_04" role="dialog" aria-labelledby="popupAccount_Label04" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <h4 class="c-title skip" id="popupAccount_Label04">삭제 완료</h4>
+                            <p>삭제가 완료되었습니다.</p>
+                        </div>
+                        <div class="modal-footer type01">
+                            <div class="buttons row">
+                                <div class="col">
+                                    <button class="c-btn bg-blue-1" data-dismiss="modal"><span>확인</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- = // popup Source -->
+        </section>
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

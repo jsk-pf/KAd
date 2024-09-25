@@ -1,0 +1,1118 @@
+/**
+type-horizontal 최상위 요소 부여
+
+*/
+
+// = [add] Improve UI (v0.1)
+
+// ================================ 콜센터 페이지 화면  ui 개선 작업 (Only Call Center)
+
+// = callCenter Only Control
+
+// = Layout
+#container {
+  // + contents
+  .content-wrapper {
+    .contents {
+      padding: 2.142rem 2.142rem 2.857rem;
+    }
+
+    // Dev (개발화면 소스 대응)
+    .header ~ #container > .contents {
+      padding: 7.785rem 2.142rem 2.857rem;
+    }
+    // Dev // 개발화면 소스 대응
+
+    .header ~ .contents {
+      padding-top: 7.785rem;
+    }
+  }
+}
+
+// = type-callcenter
+.content-wrapper.type-callcenter,
+.c-layer-popup.type-callcenter {
+  .c-panel ~ .c-panel {
+    margin-top: 20px;
+  }
+  // + 예약 진행 현황
+  .reservation-dtl-status-layout {
+    .c-input-unit {
+      input[type='text'] {
+        padding-right: 18px;
+      }
+    }
+
+    .c-m-input-list,
+    .c-input-date {
+      width: 100%;
+    }
+
+    .left-wrap {
+      .c-panel {
+        .row {
+          label,
+          .c-label-txt {
+            min-width: 60px;
+            margin-right: 10px;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+
+    .right-wrap {
+      .buttons:first-of-type {
+        margin-bottom: 15px;
+      }
+      // + type02 비용 내역
+      .cost-dtl-list.type02 {
+        overflow: hidden;
+        padding: 0;
+        flex-direction: column;
+
+        .row {
+          padding-right: 0;
+          &:nth-of-type(odd) {
+            background-color: #f6f6f6;
+          }
+          &:nth-of-type(even) {
+            background-color: $color-white-2;
+          }
+        }
+        .row ~ .row {
+          // padding-top: 8px;
+        }
+
+        .label-input {
+          label {
+            min-width: 80px;
+          }
+        }
+        .col-8 {
+          max-width: 100%;
+          flex: 0 0 100%;
+          .c-input-badge-group {
+            width: 100%;
+            // margin-top: -8px;
+            min-height: 33px;
+          }
+
+          .c-input-unit {
+            width: 100%;
+          }
+        }
+        .col-2 {
+          max-width: 50%;
+          flex: 0 0 50%;
+          .c-input-unit {
+            width: 100%;
+          }
+        }
+      }
+
+      // + type03 대상자 정보
+      .type03 {
+        .label-input {
+          label,
+          .c-label-txt {
+            min-width: 100px;
+          }
+        }
+        .row {
+          padding-right: 0;
+        }
+
+        .c-input-email-group {
+          .input-email-02 {
+            .c-select {
+              select {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        .col-3 {
+          max-width: 50%;
+          flex: 0 0 50%;
+          .c-input-mark {
+            width: 100%;
+            input {
+              padding-right: 22px;
+            }
+          }
+        }
+        .col-6 {
+          flex: 0 0 100%;
+          &.input-email-01 {
+            &:after {
+              bottom: initial;
+              right: -5px;
+            }
+            input {
+              min-width: initial;
+              width: auto;
+            }
+          }
+
+          &.input-email-02 {
+            .col {
+              flex-basis: 100%;
+              input {
+                width: 100%;
+              }
+            }
+          }
+        }
+        .c-input-email-group {
+          .col-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+          }
+        }
+
+        .c-input-address-group {
+          flex-wrap: nowrap;
+          .input-addr-02 {
+            flex-basis: 100%;
+            input {
+              width: 100%;
+            }
+          }
+        }
+        // + type03 input - not readonly
+        input[type='text'] {
+          padding: {
+            top: 4px;
+            bottom: 4px;
+          }
+        }
+        .c-input-mark {
+          .is-rate {
+            right: 8px;
+          }
+          input[type='text'] {
+            padding-right: 30px;
+          }
+        }
+        .c-input-address-group {
+          .input-addr-03 {
+            .c-btn {
+              padding: 4px 10px;
+            }
+          }
+
+          [class^='col'] {
+            &.input-addr-03 {
+              flex: 0 0 auto;
+            }
+          }
+          // 3= inner
+          &.inner {
+            flex: 1 1 100%;
+            max-width: 100%;
+            flex-wrap: wrap;
+            @include rowGridSpacing(6px);
+            > .col {
+              flex: 0 0 auto;
+              &.input-addr-02 {
+                flex: 1 1 0;
+              }
+            }
+            .input-addr-04 {
+              padding-top: 10px;
+              flex: 0 0 100%;
+            }
+          }
+        }
+        .c-inquiry-date-group {
+          .buttons {
+            .c-btn {
+              padding: 4px 10px;
+            }
+          }
+        }
+        .c-select {
+          select {
+            padding: 4px 30px 4px 12px;
+          }
+        }
+      }
+    }
+
+    .buttons:first-of-type {
+      // margin-bottom: 14px;
+    }
+  }
+
+  .d-tbl-chklist-wrap {
+    max-height: 245px;
+  }
+
+  .c-table-field {
+    & + .buttons {
+      margin-top: 20px;
+    }
+  }
+
+  .right-wrap {
+    .c-tab-contents {
+      .c-select {
+        select {
+          background-position-x: 96%;
+        }
+      }
+    }
+  }
+
+  .mod-rsv-setting-field {
+    .c-tab-contents {
+      &.multiple-rsv-contents {
+        > .tab-cont {
+          &.on {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+// + 예약 변경 설정
+.mod-rsv-setting-field {
+  // + tab-03
+  .set-modrsv-tab.tab-03 {
+    .c-table.tbl-modrsv-selectchk {
+      tbody {
+        td {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  // + tab-04
+  .tab-04 {
+    .c-tbl-paging {
+      margin-top: 4px;
+    }
+  }
+
+  // + tab-05
+  .set-modrsv-tab.tab-05 {
+    .input-list .row {
+      flex: 0 1 auto;
+    }
+    .c-rdochk {
+      label {
+        min-width: auto;
+      }
+    }
+    .col-6 {
+      flex-basis: auto;
+    }
+
+    .c-m-input-list {
+      > .input-col {
+        & ~ .input-col {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .label-txt,
+    .label-input > label {
+      display: inline-flex;
+      flex: none;
+      width: auto;
+      min-width: auto;
+    }
+    .c-panel:first-of-type {
+      .row {
+        margin: 0;
+        min-height: 38px;
+      }
+      .col-3 {
+        display: flex;
+        flex: 0 1 auto;
+        align-items: center;
+        padding: 0;
+      }
+    }
+    .chkup-date {
+      margin-top: 10px;
+      padding: {
+        top: 6px;
+        bottom: 6px;
+      }
+      > ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: {
+          left: 10px;
+          right: 10px;
+        }
+        > .chkup-date-list {
+          padding: 6px 0;
+
+          ul {
+            display: flex;
+            align-items: center;
+            li {
+              margin-right: 14px;
+              position: relative;
+              & ~ li:not(:last-of-type) {
+                &::after {
+                  display: block;
+                  content: '';
+                  position: absolute;
+                  right: -8px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 1px;
+                  height: 9px;
+                  background-color: $color-gray-3;
+                }
+              }
+              &:first-of-type {
+                margin-right: 8px;
+              }
+            }
+            .exam-detail-info {
+              white-space: nowrap;
+              @supports (min-width: fit-content) {
+                min-width: fit-content;
+              }
+            }
+          }
+          &:not(:last-of-type) {
+            border-bottom: 1px solid $color-gray-5;
+            margin-bottom: 2px;
+          }
+        }
+      }
+    }
+    .c-badge02 {
+      padding: {
+        left: 4px;
+        right: 4px;
+      }
+    }
+  }
+
+  // + tab-06
+  .set-modrsv-tab.tab-06 {
+    .c-article.input-list {
+      display: inline-block;
+      width: 100%;
+
+      > .row {
+        .c-select {
+          width: auto;
+        }
+        > .col-12 {
+          width: 100%;
+        }
+      }
+
+      .label-input {
+        .c-label-txt,
+        label {
+          min-width: 120px;
+        }
+      }
+
+      .c-input-address-group {
+        .row:nth-of-type(2) {
+          .c-input {
+            width: 300px;
+          }
+        }
+        > .row {
+          & + .row {
+            > .col {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .terms-field {
+        .c-rdochk {
+          label.chk-label {
+            min-width: 30px;
+          }
+        }
+        .terms-list {
+          display: flex;
+          flex-wrap: wrap;
+          .terms-cont {
+            display: flex;
+            padding: 6px 0;
+            margin-right: 10px;
+            justify-content: space-between;
+            .label-txt {
+              align-items: center;
+              min-width: 135px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // + tab-07
+  .set-modrsv-tab.tab-07 {
+    .c-rdochk {
+      margin-right: 25px;
+    }
+  }
+}
+
+// + 예약 변경 설정 Tab
+.set-modrsv-tab {
+  .c-inner-field > .input-list,
+  .c-title-field + .input-list {
+    @include colInnerHSpacingSmall;
+  }
+  .c-article {
+    &.input-list {
+      & > .row {
+        @include rowGridSpacingSmall;
+      }
+    }
+  }
+}
+
+// + popup
+.c-layer-popup {
+  &.type-callcenter {
+    .reservation-dtl-status-layout {
+      .c-btn {
+        min-width: initial;
+      }
+    }
+
+    .tab-05 {
+      .c-article {
+        &.input-list {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+}
+
+// ==== [add] Improve UI (v0.1)
+
+// + mediaquery
+
+// @include responsive(desktopFhd) {
+//   // = 콜센터 페이지 화면  ui 개선 작업
+
+//   body {
+//   }
+//   .content-wrapper {
+//     &.type-callcenter {
+//       // + callcenter
+
+//       .reservation-dtl-status-layout {
+//         .left-wrap {
+//           width: calc(100% - $callcenter-right-col-width);
+//           flex: 0 0 calc(100% - $callcenter-right-col-width);
+//           max-width: calc(100% - $callcenter-right-col-width);
+//         }
+//         .right-wrap {
+//           width: $callcenter-right-col-width;
+//           flex: 0 0 $callcenter-right-col-width;
+//           max-width: $callcenter-right-col-width;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// = type platformsystem
+
+#container .content-wrapper {
+  &.type-horizontal {
+    &.type-callcenter {
+      &.type-platformsystem {
+        min-width: $wrap-min-width;
+        .contents {
+          min-width: $wrap-min-width;
+          padding: 0 6px;
+        }
+        input {
+          &[type='text'],
+          &[type='number'] {
+            padding: $input-padding;
+            line-height: $input-line-height;
+            border-radius: $input-border-radius-01;
+            &[readonly='readonly'] {
+              border-radius: 0;
+            }
+          }
+        }
+
+        .c-input-mark,
+        .c-input-date,
+        .c-input-search,
+        .c-input-unit {
+          @include ellipsisLine01;
+          input[type='text'],
+          input[type='number'] {
+            padding-right: $input-ico-spacing-02;
+          }
+        }
+        .c-input-date i {
+          right: 8px;
+        }
+        .c-input-phone-group {
+          [class^='col']:last-of-type {
+            margin-left: $row-margin-01;
+          }
+        }
+        .c-input-search {
+          .btn-search {
+            background-size: $btn-search;
+            width: $btn-search;
+            height: $btn-search;
+            right: 5px;
+          }
+        }
+        .c-select {
+          select {
+            padding: $select-padding;
+            line-height: $input-line-height;
+            border-radius: $input-border-radius-01;
+          }
+          &::after {
+            right: 4px;
+          }
+        }
+        .c-table,
+        .c-article,
+        textarea[readonly='readonly'],
+        textarea.ta-r-only,
+        .c-table-field {
+          border-radius: $input-border-radius-01;
+        }
+
+        button {
+          &.c-btn {
+            padding: $c-btn-padding;
+            border-radius: $input-border-radius-01;
+          }
+        }
+
+        textarea,
+        .c-txt-area {
+          height: $textarea-height;
+          padding: $col-padding-02;
+        }
+        .c-panel ~ .c-panel {
+          margin-top: $c-panel-margin-top;
+        }
+        .c-panel {
+          &.top_head {
+            display: none;
+          }
+        }
+        .c-article {
+          margin: {
+            top: $row-margin-03;
+            bottom: $row-margin-03;
+          }
+          &.input-list {
+            .row {
+              &.inner {
+                margin: {
+                  left: $row-margin;
+                  right: $row-margin;
+                }
+              }
+
+              > [class^='col'] {
+                padding: {
+                  left: $row-padding-02;
+                  right: $row-padding-02;
+                }
+              }
+            }
+          }
+        }
+
+        .input-list {
+          [class*='col'] {
+            padding: {
+              top: $col-padding-01;
+              bottom: $col-padding-01;
+            }
+          }
+        }
+
+        .co-accrodion-list {
+          &.type01 {
+            > li ~ li {
+              margin-top: $accrodion-margin;
+            }
+            .btn-accrodion {
+              border-radius: $input-border-radius-02;
+            }
+          }
+          .c-table {
+            .c-chkbox {
+              &.in-type {
+                vertical-align: bottom;
+              }
+            }
+          }
+        }
+        .set-modrsv-tab {
+          .c-article {
+            &.input-list {
+              > .row {
+                margin: {
+                  left: $row-margin;
+                  right: $row-margin;
+                }
+              }
+            }
+          }
+        }
+      }
+      // + 검진예약관리 화면개선
+      .left-wrap {
+        overflow: hidden;
+        position: relative;
+        // 예약변경설정 검색 input 추가
+        .set-modrsv-tab {
+          &.tab-01,
+          &.tab-02,
+          &.tab-04 {
+            .c-filter-field {
+              .c-input-search {
+                margin-left: 12px;
+              }
+            }
+          }
+          &.tab-02,
+          &.tab-04 {
+            .cont-body {
+              padding-top: 12px;
+              height: calc(100% - 40px);
+            }
+          }
+          &.tab-01 {
+            .c-input-search {
+              margin-right: 12px;
+            }
+          }
+        }
+        .mod-rsv-setting-field {
+          .mod-reservation {
+            .c-tab-contents {
+              .tab-cont {
+                display: block;
+                &.on {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .right-wrap {
+        // + 메모 변경이력
+        .memo-lists-mod {
+          td.rsv-mod-cont {
+            text-align: left;
+          }
+        }
+      }
+
+      // = 다중예약  UI 추가
+      .c-tab-wrap-field03 {
+        > .c-tab-field.tab-scroll {
+          padding-bottom: 0;
+        }
+
+        & + .multiple-rsv-contents {
+          margin-top: 0;
+          > .mod-reservation {
+            margin-top: 0;
+          }
+          .c-article {
+            border-top-left-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// + 메모 리스트
+.memo-lists {
+  display: flex;
+  flex-wrap: wrap;
+  .memo-list {
+    display: table;
+    table-layout: fixed;
+    align-items: center;
+
+    .memo-contarea,
+    .memo-btnarea {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .memo-btnarea {
+      width: 30px;
+    }
+    width: 100%;
+    .memo-contarea {
+      max-height: 100px;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in;
+      display: inline-block;
+    }
+    .memo-cont {
+      display: block;
+      white-space: normal;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      // -webkit-box-orient: vertical;
+      word-wrap: break-word;
+      line-height: 20px;
+      animation: close 1s linear 0s forwards;
+    }
+
+    .memo-cont-btn {
+      background: url(../images/ico/ico_arrow_10.svg) center/8px auto no-repeat;
+      width: 30px;
+      height: 30px;
+      padding: 6px 5px;
+      transition: transform 0.2s linear;
+      transform: rotate(0deg);
+    }
+
+    &.active {
+      transition: all 0.3s ease;
+      .memo-contarea {
+        max-height: 100rem;
+      }
+      .memo-cont {
+        animation: open 0.5s linear forwards;
+      }
+      .memo-cont-btn {
+        background-image: url(../images/ico/ico_arrow_10.svg);
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &.c-table {
+    table {
+      col.name {
+        width: 90px;
+      }
+    }
+  }
+}
+.target-memo-cont {
+  margin-top: 15px;
+
+  .c-article {
+    //+ 메모등록
+    &.target-memo {
+      .row {
+        flex: 1 1 auto;
+        align-items: center;
+        flex-wrap: nowrap;
+        .col:nth-of-type(1) {
+          text-align: center;
+        }
+        .col {
+          display: flex;
+          flex: 0 1 auto;
+          justify-content: center;
+          &.target-cont {
+            flex: 1 1 0;
+          }
+        }
+      }
+      .row:not(.inner) > [class^='col'] {
+        padding: {
+          left: 10px;
+          right: 10px;
+        }
+      }
+    }
+  }
+  .name {
+    width: 90px;
+  }
+  .date {
+    width: 110px;
+  }
+}
+
+@keyframes open {
+  from {
+    -webkit-line-clamp: 5;
+  }
+  to {
+    -webkit-line-clamp: initial;
+  }
+}
+
+@keyframes close {
+  from {
+    -webkit-line-clamp: initial;
+  }
+  to {
+    -webkit-line-clamp: 5;
+  }
+}
+
+// = type-platformsystem
+.type-platformsystem,
+.c-layer-popup.type-platformsystem {
+  // + table th,td 공통
+  .c-table {
+    table {
+      th,
+      td {
+        padding: $table-padding;
+      }
+    }
+  }
+
+  [class*='c-field'] {
+    & + .c-tab-contents {
+      margin-top: $row-margin-02;
+      &.type02 {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .c-tab-field {
+    .c-tab-list {
+      > li {
+        a {
+          padding: $tab-list-padding;
+          border-radius: $input-border-radius-01;
+        }
+      }
+    }
+  }
+}
+
+.type-platformsystem {
+  .target-memo-cont {
+    .c-article {
+      padding: $table-padding;
+      padding: 0;
+    }
+    .input-list [class*='col'] {
+      padding: {
+        top: 4px;
+        bottom: 4px;
+      }
+    }
+    .row:not(.inner) {
+      margin: {
+        left: -10px;
+        right: -10px;
+      }
+    }
+  }
+}
+
+// = 검진예약관리 화면 UI 개선 (2305~)
+// + 검진예약 설정
+
+.mod-rsv-setting-title {
+  &.type-option {
+    .date-box {
+      display: block;
+    }
+  }
+}
+.content-wrapper {
+  &.type-horizontal {
+    .reservation-dtl-status-layout {
+      .left-wrap {
+        .c-panel {
+          .c-rshopt-field {
+            .label-input {
+              > label {
+                min-width: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mod-rsv-setting-field {
+  .c-rshopt-field {
+    &.c-article {
+      margin-top: 6px;
+    }
+  }
+}
+.c-rshopt-field {
+  &.c-article {
+    padding: 4px;
+    margin: {
+      bottom: 0;
+    }
+  }
+  .row {
+    margin: 0;
+    input[type='text'] {
+      padding: 0 8px;
+      border-radius: 6px;
+      line-height: 1;
+    }
+
+    > .col {
+      margin: {
+        top: 2px;
+        bottom: 2px;
+      }
+      padding: {
+        left: 0;
+        right: 0;
+      }
+      display: flex;
+      align-items: center;
+    }
+
+    .input-col {
+      min-width: 100px;
+    }
+  }
+  .chk-label {
+    > span {
+      display: inline-block;
+      width: auto;
+    }
+  }
+}
+
+//+ 연기검사 팝업
+.delayexamination-info-popup {
+  .c-title-field {
+    justify-content: flex-end;
+  }
+
+  .label-input {
+    label,
+    .c-label-txt {
+      display: inline-flex;
+      flex: none;
+      width: auto;
+      @supports (min-width: fit-content) {
+        min-width: fit-content;
+      }
+      margin-bottom: 0;
+      padding-right: 10px;
+    }
+  }
+
+  .c-field {
+    > .input-list {
+      @include colOuterHSpacingSmall;
+    }
+  }
+  .input-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: {
+      left: 20px;
+      right: 20px;
+    }
+    [class*='col'] {
+      padding: {
+        top: 5px;
+        bottom: 5px;
+        left: 10px;
+        right: 10px;
+      }
+
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .row {
+      flex: 1 0 auto;
+      flex-wrap: nowrap;
+    }
+
+    .col {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+    }
+
+    .buttons {
+      flex: 0 0 auto;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .c-rdochk {
+      label {
+        padding-right: 15px;
+      }
+    }
+  }
+  .c-panel ~ .c-panel {
+    margin-top: 10px;
+  }
+
+  .exam-date {
+    justify-content: center;
+    .col {
+      display: flex;
+      flex: 0 1 auto;
+    }
+    [class^='col'] {
+      padding: {
+        left: 4px;
+        right: 4px;
+      }
+    }
+    &:not(.inner) {
+      margin: 0;
+    }
+    .c-select {
+      select {
+        min-width: 85px;
+      }
+    }
+  }
+}
+
+.modal-tool {
+  width: auto;
+  height: auto;
+  background: none;
+  position: absolute;
+  transition: none;
+  transform: translateY(-50%);
+
+  .c-modal-cont {
+    &.type06 {
+      transition: none;
+    }
+  }
+}

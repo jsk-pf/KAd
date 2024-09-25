@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>KMI Admin</title>
+	<script type="text/javascript" src="./js/dtree.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/base.css" />
+</head>
+
+<body>
+	<div class="coding_guide">
+		<h1 class="c_left">KMI Admin</h1>
+		<h2 class="h2_guide">File Tree</h2>
+		<div class="dtree">
+			<p>
+				<a href="javascript: p.openAll();"><img src="./img/btn_expand.gif" alt="Expand All" /></a> <a
+					href="javascript: p.closeAll();"><img src="./img/btn_collapse.gif" alt="Collapse All" /></a>
+			</p>
+			<script type="text/javascript">
+				var dir = '../coding_list/guide/';
+				var tree1 = {
+					index: {
+						main: ['../coding_list/coding_main.html', '', 'mainFrame'],
+						// update: ['../coding_list/coding_update.html', '', 'mainFrame'],
+					},
+					Info: {
+						Guide: {
+							Common: [dir + 'guide_common.html', '', 'mainFrame'],
+							Class: [dir + 'guide_class.html', '', 'mainFrame'],
+							Title: [dir + 'guide_title.html', '', 'mainFrame'],
+							Button: [dir + 'guide_button.html', '', 'mainFrame'],
+							Form: [dir + 'guide_form.html', '', 'mainFrame'],
+							Detail: [dir + 'guide_detail.html', '', 'mainFrame'],
+							Popup: [dir + 'guide_popup.html', '', 'blank'],
+							Module: [dir + 'guide_module.html', '', 'mainFrame'],
+							Date: [dir + 'guide_date.html', '', 'mainFrame'],
+							DatePicker: [dir + 'guide_datepicker.html', '', 'mainFrame'],
+							Tab: [dir + 'guide_tab.html', '', 'mainFrame'],
+							Table: [dir + 'guide_table.html', '', 'mainFrame'],
+							Form: [dir + 'guide_form.html', '', 'mainFrame'],
+						},
+					},
+				};
+				var p = new dTree('p', tree1);
+				document.write(p);
+			</script>
+			<p>
+				<a href="javascript: d.openAll();"><img src="./img/btn_expand.gif" alt="Expand All" /></a> <a
+					href="javascript: d.closeAll();"><img src="./img/btn_collapse.gif" alt="Collapse All" /></a>
+			</p>
+			<script type="text/javascript">
+				var dir2 = '../html/';
+				var pi = '../html/pi/';
+				var tree = {
+					Publishing: {
+						Layout: {
+							'sample_input/입력/수정': [dir2 + 'layout/sample_input.html', '', 'blank'],
+							'sample_detail/상세보기': [dir2 + 'layout/sample_detail.html', '', 'blank'],
+							'sample_input/입력요소(page)': [dir2 + 'layout/sample_input_03.html', '', 'blank'],
+							'sample_form ': [dir2 + 'layout/sample_form.html', '', 'blank'],
+							'CT_01_001/조회 sample ': [dir2 + 'layout/CT_01_001.html', '', 'blank'],
+							'HP_05_006/캘린더 layout ': [dir2 + 'layout/HP_05_006.html', '', 'blank'],
+							'HP_05_001/예약일정 관리 테이블': [dir2 + 'layout/HP_05_001.html', '', 'blank'],
+							'OS_01_003/좌우 영역 별도 스크롤 layout': [dir2 + 'layout/OS_01_003.html', '', 'blank'],
+						},
+						'회원가입 (JO)': {
+							'JO_01_002/고객사 회원가입 ': [dir2 + 'jo/JO_01_002.html', '', 'blank'],
+							'JO_01_002-popup01/이메일 중복확인 ': [dir2 + 'jo/JO_01_002_popup01.html', '', 'blank'],
+							'JO_02_001/협력병원 회원가입 ': [dir2 + 'jo/JO_02_001.html', '', 'blank'],
+							'JO_02_001-popup01/협력병원 검진센터 조회 ': [dir2 + 'jo/JO_02_001_popup01.html', '', 'blank'],
+							'JO_02_001-popup02/약관동의 팝업 ': [dir2 + 'jo/JO_02_001_popup02.html', '', 'blank'],
+						},
+						'로그인 (LO)': {
+							'LO_01_001/로그인 ': [dir2 + 'LO/LO_01_001.html', '', 'blank'],
+							'LO_01_001-popup01/비밀번호 재설정': [dir2 + 'LO/LO_01_001_popup01.html', '', 'blank'],
+							'LO_01_001-popup02/비밀번호 찾기': [dir2 + 'LO/LO_01_001_popup02.html', '', 'blank'],
+						},
+						'회원정보 (MI)': {
+							'MI_01_002/회원정보 상세보기': [dir2 + 'mi/MI_01_002.html', '', 'blank'],
+							'MI_01_003/회원정보 수정하기': [dir2 + 'mi/MI_01_003.html', '', 'blank'],
+						},
+						'공지관리 (CT)': {
+							'CT-06-001/공지관리 내역 확인': [dir2 + 'ct/CT_06_001.html', '', 'blank'],
+							'CT-06-001-popup01/발송결과보기(POPUP)': [dir2 + 'ct/CT_06_001_popup01.html', '', 'blank'],
+							'CT-06-001-popup02/발송내역(POPUP)': [dir2 + 'ct/CT_06_001_popup02.html', '', 'blank'],
+							'CT-06-002/공지하기 등록': [dir2 + 'ct/CT_06_002.html', '', 'blank'],
+							'CT-06-002-01/공지하기 등록(horizontal)': [dir2 + 'ct/CT_06_002_01.html', '', 'blank'],
+							'CT-06-002-popup01/고객사 조회(POPUP)': [dir2 + 'ct/CT_06_002_popup01.html', '', 'blank'],
+							'CT-06-002-popup02/검진 대상자 조회(POPUP)': [dir2 + 'ct/CT_06_002_popup02.html', '', 'blank'],
+						},
+						'메인 (VGT)': {
+							'VGT_01_001 / 고객사 메인': [dir2 + 'vgt/VGT_01_001.html', '', 'blank'],
+						},
+						'검진상품관리 (PI)': {
+							'PI-01-001 / 검진상품제안관리': [pi + 'PI_01_001.html', '', 'blank'],
+							'PI-01-001_popup / 고객사조회 팝업': [pi + 'PI_01_001_popup.html', '', 'blank'],
+							'PI-01-001-1 / 검진제안서 상세보기': [pi + 'PI_01_001_1.html', '', 'blank'],
+							'PI-01-001-3 / 검진상품 상세보기': [pi + 'PI_01_001_3.html', '', 'blank'],
+							'PI-01-002 / 검진 제안서 등록': [pi + 'PI_01_002.html', '', 'blank'],
+							'PI-01-002-1 / 검진제안서 불러오기': [pi + 'PI_01_002_1.html', '', 'blank'],
+							'PI-01-002-6 / 검진항목 등록하기': [pi + 'PI_01_002_6.html', '', 'blank'],
+							'PI_02_001 / 검진상품 조회': [pi + 'PI_02_001.html', '', 'blank'],
+							'PI_02_002_3 / 검진 제안서 상품 상세 보기': [pi + 'PI_02_002_3.html', '', 'blank'],
+						},
+						'협력병원(HP)': {
+							'협력병원 선정 관리(검진기관)': [dir2 + 'hp/HP_07_001_1.html', '', 'blank'],
+						},
+						'검진예약현황(OS)': {
+							'OS-01-003 / 검진 예약 상세보기': [dir2 + 'os/OS_01_003.html', '', 'blank'],
+							'OS-01-003 / 검진 예약 관리(수납내역)': [dir2 + 'os/OS_01_003_01.html', '', 'blank'],
+							'OS-01-003-02 /  온라인 결제 URL 발송 팝업': [dir2 + 'os/OS_01_003_02.html', '', 'blank'],
+							'OS-01-006 /  검진예약일괄처리 발송이력 팝업': [dir2 + 'os/OS_01_006_popup.html', '', 'blank'],
+						},
+						'콜센터 (CS)': {
+							'CS-01-001 / 예약진행현황(조회) - 이전': [dir2 + 'cs/CS_01_001.html', '', 'blank'],
+							'CS-01-001-02 / 예약진행현황(조회)-UI 개선': [dir2 + 'cs/CS_01_001_02.html', '', 'blank'],
+							'CS-01-001-02_01 / 예약진행현황(대상자수정)': [dir2 + 'cs/CS_01_001_02_01.html', '', 'blank'],
+							'CS-01-001-02_popup / 신규대상자 등록 팝업': [dir2 + 'cs/CS_01_001_02_popup.html', '', 'blank'],
+							'CS-01-001-03_popup / 연기검사 관련 팝업': [dir2 + 'cs/CS_01_001_03_popup.html', '', 'blank'],
+							'CS-01-001-04_popup / 메모리스트 팝업': [dir2 + 'cs/CS_01_001_04_popup.html', '', 'blank'],
+							'CS-01-001-05_popup / 대체검사리스트 팝업': [dir2 + 'cs/CS_01_001_05_popup.html', '', 'blank'],
+						},
+						'콜센터 (CS) - KICS': {
+							'CS_01_001_02_kics / 예약진행현황(조회)': [dir2 + 'cs/CS_01_001_02_kics.html', '', 'blank'],
+							'CS-01-001-02_01_kics / 예약진행현황(대상자수정)': [dir2 + 'cs/CS_01_001_02_01_kics.html', '', 'blank'],
+						},
+
+						'계정관리 (CJO)': {
+							'CJO-01-001/고객사 어드민': [dir2 + 'cjo/CJO_01_001.html', '', 'blank'],
+							'CJO-01-002/협력병원 어드민': [dir2 + 'cjo/CJO_01_002.html', '', 'blank'],
+							'CJO-01-001_popup/계정관리 조회 관련 팝업': [dir2 + 'cjo/CJO_01_001_popup.html', '', 'blank'],
+						},
+						'기타 (ETC)': {
+							error: [dir2 + 'etc/error.html', '', 'blank'],
+							update: [dir2 + 'etc/under_construction.html', '', 'blank'],
+							loading: [dir2 + 'etc/loading.html', '', 'blank'],
+						},
+					},
+				};
+				var d = new dTree('d', tree);
+				document.write(d);
+			</script>
+		</div>
+	</div>
+</body>
+
+</html>

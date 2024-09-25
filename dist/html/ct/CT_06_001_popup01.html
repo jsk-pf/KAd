@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <!-- [ mod(220602) ] -->
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+    <!-- [ // mod(220602) ] -->
+
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Contents -->
+            <section class="contents">
+                <!-- = Popup Source -->
+                <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupSendNoticeSms_01"><span>open popup</span></button>
+
+                <div class="c-layer-popup type04 modal fade" id="popupSendNoticeSms_01" role="dialog" aria-labelledby="popupSendNoticeSms01_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <!-- modal Header -->
+                            <div class="modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupSendNoticeSms01_Label01">발송결과보기</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업
+                                        닫기</span></button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="c-table-field">
+                                    <div class="c-article input-list03">
+                                        <div class="row">
+                                            <div class="col-6 label-input">
+                                                <label class="c-label-txt" for="inputNoticeSmsMng02_01">전체 발송 건수</label>
+                                                <div class="row inner c-input-btn-group">
+                                                    <div class="col-9">
+                                                        <input type="text" class="c-input" id="inputNoticeSmsMng02_01" value="95건" readonly="readonly">
+                                                    </div>
+                                                    <div class="col-3 input-button">
+                                                        <div class="buttons">
+                                                            <button class="c-btn bg-navy-1 input-btn"><span>발송내역</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 label-input">
+                                                <label class="c-label-txt" for="inputNoticeSmsMng02_02">발송 실패 건수</label>
+                                                <div class="row inner c-input-btn-group">
+                                                    <div class="col-9">
+                                                        <input type="text" class="c-input" id="inputNoticeSmsMng02_02" value="5건" readonly="readonly">
+                                                    </div>
+                                                    <div class="col-3 input-button">
+                                                        <div class="buttons">
+                                                            <button class="c-btn bg-navy-1 input-btn"><span>발송내역</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col label-input">
+                                                <label for="inputNoticeSmsMng02_03">템플릿명</label>
+                                                <input type="text" class="c-input" id="inputNoticeSmsMng02_03" value="검진예약 접수안내" readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col label-input">
+                                                <label class="label-txt">템플릿내용</label>
+                                                <div class="sms-template-view">
+                                                    <div>
+                                                        #{이름} 님 안녕하세요. <br>
+                                                        With KMI입니다. <br>
+                                                        [#{검진기관} 검진예약 접수안내] <br>
+                                                        ■고객명:#{이름} <br>
+                                                        ■예약번호:#{예약번호} <br>
+                                                        ■예약일자:#{예약일자} <br>
+                                                        ■검진센터:#{센터} #{예약시간} <br>
+                                                        위와 같이 건강검진 [예약신청] 이 접수 되었습니다. <br>메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤
+                                                        포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤
+                                                        포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용
+                                                        내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤
+                                                        포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용 내부스크롤 포함메시지내용
+                                                        내부스크롤 포함
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- = // Popup Source -->
+            </section>
+            <!-- // Contents -->
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script>
+        $(function() {
+            // Guide전용 스크립트 (개발 소스 적용 X)
+            $('[data-target]').trigger('click');
+            // 검사항목 Event1
+        });
+    </script>
+</body>
+
+</html>

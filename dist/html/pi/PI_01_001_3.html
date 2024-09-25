@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검진 상품 상세 보기</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Contents -->
+            <section class="contents">
+                <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupDtlChkupPrd01
+					">
+                    <span>검진 제안서 상품 상세 보기</span>
+                </button>
+                <!-- [ layer popup] -->
+                <div class="c-layer-popup type03 modal fade" id="popupDtlChkupPrd01" role="dialog" aria-labelledby="popupDtlChkupPrd01_Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <!-- modal Header -->
+                            <div class="modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupDtlChkupPrd01_Label">검진 상품 상세 보기</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업
+                                        닫기</span></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">고객사 기본정보</h5>
+                                    </div>
+                                    <div class="c-article input-list">
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd01_01">관계 고객사명 </label>
+                                                <input type="text" class="c-input" id="inputDtlChkupPrd01_01" value="㈜삼성전자" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd01_02">검진연도</label>
+                                                <input type="text" class="c-input" id="inputDtlChkupPrd01_02" value="㈜삼성전자" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">상품정보</h5>
+                                    </div>
+                                    <div class="c-article input-list">
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd02_01">상품명</label>
+                                                <input type="text" class="c-input" id="inputDtlChkupPrd02_01" value="정밀 종합검진 일반형" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd02_02">정산가격</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputDtlChkupPrd02_02" value="500,000" readonly="readonly">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd02_03">검진연도</label>
+                                                <input type="text" class="c-input" id="inputDtlChkupPrd02_03" value="2022" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd02_04">검진구분</label>
+                                                <input type="text" class="c-input" id="inputDtlChkupPrd02_04" value="종합검진" readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd02_05">공단청구</label>
+                                                <input type="text" class="c-input" id="inputDtlChkupPrd02_05" value="포함/별도" readonly="readonly">
+                                            </div>
+
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd02_06">위 + 대장 내시경 동시진행 청구 설정</label>
+                                                <input type="text" class="c-input" id="inputDtlChkupPrd02_06" value="적용 안함" readonly="readonly">
+                                            </div>
+
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd02_07">특검청구설정</label>
+                                                <input type="text" class="c-input" id="inputDtlChkupPrd02_07" value="청구안함" readonly="readonly">
+                                            </div>
+
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd02_08">공단1차 진행설정</label>
+                                                <input type="text" class="c-input" id="inputDtlChkupPrd02_08" value="진행" readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd02_09">공단1차 청구설정</label>
+                                                <input type="text" class="c-input" id="inputDtlChkupPrd02_09" value="종합검진" readonly="readonly">
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd02_10">위 내시경 수면비 청구 (단체)</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputDtlChkupPrd02_10" value="0" readonly="readonly">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd02_11">위 내시경 수면비 청구 (개인)</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputDtlChkupPrd02_11" value="0" readonly="readonly">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 label-input">
+                                                <label for="inputDtlChkupPrd02_12">대장 내시경 수면비 청구 (단체)</label>
+                                                <div class="c-input-unit">
+                                                    <input type="text" class="c-input" id="inputDtlChkupPrd02_12" value="0" readonly="readonly">
+                                                    <span class="unit">원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <h5 class="title-md">상품설명</h5>
+                                    </div>
+                                    <div class="c-article input-list c-textarea-article">
+                                        <div class="row">
+                                            <div class="col label-input">
+                                                <div class="c-txtarea-field">
+                                                    <textarea title="상품설명" class="c-txt-area" readonly="readonly">삼성임직원을 위한 상품입니다.</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel">
+                                    <div class="c-title-field">
+                                        <p class="title-md">검진 항목 <span>(4)</span></p>
+                                    </div>
+                                    <div class="co-accrodion-list-field">
+                                        <ul class="co-accrodion-list type01">
+                                            <li>
+                                                <div class="co-accordion">
+                                                    <a href="javascript:;" role="button" class="btn-accrodion">
+                                                        <div class="left">
+                                                            <p class="txt">공통검사 <span>(4)</span></p>
+                                                        </div>
+                                                        <div class="right">
+                                                            <div class="ico-accordion"><span class="is-blind">펼치기</span></div>
+                                                        </div>
+                                                    </a>
+                                                    <div class="accrodion-panel">
+                                                        <div class="panel-cont">
+                                                            <div class="c-select-field-01 view">
+                                                                <label class="c-label-txt">선택 항목 갯수</label>
+                                                                <span>1</span>
+                                                            </div>
+                                                            <div class="c-table-field">
+                                                                <div class="c-table striped">
+                                                                    <!-- tbl-view-chkup-category  -->
+                                                                    <table class="table tbl-view-chkup-category">
+                                                                        <caption>
+                                                                            검사 항목 : 대분류, 중분류, 검사항목, 성별, 선택갯수, 필수검사,안내문구, 비고에 대한 정보
+                                                                        </caption>
+                                                                        <colgroup>
+                                                                            <col style="width: 12.5%">
+                                                                            <col style="width: 12.5%">
+                                                                            <col>
+                                                                            <col class="gender">
+                                                                            <col style="width: 6%">
+                                                                            <col style="width: 8%">
+                                                                            <col>
+                                                                            <col>
+                                                                        </colgroup>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th scope="col">대분류</th>
+                                                                                <th scope="col">중분류</th>
+                                                                                <th scope="col">검사항목</th>
+                                                                                <th scope="col">성별</th>
+                                                                                <th scope="col">선택갯수</th>
+                                                                                <th scope="col">필수검사</th>
+                                                                                <th scope="col">안내문구</th>
+                                                                                <th scope="col">비고</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <!-- input 생성 시  for/id 매칭 -->
+                                                                            <!-- 대분류 -->
+                                                                            <tr>
+                                                                                <td rowspan="3">장비검사</td>
+                                                                                <td rowspan="3">대장내시경</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" value="1" readonly="readonly"></td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" value="M2PK 대체검사 M2PK 대체검사" readonly="readonly"></td>
+                                                                                <td></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>대장내시경 수면</td>
+                                                                                <td>공통</td>
+                                                                                <td></td>
+                                                                                <td>일반</td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" value="M2PK 대체검사 M2PK 대체검사" readonly="readonly"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>대장내시경 수면</td>
+                                                                                <td>공통</td>
+                                                                                <td></td>
+                                                                                <td>일반</td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" value="M2PK 대체검사 M2PK 대체검사" readonly="readonly"></td>
+                                                                            </tr>
+                                                                            <!-- 대분류 -->
+                                                                            <tr>
+                                                                                <td>장비검사</td>
+                                                                                <td>CT검사</td>
+                                                                                <td>뇌 CT촬영</td>
+                                                                                <td>남성</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" value="M2PK 대체검사 M2PK 대체검사" readonly="readonly"></td>
+                                                                                <td><input type="text" class="c-input" value="M2PK 대체검사 M2PK 대체검사" readonly="readonly"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td rowspan="4">장비검사</td>
+                                                                                <td rowspan="4">CT검사</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" value="2" readonly="readonly"></td>
+                                                                                <td>필수</td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" readonly="readonly" value="M2PK 대체검사"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>허리 CT촬영</td>
+                                                                                <td>공통</td>
+                                                                                <td></td>
+                                                                                <td>필수</td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" readonly="readonly" value="M2PK 대체검사"></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="co-accordion">
+                                                    <a href="javascript:;" role="button" class="btn-accrodion">
+                                                        <div class="left">
+                                                            <div class="inner">
+                                                                <p class="txt">선택검사 2 <span>(8)</span></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="right">
+                                                            <div class="inner">
+                                                                <div class="ico-accordion"><span class="is-blind">펼치기</span></div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <div class="accrodion-panel">
+                                                        <div class="panel-cont">
+                                                            <div class="c-select-field-01 view">
+                                                                <label class="c-label-txt">선택 항목 갯수</label>
+                                                                <span>1</span>
+                                                            </div>
+                                                            <div class="c-table-field">
+                                                                <div class="c-table striped">
+                                                                    <!-- tbl-view-chkup-category  -->
+                                                                    <table class="table tbl-view-chkup-category">
+                                                                        <caption>
+                                                                            검사 항목 : 대분류, 중분류, 검사항목, 성별, 선택갯수, 필수검사,안내문구, 비고에 대한 정보
+                                                                        </caption>
+                                                                        <colgroup>
+                                                                            <col style="width: 12.5%">
+                                                                            <col style="width: 12.5%">
+                                                                            <col>
+                                                                            <col class="gender">
+                                                                            <col style="width: 6%">
+                                                                            <col style="width: 8%">
+                                                                            <col>
+                                                                            <col>
+                                                                        </colgroup>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th scope="col">대분류</th>
+                                                                                <th scope="col">중분류</th>
+                                                                                <th scope="col">검사항목</th>
+                                                                                <th scope="col">성별</th>
+                                                                                <th scope="col">선택갯수</th>
+                                                                                <th scope="col">필수검사</th>
+                                                                                <th scope="col">안내문구</th>
+                                                                                <th scope="col">비고</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <!-- input 생성 시  for/id 매칭 -->
+                                                                            <!-- 대분류 -->
+                                                                            <tr>
+                                                                                <td rowspan="3">장비검사</td>
+                                                                                <td rowspan="3">대장내시경</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" value="1" readonly="readonly"></td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" value="M2PK 대체검사 M2PK 대체검사" readonly="readonly"></td>
+                                                                                <td></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>대장내시경 수면</td>
+                                                                                <td>공통</td>
+                                                                                <td></td>
+                                                                                <td>일반</td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" value="M2PK 대체검사 M2PK 대체검사" readonly="readonly"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>대장내시경 수면</td>
+                                                                                <td>공통</td>
+                                                                                <td></td>
+                                                                                <td>일반</td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" value="M2PK 대체검사 M2PK 대체검사" readonly="readonly"></td>
+                                                                            </tr>
+                                                                            <!-- 대분류 -->
+                                                                            <tr>
+                                                                                <td>장비검사</td>
+                                                                                <td>CT검사</td>
+                                                                                <td>뇌 CT촬영</td>
+                                                                                <td>남성</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" value="M2PK 대체검사 M2PK 대체검사" readonly="readonly"></td>
+                                                                                <td><input type="text" class="c-input" value="M2PK 대체검사 M2PK 대체검사" readonly="readonly"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td rowspan="4">장비검사</td>
+                                                                                <td rowspan="4">CT검사</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" value="2" readonly="readonly"></td>
+                                                                                <td>필수</td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" readonly="readonly" value="M2PK 대체검사"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>허리 CT촬영</td>
+                                                                                <td>공통</td>
+                                                                                <td></td>
+                                                                                <td>필수</td>
+                                                                                <td></td>
+                                                                                <td><input type="text" class="c-input" readonly="readonly" value="M2PK 대체검사"></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+                            <!-- modal-footer -->
+                            <div class="modal-footer c-btn-field justify-content-end">
+                                <div class="buttons">
+                                    <button type="button" class="c-btn bg-blue-3" data-dismiss="modal"><span>확인 </span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- [ // layer popup] -->
+            </section>
+            <!-- // Contents -->
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script>
+        // 검사항목 Event
+        tableAllCheckBg();
+
+        $(function() {
+            // Guide전용 스크립트 (개발 소스 적용 X)
+            $('[data-target]').trigger('click');
+            // 검사항목 Event1
+        });
+    </script>
+</body>
+
+</html>

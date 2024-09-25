@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupType05_01"><span>협력병원선정관리-검진기관
+            Section Markup</span></button>
+    <div class="c-layer-popup type05 modal fade" id="popupType05_01" role="dialog" aria-labelledby="popupType05_Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- modal Header -->
+                <div class="modal-header">
+                    <div class="c-modal-title-field">
+                        <h4 class="c-title" id="popupType05_Label">타이틀</h4>
+                    </div>
+                    <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업 닫기</span></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                    <!-- 팝업에 따른 title 부여 -->
+                    <div class="c-panel">
+                        <div class="row c-arrow-move-field">
+                            <div class="column">
+
+                                <!-- [ mod(230412) ]
+									- 클래스 추가 : with-btn
+									- table colgroup, col 부분 마크업 적용 필요
+									- 클래스 확인
+								-->
+                                <div class="c-title-field mt-12 with-btn">
+                                    <h5 class="title-md">등록 검진기관</h5>
+                                </div>
+                                <div class="c-table-field">
+                                    <div class="c-table striped">
+                                        <table class="table">
+                                            <caption> 지역 검진기관 : 지역, 검진기관명, 검진가격, 정산가격, 시스템 사용료, 등록자에 대한 정보 </caption>
+                                            <colgroup>
+                                                <col class="checkbox">
+                                                <col style="width:100px;">
+                                                <col>
+                                                <col style="width:110px;">
+                                                <col style="width:110px;">
+                                                <col style="width:110px;">
+                                                <col class="date">
+                                                <col class="name">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th scope="col">지역</th>
+                                                    <th scope="col">검진기관명</th>
+                                                    <th scope="col">검진가격</th>
+                                                    <th scope="col">정산가격</th>
+                                                    <th scope="col">시스템 사용료</th>
+                                                    <th scope="col">발송일자</th>
+                                                    <th scope="col">등록자</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="proposCenterTbody">
+                                                <tr>
+                                                    <td>
+                                                        <div class="c-chkbox"><input type="checkbox" class="leftTableCheckbox" disabled="disabled" data-centerid="H00003"><label for="allchk" class="chk-label"><i></i><span class="skip">전체선택</span></label></div>
+                                                    </td>
+                                                    <td>서울 강남</td>
+                                                    <td>KMI 한국의학연구소 강남 검진센터</td>
+                                                    <td>112,520,000</td>
+                                                    <td>500,000</td>
+                                                    <td>20,000</td>
+                                                    <td>2023-04-12</td>
+                                                    <td>DEV</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- c-tbl-paging -->
+                                </div>
+                            </div>
+                            <div class="c-btn-group">
+                                <div class="buttons">
+                                    <button type="button" class="c-arrow-btn right" id="rightArrow"><span class="skip">우로
+                                            이동</span></button>
+                                    <button type="button" class="c-arrow-btn left" id="leftArrow"><span class="skip">좌로 이동</span></button>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="c-title-field mt-12">
+                                    <h5 class="title-md">전체 검진기관</h5>
+                                    <div class="row inner c-input-btn-group">
+                                        <div class="col-8"><input type="text" id="hospitalName" placeholder="검진기관명을 입력하세요." aria-label="검진기관명을 입력"></div>
+                                        <div class="col-4 input-button">
+                                            <div class="buttons">
+                                                <button class="c-btn bg-blue-1 input-btn"><span>검진추가</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="c-field">
+										<div class="label-input">
+											<label for="inputSearch" class="sr-only">검색</label>
+											<div class="c-input-search">
+												<input type="text" id="hospitalName" placeholder="검진기관명을 입력하세요." aria-label="검진기관명을 입력">
+											</div>
+										</div>
+										&nbsp;&nbsp;&nbsp;
+										<button type="button" class="c-btn bg-blue-1" id="hospitalSearch"><span>조회</span></button>
+									</div> -->
+                                </div>
+                                <div class="c-table-field">
+                                    <div class="c-table striped tbl-fixed">
+                                        <table class="table tbl-fixed" id="rightTable">
+                                            <caption> 검사항목 : 항목선택, 지역, 검진기관명, 검진금액, 정산가격, 시스템 이용료에 대한 정보 </caption>
+                                            <colgroup>
+                                                <col class="checkbox">
+                                                <col style="width:100px">
+                                                <col>
+                                                <col style="width:120px;">
+                                                <col style="width:120px;">
+                                                <col style="width:120px;">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox" id="chkAll">
+                                                            <label class="chk-label" for="chkAll"><i></i><span class="skip">checkboxAll</span></label>
+                                                        </div>
+                                                    </th>
+                                                    <th scope="col">지역</th>
+                                                    <th scope="col">검진기관명</th>
+                                                    <th scope="col">검진가격</th>
+                                                    <th scope="col">정산가격</th>
+                                                    <th scope="col">시스템이용료</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox" id="inputChk01_02">
+                                                            <label class="chk-label" for="inputChk01_02"><i></i><span class="skip">checkbox</span></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>경기도 군포시</td>
+                                                    <td> KMI 한국의학연구소 광화문 검진센터 </td>
+                                                    <td><input type="text" name="" value="10,000"></td>
+                                                    <td><input type="text" name="" value="10,000"></td>
+                                                    <td><input type="text" name="" readonly="readonly" value="500,000"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="selectionPaging">
+                                    <div class="c-tbl-paging">
+                                        <p class="page-info">Total Page <em>4</em> page</p>
+                                        <nav class="c-pagination">
+                                            <ul>
+                                                <li></li>
+                                                <li><a class="page-link" href="1" aria-label="처음"> <span class="is-blind p-first">처음</span></a>
+                                                </li>
+                                                <li><a class="page-link" href="1 aria-label=" 이전"=""> <span class="is-blind p-prev">이전</span></a></li>
+                                                <li><a href="1" class="page-link is-active">1</a></li>
+                                                <li><a href="2" class="page-link">2</a></li>
+                                                <li><a href="3" class="page-link">3</a></li>
+                                                <li><a href="4" class="page-link">4</a></li>
+                                                <li><a class="page-link" href="4" aria-label="다음"> <span class="is-blind p-next">다음</span> </a>
+                                                </li>
+                                                <li><a class="page-link" href="4" aria-label="끝"> <span class="is-blind p-end">끝</span> </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- // modal body -->
+            </div>
+        </div>
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+    // 팝업 확인용 Script (Dev 반영 제외)
+    <script>
+        $('.c-btn').trigger('click');
+    </script>
+</body>
+
+</html>

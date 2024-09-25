@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Layout Guide</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- guide css -->
+	<link rel="stylesheet" href="../css/base.css">
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<script src="../../lib/jquery/jquery.min.js"></script>
+</head>
+
+<body style="background-color: #fff">
+	<div id="wrap" class="coding_guide">
+		<h1 class="h1_guide">Detail</h1>
+		<div class="title-box">
+			<h2 class="h2_guide">공통</h2>
+		</div>
+		<div class="guide_descbox">
+			<h3 class="g-title"></h3>
+			<div class="inner_desc">
+				<ul>
+					<li>input 태그 readonly="readonly" 추가</li>
+					<li>[class="row"] row 별 요소 배치</li>
+					<li>row 당 최대 column 개수 : 4</li>
+					<li>
+						[class='col-*'] : (column max : 12), column에 비례 [col-*] 클래스 숫자를 부여하여 컬럼 너비 적용<br>
+						ex) <em class="e_code">[class="col-1 ~ col-12"], 또는 [class="col"]</em>
+					</li>
+					<li>
+						label + input 결합 시 =&gt; label(1) : input (1) 경우 동일 네이밍<br>
+						: <span class="e_code">ex) label for="userName" == input id="userName"</span>
+					</li>
+					<li>
+						label + input 결합 시 =&gt; label(1) : input (n) 경우<br>label for, input id 부여 X / <br>각 input 태그 title 속성값 선언
+						<em class="fc-yellow">input title='해당 인풋 요소에 대한 설명'</em>
+					</li>
+					<li>label for, input id 선언 시 퍼블리싱 소스의 속성값은 임의값으로 해당 항목에 따른 <em class="fc-yellow">적절한 값으로 수정하여 사용 필요</em></li>
+					<li>샘플 페이지 : <a href="../../html/sample_detail.html" target="_blank" class="fc-blue">sample_detail.html</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- ===================================== INPUT -->
+		<div class="title-box">
+			<h2 class="h2_guide">INPUT</h2>
+		</div>
+
+		<!-- [Input Text] -->
+		<h3 class="h3_guide">Input Text</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<input type="text" class="c-input" value="text" readonly="readonly">
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<input type="text" class="c-input" value="text" readonly="readonly">
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<!-- [ // Input Text] -->
+
+		<!-- [Label + Input Text] -->
+		<h3 class="h3_guide">Label + input Text</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="row">
+				<div class="col-6 label-input">
+					<label for="code">고객사 코드<i class="is-nec">필수입력</i></label>
+					<input type="text" class="c-input" id="code" value="adcd1234" readonly="readonly">
+				</div>
+				<div class="col-6 label-input">
+					<label for="code02">고객사 코드<i class="is-nec">필수입력</i></label>
+					<input type="text" class="c-input" id="code02" value="adcd1234" readonly="readonly">
+				</div>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col-6 label-input">
+						<label for="code">고객사 코드<i class="is-nec">필수입력</i></label>
+						<input type="text" class="c-input" id="code" value="adcd1234" readonly="readonly">
+					</div>
+					<div class="col-6 label-input">
+						<label for="code02">고객사 코드<i class="is-nec">필수입력</i></label>
+						<input type="text" class="c-input" id="code02" value="adcd1234" readonly="readonly">
+					</div>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<h3 class="h3_guide">Input Text</h3>
+		<!-- ? view -->
+		<div class="d_desc code">
+			<div class="row">
+				<div class="col-3 label-input">
+					<label for="inputText01">회원번호</label>
+					<input type="text" class="c-input" id="inputText01" value="11442222" readonly="readonly">
+				</div>
+				<div class="col-3 label-input">
+					<label for="unit">검사대상인원</label>
+					<div class="c-input-unit">
+						<input type="text" class="c-input" id="unit" value="11442222" readonly="readonly">
+						<span class="unit">명</span>
+					</div>
+				</div>
+				<div class="col-3 label-input">
+					<label for="inputSearch">검색</label>
+					<div class="c-input-search">
+						<input type="text" id="inputSearch" value="홍길동" readonly="readonly">
+						<button type="button" class="btn-search" disabled><span class="skip">검색</span></button>
+					</div>
+				</div>
+				<div class="col-3 label-input">
+					<label for="inputName01_02">이름</label>
+					<div class="c-input-mark">
+						<input type="text" class="c-input" id="inputName01_02" value="홍길동" readonly="readonly">
+						<div class="is-rate"><span class="is-orange-1">VIP</span></div>
+					</div>
+				</div>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col-3 label-input">
+						<label for="unit">검사대상인원</label>
+						<div class="c-input-unit">
+							<input type="text" class="c-input" id="unit">
+							<span class="unit">명</span>
+						</div>
+					</div>
+					<div class="col-3 label-input">
+						<label for="inputName01_01">이름</label>
+						<input type="text" class="c-input" id="inputName01_01" value="홍길동" readonly="readonly">
+					</div>
+					<div class="col-3 label-input">
+						<label for="inputSearch">검색</label>
+						<div class="c-input-search">
+							<input type="text" id="inputSearch" value="홍길동" readonly="readonly">
+							<button type="button" class="btn-search" disabled><span class="skip">검색</span></button>
+						</div>
+					</div>
+					<div class="col-3 label-input">
+						<label for="inputName01_02">이름</label>
+						<div class="c-input-mark">
+							<input type="text" class="c-input" id="inputName01_02" value="홍길동" readonly="readonly">
+							<div class="is-rate"><span class="is-orange-1">VIP</span></div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<!-- [ // Input Search] -->
+
+		<!-- [Input Text + Button] -->
+		<h3 class="h3_guide">Input Text + Button</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="row">
+				<div class="col label-input">
+					<label class="c-label-txt" for="inputBtn01">버튼</label>
+					<div class="row inner c-input-btn-group">
+						<div class="col-10">
+							<input type="text" class="c-input" id="inputBtn01" value="test" readonly="readonly">
+						</div>
+						<div class="col-2 input-button">
+							<div class="buttons">
+								<button class="c-btn bg-blue-1 input-btn"><span>검진추가</span></button>
+								<button class="c-btn bg-blue-1 input-btn"><span>검진추가</span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col label-input">
+					<label class="c-label-txt" for="inputBtn02">버튼</label>
+					<div class="row inner c-input-btn-group">
+						<div class="col-11">
+							<input type="text" class="c-input" id="inputBtn02" value="test" readonly="readonly">
+						</div>
+						<div class="col-1 input-button">
+							<div class="buttons">
+								<button class="c-btn bg-blue-1 input-btn"><span>검진추가</span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col label-input">
+						<label class="c-label-txt" for="inputBtn01">버튼</label>
+						<div class="row inner c-input-btn-group">
+							<div class="col-10"><input type="text" class="c-input" id="inputBtn01" value="test"></div>
+							<div class="col-2 input-button">
+								<div class="buttons">
+									<button class="c-btn bg-blue-1 input-btn"><span>검진추가</span></button>
+									<button class="c-btn bg-blue-1 input-btn"><span>검진추가</span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col label-input">
+						<label class="c-label-txt" for="inputBtn02">버튼</label>
+						<div class="row inner c-input-btn-group">
+							<div class="col-11"><input type="text" class="c-input" id="inputBtn02" value="test"></div>
+							<div class="col-1 input-button">
+								<div class="buttons">
+									<button class="c-btn bg-blue-1 input-btn"><span>검진추가</span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<!-- [ // Input Text] -->
+		<!-- ===================================== // TEXTAREA -->
+
+		<!-- [textarea] -->
+		<h3 class="h3_guide">textarea</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="c-article input-list c-textarea-article">
+				<div class="row">
+					<div class="col label-input">
+						<label for="inpuTxtA02">textarea 입력</label>
+						<div class="c-txtarea-field">
+							<textarea id="inpuTxtA02" class="c-txt-area" readonly="readonly">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui voluptates omnis rem, reprehenderit, odit quis soluta quasi voluptas, quos sequi veritatis vel itaque aperiam ea alias. Atque, illum voluptatum modi nesciunt, velit alias, distinctio vel delectus nihil earum pariatur beatae? Cum voluptate beatae unde molestias animi laborum nihil tempore voluptatibus. </textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="c-article input-list c-textarea-article">
+					<div class="row">
+						<div class="col label-input">
+							<label for="inpuTxtA02">textarea 입력</label>
+							<div class="c-txtarea-field">
+								<textarea id="inpuTxtA02" class="c-txt-area"
+									readonly="readonly">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui voluptates omnis rem, reprehenderit, odit quis soluta quasi voluptas, quos sequi veritatis vel itaque aperiam ea alias. Atque, illum voluptatum modi nesciunt, velit alias, distinctio vel delectus nihil earum pariatur beatae? Cum voluptate beatae unde molestias animi laborum nihil tempore voluptatibus. </textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<!-- [ // textarea] -->
+		<!-- ===================================== File -->
+		<div class="title-box">
+			<h2 class="h2_guide">File</h2>
+		</div>
+
+		<!-- [Input File] -->
+		<h3 class="h3_guide">Input File</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="row">
+				<div class="col label-input">
+					<div class="c-label-txt">작업환경측정서</div>
+					<div class="c-input-download input-view">
+						<a href="javascript:;" class="btn-download" role="button">
+							<span class="filename">텍스트.png</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col label-input">
+						<div class="c-label-txt">작업환경측정서</div>
+						<div class="c-input-download input-view">
+							<a href="javascript:;" class="btn-download" role="button">
+								<span class="filename">텍스트.png</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<!-- [ // Input File] -->
+
+		<!-- ===================================== // File -->
+		<!-- [ // textarea] -->
+		<!-- ===================================== URL -->
+		<div class="title-box">
+			<h2 class="h2_guide">URL</h2>
+		</div>
+
+		<!-- [URL] -->
+		<h3 class="h3_guide">URL</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="row">
+				<div class="col label-input">
+					<label for="">URL 설정</label>
+					<div class="c-input-url input-view">
+						<a href="javascript:;" target="_blank" title="새 창 열기">https://samsung.kmi.or.kr</a>
+					</div>
+				</div>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col label-input">
+						<label for="">URL 설정</label>
+						<div class="c-input-url input-view">
+							<a href="javascript:;" target="_blank" title="새 창 열기">https://samsung.kmi.or.kr</a>
+						</div>
+					</div>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<!-- [ // URL] -->
+
+		<!-- ===================================== // URL -->
+
+		<!-- ===================================== Phone -->
+		<div class="title-box">
+			<h2 class="h2_guide">Phone</h2>
+		</div>
+
+		<!-- [Phone] -->
+		<h3 class="h3_guide">Phone</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="row">
+				<div class="col label-input">
+					<label class="c-label-txt">휴대폰 전화번호</label>
+					<div class="row inner c-input-phone-group">
+						<div class="col input-phone-01">
+							<input type="text" class="c-input" title="휴대폰 전화번호 잎 3자리 입력" value="010" readonly="readonly">
+						</div>
+						<div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 중간 4자리 입력" readonly="readonly"></div>
+						<div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 끝 3자리 입력" readonly="readonly"></div>
+					</div>
+				</div>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col label-input">
+						<label class="c-label-txt">휴대폰 전화번호</label>
+						<div class="row inner c-input-phone-group">
+							<div class="col input-phone-01">
+								<input type="text" class="c-input" title="휴대폰 전화번호 잎 3자리 입력" value="010" readonly="readonly">
+							</div>
+							<div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 중간 4자리 입력" readonly="readonly"></div>
+							<div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 끝 3자리 입력" readonly="readonly"></div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<!-- [ // Phone] -->
+		<!-- ===================================== // Phone -->
+
+		<!-- ===================================== Email -->
+		<div class="title-box">
+			<h2 class="h2_guide">Email</h2>
+		</div>
+
+		<!-- [Email] -->
+		<h3 class="h3_guide">Email</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="row">
+				<div class="col label-input">
+					<label class="c-label-txt">이메일</label>
+					<div class="row inner c-input-email-group">
+						<div class="col-6 input-email-01">
+							<input type="text" class="c-input" title="이메일 계정입력" value="test" readonly="readonly">
+						</div>
+						<div class="col-6 input-email-02">
+							<div class="row">
+								<div class="col">
+									<input type="text" class="c-input" title="이메일 도메인 입력" value="hanmail.net" readonly="readonly">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col label-input">
+						<label class="c-label-txt">이메일</label>
+						<div class="row inner c-input-email-group">
+							<div class="col-6 input-email-01">
+								<input type="text" class="c-input" title="이메일 계정입력" value="test" readonly="readonly">
+							</div>
+							<div class="col-6 input-email-02">
+								<div class="row">
+									<div class="col">
+										<input type="text" class="c-input" title="이메일 도메인 입력" value="hanmail.net" readonly="readonly">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<!-- ===================================== // Email -->
+
+		<!-- ===================================== Address -->
+		<div class="title-box">
+			<h2 class="h2_guide">Address</h2>
+		</div>
+
+		<!-- [Address type01] -->
+		<h3 class="h3_guide">Address type01</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="row">
+				<div class="col label-input">
+					<label class="c-label-txt">주소</label>
+					<div class="row inner c-input-address-group">
+						<div class="col input-addr-01">
+							<input type="text" class="c-input" title="우편번호 입력" placeholder="우편번호" value="12222" readonly="readonly">
+						</div>
+						<div class="col input-addr-02"><input type="text" class="c-input" title="주소 입력" value="주소"
+								readonly="readonly"></div>
+					</div>
+				</div>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col label-input">
+						<label class="c-label-txt">주소</label>
+						<div class="row inner c-input-address-group">
+							<div class="col input-addr-01">
+								<input type="text" class="c-input" title="우편번호 입력" placeholder="우편번호" value="12222" readonly="readonly">
+							</div>
+							<div class="col input-addr-02"><input type="text" class="c-input" title="주소 입력" value="주소"
+									readonly="readonly"></div>
+						</div>
+					</div>
+				</div>
+
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<!-- [ // Address type01] -->
+
+		<!-- [Address type02] -->
+		<h3 class="h3_guide">Address type02</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="row">
+				<div class="col-6 label-input">
+					<label class="c-label-txt">주소</label>
+					<div class="row inner c-input-address-group">
+						<div class="col input-addr-01">
+							<input type="text" class="c-input" title="우편번호 입력" placeholder="우편번호" value="12222" readonly="readonly">
+						</div>
+						<div class="col input-addr-02"><input type="text" class="c-input" title="주소 입력" value="주소"
+								readonly="readonly"></div>
+					</div>
+				</div>
+				<div class="col-6 label-input">
+					<label for="detailAddress">상세주소</label>
+					<input type="text" class="c-input" id="detailAddress" title="상세주소 입력" value="광화문 빌딩 2층" readonly="readonly">
+				</div>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col-6 label-input">
+						<label class="c-label-txt">주소</label>
+						<div class="row inner c-input-address-group">
+							<div class="col input-addr-01">
+								<input type="text" class="c-input" title="우편번호 입력" placeholder="우편번호" value="12222" readonly="readonly">
+							</div>
+							<div class="col input-addr-02"><input type="text" class="c-input" title="주소 입력" value="주소"
+									readonly="readonly"></div>
+						</div>
+					</div>
+					<div class="col-6 label-input">
+						<label for="detailAddress">상세주소</label>
+						<input type="text" class="c-input" id="detailAddress" title="상세주소 입력" value="광화문 빌딩 2층" readonly="readonly">
+					</div>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<!-- [ // Address type02] -->
+		<!-- ===================================== // Address -->
+
+		<!-- ===================================== Date -->
+		<div class="title-box">
+			<h2 class="h2_guide">Date</h2>
+		</div>
+
+		<!-- [Date type01] -->
+		<h3 class="h3_guide">Date type01</h3>
+		<div class="d_desc code">
+			<!-- ? view -->
+			<div class="row">
+				<div class="col">
+					<div class="row inner c-input-date-group">
+						<!-- for/id 매칭 필수 -->
+						<div class="col-6 label-input">
+							<label for="startDate01">시작일 (시작)</label>
+							<div class="c-input-date">
+								<input type="text" class="c-input" id="startDate01" placeholder="YYYY-MM-DD" value="2022-06-11"
+									readonly="readonly">
+								<span><i class="date-btn"></i></span>
+							</div>
+						</div>
+						<div class="col-6 label-input">
+							<label for="endDate01">종료일 (종료)</label>
+							<div class="c-input-date">
+								<input type="text" class="c-input" id="endDate01" placeholder="YYYY-MM-DD" value="2022-06-11"
+									readonly="readonly">
+								<span><i class="date-btn"></i></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ? // view -->
+			<!-- ! code -->
+			<xmp class="prettyprint linenums javascript">
+				<div class="row">
+					<div class="col-6">
+						<div class="row inner c-input-date-group">
+							<!-- for/id 매칭 필수 -->
+							<div class="col-6 label-input">
+								<label for="startDate01">시작일 (시작)</label>
+								<div class="c-input-date">
+									<input type="text" class="c-input" id="startDate01" placeholder="YYYY-MM-DD" value="2022-06-11"
+										readonly="readonly">
+									<span><i class="date-btn"></i></span>
+								</div>
+							</div>
+							<div class="col-6 label-input">
+								<label for="endDate01">종료일 (종료)</label>
+								<div class="c-input-date">
+									<input type="text" class="c-input" id="endDate01" placeholder="YYYY-MM-DD" value="2022-06-11"
+										readonly="readonly">
+									<span><i class="date-btn"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xmp>
+			<!-- ! // code -->
+		</div>
+		<!-- [ // Date type01] -->
+		<!-- ===================================== // Date -->
+	</div>
+	<!-- guide script -->
+	<script src="../js/pretty.js"></script>
+
+	<script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+	<script defer src="../../js/common.js"></script>
+</body>
+
+</html>

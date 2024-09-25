@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약일정관리</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body> <!-- [ mod(220602) ] -->
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+    <!-- [ // mod(220602) ] -->
+    <div id="container"> <!-- Side Navigation -->
+        <nav id="sideNav">
+            <!-- Sidebar -->
+            <div class="sidenav-wrapper">
+                <div class="top-area">
+                    <div class="top-logo">
+                        <h1 class="logo">
+                            <!-- [ mod(230202) ] -->
+                            <a href="javascript:;"><img src="../../images/logo/logo_01.svg" alt="WITH KMI"></a>
+                        </h1>
+                    </div>
+                    <p style="color:#fff">UI개발 화면 일부 목록</p>
+                </div>
+                <div class="sidebar-wrap">
+                    <ul class="sidebar-menu">
+                        <li><a href="../vgt/VGT_01_001.html">메인</a></li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>회원가입/로그인</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../jo/JO_01_002.html" target="_blank">고객사 회원가입</a></li>
+                                <li><a href="../jo/JO_02_001.html" target="_blank">협력병원 회원가입</a></li>
+                                <li><a href="../LO/LO_01_001.html">로그인</a></li>
+                                <li><a href="../LO/LO_01_001_popup01.html">비밀번호 재설정(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진예약현황</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cs/CS_01_001.html">예약 진행 현황</a></li>
+                                <li><a href="../cs/CS_01_001_03_popup.html" target="_blank">연기검사 조회(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진상품관리</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../pi/PI_01_001.html">검진상품제안관리</a></li>
+                                <li><a href="../pi/PI_02_001.html">검진상품 조회</a></li>
+                                <li><a href="../pi/PI_01_001_1.html" target="_blank">검진제안서 상세보기(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002.html" target="_blank">검진제안서 등록(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002_1.html" target="_blank">검진제안서 불러오기(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>검진예약</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cs/CS_01_001.html">예약 진행 현황</a></li>
+                                <li><a href="../pi/CS_01_001_03_popup.html" target="_blank">연기검사 조회 (팝업)</a></li>
+                                <li><a href="../pi/CS_01_001_04_popup.html" target="_blank">메모목록 (팝업)</a></li>
+                                <li><a href="../pi/PI_01_001_1.html" target="_blank">검진제안서 상세보기(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002.html" target="_blank">검진제안서 등록(팝업)</a></li>
+                                <li><a href="../pi/PI_01_002_1.html" target="_blank">검진제안서 불러오기(팝업)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span>계정관리</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="../cjo/CJO_01_001.html">계정관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- [ mod(230130) ] -->
+            <div class="btm-info">
+                <p class="time">오전 07:00 ~ 오후 18:00</p>
+                <p class="tel">1533-0505</p>
+                <div class="btm-info"> (토요일 07:00~12:30)<br> (일/공휴일 휴무) </div>
+            </div>
+            <!-- [ // mod(230130) ] -->
+            <!-- // Side Navigation -->
+        </nav>
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper"> <!-- Header-->
+            <header class="header">
+                <div class="wrap">
+                    <div class="top-left">
+                        <button class="sidebar-toggle" type="button">
+                            <span class="ico-type01 t-i-menu is-blind">사이드메뉴</span>
+                        </button>
+                        <div class="total-search">
+                            <i class="ico-search"></i>
+                            <input type="text" placeholder="검색" class="search-input">
+                            <!-- - 검색어 입력에 따른 연관 검색어 노출 처리 -->
+                            <div class="search-related-field" style="display: none">
+                                <ul class="search-list">
+                                    <li><a href="javascript:;">검진정책관리</a></li>
+                                    <li><a href="javascript:;">검진상품관리</a></li>
+                                    <li><a href="javascript:;">검진항목관리</a></li>
+                                    <li class="on"><a href="javascript:;">검진상품승인관리</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-right">
+                        <!-- [ mod(221031) ]
+				- 부서, 로그아웃 버튼 추가
+			-->
+                        <div class="user-team">운영지원팀</div>
+                        <div class="user-infobox">
+                            <a href="javascript:;" role="button" class="c-top-usercontrol btn-open-usercontrol">
+                                <div class="user-name">
+                                    <p>홍길동님</p>
+                                </div>
+                                <div class="user-img"><img src="../../images/ico/ico_user_profile.svg" alt=""></div>
+                            </a>
+                            <div class="user-control">
+                                <ul>
+                                    <li><a href="javascript:;">로그아웃</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- // Header--> <!-- Contents -->
+            <section class="contents">
+                <div class="c-panel">
+                    <div class="c-field c-btn-field justify-content-end">
+                        <div class="buttons">
+                            <button class="c-btn bg-navy-1" type="button"><span>초기화</span></button>
+                            <button class="c-btn bg-navy-2" type="button"><span>마감하기</span></button>
+                            <button class="c-btn bg-blue-1" type="button"><span>등록하기</span></button>
+                        </div>
+                    </div>
+                    <div class="c-table-field">
+                        <div class="c-table striped c-horizontal-scroll c-tbl-plan">
+                            <table class="table">
+                                <!--caption 내용 기재 -->
+                                <caption> 예약일정 내역 : 날짜 , 전체선택, VIP종합(2F), 종합(3F), 일반(4F), PET-CT, CT, 유방초음파, 대장내시경, 수면위내시경, 위내시경에 대한 정보
+                                </caption>
+                                <colgroup>
+                                    <col class="date">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="date">날짜</th>
+                                        <th scope="col" style>
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="chk01_01">
+                                                <label for="chk01_01" class="chk-label"><i></i><span>전체선택</span></label>
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="chk01_02">
+                                                <label for="chk01_02" class="chk-label"><i></i><span>VIP종합(2F)</span></label>
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="chk01_03">
+                                                <label for="chk01_03" class="chk-label"><i></i><span>종합(3F)</span></label>
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="chk01_04">
+                                                <label for="chk01_04" class="chk-label"><i></i><span>일반(4F)</span></label>
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="chk01_05">
+                                                <label for="chk01_05" class="chk-label"><i></i><span>PET-CT</span></label>
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="chk01_06">
+                                                <label for="chk01_06" class="chk-label"><i></i><span>CT</span></label>
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="chk01_07">
+                                                <label for="chk01_07" class="chk-label"><i></i><span>유방초음파</span></label>
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="chk01_08">
+                                                <label for="chk01_08" class="chk-label"><i></i><span>대장내시경</span></label>
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="chk01_09">
+                                                <label for="chk01_09" class="chk-label"><i></i><span>수면위내시경</span></label>
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="c-chkbox">
+                                                <input type="checkbox" id="chk01_10">
+                                                <label for="chk01_10" class="chk-label"><i></i><span>위내시경</span></label>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- label  for/ input id 매칭 -->
+                                    <tr class="is-holiday">
+                                        <td class="date-info">2021-05-04 휴일</td>
+                                        <td colspan="11"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-info">2021-05-02(일)</td>
+                                        <td>
+                                            <div class="c-tbl-chklist type01">
+                                                <div class="c-chkbox">
+                                                    <input type="checkbox" id="">
+                                                    <label for="" class="chk-label"><i></i><span>오전</span></label>
+                                                </div>
+                                                <div class="c-chkbox">
+                                                    <input type="checkbox" id="">
+                                                    <label for="" class="chk-label"><i></i><span>오후</span></label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- day-txt01 : 휴 무 일 -->
+                                    <tr>
+                                        <td class="date-info">2021-05-02(일)</td>
+                                        <td>
+                                            <div class="c-tbl-chklist type01">
+                                                <div class="c-chkbox">
+                                                    <input type="checkbox" id="">
+                                                    <label for="" class="chk-label"><i></i><span>오전</span></label>
+                                                </div>
+                                                <div class="c-chkbox">
+                                                    <input type="checkbox" id="">
+                                                    <label for="" class="chk-label"><i></i><span>오후</span></label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- day-txt02 : 근 로 자 의 날 -->
+                                    <tr>
+                                        <td class="date-info">2021-05-02(일)</td>
+                                        <td>
+                                            <div class="c-tbl-chklist type01">
+                                                <div class="c-chkbox">
+                                                    <input type="checkbox" id="">
+                                                    <label for="" class="chk-label"><i></i><span>오전</span></label>
+                                                </div>
+                                                <div class="c-chkbox">
+                                                    <input type="checkbox" id="">
+                                                    <label for="" class="chk-label"><i></i><span>오후</span></label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- day-txt03 : 휴 일 -->
+                                    <tr>
+                                        <td class="date-info">2021-05-02(일)</td>
+                                        <td>
+                                            <div class="c-tbl-chklist type01">
+                                                <div class="c-chkbox">
+                                                    <input type="checkbox" id="">
+                                                    <label for="" class="chk-label"><i></i><span>오전</span></label>
+                                                </div>
+                                                <div class="c-chkbox">
+                                                    <input type="checkbox" id="">
+                                                    <label for="" class="chk-label"><i></i><span>오후</span></label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="c-tbl-chklist type02">
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                                <div class="c-multi-input-group-02">
+                                                    <div class="input-col">
+                                                        <div class="c-chkbox">
+                                                            <input type="checkbox">
+                                                            <label for="" class="chk-label"><i></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-col time">
+                                                        <input type="text" value="5" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="../../js/common.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Layout Guide</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- guide css -->
+    <link rel="stylesheet" href="../css/base.css" />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap" class="coding_guide">
+      <h1 class="h1_guide">BUTTON</h1>
+      <div class="title-box">
+        <h2 class="h2_guide">공통</h2>
+      </div>
+      <div class="guide_descbox">
+        <h3 class="g-title"></h3>
+        <div class="inner_desc">
+          <ul>
+            <li>단일 태그 사용 : button 태그만</li>
+            <li>버튼 여러 개 나열 시 : buttons 태그 내 button 태그 삽입</li>
+            <li>기본 클래스 [class="c-btn"] 유지 - 색상에 따른 클래스 추가</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ===================================== Button -->
+      <div class="title-box">
+        <h2 class="h2_guide">Button</h2>
+      </div>
+
+      <!-- [Button Color] -->
+      <h3 class="h3_guide">Basic</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="d_ib">
+          <div class="buttons">
+            <button type="button" class="c-btn bg-blue-1"><span>button</span></button>
+            <button type="button" class="c-btn bg-navy-1"><span>button</span></button>
+            <button type="button" class="c-btn bg-navy-2"><span>button</span></button>
+            <button type="button" class="c-btn bg-green-1"><span>button</span></button>
+            <button type="button" class="c-btn bg-gray-1"><span>button</span></button>
+            <button type="button" class="c-btn bg-gray-2"><span>button</span></button>
+            <button type="button" class="c-btn bg-gray-3"><span>button</span></button>
+          </div>
+        </div>
+        <!-- ? // view -->
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+<div class="buttons">
+	<button type="button" class="c-btn bg-blue-1"><span>button</span></button>
+</div>
+			</xmp>
+        <!-- ! // code -->
+      </div>
+      <!-- [Basic Color] -->
+      <h3 class="h3_guide">outline</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="d_ib">
+          <div class="buttons">
+            <button type="button" class="c-btn is-outline-blue-1"><span>button</span></button>
+            <button type="button" class="c-btn is-outline-blue-1 type02"><span>button</span></button>
+          </div>
+        </div>
+        <!-- ? // view -->
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="buttons">
+					<button type="button" class="c-btn is-outline-blue-1"><span>button</span></button>
+					<button type="button" class="c-btn is-outline-blue-1 type02"><span>button</span></button>
+				</div>
+			</xmp>
+      </div>
+      <h3 class="h3_guide">disabled</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="d_ib">
+          <div class="buttons">
+            <button type="button" class="c-btn is-outline-blue-1" disabled><span>button</span></button>
+          </div>
+        </div>
+        <!-- ? // view -->
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript">
+				<div class="buttons">
+					<button type="button" class="c-btn is-outline-blue-1" disabled><span>button</span></button>
+				</div>
+			</xmp>
+        <!-- ! // code -->
+      </div>
+      <!-- [ // Button Color] -->
+    </div>
+    <script src="../js/pretty.js"></script>
+
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script defer src="../../js/common.js"></script>
+  </body>
+</html>

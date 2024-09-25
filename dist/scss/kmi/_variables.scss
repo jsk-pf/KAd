@@ -1,0 +1,266 @@
+//+ generic
+
+$g-lineheight: 1.4;
+$g-lineheight-2: 1.7;
+$g-lineheight-3: 1.666666;
+
+// + font
+$font-name: 'NotoSansKR';
+$font-path: '../fonts/';
+
+// + color
+$color-black-1: #1c1c1b !default;
+$color-black-2: #222225 !default;
+$color-black-op4: rgba(28, 28, 27, 0.4) !default;
+$color-black-op6: rgba(28, 28, 27, 0.6) !default;
+$color-black-op8: rgba(28, 28, 27, 0.8) !default;
+
+$color-blue-1: #2f7ad3 !default;
+$color-blue-2: #66acff !default;
+$color-blue-3: #f9f8ff !default;
+$color-blue-4: #8d8db9 !default;
+$color-blue-5: #ecf1f8 !default;
+
+$color-navy-1: #253981 !default;
+$color-navy-2: #225490 !default;
+$color-red-1: #ba1d3c !default;
+$color-orange-1: #ff6859 !default;
+$color-green-1: #206f44 !default;
+$color-white-1: #fff !default;
+$color-white-2: #fcfcfc !default;
+$color-white-3: #f8f9fb !default;
+$color-white-op2: rgba(255, 255, 255, 0.2) !default;
+$color-white-op4: rgba(255, 255, 255, 0.4) !default;
+$color-white-op6: rgba(255, 255, 255, 0.6) !default;
+$color-white-op8: rgba(255, 255, 255, 0.8) !default;
+$color-gray-1: #494949 !default;
+$color-gray-2: #777776 !default;
+$color-gray-3: #a4a4a4 !default;
+$color-gray-4: #d2d2d1 !default;
+$color-gray-5: #e9e9e9 !default;
+$color-gray-6: #d2d2d1 !default;
+$color-gray-7: #f3f3f3 !default;
+$color-gray-8: #ecf1f8 !default;
+$color-gray-9: #f5f5f9 !default;
+$color-gray-10: #c0c4d1 !default;
+$color-gray-11: #525258 !default;
+$color-gray-12: #d3d3d3 !default;
+$color-gray-13: #f1f1ef !default;
+$color-gray-14: #777676 !default;
+
+// + font weight
+$weight-100: 100 !default; // Thin
+$weight-300: 300 !default; // Light
+$weight-400: 400 !default; // Regular
+$weight-500: 500 !default; // Medium
+$weight-700: 700 !default; // Bold
+$weight-900: 900 !default; // Black
+
+// + font size
+$fs-small: 10px !default;
+$fs-small-m: 12px !default;
+$fs-normal: 12px !default;
+$fs-normal-m: 14px !default;
+$fs-middle: 16px !default;
+$fs-large: 20px;
+
+// + radius
+$radius-4: 4px;
+$radius-6: 6px;
+$radius-8: 8px;
+$radius-12: 12px;
+$radius-20: 20px;
+
+// + image
+$image-path: '../images/';
+$image-ico-path: $image-path + 'ico/';
+$image-ico-sprite01: $image-ico-path + 'ico_sprites_01.svg';
+$image-logo-path: $image-path + 'logo/';
+
+// + icon
+$ico-sprite01-t-y: -10px;
+$ico-sprite01-b-y: -48px;
+$ico-text: '' !default;
+
+$ico-type01-t-i-bg-arrow: -10px $ico-sprite01-t-y;
+$ico-type01-t-i-map: -48px $ico-sprite01-t-y;
+$ico-type01-t-i-home: -86px $ico-sprite01-t-y;
+
+$result: 10;
+
+// + gap
+$gap-2: 2px !default;
+$gap-4: 4px !default;
+$gap-5: 5px !default;
+$gap-6: 6px !default;
+$gap-8: 8px !default;
+$gap-10: 10px !default;
+$gap-12: 12px !default;
+$gap-14: 14px !default;
+$gap-15: 15px !default;
+$gap-16: 16px !default;
+$gap-20: 20px !default;
+$gap-24: 24px !default;
+$gap-28: 28px !default;
+$gap-40: 40px !default;
+$gap-60: 60px !default;
+
+// + Scrollbar
+$scrollbar-color: $color-gray-5;
+$scrollbar-size: 10px;
+$scrollbar-bg-color: transparent;
+$scrollbar-border-color: transparent;
+
+// + button
+$btn-size-normal: 8px 24px;
+
+//  + spacing
+$spacing-normal: 20px;
+$spacing-small: 10px;
+$spacing-xsmall: 5px;
+$spacing-inputgrp: 12px;
+$spacing-cardgrp: 12px;
+
+// + layout
+
+$side-nav: 220px;
+$per-title-article-gap: 12px;
+$tabFocus: 1px dashed $input-focus-color;
+
+// + table
+$tbl-col-w-no: 60px;
+$tbl-col-w-date: 110px;
+$tbl-col-w-date02: 185px;
+$tbl-col-w-birthday: 110px;
+$tbl-col-w-name: 110px;
+$tbl-col-w-phone: 140px;
+$tbl-col-w-gender: 70px;
+$tbl-col-w-price: 120px;
+$tbl-col-w-link: 60px;
+
+$tbl-col-w-checkbox: 40px;
+$tbl-col-w-checkbox02: 30px;
+
+// 1= input
+// 2= basic
+$input-border-color: $color-gray-4;
+$input-border-radius: $radius-8;
+$input-focus-border-color: $color-blue-1;
+$input-disabled-border-color: $color-gray-4;
+$input-disabled-bg-color: $color-gray-5;
+$input-disabled-font-color: $color-gray-2;
+
+$input-w-default: 120px;
+$input-w-postcode: 95px;
+
+$input-w-phone: 70px;
+$input-w-date: $input-w-default;
+$input-w-address: $input-w-default;
+$input-w-email: 100px;
+
+$select-w-default: $input-w-default;
+
+// $input-basic-lineheight: 22px;
+$input-basic-lineheight: 20px;
+
+$input-ico-spacing-01: 32px;
+
+// 2= detail
+$input-detail-border-color: $color-gray-5;
+$input-detail-spacing-btm: 4px;
+
+// 2= input-list
+$input-col-gap-h: $spacing-normal;
+$input-col-gap-v: $spacing-small;
+
+// 2= check, radio
+$input-check-size: 18px;
+
+// 1= Per Page
+
+// 2= Main
+$main-gap: 14px;
+
+// 2= callcenter
+$callcenter-right-col-width: 40%;
+$callcenter-right-col-width02: 45%;
+
+// ui-mod(v0.1)
+$input-label-w-default: fit-content; // 85px
+$input-label-min-width01: 60px;
+$input-label-min-width02: 100px;
+$input-label-min-width03: 120px;
+$input-label-min-width04: 75px;
+
+// type-horizontal
+$spacing-inputgrp-02: 4px;
+$input-w-default-readonly: 50px;
+$input-w-postcode-readonly: 65px;
+$input-w-phone-readonly: 65px;
+$input-w-address-readonly: 150px;
+
+// type-platformsystem
+$table-padding: 4px 8px;
+$input-padding: 4px 8px;
+$tab-list-padding: 2px 8px;
+$select-padding: 4px 20px 4px 8px;
+$c-article-padding: 2px;
+$c-article-padding-01: 6px;
+$c-article-padding-02: 10px;
+$col-padding: 2px;
+$col-padding-01: 6px;
+$col-padding-02: 8px;
+$col-padding-03: 10px;
+$col-padding-04: 12px;
+$col-padding-05: 14px;
+$c-btn-padding: 4px 12px;
+$c-panel-margin-top: 14px;
+$input-min-width: 77px;
+$input-min-width-02: 115px;
+$input-min-width-03: 60px;
+$input-min-width-04: 86px;
+
+$mod-reservation-padding: 6px 20px;
+$c-btn-refresh: 28px;
+$row-margin: -6px;
+$row-margin-01: 4px;
+$row-margin-02: 6px;
+$row-margin-03: 8px;
+$row-margin-04: 22px;
+$row-padding: 2px;
+$row-padding-01: 4px;
+$row-padding-02: 6px;
+$row-padding-03: 10px;
+
+$email-width: 280px;
+$phone-width: 50px;
+$accrodion-margin: 8px;
+$mod-reservation-height: 380px;
+$textarea-height: 100px;
+$wrap-min-width: 1400px;
+$input-ico-spacing-02: 24px;
+$c-badge: 2px 10px;
+$c-badge-font: 12px;
+$btn-search: 16px;
+$input-line-height: 18px;
+$input-border-radius-01: 6px;
+$input-border-radius-02: 8px;
+$input-border-radius-03: 10px;
+$refresh-size: 14px;
+$badge-margin: -4px;
+$chk-size: 16px;
+//
+
+// login - join
+$join-w: 460px;
+$join-btn-email: 56px;
+$join-btn-login: 16px 46px;
+$join-btn-margin: 30px auto 20px;
+$pw-sch-input: 116px;
+
+// devices
+$laptopHD: 1280px;
+$laptopMedium: 1366px;
+$laptopHigh: 1440px;
+$laptopFhd: 1536px;
+$desktopFhd: 1660px;

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMI</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Contents -->
+        <section class="contents">
+            <button type="button" class="c-btn bg-blue-1" data-toggle="modal" data-target="#popupTargetInfo_01"><span> 신규대상자 등록</span></button>
+
+            <!-- = popup Source  -->
+            <div class="c-layer-popup type04 modal fade" id="popupTargetInfo_01" role="dialog" aria-labelledby="popupTargetInfo_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <!-- modal Header -->
+                        <div class="modal-header">
+                            <div class="c-modal-title-field">
+                                <h4 class="c-title" id="popupTargetInfo_Label01">신규 대상자 등록</h4>
+                            </div>
+                            <button type="button" class="popup-cls-btn" data-dismiss="modal"><span class="skip">팝업 닫기</span></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="c-panel">
+                                <div class="c-title-field">
+                                    <h5 class="title-md">임직원 정보</h5>
+                                </div>
+                                <div class="c-article input-list">
+                                    <div class="row">
+                                        <div class="col-6 label-input">
+                                            <label for="popupTargetInfo_02">임직원 고객사</label>
+                                            <div class="c-input-search">
+                                                <input type="text" id="popupTargetInfo_02" />
+                                                <button type="button" class="btn-search"><span class="skip">검색</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 label-input">
+                                            <label for="popupTargetInfo_03">임직원 이름</label>
+                                            <input type="text" id="popupTargetInfo_03" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 label-input">
+                                            <label class="c-label-txt">휴대폰 전화번호</label>
+                                            <div class="row inner c-input-phone-group">
+                                                <div class="col input-phone-01">
+                                                    <div class="c-select">
+                                                        <select title="휴대폰 전화번호 앞 3자리 선택">
+                                                            <option value="" selected="">010</option>
+                                                            <option value="">option</option>
+                                                            <option value="">option</option>
+                                                            <option value="">option</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 중간 4자리 입력" /></div>
+                                                <div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 끝 4자리 입력" /></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 label-input">
+                                            <label for="popupTargetInfo_04">생년월일(8자리)</label>
+                                            <input type="text" id="popupTargetInfo_04" placeholder="ex) 19870505" />
+                                        </div>
+                                        <div class="col-3 label-input">
+                                            <label for="popupTargetInfo_05">성별</label>
+                                            <div class="c-select">
+                                                <select name="" id="popupTargetInfo_05">
+                                                    <option value="" selected>전체</option>
+                                                    <option value="">남성</option>
+                                                    <option value="">여성</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 label-input">
+                                            <label for="popupTargetInfo_06">사번</label>
+                                            <input type="text" id="popupTargetInfo_06" />
+                                        </div>
+                                        <div class="col-6 label-input">
+                                            <label for="popupTargetInfo_07">부서</label>
+                                            <input type="text" id="popupTargetInfo_07" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 label-input">
+                                            <label for="popupTargetInfo_08">내/외국인</label>
+                                            <div class="c-select">
+                                                <select name="" id="popupTargetInfo_08">
+                                                    <option value="" selected>전체</option>
+                                                    <option value="">내국인</option>
+                                                    <option value="">외국인</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 label-input">
+                                            <label for="popupTargetInfo_09">국적</label>
+                                            <input type="text" id="popupTargetInfo_09" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="">검진구분</label>
+                                            <div class="c-m-input-list">
+                                                <div class="input-col">
+                                                    <div class="inner">
+                                                        <div class="c-rdochk">
+                                                            <input type="radio" id="popupTargetInfo_10_01" name="medicalTesting01" />
+                                                            <label for="popupTargetInfo_10_01" class="chk-label"><i></i>종합검진</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="input-col">
+                                                    <div class="inner">
+                                                        <div class="c-rdochk">
+                                                            <input type="radio" id="popupTargetInfo_10_02" name="medicalTesting01" />
+                                                            <label for="popupTargetInfo_10_02" class="chk-label"><i></i>일반검진</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="input-col">
+                                                    <div class="inner">
+                                                        <div class="c-rdochk">
+                                                            <input type="radio" id="popupTargetInfo_10_03" name="medicalTesting01" />
+                                                            <label for="popupTargetInfo_10_03" class="chk-label"><i></i>특수검진</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="input-col">
+                                                    <div class="inner">
+                                                        <div class="c-rdochk">
+                                                            <input type="radio" id="popupTargetInfo_10_04" name="medicalTesting01" />
+                                                            <label for="popupTargetInfo_10_04" class="chk-label"><i></i>채용검진</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="input-col w-100">
+                                                    <div class="c-multi-input-group">
+                                                        <div class="c-rdochk">
+                                                            <input type="radio" id="popupTargetInfo_10_05" name="medicalTesting01" />
+                                                            <label for="popupTargetInfo_10_05" class="chk-label"><i></i>기타</label>
+                                                        </div>
+                                                        <input type="text" class="c-input" disabled />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- // modal body -->
+                        <div class="modal-footer">
+                            <div class="buttons">
+                                <button class="c-btn is-outline-blue-1" data-dismiss="modal"><span>취소</span></button>
+                                <button class="c-btn bg-blue-1" data-dismiss="modal"><span>등록</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- = // popup Source -->
+        </section>
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script>
+        // guide 용 소스 스크립트 (DEV 제외)
+        $('.c-btn').trigger('click');
+    </script>
+</body>
+
+</html>

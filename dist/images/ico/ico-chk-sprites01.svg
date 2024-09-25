@@ -1,0 +1,22 @@
+<svg width="122" height="66" viewBox="0 0 122 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="10.5" y="10.5" width="17" height="17" rx="3.5" fill="white"/>
+<rect x="10.5" y="10.5" width="17" height="17" rx="3.5" stroke="#D2D2D1"/>
+<rect x="38.5" y="10.5" width="17" height="17" rx="3.5" fill="#E9E9E9"/>
+<rect x="38.5" y="10.5" width="17" height="17" rx="3.5" stroke="#D2D2D1"/>
+<rect x="66.5" y="10.5" width="17" height="17" rx="3.5" fill="#253981"/>
+<path d="M72.7122 21.7948L70.21 19.2899C69.9312 19.0107 69.4879 19.0107 69.2091 19.2899C68.9303 19.569 68.9303 20.0127 69.2091 20.2918L72.2046 23.2907C72.4835 23.5698 72.9339 23.5698 73.2127 23.2907L80.7909 15.7113C81.0697 15.4322 81.0697 14.9885 80.7909 14.7093C80.5121 14.4302 80.0688 14.4302 79.79 14.7093L72.7122 21.7948Z" fill="white"/>
+<rect x="66.5" y="10.5" width="17" height="17" rx="3.5" stroke="#D2D2D1"/>
+<rect x="94.5" y="10.5" width="17" height="17" rx="3.5" fill="#D2D2D1"/>
+<path d="M99.9497 22.7264L96.6133 19.3865C96.2416 19.0143 95.6506 19.0143 95.2788 19.3865C94.9071 19.7586 94.9071 20.3503 95.2788 20.7225L99.2729 24.7209C99.6446 25.093 100.245 25.093 100.617 24.7209L110.721 14.6151C111.093 14.2429 111.093 13.6513 110.721 13.2791C110.349 12.907 109.758 12.907 109.387 13.2791L99.9497 22.7264Z" fill="white"/>
+<rect x="94.5" y="10.5" width="17" height="17" rx="3.5" stroke="#D2D2D1"/>
+<rect x="10.5" y="38.5" width="17" height="17" rx="8.5" fill="white"/>
+<rect x="10.5" y="38.5" width="17" height="17" rx="8.5" stroke="#D2D2D1"/>
+<rect x="38.5" y="38.5" width="17" height="17" rx="8.5" fill="#A4A4A4"/>
+<rect x="38.5" y="38.5" width="17" height="17" rx="8.5" stroke="#D2D2D1"/>
+<rect x="66.5" y="38.5" width="17" height="17" rx="8.5" fill="white"/>
+<rect x="69" y="41" width="12" height="12" rx="6" fill="#253981"/>
+<rect x="66.5" y="38.5" width="17" height="17" rx="8.5" stroke="#D2D2D1"/>
+<rect x="94.5" y="38.5" width="17" height="17" rx="8.5" fill="white"/>
+<rect x="97" y="41" width="12" height="12" rx="6" fill="#A4A4A4"/>
+<rect x="94.5" y="38.5" width="17" height="17" rx="8.5" stroke="#D2D2D1"/>
+</svg>

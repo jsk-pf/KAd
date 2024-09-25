@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KMI</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico">
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../lib/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/dataTables/datatables.min.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Contents -->
+            <section class="contents">
+                <!-- = Popup Source -->
+                <button type="button" class="c-btn bg-blue-1 btn-open-delayexam-popup" data-toggle="modal" data-target="#popupDelayExamination01"><span>open popup</span></button>
+                <div class="c-layer-popup type03 modal fade type-horizontal delayexamination-info-popup delay-popup-type02" id="popupDelayExamination01" role="dialog" aria-labelledby="popupDelayExamination01_Label01" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <!-- modal Header -->
+                            <div class="modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupDelayExamination01_Label01">연기검사 조회</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn btn-close-delayexam-popup" data-dismiss="modal"><span class="skip">팝업 닫기</span></button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <!-- 팝업에 따른 title 부여 -->
+                                <div class="c-panel">
+                                    <div class="c-field">
+                                        <div class="input-list">
+                                            <div class="row">
+                                                <div class="col label-input">
+                                                    <label for="delay_reservNo">예약번호</label>
+                                                    <input type="text" class="c-input" id="delay_reservNo" disabled="">
+                                                </div>
+                                                <div class="col label-input">
+                                                    <input type="text" class="c-input" id="delay_rosterName" value="" disabled="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-list">
+                                            <div class="row">
+                                                <div class="col label-input">
+                                                    <div class="c-rdochk">
+                                                        <input type="radio" class="rdoExaminationDate" id="examinationDateRdo01" name="rdoExaminationDate" value="오전" checked="">
+                                                        <label for="examinationDateRdo01" class="chk-label"><i></i><span>오전</span></label>
+                                                    </div>
+                                                    <div class="c-rdochk">
+                                                        <input type="radio" class="rdoExaminationDate" id="examinationDateRdo02" name="rdoExaminationDate" value="오후">
+                                                        <label for="examinationDateRdo02" class="chk-label"><i></i><span>오후</span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="col label-input">
+                                                    <label for="examinationDate04">검진일자</label>
+                                                    <div class="c-inquiry-date-group">
+                                                        <div class="c-input-date">
+                                                            <input type="text" class="c-input btn-date-pickerRv4 hasDatepicker" id="examinationDate04" placeholder="YYYY-MM-DD" autocomplete="off" size="10">
+                                                            <span><i class="date-btn"></i></span>
+                                                        </div>
+                                                        <div class="buttons">
+                                                            <button type="button" class="c-btn bg-navy-1"><span>조희</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col label-input">
+                                                    <label for="examChkupDate02">예약시간</label>
+                                                    <div class="c-select" id="examChkupDate02">
+                                                        <select title="항목 선택" id="hopeTime4" onchange="fn_timeChange();">
+                                                            <option value="" selected="">선택해주세요</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel">
+                                    <div class="c-field">
+                                        <div class="input-list">
+                                            <div class="row">
+                                                <div class="col label-input">
+                                                    <label>검색</label>
+                                                    <div class="c-select">
+                                                        <select title="항목 선택" id="selSearch" onchange="fn_delaySearch();">
+                                                            <option value="" selected="">전체</option>
+                                                            <option value="selTestCd">검사코드</option>
+                                                            <option value="selTestName">항목명</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col label-input">
+                                                    <div class="c-input-search">
+                                                        <input type="text" value="" id="inputValue">
+                                                        <button type="button" class="btn-search" onclick="delayExaminationPop()"><span class="skip">검색</span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-list">
+                                            <div class="row">
+                                                <div class="col label-input">
+                                                    <label for="examinationDate05">연기일자 일괄조회</label>
+                                                    <div class="c-inquiry-date-group">
+                                                        <div class="c-input-date">
+                                                            <input type="text" class="c-input btn-date-pickerRv4 hasDatepicker" id="examinationDate05" placeholder="YYYY-MM-DD" autocomplete="off" size="10">
+                                                            <span><i class="date-btn"></i></span>
+                                                        </div>
+                                                        <div class="buttons">
+                                                            <button type="button" class="c-btn bg-navy-1"><span>조희</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col label-input">
+                                                    <label for="examChkupDate05">예약시간</label>
+                                                    <div class="c-select" id="examChkupDate05" style="width: 120px;">
+                                                        <select title="항목 선택" id="hopeTime6" onchange="fn_timeChange2();">
+                                                            <option value="" selected="">선택해주세요</option>
+                                                            <option value="AM">AM</option>
+                                                            <option value="PM">PM</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-panel">
+                                    <div class="c-table-field type02">
+                                        <!-- [ mod(230719) ]
+												- 클래스 삭제 : tbl-fixed
+												 -->
+                                        <div class="c-table striped">
+                                            <table class="table" id="delayExaminationList01" style="width: 100%">
+                                                <caption> 연기검사 조회 목록: 연기, 선택, 검진센터, 검사코드, 항목명, 검진일자, 연기일자(검진시간, 예약신청일, 예약시간 선택) </caption>
+                                                <colgroup>
+                                                    <col style="width: 45px; max-width: 45px" />
+                                                    <col style="width: 45px; max-width: 45px" />
+                                                    <col style="width: 140px; max-width: 140px" />
+                                                    <col style="width: 140px; max-width: 140px" />
+                                                    <col />
+                                                    <col class="max-date" />
+                                                    <col style="width: 400px; max-width: 400px; min-width: 400px" />
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" style="width: 45px; max-width: 45px">연기</th>
+                                                        <th scope="col" style="width: 45px; max-width: 45px">선택</th>
+                                                        <th scope="col" style="width: 140px; max-width: 140px">검진센터</th>
+                                                        <th scope="col" style="width: 140px; max-width: 140px">검사코드</th>
+                                                        <th scope="col">항목명</th>
+                                                        <th scope="col" class="max-date">검진일자</th>
+                                                        <th scope="col" style="width: 400px; max-width: 400px; min-width:400px;">연기일자</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="col">
+                                                            <div class="c-chkbox">
+                                                                <input type="checkbox" id="examChk_01" checked />
+                                                                <label for="examChk_01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <div class="c-chkbox">
+                                                                <input type="checkbox" id="examChk_02" checked />
+                                                                <label for="examChk_02" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                            </div>
+                                                        </th>
+                                                        <td>KMI 광화문</td>
+                                                        <td>T0001</td>
+                                                        <td>뇌 CT뇌 CT뇌 CT뇌 CT뇌 CT뇌 CT</td>
+                                                        <td>2023-07-12</td>
+                                                        <td>
+                                                            <!-- [ mod(230719) ]
+																	+ 연기일자 : 검진시간, 예약신청일, 예약시간 선택 추가
+																-->
+                                                            <div class="row exam-date">
+                                                                <div class="col">
+                                                                    <div class="c-m-input-list">
+                                                                        <div class="input-col">
+                                                                            <div class="inner">
+                                                                                <div class="c-rdochk">
+                                                                                    <input type="radio" id="examTimeChk_01" name="examTimeChk01" />
+                                                                                    <label for="examTimeChk_01" class="chk-label"><i></i><span>오전</span></label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="input-col">
+                                                                            <div class="inner">
+                                                                                <div class="c-rdochk">
+                                                                                    <input type="radio" id="examTimeChk_02" name="examTimeChk01" />
+                                                                                    <label for="examTimeChk_02" class="chk-label"><i></i><span>오후</span></label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <div class="c-inquiry-date-group">
+                                                                        <div class="c-input-date">
+                                                                            <input type="text" class="c-input btn-date-pickerRv4 hasDatepicker" id="examinationDate05" placeholder="YYYY-MM-DD" autocomplete="off" size="10">
+                                                                            <span><i class="date-btn"></i></span>
+                                                                        </div>
+                                                                        <div class="buttons">
+                                                                            <button type="button" class="c-btn bg-navy-1"><span>조희</span></button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <div class="c-select" id="examChkupDate01">
+                                                                        <select title="항목 선택">
+                                                                            <option value="" selected="">AM</option>
+                                                                            <option value="">13:00</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+                            <div class="modal-footer">
+                                <div class="buttons">
+                                    <button class="c-btn is-outline-navy-1 btn-close-delayexam-popup" data-dismiss="modal"><span>등록</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- = // Popup Source -->
+            </section>
+            <!-- // Contents -->
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script src="../../js/date.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            var delayExamScroll = document.querySelector('.dataTables_scroll');
+
+            // DatePicker Sample
+            $('.btn-date-picker').datepicker({
+                beforeShowDay: disableAllTheseDays,
+                beforeShow: function(input) {
+                    datepickerBtmBar(input);
+                    delayExamScroll.addEventListener('wheel', PreventScrollDelayTable, {
+                        passive: false
+                    });
+                },
+                onChangeMonthYear: function(input) {
+                    datepickerBtmBar(input);
+                },
+                onSelect: function() {
+                    delayExamScroll.removeEventListener('wheel', PreventScrollDelayTable);
+                },
+                onClose: function() {
+                    delayExamScroll.removeEventListener('wheel', PreventScrollDelayTable);
+                },
+            });
+
+            // 특정날짜 disabled List (Sample Source)
+            var disabledDays = ['2022-7-9', '2022-7-26', '2022-7-26', '2022-8-1'];
+
+            function disableAllTheseDays(date) {
+                var m = date.getMonth(),
+                    d = date.getDate(),
+                    y = date.getFullYear();
+
+                for (i = 0; i < disabledDays.length; i++) {
+                    if ($.inArray(y + '-' + (m + 1) + '-' + d, disabledDays) != -1) {
+                        return [false];
+                    }
+                }
+                return [date.getDay() != 0, '']; // 일요일 제어
+                return [true];
+            }
+        });
+
+        function PreventScrollDelayTable(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            return false;
+        }
+
+        // 연기 검사 팝업 Data Table 제어
+        var delayExamDateTableOption = {
+            // [ mod(230719) ] -옵션 수정
+            scrollX: true,
+            scrollY: 270,
+            paging: false,
+            searching: false,
+            ordering: false,
+            reponsive: true,
+            info: false,
+            autoWidth: false,
+            destroy: true,
+        };
+
+        $('#delayExaminationList01').DataTable(delayExamDateTableOption);
+    </script>
+</body>
+
+</html>
